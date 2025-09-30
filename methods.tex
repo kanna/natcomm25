@@ -2,8 +2,6 @@
 \section{Methods}
 % max 3000 words
 
-\subsection{Overall Approach}
-
 Our methodology is based on the implementation of a complete data cycle to enhance model predictions in a coastal ocean domain through adaptive sampling and data assimilation. The approach consists of three fundamental steps, executed iteratively on a daily basis:
 
 \begin{enumerate}
@@ -16,6 +14,8 @@ Our methodology is based on the implementation of a complete data cycle to enhan
     \item \textbf{Data Collection and Assimilation}:  
     Throughout the operational period, each AUV collects pointwise measurements of the target variable $\theta$ along its assigned path. After the mission is completed, the collected measurements are assimilated into the numerical model using an appropriate data assimilation scheme. This updated model state serves as the new initial condition for the next forecasting cycle, closing the loop.
 \end{enumerate}
+
+
 
 \subsection{Available Models}
 \subsection{Adaptive Sampling Algorithm}

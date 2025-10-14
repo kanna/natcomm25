@@ -57,78 +57,89 @@ autonomous underwater vehicles (AUVs) and other robotic platforms,
 offering flexible, mobile, and increasingly autonomous means of
 sampling ocean properties with high spatiotemporal resolution and low
 logistic footprint
-\cite{das10,das11b,olaya12,graham12,jdas13,das15,sousa16,fossum18,fossum19,fossum19b}.
+\cite{das10,das11b,olaya12,graham12,jdas13,das15,sousa16,fossum18,fossum19b}.
 
-However, even with these new tools, efficiently gathering the
-\textit{right} data remains a complex challenge. AUVs are constrained
-by endurance, communication bandwidth, and operational risks such as
-high currents and bathymetry. Meanwhile, the ocean itself remains
-highly dynamic and unpredictable, with key processes often evolving
-faster than traditional sampling strategies can capture. This opens
-the door to adaptive sampling strategies, where observation efforts
-are guided by model outputs and uncertainty estimates to maximize the
-relevance of collected data. Adaptive sampling represents a
-fundamental shift: instead of executing pre-planned missions,
-autonomous vehicles dynamically prioritize areas for observation. One
-approach that we articulate here is combining model predictions with
-adaptive AUV sampling. Doing so combines predicted model uncertainties
-in comparison with prior data assimilation process with availabe
-obervations. Model forecasts identify where uncertainty is highest or
-where new observations are expected to have the greatest impact in
-reducing forecast errors. Vehicles are then directed to sample these
-areas, and their data are in turn assimilated back into the models,
-generating improved forecasts for subsequent adaptive planning as a
-virtuous cycle.
+However, even with these new tools, efficiently gathering data at the
+right spatial and temporal scales remains a complex challenge. AUVs
+are constrained by endurance, communication bandwidth, and operational
+risks such as high currents and bathymetry even as the ocean itself
+remains highly dynamic with key processes often evolving faster than
+traditional sampling strategies can capture. This opens the door to
+adaptive sampling strategies, where observation efforts are guided by
+model outputs and uncertainty estimates to maximize the relevance of
+collected data. Adaptive sampling
+\cite{BinZhang07,Singh09,smith14,fossum19} represents a fundamental
+shift: instead of executing pre-planned missions, autonomous vehicles
+dynamically prioritize areas for observation.
 
-%data-cycle
-Doing so closes a critical feedback loop between models and
-observations; model prediction generates a forecast and associated
-uncertainty field while adaptive sampling targets areas of maximum
-predicted uncertainty. Data assimilation from these regions of high
-uncertainty are then incorporated into the model such that new
+One approach that we articulate here is combining model predictions
+with adaptive AUV sampling. Doing so combines predicted model
+uncertainties in comparison with prior data assimilation process with
+availabe obervations. Model forecasts identify where uncertainty is
+highest or where new observations are expected to have the greatest
+impact in reducing forecast errors. Vehicles are then directed to
+sample these areas, and their data are in turn assimilated back into
+the models, generating improved forecasts for subsequent adaptive
+planning as a virtuous cycle. Doing so closes a critical feedback loop
+between models and observations; model prediction generates a forecast
+and associated uncertainty field while adaptive sampling targets areas
+of maximum predicted uncertainty. Data assimilation from these high
+uncertainty regions are then incorporated into the model such that new
 predictions benefit from improved in-situ data, closing the loop.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.7\linewidth]{fig/data_cycle.png}
-    \caption{Enter Caption}
-    \label{fig:enter-label}
-\end{figure}
-
 Such a \textit{data cycle} approach promises to significantly enhance
 the skill of ocean forecasts, especially in the complex coastal
-environment where processes occur over a wide range of scales and where
-human and environmental stakes are high. It also has the potential to
-improve operational efficiency by optimizing the deployment of costly
-and resource-constrained observational assets.
+environment where processes occur over a wide range of scales and
+where human and environmental stakes are high. It also has the
+potential to improve operational efficiency by optimizing the
+deployment of costly and resource-constrained observational assets.
 
-% real-world gap
-Yet, implementing such a system in the real world presents substantial
-challenges. It demands high-resolution numerical models capable of
-rapidly generating uncertainty projections, robust algorithms for
-exploration under a range of constraints, reliable communication links
-for mission updates, and assimilation frameworks able to integrate
-heterogeneous, real-time data streams. Furthermore, the logistical risks
-and communication limitations inherent to marine operations — low
-bandwidth, intermittent connections, unpredictable weather conditions —
-impose additional constraints on the practical execution of adaptive
-sampling missions.
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=.7\linewidth]{fig/data_cycle.png}
+%     \caption{Enter Caption}
+%     \label{fig:enter-label}
+%   \end{figure}
+
+
+\begin{figure}[!]
+  \centering
+  \includegraphics[scale=0.5]{fig/ensemble-2.jpg}
+  \caption{\proj demonstrates the value of integrating ocean models
+    with adaptive robotic vehicles in the coastal ocean, to increase
+    model skill while increasing model accuracy and prediction within
+    a tight control loop.}
+  \label{fig:block-diag}
+\end{figure}
+
+
+% Yet, implementing such a system in the real world presents substantial
+% challenges. It demands high-resolution numerical models capable of
+% rapidly generating uncertainty projections, robust algorithms for
+% exploration under a range of constraints, reliable communication links
+% for mission updates, and assimilation frameworks able to integrate
+% heterogeneous, real-time data streams. Furthermore, the logistical risks
+% and communication limitations inherent to marine operations — low
+% bandwidth, intermittent connections, unpredictable weather conditions —
+% impose additional constraints on the practical execution of adaptive
+% sampling missions.
 
 %impact
-In this study, we address these challenges by implementing and
-evaluating a complete data cycle — from model prediction, to uncertainty
-projection, to adaptive sampling and data assimilation — in a coastal
-ocean environment. The work was conducted within the framework of \proj
-(\textbf{F}ield expe\textbf{R}iments for mod\textbf{E}ling,
-a\textbf{S}similatio\textbf{N} and adaptiv\textbf{E} samp\textbf{L}ing),
-a project specifically designed to explore and test model-driven robotic
-exploration strategies. \proj provided the experimental setting and
-operational assets to demonstrate how model-based uncertainty fields can
-drive adaptive sampling missions aimed at improving ocean model
-predictive skills. This work focuses on the underlying problem: how to
-effectively close the loop between model predictions, observational
-targeting, and data assimilation to enhance ocean forecasts in highly
-dynamic coastal environments. The experimental results obtained within
+In this study, we address the challenge of such loop closure by
+implementing and evaluating a complete data cycle — from model
+prediction, to uncertainty projection, to adaptive sampling and data
+assimilation — in a coastal ocean environment. The work was conducted
+within the framework of \proj (\textbf{F}ield expe\textbf{R}iments for
+mod\textbf{E}ling, a\textbf{S}similatio\textbf{N} and
+adaptiv\textbf{E} samp\textbf{L}ing), a project specifically designed
+to explore and test model-driven robotic exploration strategies. \proj
+provided the experimental setting and operational assets to
+demonstrate how model-based uncertainty fields can drive adaptive
+sampling missions aimed at improving ocean model predictive
+skills % This work focuses on the underlying problem: how to
+% effectively close the loop between model predictions, observational
+% targeting, and data assimilation
+to enhance ocean forecasts in highly dynamic coastal environments
+(Fig. \ref{fig:block-diag}). The experimental results obtained within
 \proj serve to illustrate and validate the proposed approach,
 highlighting the practical benefits and challenges of real-world
 adaptive ocean exploration.

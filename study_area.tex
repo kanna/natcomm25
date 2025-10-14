@@ -19,14 +19,47 @@
 
 The study was conducted in the coastal ocean off central Portugal,
 focusing on the region influenced by the \naz Canyon (39.2$^{\circ}$
--39.9$^{\circ}$N) (Fig. \ref{fig:studyarea-1}). This area is shaped by
-strong topographic contrasts, including the transition from the wide
-Estremadura Plateau to the narrower shelf to the north, the long and
-narrow \naz submarine canyon that incises the shelf and extends more
-than 200 km offshore, and the Berlengas archipelago, a UNESCO
-Biosphere Reserve with high ecological value. These features
-contribute to enhanced biological productivity and biodiversity, and
-strongly modulate physical and biogeochemical processes in the region.
+-39.9$^{\circ}$N) (Fig. \ref{fig:studyarea-1}) in the Fall of
+2024. While the experiment considered the measurable impact of model
+driven robotic sampling to both the bio-geochemistry of the the canyon
+region, this manuscript is focused on the implications of such
+\emph{sample-assimilate-predict-direct} loop closure
+(Fig. \ref{fig:loop-closure}).
+
+
+
+\begin{wrapfigure}{!h}{2.75in}
+  \centering
+ \includegraphics[scale=0.2]{fig/data_cycle.png}
+  \caption{\proj attempts to close the
+    \emph{sample-assimilate-predict-direct} loop using data obtained
+    from robotic vehicles assimilated into a model which generates a
+    prediction which in turn targets where the robotic vehicles can be
+    repositioned to better address model uncertainty.}
+  \label{fig:loop-closure}
+\end{wrapfigure}
+
+
+Implementing such a system in the dynamic real world of the coastal
+region presents substantial challenges requiring high-resolution
+numerical models capable of rapidly generating uncertainty
+projections, robust algorithms for exploration under a range of
+constraints, reliable communication links for mission updates, and
+assimilation frameworks able to integrate heterogeneous, real-time
+data streams. Furthermore, the logistical risks and communication
+limitations inherent in marine operations — low bandwidth,
+intermittent connections, unpredictable weather conditions — impose
+additional constraints on the practical execution of adaptive sampling
+missions.
+
+The \naz area is shaped by strong topographic contrasts, including the
+transition from the wide Estremadura Plateau to the narrower shelf to
+the north, the long and narrow \naz submarine canyon that incises the
+shelf and extends more than 200 km offshore, and the Berlengas
+archipelago, a UNESCO Biosphere Reserve with high ecological
+value. These features contribute to enhanced biological productivity
+and biodiversity, and strongly modulate physical and biogeochemical
+processes in the region.
 
 Freshwater inputs from major rivers, such as the Tagus, have only a
 limited direct impact on the area. In contrast, smaller rivers and the

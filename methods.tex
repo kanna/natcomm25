@@ -457,15 +457,56 @@ as dictated by meteorological and ocean conditions or forecasts.
 
 \subsection{Field Experiment Analysis and Evaluation}
 
-Although the FRESNEL field campaign extended over a longer period, for the purpose of this paper, only a three-day sequence of consecutive experiments (29–31 October) is considered, as it provides a representative demonstration of the proposed framework and its operational workflow.
+Although the FRESNEL field campaign extended over a longer period, for
+the purpose of this paper, only a three-day sequence of consecutive
+experiments (29–31 October) is considered, as it provides a
+representative demonstration of the proposed framework and its
+operational workflow.
 
-The evaluation of the framework was carried out during the FRESNEL field campaign through a series of consecutive daily experiments designed to test the integration of model forecasts, target sampling planning, and data assimilation. All of these components were previously described. The analysis aimed to quantify the impact of assimilating AUV-acquired temperature data on the predictive performance of the statistical model and to assess the operational feasibility of the data cycle approach in a real-world coastal setting.
+The evaluation of the framework was carried out during the FRESNEL
+field campaign through a series of consecutive daily experiments
+designed to test the integration of model forecasts, target sampling
+planning, and data assimilation. All of these components were
+previously described. The analysis aimed to quantify the impact of
+assimilating AUV-acquired temperature data on the predictive
+performance of the statistical model and to assess the operational
+feasibility of the data cycle approach in a real-world coastal
+setting.
 
-Each experimental day followed a structured cycle involving: (i) the generation of a statistical model forecast and its associated uncertainty field based on CMEMS data available up to the previous day; (ii) the execution of the target sampling algorithm to plan the next-day missions; and (iii) in situ data collection by the AUV fleet following the planned routes. The data collected within the previous day (0–24 h) were subsequently assimilated into the statistical model to produce updated forecasts, enabling comparisons between forecasts with and without data assimilation.
+Each experimental day followed a structured cycle involving: (i) the
+generation of a statistical model forecast and its associated
+uncertainty field based on CMEMS data available up to the previous
+day; (ii) the execution of the target sampling algorithm to plan the
+next-day missions; and (iii) in situ data collection by the AUV fleet
+following the planned routes. The data collected within the previous
+day (0–24 h) were subsequently assimilated into the statistical model
+to produce updated forecasts, enabling comparisons between forecasts
+with and without data assimilation.
 
-The campaign involved three Light Autonomous Underwater Vehicles (LAUVs) — Xplore2 (XP2), Xplore3 (XP3), and Xplore5 (XP5), which alternated daily in performing target sampling missions over the Nazaré Canyon region. On 29 October, the statistical model produced the initial forecast solution (A), which was used to plan the mission executed by XP2. The resulting in situ temperature data were later assimilated offline to produce an updated statistical model solution (B1) for 30 October. Although operational real-time assimilation was initially planned, logistical constraints prevented its implementation. Consequently, all assimilation cases were performed offline after mission completion. The target sampling algorithm, therefore, relied on statistical forecasts without assimilation (B), using pre-existing data as input for daily mission planning. This limitation is not expected to have significantly affected the experimental outcomes, as the operational area was spatially compact and the predicted variability field remained consistent between consecutive days. In future implementations, on-board or near-real-time assimilation should be considered to fully exploit the adaptive potential of the framework.
+The campaign involved three Light Autonomous Underwater Vehicles
+(LAUVs) — Xplore2 (XP2), Xplore3 (XP3), and Xplore5 (XP5), which
+alternated daily in performing target sampling missions over the
+Nazaré Canyon region. On 29 October, the statistical model produced
+the initial forecast solution (A), which was used to plan the mission
+executed by XP2. The resulting in situ temperature data were later
+assimilated offline to produce an updated statistical model solution
+(B1) for 30 October. Although operational real-time assimilation was
+initially planned, logistical constraints prevented its
+implementation. Consequently, all assimilation cases were performed
+offline after mission completion. The target sampling algorithm,
+therefore, relied on statistical forecasts without assimilation (B),
+using pre-existing data as input for daily mission planning. This
+limitation is not expected to have significantly affected the
+experimental outcomes, as the operational area was spatially compact
+and the predicted variability field remained consistent between
+consecutive days. In future implementations, on-board or
+near-real-time assimilation should be considered to fully exploit the
+adaptive potential of the framework.
 
-Data collected by XP3 and XP5 on 30 October were assimilated offline to generate new model solutions for 31 October (C1, C2, C3, C4), along with a non-assimilated reference case (C). The configurations were as follows:
+Data collected by XP3 and XP5 on 30 October were assimilated offline
+to generate new model solutions for 31 October (C1, C2, C3, C4), along
+with a non-assimilated reference case (C). The configurations were as
+follows:
 
 \begin{itemize}
     \item C1 – assimilation including only XP2 data from 29 October;
@@ -474,15 +515,22 @@ Data collected by XP3 and XP5 on 30 October were assimilated offline to generate
     \item C4 – assimilation including all available data from 29 and 30 October (XP2, XP3, and XP5).
 \end{itemize}
 
-An analogous setup was used for scenario D, in which the difference from case C is that the statistical predictions for 31 October were generated using CMEMS data available up to different cutoff dates:
+An analogous setup was used for scenario D, in which the difference
+from case C is that the statistical predictions for 31 October were
+generated using CMEMS data available up to different cutoff dates:
 
 \begin{itemize}
     \item D – forecast for 31 October based on CMEMS data available until 29 October;
-    \item D1–D4 – corresponding to the same assimilation configurations as C1–C4, but using CMEMS data available until 30 October.
+    \item D1–D4 – corresponding to the same assimilation
+      configurations as C1–C4, but using CMEMS data available until 30
+      October.
 \end{itemize}
-D1–D4 – corresponding to the same assimilation configurations as C1–C4, but using CMEMS data available until 30 October.
+D1–D4 – corresponding to the same assimilation configurations as
+C1–C4, but using CMEMS data available until 30 October.
 
-Model performance was evaluated by comparing predicted and observed temperature data along the AUV trajectories using the root-mean-square error (RMSE) as the primary performance metric for 31 October.
+Model performance was evaluated by comparing predicted and observed
+temperature data along the AUV trajectories using the root-mean-square
+error (RMSE) as the primary performance metric for 31 October.
 
 \begin{figure}
     \centering

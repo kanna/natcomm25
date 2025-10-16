@@ -121,12 +121,11 @@ smoothened to highlight large-scale features. Candidate waypoints are
 then identified from the map and used to build a weighted graph, where
 nodes carry a reward proportional to their uncertainty value and edges
 represent travel costs. The trajectory planning task is posed as a
-Prize Collecting Vehicle Routing Problem
-(PCVRP)\cite{vidal2013,toth2014vehicle} where routes must balance the
-rewards obtained from visiting nodes with associated costs of
-traveling between them. By solving this, the algorithm returns a set
-of near-optimal trajectories that prioritize regions of greatest
-uncertainty, while ensuring vehicle endurance and safety
+vehicle routing problem where routes must balance the rewards obtained
+from visiting nodes with associated costs of traveling between them
+\cite{vidal2013,toth2014vehicle}. By solving this, the algorithm
+returns a set of near-optimal trajectories that prioritize regions of
+greatest uncertainty, while ensuring vehicle endurance and safety
 constraints. This provides a principled way of steering autonomous
 platforms toward the most informative sampling locations, forming a
 key component in the daily cycle of forecast, adaptive sampling, and

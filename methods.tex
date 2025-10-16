@@ -137,25 +137,38 @@ deployment during \proj are reported elsewhere in
 
 \subsection{Data Collection}
 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\linewidth]{fig/lauvs.png}
+    \caption{AUVs deployed in the \proj experiment.}
+    \label{fig:lauvs}
+\end{figure}
+
 In-situ data collection process involved a number of upper
 water-column AUVs designed and developed in-house at the University of
-Porto \cite{lauvurl}.Each AUV comes equipped with a range of sensors
-including a CTD. Some have in addition other sensors including
-fluorometers, turbidity, Oxygen, DVL/ADCP and all come equiped with
-WiFi and Iridium satellite communications, acoustic modems, and
-battery packs enabling 60h+ endurance. The CTDs mounted on the AUVs
-were calibrated and cross-calibrated to ensure consistency. 
+Porto \cite{sousa2012lauv}.Each AUV comes equipped with a range of
+sensors including a CTD (Fig. \ref{fig:lauvs}). Some have in addition
+other sensors including fluorometers, turbidity, Oxygen, DVL/ADCP and
+all come equiped with WiFi and Iridium satellite communications,
+acoustic modems, and battery packs enabling 60h+ endurance. The CTDs
+mounted on the AUVs were cross-calibrated to ensure consistency across
+all vehicle measurements. In addition to the hardware involved, an
+extensive suite of mature advanced mission planning and
+command/control tools were used -- discussion of these is outside the
+scope of the paper and can be referenced at
+\cite{dias2005neptus,seacons10,toolchain2012,pinto2013lsts,Ferreira2018}.
 
-at IH calibration facilities. The
-Manta communication gateways \cite{} are equipped with acoustic
-modems, satellite and Wi-Fi modules for long range communications with
-underwater, surface, and aerial vehicles. The AUV operations were
-supported by two boats rented in Nazaré. In addition, to the existing
-command and control center located in Porto, LSTS installed another in
-Nazaré. Two Manta units were installed in the support boats to support
-local deployments and communications with the command and control
-centers. Four units were used to support the command and control
-center installed in Nazaré.
+% at IH calibration facilities. The
+% Manta communication gateways \cite{} are equipped with acoustic
+% modems, satellite and Wi-Fi modules for long range communications with
+% underwater, surface, and aerial vehicles. The AUV operations were
+% supported by two boats rented in Nazaré. In addition, to the existing
+% command and control center located in Porto, LSTS installed another in
+% Nazaré. Two Manta units were installed in the support boats to support
+% local deployments and communications with the command and control
+% centers. Four units were used to support the command and control
+% center installed in Nazaré.
 
 % \subsubsection{System of systems for ocean observation}
 
@@ -207,49 +220,49 @@ center installed in Nazaré.
 % The Columbia University deployed a vertical profiler equipped with a CTD
 % and portable CTD deployed from the support boats.
 
-The Xplore AUVs, control stations, and Manta gateways were powered by
-the LSTS software toolchain \cite{pinto2013lsts} deploying command and
-control, data pipelines, and algorithm integration to support closing
-the modeling-sample-assimilation-tasking cycles. The 4 components of the
-toolchain are briefly described below:
+% The Xplore AUVs, control stations, and Manta gateways were powered by
+% the LSTS software toolchain \cite{pinto2013lsts} deploying command and
+% control, data pipelines, and algorithm integration to support closing
+% the modeling-sample-assimilation-tasking cycles. The 4 components of the
+% toolchain are briefly described below:
 
-DUNE, the onboard control software, running on vehicles and other
-devices. DUNE interfaces with sensors and actuators, by sending commands
-and monitoring them. DUNE is also in charge of executing missions and
-commands sent by the command and control (C2) stations. DUNE and its
-upper water column backseat implementation provided additional
-functionally for Iridium satellite communications, telemetry, and
-interaction with Neptus.
+% DUNE, the onboard control software, running on vehicles and other
+% devices. DUNE interfaces with sensors and actuators, by sending commands
+% and monitoring them. DUNE is also in charge of executing missions and
+% commands sent by the command and control (C2) stations. DUNE and its
+% upper water column backseat implementation provided additional
+% functionally for Iridium satellite communications, telemetry, and
+% interaction with Neptus.
 
-IMC, the messaging protocol. It includes a definition of messages and
-its serialization. It is used to send and receive commands and data
-between vehicles and the C2 stations. A few IMC messages were created to
-support this field experiment. NEPTUS, the C2 software framework. Neptus
-presents a graphical user interface (GUI) enabling the operator to
-connect to one or several heterogeneous vehicles (underwater, surface,
-aerial, or sensors). With Neptus, one operator can control multiple
-vehicles simultaneously, sending commands, missions, and receiving and
-monitoring telemetry and data using Wi-Fi acoustics, or satellite
-communications. For this deployment Neptus incorporated new developments
-to streamline the integration of telemetry coming through the Iridium
-satellite communications with existing GUIs and to import optimal routes
-generated by the adaptive sampling algorithm into mission plans to send
-to the vehicles.
+% IMC, the messaging protocol. It includes a definition of messages and
+% its serialization. It is used to send and receive commands and data
+% between vehicles and the C2 stations. A few IMC messages were created to
+% support this field experiment. NEPTUS, the C2 software framework. Neptus
+% presents a graphical user interface (GUI) enabling the operator to
+% connect to one or several heterogeneous vehicles (underwater, surface,
+% aerial, or sensors). With Neptus, one operator can control multiple
+% vehicles simultaneously, sending commands, missions, and receiving and
+% monitoring telemetry and data using Wi-Fi acoustics, or satellite
+% communications. For this deployment Neptus incorporated new developments
+% to streamline the integration of telemetry coming through the Iridium
+% satellite communications with existing GUIs and to import optimal routes
+% generated by the adaptive sampling algorithm into mission plans to send
+% to the vehicles.
 
-RIPPLES, the Web based C2 that supports situational awareness of
-unmanned systems operations. It supports real-time monitoring of an
-operation and planning of such operations by providing access to several
-data products layers. These layers include environmental data and other
-support models for the environment and additions marine traffic in the
-vicinity of the operating autonomous vehicles (such AIS and aircraft
-data, or density maps). New layers were added to RIPPLES to support new
-aspects planning and execution control for this deployment.
+% RIPPLES, the Web based C2 that supports situational awareness of
+% unmanned systems operations. It supports real-time monitoring of an
+% operation and planning of such operations by providing access to several
+% data products layers. These layers include environmental data and other
+% support models for the environment and additions marine traffic in the
+% vicinity of the operating autonomous vehicles (such AIS and aircraft
+% data, or density maps). New layers were added to RIPPLES to support new
+% aspects planning and execution control for this deployment.
 
-Figure XXX shows outputs of the HOPS (Harvard Ocean Prediction System)
-with temperature and salinity model outputs and respective errors.
-Another layer displayed geostatistical model outputs XXX. These outputs
-were used to monitor progress by enabling the visualization of updated
-during the execution of the operation.
+% Figure XXX shows outputs of the HOPS (Harvard Ocean Prediction System)
+% with temperature and salinity model outputs and respective errors.
+% Another layer displayed geostatistical model outputs XXX. These outputs
+% were used to monitor progress by enabling the visualization of updated
+% during the execution of the operation.
 
 % IH has several buoys in the area. A new layer to directly access and
 % visualize their data in real-time was added to RIPPLES (Figure
@@ -257,22 +270,22 @@ during the execution of the operation.
 % and historical).
 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.7\linewidth]{fig/buoys.png}
-    \caption{AUVs deployed in the experiment.}
-    \label{fibuoys}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=.7\linewidth]{fig/buoys.png}
+%     \caption{AUVs deployed in the experiment.}
+%     \label{fibuoys}
+% \end{figure}
 
  
-Optimal routes were generated for the AUVs to execute. A new Ripples
-layer enabled the user to visualize all the routes taken by the AUVs, as
-well as the routes generated for future deployments. This contributed to
-a timely launch and deployment of the vehicles.
+% Optimal routes were generated for the AUVs to execute. A new Ripples
+% layer enabled the user to visualize all the routes taken by the AUVs, as
+% well as the routes generated for future deployments. This contributed to
+% a timely launch and deployment of the vehicles.
  
-New layers for the visualization of remote sensing data, as well as of
-data collected by sensors installed onboard NRP D. Carlos were also
-deployed.
+% New layers for the visualization of remote sensing data, as well as of
+% data collected by sensors installed onboard NRP D. Carlos were also
+% deployed.
 
 
 % The adaptive sampling problem is formulated as an optimization task

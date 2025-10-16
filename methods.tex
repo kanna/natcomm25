@@ -51,8 +51,8 @@ Fig. \ref{fig:loop-closure}.
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. However, conventional numerical ocean
 models are computationally intensive, and their runtime makes them
-impractical for use in near-real-time mission planning \krcom{Need a
-  citation here}. While similar assimilation cycles could, in
+impractical for use in near-real-time mission planning \kcomment{Need
+  a citation here}. While similar assimilation cycles could, in
 principle, be implemented directly within deterministic numerical
 models, this would require either substantially higher computational
 resources or larger temporal horizons. As a more practical
@@ -64,8 +64,8 @@ variability of local ocean dynamics, based on calibrated dynamic ocean
 models, at a fraction of the computational cost of full numerical
 models, while remaining flexible enough to assimilate new in situ
 observations quickly \cite{Duarte2025} and coherent with the scope of
-the work approach.\kcom{But what do we loose in turn? Resolution? Need
-  to state that.}
+the work approach.\kcomment{But what do we loose in turn? Resolution?
+  Need to state that.}
 
 The methodology relies on ensembles of geostatistical realizations,
 each representing a state of the ocean temperature field conditioned
@@ -85,14 +85,14 @@ the temperature field in space and time is characterized by variogram
 models fitted to long-term calibrated ocean model data
 \cite{CMEMS2017}. At each depth of the numerical ocean model,
 geostatistical simulations are carried out independently, using a
-moving temporal window of fourteen previous \krcom{why 14? Where did
-  this specific number come from?}  days as conditioning data (i.e.,
-experimental data) to predict the subsequent day. This sliding-window
-strategy strikes a balance between forecast skill and computational
-feasibility, and can be adapted according to the complexity of the
-oceanographic conditions.
+moving temporal window of fourteen previous \kcomment{why 14? Where
+  did this specific number come from?}  days as conditioning data
+(i.e., experimental data) to predict the subsequent day. This
+sliding-window strategy strikes a balance between forecast skill and
+computational feasibility, and can be adapted according to the
+complexity of the oceanographic conditions.
 
-The ensemble of realisations provides both a forecast of ocean
+The ensemble of realizations provides both a forecast of ocean
 temperature and a quantitative assessment of the prediction
 uncertainty.  By updating the forecasts with new AUV measurements
 through sequential assimilation, the method progressively refines the

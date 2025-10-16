@@ -18,15 +18,13 @@ fundamental steps, executed iteratively on a daily basis:
   predicted state and its uncertainty over a predefined grid covering
   the study area.
     
-\item \textbf{Target Sampling Planning}: Using the uncertainty map
-  $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, a target sampling
-  algorithm determines the set of trajectories for a fleet of $N$
-  Autonomous Underwater Vehicles (AUVs) for the next operational
-  cycle. The goal is to maximize the accumulated uncertainty sampled
-  along the vehicle paths, while satisfying vehicle-specific
-  constraints such as maximum endurance, operational limits, and
-  navigation feasibility. The planned trajectories are transmitted to
-  the vehicles for execution.
+\item \textbf{Target Sample Planning}: Using the uncertainty map
+  $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, a targeted sampling
+  algorithm determines the set of trajectories for a fleet of $N$ AUVs
+  for the next operational cycle. The goal is to maximize the
+  accumulated uncertainty sampled along the vehicle paths, while
+  satisfying vehicle-specific constraints. The planned trajectories
+  are transmitted to the vehicles for execution.
 
 \item \textbf{Data Collection and Assimilation}: Throughout the
   operational period, each AUV collects measurements of the target
@@ -37,6 +35,16 @@ fundamental steps, executed iteratively on a daily basis:
   forecasting cycle, closing the loop.
 
 \end{description}
+
+While previous efforts have concentrated on a form on embedded
+automated decision-making on AUVs
+\cite{mcgann08a,mcgann08b,ryan10,py10,Das-2010-637,das10,olaya12,rajan12}
+to demonstrate adaptive sampling, here we AUV trajectories are defined
+by human-in-the-loop decisions apriori, with adaptation focused on
+deployment based on $M_{\sigma_{\hat{\theta}}}(x, y)$. No automated
+decisions were made on the AUVs. Loop closure in this work, refers to
+the \emph{sample-assimilate-predict-direct} process as indicated in
+Fig. \ref{fig:loop-closure}.
 
 \subsection{Model Forecast and Uncertainty Projection}
 

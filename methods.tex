@@ -6,35 +6,35 @@ adaptive sampling and data assimilation. The approach consists of three
 fundamental steps, executed iteratively on a daily basis:
 
 \begin{description}
-    \item[Model Forecast and Uncertainty Projection]:  
-      A numerical ocean model provides a daily one-step forecast
-      $\hat{\theta}(k+1, x, y)$ of a target oceanic variable $\theta$,
-      along with an associated uncertainty field
-      $\sigma_{\hat{\theta}}(k+1, x, y)$, where $k$ represents the
-      current day and $(x, y)$ denote the geographical coordinates.
-      These outputs are organized into discrete spatial maps,
-      $M_{\hat{\theta}}(x, y)$ and $M_{\sigma_{\hat{\theta}}}(x, y)$,
-      representing, respectively, the predicted state and its
-      uncertainty over a predefined grid covering the study area.
-    
-    \item \textbf{Target Sampling Planning}:  
-      Using the uncertainty map $M_{\sigma_{\hat{\theta}}}(x, y)$ as
-      input, a target sampling algorithm determines the set of
-      trajectories for a fleet of $N$ Autonomous Underwater Vehicles
-      (AUVs) for the next operational cycle. The goal is to maximize the
-      accumulated uncertainty sampled along the vehicle paths, while
-      satisfying vehicle-specific constraints such as maximum endurance,
-      operational limits, and navigation feasibility. The planned
-      trajectories are transmitted to the vehicles for execution.
 
-    \item \textbf{Data Collection and Assimilation}:  
-      Throughout the operational period, each AUV collects
-      measurements of the target variable $\theta$ along its assigned
-      path. After the mission is completed, the collected measurements
-      are assimilated into the numerical model using an appropriate data
-      assimilation scheme. This updated model state serves as the new
-      initial condition for the next forecasting cycle, closing the
-      loop.
+\item[Model Forecast and Uncertainty Projection]: A numerical ocean
+  model provides a daily one-step forecast $\hat{\theta}(k+1, x, y)$
+  of a target oceanic variable $\theta$, along with an associated
+  uncertainty field $\sigma_{\hat{\theta}}(k+1, x, y)$, where $k$
+  represents the current day and $(x, y)$ denote the geographical
+  coordinates.  These outputs are organized into discrete spatial
+  maps, $M_{\hat{\theta}}(x, y)$ and
+  $M_{\sigma_{\hat{\theta}}}(x, y)$, representing, respectively, the
+  predicted state and its uncertainty over a predefined grid covering
+  the study area.
+    
+\item \textbf{Target Sampling Planning}: Using the uncertainty map
+  $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, a target sampling
+  algorithm determines the set of trajectories for a fleet of $N$
+  Autonomous Underwater Vehicles (AUVs) for the next operational
+  cycle. The goal is to maximize the accumulated uncertainty sampled
+  along the vehicle paths, while satisfying vehicle-specific
+  constraints such as maximum endurance, operational limits, and
+  navigation feasibility. The planned trajectories are transmitted to
+  the vehicles for execution.
+
+\item \textbf{Data Collection and Assimilation}: Throughout the
+  operational period, each AUV collects measurements of the target
+  variable $\theta$ along its assigned path. After the mission is
+  completed, the collected measurements are assimilated into the
+  numerical model using an appropriate data assimilation scheme. This
+  updated model state serves as the new initial condition for the next
+  forecasting cycle, closing the loop.
 
 \end{description}
 

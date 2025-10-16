@@ -109,24 +109,24 @@ planner. The task is then to generate, for each vehicle, a path
 composed of waypoints that accumulates the highest possible
 uncertainty values.
 
-To address this, the problem is cast as a graph. The spatial
-uncertainty map is first pre-processed to remove obstacles and
+To address this, the problem is cast as a graph theoretic problem. The
+spatial uncertainty map is first pre-processed to remove obstacles and
 smoothened to highlight large-scale features. Candidate waypoints are
 then identified from the map and used to build a weighted graph, where
 nodes carry a reward proportional to their uncertainty value and edges
 represent travel costs. The trajectory planning task is posed as a
 Prize Collecting Vehicle Routing Problem
-(PCVRP)\cite{vidal2013,toth2014vehicle}, a well-known formulation in
-combinatorial optimization where routes must balance the rewards
-obtained from visiting nodes with the costs of traveling between
-them. By solving this problem, the algorithm returns a set of
-near-optimal trajectories that prioritize regions of greatest
+(PCVRP)\cite{vidal2013,toth2014vehicle} where routes must balance the
+rewards obtained from visiting nodes with associated costs of
+traveling between them. By solving this, the algorithm returns a set
+of near-optimal trajectories that prioritize regions of greatest
 uncertainty, while ensuring vehicle endurance and safety
 constraints. This provides a principled way of steering autonomous
 platforms toward the most informative sampling locations, forming a
 key component in the daily cycle of forecast, adaptive sampling, and
-data assimilation. Additional insights into the algorithm formulation
-and its deployment during \proj are reported in \cite{bernacchi2025}.
+data assimilation. Additional insights into the algorithm and its
+deployment during \proj are reported elsewhere in
+\cite{bernacchi2025}.
 
 \subsection{Data Collection}
 

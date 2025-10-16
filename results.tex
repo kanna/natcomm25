@@ -1,13 +1,15 @@
 \section{Results}
-\textit{- Present your \textbf{findings} in a logical and coherent manner.}
-
 This section presents the main results of the FRESNEL field campaign, focusing on the integration of model forecasts, target sampling, and data assimilation using autonomous underwater vehicles (AUVs). The analysis combines CMEMS and statistical model forecasts (as described in the Methods section) with in situ observations to assess how the proposed data-cycle approach can enhance short-term ocean prediction in a dynamic coastal environment.
 
-Figure \figure{sst} provides an overview of the environmental conditions observed during the three-day experimental window considered in this study (29–31 October). The background fields correspond to the Level-3 Sea Surface Temperature (SST) product from the E.U. Copernicus Marine Service Information (url{DOI:10.48670/moi-00310})
+Figure \ref{fig:sst} provides an overview of the environmental conditions observed during the three-day experimental window considered in this study (29–31 October). The background fields correspond to the Level-3 Sea Surface Temperature (SST) product from the E.U. CMS (\url{https://doi.org/10.48670/moi-00310}), while the superimposed lines show the trajectories of the three LAUVs, XP2, XP3, and XP5, which conducted the consecutive sampling missions in the Nazaré Canyon region.
 
+The operational area was relatively compact, covering approximately 100 km² south of the Nazaré Canyon, where the AUVs executed the planned target sampling missions. All missions were planned using the target sampling algorithm to explore the temperature variability predicted by the statistical model. On 31 October, however, XP2 performed a different mission, following a cross-shore transect of approximately 13 km instead of a target-driven pattern north of the canyon. This mission was designed to sample an internal wave hotspot, but, for the purpose of this study, it serves as an independent ground-truth dataset, collected in a distinct subregion relative to where the data assimilation was applied. The XP2 observations are thus used as a reference for evaluating the forecast cases (C–C4 and D–D4).
 
-\begin{itemize}
-    \item Environmental context
+During this period, the coastal ocean was influenced by a late-season upwelling–relaxation cycle. At the beginning of the sequence (29 October), the SST field reveals the characteristic signature of coastal upwelling, with colder water masses extending offshore due to wind-driven Ekman transport that brings subsurface, nutrient-rich waters to the surface. In the following days (30–31 October), the weakening of upwelling-favorable winds led to a relaxation phase, during which warmer offshore waters gradually advanced toward the coast. This transition is reflected in the SST maps by an overall warming trend in the nearshore region, particularly evident on 31 October.
+
+It is important to note that the SST imagery is partially affected by cloud coverage, which limits the availability and accuracy of satellite-derived temperature data. These gaps arise from the radiometric constraints of indirect SST retrieval, resulting in reduced spatial continuity and increased uncertainty near cloudy regions. Despite these limitations, the SST patterns clearly capture the dominant mesoscale features and coastal processes driving the observed variability during the experiment.
+
+These evolving conditions provided an ideal natural setting for testing the adaptive sampling and data assimilation framework developed in FRESNEL. The pronounced temperature gradients associated with the upwelling front generated well-defined spatial and temporal variability, allowing the evaluation of how AUV-based targeted observations can improve the predictive skill of the statistical model in a real-world coastal scenario.
     
 \begin{figure}
     \centering

@@ -43,7 +43,7 @@ to demonstrate adaptive sampling, here we AUV trajectories are defined
 by human-in-the-loop decisions apriori, with adaptation focused on
 deployment based on $M_{\sigma_{\hat{\theta}}}(x, y)$. No automated
 decisions were made on the AUVs. Loop closure in this work, refers to
-the \emph{sample-assimilate-predict-direct} process as indicated in
+the \emph{sample-assimilate-predict-direct} process as shown in
 Fig. \ref{fig:loop-closure}.
 
 \subsection{Model Forecast and Uncertainty Projection}
@@ -56,40 +56,41 @@ impractical for use in near-real-time mission planning \krcom{Need a
 principle, be implemented directly within deterministic numerical
 models, this would require either substantially higher computational
 resources or larger temporal horizons. As a more practical
-alternative, we employ geostatistical simulation (i.e., stochastic
-sequential simulation) as a computationally efficient surrogate,
-producing short-term spatial predictions of ocean temperature together
-with estimates of spatial uncertainty \cite{deutsch1992}. This
-approach captures the essential variability of local ocean dynamics,
-based on calibrated dynamic ocean models, at a fraction of the cost of
-full numerical models, while remaining flexible enough to assimilate
-new in situ observations quickly \cite{Duarte2025} and coherent with
-the scope of the work approach.
+alternative, we employ geostatistical stochastic sequential simulation
+as a computationally efficient surrogate, producing short-term spatial
+predictions of ocean temperature together with estimates of spatial
+uncertainty \cite{deutsch1992}. This approach captures the essential
+variability of local ocean dynamics, based on calibrated dynamic ocean
+models, at a fraction of the computational cost of full numerical
+models, while remaining flexible enough to assimilate new in situ
+observations quickly \cite{Duarte2025} and coherent with the scope of
+the work approach.\kcom{But what do we loose in turn? Resolution? Need
+  to state that.}
 
 The methodology relies on ensembles of geostatistical realizations,
 each representing a state of the ocean temperature field conditioned
-by an a priori deterministic ocean models \cite{CMEMS2017} and direct
-observations. By computing the pointwise standard deviation across the
-ensemble, we obtain spatial uncertainty maps that highlight regions
-where predictions are less constrained and/or more variable and
-potentially more informative for sampling. These maps serve as the
+by \emph{a priori} deterministic ocean models \cite{CMEMS2017} and
+direct observations. By computing the pointwise standard deviation
+across the ensemble, we obtain spatial uncertainty maps that highlight
+regions where predictions are less constrained and/or more variable
+and potentially more informative for sampling. These maps serve as the
 basis for identifying areas where new measurements are expected to
-maximize the reduction of forecast error \cite{Duarte2025}.
-
-In the field application example shown herein, the geostatistical
-realizations are produced using direct sequential simulation
-\cite{soares2001direct}, a stochastic method that draws values from
-conditional probability distributions defined by kriging estimates and
-variances and conditioned to existing direct measurements and a
-spatial covariance matrix. The continuity of the temperature field in
-space and time is characterized by variogram models fitted to
-long-term calibrated ocean model data \cite{CMEMS2017}. At each depth
-of the numerical ocean model, geostatistical simulations are carried
-out independently, using a moving temporal window of fourteen previous
-days as conditioning data (i.e., experimental data) to predict the
-subsequent day. This sliding-window strategy strikes a balance between
-forecast skill and computational feasibility, and can be adapted
-according to the complexity of the oceanographic conditions.
+maximize the reduction of forecast error. In the field application
+example shown here, the geostatistical realizations are produced using
+direct sequential simulation \cite{soares2001direct}, a stochastic
+method that draws values from conditional probability distributions
+defined by kriging estimates and variances and conditioned to existing
+direct measurements and a spatial covariance matrix. The continuity of
+the temperature field in space and time is characterized by variogram
+models fitted to long-term calibrated ocean model data
+\cite{CMEMS2017}. At each depth of the numerical ocean model,
+geostatistical simulations are carried out independently, using a
+moving temporal window of fourteen previous \krcom{why 14? Where did
+  this specific number come from?}  days as conditioning data (i.e.,
+experimental data) to predict the subsequent day. This sliding-window
+strategy strikes a balance between forecast skill and computational
+feasibility, and can be adapted according to the complexity of the
+oceanographic conditions.
 
 The ensemble of realisations provides both a forecast of ocean
 temperature and a quantitative assessment of the prediction

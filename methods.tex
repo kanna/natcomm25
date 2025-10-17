@@ -298,88 +298,90 @@ scope of the paper and can be referenced at
 % combinatorial optimization techniques — are employed to allocate
 % waypoints efficiently among the available AUVs.
 
-\subsubsection{Field deployment: planning and preparation}
+% \subsubsection{Field deployment: planning and preparation}
 
-IH contributed the NRP D. Carlos for 5 days during one of the planned
-offshore buoy maintenance missions taking place annually in April or in
-October. The October period was selected for the \proj deployment. The
-meteorological and ocean conditions are typically not significantly
-different in these periods and may be affected by distant storms taking
-place in the Atlantic.
+% IH contributed the NRP D. Carlos for 5 days during one of the planned
+% offshore buoy maintenance missions taking place annually in April or in
+% October. The October period was selected for the \proj deployment. The
+% meteorological and ocean conditions are typically not significantly
+% different in these periods and may be affected by distant storms taking
+% place in the Atlantic.
 
-The planned time window for the \proj deployment with NRP D. Carlos was
-the second week of October. However, this time window had to be shifted
-by one week, to start October 20th, because of challenging
-meteorological and ocean conditions. The AUV deployments were planned to
-start the first week of October but were delayed starting October 14th
-and end October 31st. The decisions to delay both the ship and AUV
-deployments proved to be adequate and made it possible to have 5 days of
-ship time and 7 days of AUV operations. This also enabled concurrent
-operations of the ship, glider, and AUVs. The AUVs collected data one
-week in advance of the ship’s arrival and kept running the developed
-algorithms during the third week of the deployment. The planned areas of
-operation for NRP D. Carlos (large rectangle) and for the AUVs (smaller
-rectangle) are depicted next.
+% The planned time window for the \proj deployment with NRP D. Carlos was
+% the second week of October. However, this time window had to be shifted
+% by one week, to start October 20th, because of challenging
+% meteorological and ocean conditions. The AUV deployments were planned to
+% start the first week of October but were delayed starting October 14th
+% and end October 31st. The decisions to delay both the ship and AUV
+% deployments proved to be adequate and made it possible to have 5 days of
+% ship time and 7 days of AUV operations. This also enabled concurrent
+% operations of the ship, glider, and AUVs. The AUVs collected data one
+% week in advance of the ship’s arrival and kept running the developed
+% algorithms during the third week of the deployment. The planned areas of
+% operation for NRP D. Carlos (large rectangle) and for the AUVs (smaller
+% rectangle) are depicted next.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.7\linewidth]{fig/Opareaas.png}
-    \caption{Areas of operations for NRP D. Carlos and for the AUVs.}
-    \label{fig:opareas}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=.7\linewidth]{fig/Opareaas.png}
+%     \caption{Areas of operations for NRP D. Carlos and for the AUVs.}
+%     \label{fig:opareas}
+% \end{figure}
 
-These areas have intense ship traffic, particularly from fishing
-vessels, that presents added collision risks to AUVs at surface or when
-surfacing, as well as potential encounters with bottom trawling fishing
-nets. In addition, because Nazaré is a fishing harbor there is the added
-challenge of AUV encounters with fishing nets.
+% These areas have intense ship traffic, particularly from fishing
+% vessels, that presents added collision risks to AUVs at surface or when
+% surfacing, as well as potential encounters with bottom trawling fishing
+% nets. In addition, because Nazaré is a fishing harbor there is the added
+% challenge of AUV encounters with fishing nets.
 
-To address these challenges we started by meeting fisherman associations
-with the support of the city hall to engage the community, understand
-their fishing procedures and the probable locations of fishing nets.
-Second, we studied AIS patterns and densities, first for one year, then
-for one month, and finally for each week in October. This enabled us to
-partition the operations area into 3 areas with increasing risk levels
-\ref{fig:riskareas}. We focused our operations on the first two areas,
-starting operations at the one where risk was lower. Finally, by
-studying daily patterns we were able to establish temporary areas for
-operations with acceptable risks. We have distilled this knowledge into
-operational procedures and automated decision aids and alerts.
+% To address these challenges we started by meeting fisherman associations
+% with the support of the city hall to engage the community, understand
+% their fishing procedures and the probable locations of fishing nets.
+% Second, we studied AIS patterns and densities, first for one year, then
+% for one month, and finally for each week in October. This enabled us to
+% partition the operations area into 3 areas with increasing risk levels
+% \ref{fig:riskareas}. We focused our operations on the first two areas,
+% starting operations at the one where risk was lower. Finally, by
+% studying daily patterns we were able to establish temporary areas for
+% operations with acceptable risks. We have distilled this knowledge into
+% operational procedures and automated decision aids and alerts.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.7\linewidth]{fig/riskareas.png}
-    \caption{The operational area was partitioned into 3 areas with
-      different levels of risk} XXX PLACE RISK MAP SIDE BY SIDE
-    \label{fig:riskareas}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=.7\linewidth]{fig/riskareas.png}
+%     \caption{The operational area was partitioned into 3 areas with
+%       different levels of risk} XXX PLACE RISK MAP SIDE BY SIDE
+%     \label{fig:riskareas}
+% \end{figure}
 
-Field operations were organized into two concurrent activities:
+% Field operations were organized into two concurrent activities:
 
-\begin{itemize}
-\item NRP \emph{D. Carlos} campaign taking place October 20th – 24th.
-  Team members from the University of Aveiro were onboard NRP D. Carlos
-  to support operations with the UVP and wet laboratory operations. In
-  addition to the rosette casts a glider was also deployed from the
-  ship. The deployment of the glider along the western boundary of the
-  operations area provided some of the initial conditions for the HOPS
-  model. The rosette casts provided a course description of essential
-  ocean variables in the larger area of operation. XXX Detailed
-  descriptions of these activities are presented in Annexes E - H.
+% \begin{itemize}
+% \item NRP \emph{D. Carlos} campaign taking place October 20th – 24th.
+%   Team members from the University of Aveiro were onboard NRP D. Carlos
+%   to support operations with the UVP and wet laboratory operations. In
+%   addition to the rosette casts a glider was also deployed from the
+%   ship. The deployment of the glider along the western boundary of the
+%   operations area provided some of the initial conditions for the HOPS
+%   model. The rosette casts provided a course description of essential
+%   ocean variables in the larger area of operation. XXX Detailed
+%   descriptions of these activities are presented in Annexes E - H.
 
-\item AUV deployments taking place October 14th - 31st. These
-  deployments were supported by two boats rented in Nazaré. In addition
-  to the AUV deployments by LSTS-UPorto, water samples were collected by
-  researchers from Columbia University. These data collection activities
-  provided a dense grip of data collection points. XXX Detailed
-  descriptions of these activities are presented in Annexes D, F, G.
+% \item AUV deployments taking place October 14th - 31st. These
+%   deployments were supported by two boats rented in Nazaré. In addition
+%   to the AUV deployments by LSTS-UPorto, water samples were collected by
+%   researchers from Columbia University. These data collection activities
+%   provided a dense grip of data collection points. XXX Detailed
+%   descriptions of these activities are presented in Annexes D, F, G.
 
-\end{itemize}
+% \end{itemize}
 
-These two activities were conducted in coordination, namely in what
-concerns water space management and sharing of model predictions, done
-with the help of the LSTS toolchain and the underlying communication
-infrastructure. Both activities run 24/x. In the case of the AUV
+% These two activities were conducted in coordination, namely in what
+% concerns water space management and sharing of model predictions, done
+% with the help of the LSTS toolchain and the underlying communication
+% infrastructure. Both activities run 24/x.
+
+In the case of the AUV
 deployments the LSTS-UPorto team operated in 4 6-hour long shifts with
 minimal operator’s footprint (one active and one backup operator).
 Operations were run from a house rented in Nazaré and from LSTS in

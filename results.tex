@@ -55,6 +55,20 @@ allowing the evaluation of how AUV-based targeted observations can
 improve the predictive skill of the statistical model in a real-world
 coastal scenario.
 
+
+\begin{figure}
+  \centering 
+
+  \subfigure[Sea surface temperature (SST) and XP2, XP3 and
+  XP5 trajectories during the FRESNEL field campaign (29–31
+  October) ADD new subfigure november.]{\label{fig:sst}\includegraphics[width=1\linewidth]{fig/Figure_sst_auv_l3_zoom.pdf}}
+
+  \subfigure[Time–depth temperature evolution observed by XP2, XP3, and
+  XP5 during the FRESNEL field campaign (29–31
+  October).]{\label{fig:temperatureprofiles}\includegraphics[width=1\linewidth]{fig/Figure2_100m.pdf}}
+
+\end{figure}
+
 Following the overview of the surface conditions,
 Fig.\ref{fig:temperatureprofiles} presents the vertical temperature
 distribution recorded by the LAUVs XP2, XP3, and XP5 during their
@@ -83,24 +97,24 @@ multi-vehicle operations, where dynamic scheduling, resource allocation,
 and environmental constraints determine the actual temporal coverage of
 the missions.
 
-\begin{figure}
-  \centering 
+%%%%%%% NEED TO INCLUDE HERE THE TABLE AND RESULTS WITH RMS FOR ALL SCENARIOS
 
-  \subfigure[Sea surface temperature (SST) and XP2, XP3 and
-  XP5 trajectories during the FRESNEL field campaign (29–31
-  October) ADD new subfigure november.]{\label{fig:sst}\includegraphics[width=1\linewidth]{fig/Figure_sst_auv_l3_zoom.pdf}}
+To further interpret the RMSE results presented in the previous table, Fig. \ref{fig:scatter} focuses on the most contrasted scenarios: the baseline cases without assimilation (C and D) and those incorporating the full set of AUV observations from previous days (C4 and D4). This comparison highlights the point-wise behaviour of the statistical model under minimum and maximum assimilation influence.
 
-  \subfigure[Time–depth temperature evolution observed by XP2, XP3, and
-  XP5 during the FRESNEL field campaign (29–31
-  October).]{\label{fig:temperatureprofiles}\includegraphics[width=1\linewidth]{fig/Figure2_100m.pdf}}
+The four scatter plots compares the temperature values acquired in situ by the AUVs on 31 October against the corresponding geostatistical predictions derived from the statistical model under each scenario. The observations include all available measurements collected along the missions of XP2, XP3, and XP5 on that day (see Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate the depth layers associated with the vertical discretization used in the deterministic CMEMS model, which defines the vertical structure of the statistical model. Shallower layers (e.g., 0.5 m to ~10 m) are shown in warmer colors (red to yellow), while deeper layers (>30 m) are progressively represented in cooler shades (green to blue).
 
+The dashed red 1:1 line provides a reference for perfect agreement between model predictions and observations. Deviations from this line highlight over- or underestimation by the statistical forecasts across depths. By contrasting C vs. C4 and D vs. D4, the plots allow a direct assessment of the impact of full assimilation relative to fully non-assimilated baseline predictions.
+
+\begin{figure}[!]
+  \centering
+  \includegraphics[scale=0.7]{fig/scatter.png}
+  \caption{Comparison between in situ AUV observations (31 October) and geostatistical model predictions for scenarios C, C4, D, and D4. !not the final figure. need to correct and round values to 1 decimal place!}
+  \label{fig:scatter}
 \end{figure}
 
 
 
-
 \begin{itemize}
-    \item Environmental context
     
     \item RMS table (all cases) + rms figure (just A+D cases)
 \end{itemize}

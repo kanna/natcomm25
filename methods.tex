@@ -159,6 +159,11 @@ command/control tools were used -- discussion of these is outside the
 scope of the paper and can be referenced at
 \cite{dias2005neptus,seacons10,toolchain2012,pinto2013lsts,Ferreira2018}.
 
+\kcomment{Need a paragraph, potentially with a figure on the
+  asynchronous data assimilation in the statistical model from
+  AUVs. Are any other sources (e.g. remote sensing) assimilated? If
+  so, how so and with what frequency?}
+
 % at IH calibration facilities. The
 % Manta communication gateways \cite{} are equipped with acoustic
 % modems, satellite and Wi-Fi modules for long range communications with
@@ -387,7 +392,7 @@ one backup operator).  Operations were run from a house rented in
 Nazaré and from LSTS in Porto.
 
 
-\subsubsection{Field deployment and operations}
+\subsubsection{Deployment and operations}
 
 % Questions:
 % \begin{itemize}
@@ -485,8 +490,6 @@ Nazaré and from LSTS in Porto.
 %     \label{fig:temperatureprofiles}
 % \end{figure}
 
-
-
 Despite the challenging meteorological and ocean conditions, that
 strongly constrained the overall deployment, the \proj team was able to
 demonstrate the overall approach during these 3 weeks (out of which only
@@ -494,40 +497,70 @@ demonstrate the overall approach during these 3 weeks (out of which only
 these 3 weeks on site and on call to rapidly deploy or recover the AUVs
 as dictated by meteorological and ocean conditions or forecasts.
 
-% \subsection{Field Experiment Analysis and Evaluation}
 
-Although the \proj field campaign extended over a longer period, for
-the purpose of this paper, only a three-day sequence of consecutive
-experiments (29–31 October) is considered, as it provides a
-representative demonstration of the proposed framework and its
-operational workflow.
-
-The evaluation of the framework was carried out during the FRESNEL
-field campaign through a series of consecutive daily experiments
-designed to test the integration of model forecasts, target sampling
-planning, and data assimilation. All of these components were
-previously described. The analysis aimed to quantify the impact of
+Chellenging meteorological and ocean conditions constrained the team
+from multiple iterations of the
+\emph{sample-assimilate-predict-direct} loop to
+% Although the \proj field campaign extended over a longer period, for
+% the purpose of this paper,
+a three-day sequence of consecutive experiments (29-–31 October,
+2025). The analysis in this work aims to quantify the impact of
 assimilating AUV-acquired temperature data on the predictive
 performance of the statistical model and to assess the operational
 feasibility of the data cycle approach in a real-world coastal
-setting.
+setting. AUV CTDs used for this effort, were cross-calibrated at the
+initiation of the experiment. While the AUVs had a range of sensors,
+the model's workflow was focused only towards temperature data; we
+believe that results in Sec \ref{sec:results} are general enough to
+apply to other critical oceanographic variables which can be modeled
+similarly.
+
+% is considered, as it provides a representative demonstration of
+% the proposed framework and its operational workflow.
+
+% The evaluation of the framework was carried out during the FRESNEL
+% field campaign through a series of consecutive daily experiments
+% designed to test the integration of model forecasts, target sampling
+% planning, and data assimilation. All of these components were
+% previously described. 
+% The analysis aimed to quantify the impact of assimilating AUV-acquired
+% temperature data on the predictive performance of the statistical
+% model and to assess the operational feasibility of the data cycle
+% approach in a real-world coastal setting.
 
 Each experimental day followed a structured cycle involving: (i) the
 generation of a statistical model forecast and its associated
-uncertainty field based on E.U. Copernicus Marine Serice (CMS)
+uncertainty field based on the Copernicus Marine Serice (CMS)
 \cite{sotillo2021} data available up to the previous day; (ii) the
 execution of the target sampling algorithm to plan the next-day
 missions; and (iii) in situ data collection by the AUV fleet following
-the planned routes. The data collected within the previous day (0–24
-h) were subsequently assimilated into the statistical model to produce
-updated forecasts, enabling comparisons between forecasts with and
-without data assimilation.
+the planned routes. The data collected within the previous day were
+subsequently assimilated into the statistical model to produce updated
+forecasts, enabling comparisons between forecasts with and without
+data assimilation.
 
-The campaign involved three Light Autonomous Underwater Vehicles
-(LAUVs) — Xplore2 (XP2), Xplore3 (XP3), and Xplore5 (XP5), which
-alternated daily in performing target sampling missions over the
-Nazaré Canyon region. On 29 October, the statistical model produced
-the initial forecast solution (A), which was used to plan the mission
+The experiment involved three AUVs XP2, XP3 and XP5, which alternated
+daily in performing targeted sampling missions over the \naz Canyon
+region.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6]{fig/model-config.jpeg}
+    \caption{The statistical model configurations and assimilation
+      options used during the \proj experiment.}
+    \label{fig:model-config}
+\end{figure}
+
+\kcomment{Renato, I think we might need to place a simplified version
+  of figure from your powerpoint slide about the various
+  configurations and versions of the models. I'm adding a version here
+which is probably old and too complicated. If you can do work on
+getting a simpler version which just shows what we used. The caption
+of the figure then will need to be explanatory.}
+
+On 29\textsuperscript{th} October, the statistical model produced the
+initial forecast solution (A), which was used to plan the mission
 executed by XP2. The resulting in situ temperature data were later
 assimilated offline to produce an updated statistical model solution
 (B1) for 30 October. Although operational real-time assimilation was

@@ -135,7 +135,7 @@ data assimilation. Additional insights into the algorithm and its
 deployment during \proj are reported elsewhere in
 \cite{bernacchi2025}.
 
-\subsection{Data Collection}
+\subsection{Data Collection, Deployment and Operations}
 
 
 \begin{figure}
@@ -145,21 +145,22 @@ deployment during \proj are reported elsewhere in
     \label{fig:lauvs}
 \end{figure}
 
-In-situ data collection process involved a number of upper
-water-column AUVs designed and developed in-house at the University of
-Porto \cite{sousa2012lauv}.Each AUV comes equipped with a range of
-sensors including a CTD (Fig. \ref{fig:lauvs}) while some have in
-addition fluorometers, turbidity, Oxygen, DVL/ADCP sensors. All
-vehicles come equiped with WiFi and Iridium satellite communications,
-acoustic modems, and battery packs enabling 60h+ endurance. The CTDs
-mounted on the AUVs were cross-calibrated to ensure consistency across
-all vehicle measurements. In addition to the hardware involved, an
-extensive suite of mature and advanced mission planning and
-command/control tools were used -- discussion of these is outside the
-scope of the paper and can be referenced at
+In-situ data collection process involved three upper water-column AUVs
+(XP2, XP3 and XP5) which alternated daily in performing targeted
+sampling missions over the \naz Canyon region. These vehicles designed
+and developed in-house at the University of Porto \cite{sousa2012lauv}
+came equipped with a range of sensors including a CTD
+(Fig. \ref{fig:lauvs}). Some had in addition fluorometers, turbidity,
+Oxygen, DVL/ADCP sensors while all came equipped with WiFi and Iridium
+satellite communications, acoustic modems, and battery packs enabling
+60h+ endurance; the CTDs mounted on the AUVs were cross-calibrated to
+ensure consistency. In addition to the hardware involved, an extensive
+suite of mature mission planning and command/control tools were used
+-- discussion of these is outside the scope of the paper and can be
+referenced at
 \cite{dias2005neptus,seacons10,toolchain2012,pinto2013lsts,Ferreira2018}.
 
-\kcomment{Need a paragraph, potentially with a figure on the
+\kcomment{Ana, we need a paragraph, potentially with a figure on the
   asynchronous data assimilation in the statistical model from
   AUVs. Are any other sources (e.g. remote sensing) assimilated? If
   so, how so and with what frequency?}
@@ -386,13 +387,13 @@ scope of the paper and can be referenced at
 % with the help of the LSTS toolchain and the underlying communication
 % infrastructure. Both activities run 24/x.
 
-In the case of the AUV deployments the LSTS-UPorto team operated in 4
-6-hour long shifts with minimal operator’s footprint (one active and
-one backup operator).  Operations were run from a house rented in
-Nazaré and from LSTS in Porto.
+% In the case of the AUV deployments the LSTS-UPorto team operated in 4
+% 6-hour long shifts with minimal operator’s footprint (one active and
+% one backup operator).  Operations were run from a house rented in
+% Nazaré and from LSTS in Porto.
 
 
-\subsubsection{Deployment and operations}
+% \subsubsection{Deployment and operations}
 
 % Questions:
 % \begin{itemize}
@@ -508,12 +509,12 @@ a three-day sequence of consecutive experiments (29-–31 October,
 assimilating AUV-acquired temperature data on the predictive
 performance of the statistical model and to assess the operational
 feasibility of the data cycle approach in a real-world coastal
-setting. While the AUVs had a range of sensors, the model's workflow
-was focused only towards temperature data. As a consequence this work
-is univariate in showing the impact of assimilated model-driven
-coastal exploration. We believe that results in Sec \ref{sec:results}
-are general enough to apply to other critical oceanographic variables
-which can be modeled similarly.
+setting. To simply the process the model's workflow and the
+assimilation loop was focused only towards temperature data. As a
+consequence this work is univariate in showing the impact of
+assimilated model-driven exploration. We believe that results in Sec
+\ref{sec:results} are general enough to apply to other critical
+oceanographic variables which would need to be modeled similarly.
 
 % is considered, as it provides a representative demonstration of
 % the proposed framework and its operational workflow.
@@ -530,18 +531,14 @@ which can be modeled similarly.
 
 Each experimental day followed a structured cycle involving: (i) the
 generation of a statistical model forecast and its associated
-uncertainty field based on the Copernicus Marine Serice (CMS)
+uncertainty field based on the Copernicus Marine Service (CMS)
 \cite{sotillo2021} data available up to the previous day; (ii) the
 execution of the target sampling algorithm to plan the next-day
-missions; and (iii) in situ data collection by the AUV fleet following
-the planned routes. The data collected within the previous day were
-subsequently assimilated into the statistical model to produce updated
-forecasts, enabling comparisons between forecasts with and without
-data assimilation.
-
-The experiment involved three AUVs XP2, XP3 and XP5, which alternated
-daily in performing targeted sampling missions over the \naz Canyon
-region.
+missions; and (iii) in situ data collection by AUVs following the
+algorithmically determined transects. The data collected within the
+previous day were subsequently assimilated into the statistical model
+to produce updated forecasts, enabling comparisons between forecasts
+with and without data assimilation.
 
 
 \begin{figure}
@@ -555,9 +552,9 @@ region.
 \kcomment{Renato, I think we might need to place a simplified version
   of figure from your powerpoint slide about the various
   configurations and versions of the models. I'm adding a version here
-which is probably old and too complicated. If you can do work on
-getting a simpler version which just shows what we used. The caption
-of the figure then will need to be explanatory.}
+  which is probably old and too complicated. If you can do work on
+  getting a simpler version which just shows what we used. The caption
+  of the figure then will need to be explanatory.}
 
 On 29\textsuperscript{th} October, the statistical model produced the
 initial forecast solution (A), which was used to plan the mission

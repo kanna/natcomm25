@@ -1,6 +1,21 @@
 \section{Discussion}
 \label{sec:disc}
 
+
+
+
+
+%%%%%%%%%%%% xp2 vs xp3/xp5 results, north and south area %%%%%%%
+Although the overall results indicate that the assimilation procedure generally improves model performance across most scenarios, a more detailed and vehicle-specific analysis reveals important nuances. Some of these results highlight aspects that should be carefully considered in the planning and execution of future oceanographic campaigns of this nature. These points are discussed following.
+Figure \ref{fig:rms_bar_vechicle} presents the root-mean-square error (RMSE) of temperature predictions compared with in-situ data from LAUVs XP2, XP3, and XP5 under the different assimilation scenarios (C, C4, D, and D4) for 31st October. The results are shown as a function of depth and vehicle, allowing a direct comparison between simulations with and without data assimilation.
+
+For LAUVs XP3 and XP5, a clear and consistent trend is observed: the assimilation scenarios (C4 and D4) improve the model prediction skill. The RMSE error decreases across all depths and vehicles, indicating that the assimilation procedure effectively constrains the local dynamics represented in the geostatistical model. Although small differences are present between C4 and D4, they are not statistically significant, confirming that the assimilation results are robust with respect to initial configuration differences.
+
+The situation for LAUV XP2 is radically different. In this case, the assimilation scenarios (C4 and D4) lead to higher prediction errors compared with the non-assimilation runs (C and D). This counterintuitive result stems from an important spatial mismatch: on 31 October, XP2 operated north of the Nazaré Canyon, whereas the assimilated data from the previous days (29 and 30 October) were collected in its southern sector. The Nazaré Canyon marks a transition zone between distinct oceanographic regimes, where circulation patterns are strongly influenced by the canyon’s complex topography and the interaction between shelf and slope processes. Inside the Nazaré Canyon, residual currents are generally aligned along the canyon axis as a result of strong topographical control and this alignment extends well above the canyon edges (~150 m depth), implying a substantial disturbance of the predominant north–south circulation parallel to the general trend of the shelf and slope \cite{tyler2009europe,relvas2007physical,guerreiro2014influence}. 
+\rmcomment{we can talk here about the clustering/  allocation by areas of different dybamics, etc - future studies}
+
+
+ %%%%%%%%%%%%%
 The challenging ocean and meteorological conditions faced as part of
 this experiment precluded cycles of week-long operations, as
 planned. Nevertheless, we were able to operate for 7 days during the
@@ -51,7 +66,12 @@ improving the skill of oceanographic models. Furthermore, dense grids of
 sampled oceanographic data have the potential to fuel developments
 targeting existing gaps in modeling skill when different levels of
 spatial and temporal resolution are considered \cite{Balaji_2022}.
-
+\begin{figure}[!]
+  \centering
+  \includegraphics[scale=0.3]{fig/rms_bar_vechicle.png}
+  \caption{not the final figure}
+  \label{fig:rms_bar_vechicle}
+\end{figure}
 
 \begin{figure}[!]
   \centering

@@ -48,7 +48,7 @@ decisions were made on the AUVs. Loop closure in this work, refers to
 the \emph{sample-assimilate-predict-direct} process as shown in
 Fig. \ref{fig:loop-closure}.
 
-\subsection{Model Forecast and Uncertainty Projection}
+\subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
 
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. However, conventional numerical ocean
@@ -67,7 +67,7 @@ models, at a fraction of the computational cost of full numerical
 models, while remaining flexible enough to assimilate new in situ
 observations quickly \cite{Duarte2025} and coherent with the scope of
 the work approach.\kcomment{But what do we loose in turn? Resolution?
-  Need to state that.} \rmcomment{we lose physics. }
+  Need to state that.} \rmcomment{we lose "physics"}
 
 The methodology relies on ensembles of geostatistical realizations,
 each representing a state of the ocean temperature field conditioned
@@ -79,12 +79,10 @@ and potentially more informative for sampling. These maps serve as the
 basis for identifying areas where new measurements are expected to
 maximize the reduction of forecast error. 
 %% Assimilation part
-Beyond uncertainty prediction, the proposed framework also allows direct assimilation of AUV-acquired data during oceanographic campaigns. Data collected on a given day are used to update the ocean temperature forecast for the following day by combining prior predictions with the new measurements. The simulation grid, in this case, includes two temporal layers: the first containing the AUV measurements at their spatial locations and the second corresponding to the new prediction step. Since AUV sampling is often denser than the grid resolution, measurements within the same grid cell are averaged—an arithmetic upscaling \cite{duarte2025}.
-
-To incorporate spatial and temporal variability, we apply direct sequential simulation with local means \cite{soares2001direct}, where each simulated value is drawn from its conditional distribution, accounting for both prior simulated values and local mean models. This enables consistent updating of the temperature field while integrating both direct AUV observations and a \it{priori} information. The ensemble of realizations thus provides an updated ocean forecast and a quantitative measure of uncertainty.
+Beyond uncertainty prediction, the proposed framework also allows direct assimilation of AUV-acquired data during oceanographic campaigns. Data collected on a given day are used to update the ocean temperature forecast for the following day by combining prior predictions with the new measurements. The simulation grid, in this case, includes two temporal layers: the first containing the AUV measurements at their spatial locations and the second corresponding to the new prediction step. Since AUV sampling is often denser than the grid resolution, measurements within the same grid cell are averaged—an arithmetic upscaling \cite{Duarte2025}. To incorporate spatial and temporal variability, we apply direct sequential simulation with local means \cite{soares2001direct}, where each simulated value is drawn from its conditional distribution, accounting for both prior simulated values and local mean models. This enables consistent updating of the temperature field while integrating both direct AUV observations and a \textit{priori} information. The ensemble of realizations thus provides an updated ocean forecast and a quantitative measure of uncertainty.
 %%
  
-example shown here, the geostatistical realizations are produced using direct sequential simulation \cite{soares2001direct}, a stochastic method that draws values from conditional probability distributions defined by kriging estimates and variances and conditioned to existing
+Example shown here, the geostatistical realizations are produced using direct sequential simulation \cite{soares2001direct}, a stochastic method that draws values from conditional probability distributions defined by kriging estimates and variances and conditioned to existing
 direct measurements and a spatial covariance matrix. The continuity of the temperature field in space and time is characterized by variogram models fitted to long-term calibrated ocean model data from E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}. At each depth of the numerical ocean model, geostatistical simulations are carried out independently, using a moving temporal window of fourteen previous \kcomment{why 14? Where did this specific number come from?}  days as
 conditioning data (i.e., experimental data) to predict the subsequent day. This sliding-window strategy strikes a balance between forecast skill and computational feasibility, and can be adapted according to the complexity of the oceanographic conditions.
 
@@ -157,7 +155,7 @@ referenced at
 \kcomment{Ana, we need a paragraph, potentially with a figure on the
   asynchronous data assimilation in the statistical model from
   AUVs. Are any other sources (e.g. remote sensing) assimilated? If
-  so, how so and with what frequency?}
+  so, how so and with what frequency?} \rmcomment{only AUV data was assimilated. the paragraph was included in the previous section Model Forecast, Uncertainty Projection and Data Assimilation (I also changed the name of the section to accomodate the assimlation description}
 
 % at IH calibration facilities. The
 % Manta communication gateways \cite{} are equipped with acoustic

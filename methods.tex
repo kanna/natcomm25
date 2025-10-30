@@ -79,12 +79,42 @@ and potentially more informative for sampling. These maps serve as the
 basis for identifying areas where new measurements are expected to
 maximize the reduction of forecast error. 
 %% Assimilation part
-Beyond uncertainty prediction, the proposed framework also allows direct assimilation of AUV-acquired data during oceanographic campaigns. Data collected on a given day are used to update the ocean temperature forecast for the following day by combining prior predictions with the new measurements. The simulation grid, in this case, includes two temporal layers: the first containing the AUV measurements at their spatial locations and the second corresponding to the new prediction step. Since AUV sampling is often denser than the grid resolution, measurements within the same grid cell are averaged—an arithmetic upscaling \cite{Duarte2025}. To incorporate spatial and temporal variability, we apply direct sequential simulation with local means \cite{soares2001direct}, where each simulated value is drawn from its conditional distribution, accounting for both prior simulated values and local mean models. This enables consistent updating of the temperature field while integrating both direct AUV observations and a \textit{priori} information. The ensemble of realizations thus provides an updated ocean forecast and a quantitative measure of uncertainty.
+
+Beyond uncertainty prediction, the proposed framework also allows
+direct assimilation of AUV-acquired data during oceanographic
+campaigns. Data collected on a given day are used to update the ocean
+temperature forecast for the following day by combining prior
+predictions with new measurements. The simulation grid, in this case,
+includes two temporal layers: the first containing the AUV
+measurements at their spatial locations and the second corresponding
+to the new prediction step. With AUV sampling denser than the grid
+resolution, measurements within the same grid cell are averaged as a
+form of arithmetic upscaling \cite{Duarte2025}. To incorporate spatial
+and temporal variability, we apply direct sequential simulation with
+local means \cite{soares2001direct}, where each simulated value is
+drawn from its conditional distribution, accounting for both prior
+simulated values and local mean models. This enables consistent
+updating of the temperature field while integrating both direct AUV
+observations and \textit{priori} information. The ensemble of
+realizations thus provides an updated ocean forecast and a
+quantitative measure of uncertainty.
 %%
  
-Example shown here, the geostatistical realizations are produced using direct sequential simulation \cite{soares2001direct}, a stochastic method that draws values from conditional probability distributions defined by kriging estimates and variances and conditioned to existing
-direct measurements and a spatial covariance matrix. The continuity of the temperature field in space and time is characterized by variogram models fitted to long-term calibrated ocean model data from E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}. At each depth of the numerical ocean model, geostatistical simulations are carried out independently, using a moving temporal window of fourteen previous \kcomment{why 14? Where did this specific number come from?}  days as
-conditioning data (i.e., experimental data) to predict the subsequent day. This sliding-window strategy strikes a balance between forecast skill and computational feasibility, and can be adapted according to the complexity of the oceanographic conditions.
+Example shown here, the geostatistical realizations are produced using
+direct sequential simulation \cite{soares2001direct}, a stochastic
+method that draws values from conditional probability distributions
+defined by kriging estimates and variances and conditioned to existing
+direct measurements and a spatial covariance matrix. The continuity of
+the temperature field in space and time is characterized by variogram
+models fitted to long-term calibrated ocean model data from
+E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}. At each depth
+of the numerical ocean model, geostatistical simulations are carried
+out independently, using a moving temporal window of fourteen previous
+\kcomment{why 14? Where did this specific number come from?}  days as
+conditioning data (i.e., experimental data) to predict the subsequent
+day. This sliding-window strategy strikes a balance between forecast
+skill and computational feasibility, and can be adapted according to
+the complexity of the oceanographic conditions.
 
 The ensemble of realizations provides both a forecast of ocean
 temperature and a quantitative assessment of the prediction

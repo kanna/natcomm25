@@ -56,12 +56,20 @@ Fig. \ref{fig:loop-closure}.
 \subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
 
 Sampling strategies rely on timely information about the spatial
-variability of ocean properties. However, conventional numerical ocean
+variability of ocean properties. However, conventional DETERMINIST numerical ocean
 models are computationally intensive, and their runtime makes them
-impractical for use in near-real-time mission planning. While similar assimilation cycles could, in
+impractical for use in near-real-time mission planning. 
+
+BEGIN ELIMINATE
+
+While similar assimilation cycles could, in
 principle, be implemented directly within deterministic numerical
 models, this would require either substantially higher computational
-resources or larger temporal horizons. As a more practical
+resources or larger temporal horizons. 
+
+END ELIMINATE
+
+As a more practical
 alternative, we employ geostatistical stochastic sequential simulation
 as a computationally efficient surrogate, producing short-term spatial
 predictions of ocean temperature, together with estimates of spatial

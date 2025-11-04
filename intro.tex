@@ -60,15 +60,15 @@ logistic footprint
 However, even with these new tools, efficiently gathering data at the
 right spatial and temporal scales remains a complex challenge. AUVs
 are constrained by endurance, communication bandwidth, and operational
-risks such as VESSEL TRAFFIC, high currents and bathymetry, IN ADDITION, the ocean itself
-remains highly dynamic with key processes often evolving faster than
-traditional sampling strategies can capture. This opens the door to
-adaptive sampling strategies, where observation efforts are guided by
-model outputs and uncertainty estimates to maximize the relevance of
-collected data. Adaptive sampling
-\cite{BinZhang07,Singh09,smith14,fossum19} represents a fundamental
-shift: instead of executing pre-planned missions, autonomous vehicles
-dynamically prioritize areas for observation.
+risks such as vessel traffic, high currents and bathymetry. In
+addition, the ocean itself remains highly dynamic with key processes
+often evolving faster than traditional sampling strategies can
+capture. This opens the door to adaptive sampling strategies, where
+observation efforts are guided by model outputs and uncertainty
+estimates to maximize the relevance of collected data. Adaptive
+sampling \cite{BinZhang07,Singh09,smith14,fossum19} represents a
+fundamental shift: instead of executing pre-planned missions,
+autonomous vehicles dynamically prioritize areas for observation.
 
 One approach that we articulate here is combining model predictions
 with adaptive AUV sampling. Doing so combines predicted model
@@ -92,6 +92,21 @@ potential to improve operational efficiency by optimizing the
 deployment of costly and resource-constrained observational assets. 
 WE MAY WANT TO EXPLAIN THAT THIS CAN ONLY BE DONE WITH AUVS AND AT A MODERATE COST IN COMPARISON TO TRADITIONAL SAMPLING METHODS
 
+
+IT MAY ALSO BE A GOOD IDEA TO HAVE A SHORT PARAGRAPH OM INNOVATION CLAIMS: something like
+
+This has been done before, but we innovate in several aspects: 
+\begin{itemize}
+    \item Near-real time data visualization enable real.time response by operators..
+    \item Simultaneous deployments in geographically separate subareas in the area of operations.
+    \item Coordination also included risk minimizing considerations. This enabled operations in tight time intervals to collect data where it was needed taking advantage of openings provided by trawlers between consective legs.
+    \item Parameterized framework enabling fine tuning of the overall approach. 
+    \item Dense grid of observations.
+    \item The sampling algorithm is not based only on position, but on error distributions and closed tours to maximize area coverage and utilization of the auvs.
+    \end{itemize}
+
+WHAT DO YOU THINK?
+
 \begin{figure}[!]
   \centering
   \includegraphics[scale=0.5]{fig/ensemble-2.jpg}
@@ -103,7 +118,7 @@ WE MAY WANT TO EXPLAIN THAT THIS CAN ONLY BE DONE WITH AUVS AND AT A MODERATE CO
 \end{figure}
 
 
-%impact
+
 In this study, we address the challenge of such loop closure by
 implementing and evaluating a complete data cycle — from model
 prediction, to uncertainty projection, to adaptive sampling and data
@@ -114,29 +129,14 @@ adaptiv\textbf{E} samp\textbf{L}ing), a project specifically designed
 to explore and test model-driven robotic exploration strategies. \proj
 provided the experimental setting and operational assets to
 demonstrate how model-based uncertainty fields can drive adaptive
-sampling missions aimed at improving ocean model predictive
-skills % This work focuses on the underlying problem: how to
-% effectively close the loop between model predictions, observational
-% targeting, and data assimilation
-to enhance ocean forecasts in highly dynamic coastal environments
+sampling missions aimed at improving ocean model predictive skills to
+enhance ocean forecasts in highly dynamic coastal environments
 (Fig. \ref{fig:block-diag}). The experimental results obtained within
 \proj serve to illustrate and validate the proposed approach,
 highlighting the practical benefits and challenges of real-world
-adaptive ocean exploration. FURTHERMORE, WE DEMONSTRATE THAT THIS SAMPLING ROBOTIC SYSTEM OFFERS UNPRECEDENTED CAPABILITIES FOR OCEAN STUDIES BY PROVIDING SAMPLES IN CLOSE TO REAL-TIME AND ENABLING SCIENTISTS TO RETASK WITHIN MINUTES IF SOME INTERESTING FEATURE IS DETECTED.
+adaptive ocean exploration. Furthermore, we demonstrate that this
+sampling robotic system offers unprecedented capabilities for ocean
+studies by providing samples in close to real-time and enabling
+scientists to adaptively re-task AUVs within minutes if some
+interesting feature is detected.
 
-
-% \textit{\textbf{-	Set the context and background of your study.}}
-% \begin{itemize}
-% \item Fresnel proposal context
-% \item Data cycle idea
-% \item Model predictions and uncertainties -$>$ Improve quality of Data gathering -$>$ data assimilation into models -$>$ better model predictions
-% \item Point out the logistics difficulties of doing this in the sea (low bandwidth comms, risks, computing time, etc)
-% \end{itemize}
-
-% \textit{-	\textbf{Clearly state the objective and significance of your research.}}
-% \begin{itemize}
-% \item real-world experiment to close the data loop between better efficiency to get data to improve the Improved Ocean Model Predictions\
-% \end{itemize}
-% \begin{itemize}
-%     \item present a figure showing that idea of loop/cycle
-% \end{itemize}

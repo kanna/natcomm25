@@ -132,9 +132,9 @@ and under the same season, and comparing the geostatistical
 predictions against the response of numerical ocean mode. This
 sliding-window strategy strikes a balance between forecast skill and
 computational feasibility, and can be adapted according to the
-complexity of the oceanographic conditions.
+complexity of the oceanographic conditions. AN EXPLANATION OF THE METHOD THAT PROCEEDS BY DEPTHS MAY BE USEFUL . iS PROPAGRATION DONE ONLY IN THE HORIZONTAL DOMAINS?
 
-ELIMINATE THIS PHASE IT IS MENTIONED ANThe ensemble of realizations provides both a forecast of ocean
+ELIMINATE THIS PHASE IT IS MENTIONED ABOVE The ensemble of realizations provides both a forecast of ocean
 TEMPERATURE? temperature and a quantitative assessment of the prediction
 uncertainty.  By updating the forecasts with new AUV measurements
 through sequential assimilation, the method progressively refines the
@@ -143,7 +143,7 @@ dynamics. ELMINATE THIS SENTENCE The resulting forecasts and uncertainty maps fo
 for the target sampling algorithm, guiding the allocation of AUV
 trajectories towards regions of greatest expected information
 gain. More details about the model, its development, and application
-during the \proj experiment can be found in \cite{Duarte2025}.
+during the \proj experiment can be found in \cite{Duarte2025}. WHY NO ELIMINATING THIS PARAGRAPH EXCEPT FOR THE LAST SENTENCE?
 
 \subsection{Target Sampling Algorithm}
 
@@ -153,9 +153,10 @@ trajectories that maximize information gain
 map, while satisfying operational AUV constraints. Each day, the
 models provide both a forecast field and its associated uncertainty
 distribution, which together define the reward landscape for the
-planner. The task is then to generate, for each vehicle, a path
-composed of waypoints that accumulates the highest possible
-uncertainty values.
+planner. The task is then to generate, for each vehicle, a CLOSED PATH, A TOUR, ERASE composed of waypoints END OF ERASE that accumulates the highest possible
+uncertainty values. THE TOUR IS TRAVELED AT A PRESCRIBED SPEED WHILE THE DURATION IS BOUNDED ABOVE BY THE ASSIMILATION PERIOD. THE STARTING AND ENDING POINT IS SELECTED TO SIMPLIFY LOGISTICS FOR LAUNCH AND RECOVERY.
+
+IT MAY BE WORTH SAYING MORE ABOUT THESE PARAMETERS: DURATION OF THE TOUR, ASSIMILATION PERIOD, ETC.
 
 To address this, the problem is cast as a graph theoretic problem. The
 spatial uncertainty map is first pre-processed to remove obstacles and
@@ -163,7 +164,7 @@ smoothened to highlight large-scale features. Candidate waypoints are
 then identified from the map and used to build a weighted graph, where
 nodes carry a reward proportional to their uncertainty value and edges
 represent travel costs. The trajectory planning task is posed as a
-vehicle routing problem where routes must balance the rewards obtained
+vehicle TOUR routing problem where routes must balance the rewards obtained
 from visiting nodes with associated costs of traveling between them
 \cite{vidal2013,toth2014vehicle}. By solving this, the algorithm
 returns a set of near-optimal trajectories that prioritize regions of

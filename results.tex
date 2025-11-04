@@ -98,37 +98,8 @@ and environmental constraints determine the actual temporal coverage of
 the missions.
 
 %%%%%%% NEED TO INCLUDE HERE THE TABLE AND RESULTS WITH RMS FOR ALL SCENARIOS
+The following section summarizes the quantitative evaluation of the model’s predictive performance across all tested scenarios. Tables \ref{table:Table_AB}, \ref{table:Table_C}, and \ref{table:Table_D} present the RMSE between the statistical model forecasts and the in situ temperature observations collected by the AUVs during the FRESNEL campaign. These tables cover all experimental configurations examined in this study, providing a comprehensive overview of how the assimilation of targeted AUV data affects the model’s short-term forecast accuracy and vertical consistency.
 
-To further interpret the RMSE results presented in the previous table, Fig. \ref{fig:scatter} focuses on the most contrasted scenarios: the baseline cases without assimilation (C and D) and those incorporating the full set of AUV observations from previous days (C4 and D4). This comparison highlights the point-wise behaviour of the statistical model under minimum and maximum assimilation influence.
-
-The four scatter plots compares the temperature values acquired in situ by the AUVs on 31 October against the corresponding geostatistical predictions derived from the statistical model under each scenario. The observations include all available measurements collected along the missions of XP2, XP3, and XP5 on that day (see Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate the depth layers associated with the vertical discretization used in the deterministic CMS model, which defines the vertical structure of the statistical model. 
-
-In the baseline scenarios without assimilation (C and D), the scatter plots exhibit a wide spread of points around the reference line, indicating substantial discrepancies between the model predictions and the observed AUV temperatures. These deviations are particularly evident in ..., where surface temperatures tend to be overestimated. This dispersion reflects the model’s limited ability to accurately reproduce the vertical thermal structure when it relies solely on CMS data without incorporating recent in situ information. 
-
-In contrast, the fully assimilated scenarios (C4 and D4) show a much tighter clustering of points around reference, especially within the upper layers, where the previous AUV missions had provided dense and temporally relevant observations. This reduction in spread suggests a clear improvement in predictive accuracy, indicating that the assimilation of targeted measurements effectively constrains the thermal structure and captures ongoing physical transitions in the water column. 
-
-
-
-\begin{figure}[!]
-  \centering
-  \includegraphics[scale=0.7]{fig/scatter.png}
-  \caption{Comparison between in situ AUV observations (31 October) and geostatistical model predictions for scenarios C, C4, D, and D4. Shallower layers are shown in warmer colors (red to yellow), while deeper layers (>30 m) are progressively represented in cooler shades (green to blue). The dashed red line provides a reference for perfect agreement.  !not the final figure. need to correct and round values to 1 decimal place!}
-  \label{fig:scatter}
-\end{figure}
-
-
-
-
-\begin{itemize}
-    
- 
-\end{itemize}
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage[table,xcdraw]{xcolor}
-% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
 \begin{table}[]
 \centering
 \begin{tabular}{@{}cccc@{}}
@@ -153,10 +124,16 @@ Depth & A    & B              & B1            \\ \midrule
 34.4  & 1.19 & 0.72           & 0.45          \\
 40.3  & 1.33 & 0.69           & 0.55          \\ \bottomrule
 \end{tabular}
+\caption{RMSE (in \textdegree C) between statistical model forecasts and \textit{in situ} LAUV temperature observations for 29–30 October. Scenario A corresponds to the baseline statistical forecast generated based on CMS data up to 29 October. Scenarios B and B1 represent forecasts for 30 October without and with the assimilation of LAUV observations collected by XP2, respectively. Values are shown for each depth level sampled during the missions.}
+\label{table:Table_AB}
 \end{table}
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
+
+The first set of results, summarized in Table \ref{table:Table_AB}, corresponds to the initial phase of the FRESNEL experiments on days 29 and 30 October. Scenario A represents the baseline statiscal forecast produced based CMS data. The B and B1 scenarios correspond to forecasts for 30 October with and without the assimilation of \textit{in situ} observations collected by XP2 during the previous day, respectively.
+Across the vertical profile, RMSE values in scenario A range from approximately 0.48 \textdegree C near the surface to 1.33 \textdegree C at 40 m, with a mean RMSE of about 0.74 \textdegree C. The errors increase with depth, indicating reduced model skill in reproducing the subsurface thermal structure.
+The non-assimilated B scenario remains similar to A in the upper layers but diverges below 20 m, confirming that the assimilation of recent AUV data substantially improves the short-term forecast skill and internal consistency of the model.  After assimilation, the B1 case shows a consistent improvement throughout the column compared to the non-assimilated B scenario, with RMSE values between 0.31 \textdegree C and 0.55 \textdegree C and an average of 0.39 \textdegree C, representing an overall reduction of nearly 50\% relative to B. This improvement is most pronounced in the 5–20 m layer, coinciding with the strongest vertical temperature gradients and the region most densely sampled by the LAUVs. 
+
+
+
 \begin{table}[]
 \centering
 \resizebox{\columnwidth}{!}{%
@@ -183,6 +160,8 @@ Depth & C    & C1   & C2   & C3   & C4   & C    & C1   & C2   & C3   & C4   & C 
 40.3  & 0.34 & 0.49 & 0.60 & 0.82 & 0.60 & 0.67 & 0.49 & 0.50 & 0.52 & 0.48 & 0.86 & 0.35 & 0.35 & 0.25 & 0.33 & 0.68          & 0.47          \\ \bottomrule
 \end{tabular}%
 }
+\caption{RMSE (in \textdegree C) between statistical model forecasts and \textit{in situ} AUV temperature measurements for 31 October, scenarios C, C1–C4. The forecasts were initialized using CMS data available up to 30 October, and the assimilation steps progressively include AUV data collected on previous days by XP2, XP3, and XP5. Results are presented for each vehicle individually and for the combined dataset (ALL LAUVs).}
+\label{table:Table_C}
 \end{table}
 
 % Please add the following required packages to your document preamble:
@@ -214,4 +193,32 @@ Depth & D    & D1   & D2   & D3   & D4   & D    & D1   & D2   & D3   & D4   & D 
 40.3  & 0.36 & 0.76 & 0.66 & 0.55 & 0.62 & 0.72 & 0.47 & 0.48 & 0.51 & 0.49 & 0.96 & 0.30 & 0.37 & 0.34 & 0.37 & 0.74          & 0.49          \\ \bottomrule
 \end{tabular}%
 }
+\caption{RMSE (in \textdegree C) between statistical model forecasts and \textit{in situ} AUV temperature measurements for 31 October, scenarios D, D1–D4. The forecasts were initialized using CMS data available up to 29 October, and the assimilation steps progressively include AUV data collected on previous days by XP2, XP3, and XP5. Results are presented for each vehicle individually and for the combined dataset (ALL LAUVs)}
+\label{table:Table_D}
 \end{table}
+
+
+To further interpret the RMSE results presented in the previous table, Fig. \ref{fig:scatter} focuses on the most contrasted scenarios: the baseline cases without assimilation (C and D) and those incorporating the full set of AUV observations from previous days (C4 and D4). This comparison highlights the point-wise behaviour of the statistical model under minimum and maximum assimilation influence.
+
+The four scatter plots compares the temperature values acquired in situ by the AUVs on 31 October against the corresponding geostatistical predictions derived from the statistical model under each scenario. The observations include all available measurements collected along the missions of XP2, XP3, and XP5 on that day (see Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate the depth layers associated with the vertical discretization used in the deterministic CMS model, which defines the vertical structure of the statistical model. 
+
+In the baseline scenarios without assimilation (C and D), the scatter plots exhibit a wide spread of points around the reference line, indicating substantial discrepancies between the model predictions and the observed AUV temperatures. These deviations are particularly evident in ..., where surface temperatures tend to be overestimated. This dispersion reflects the model’s limited ability to accurately reproduce the vertical thermal structure when it relies solely on CMS data without incorporating recent in situ information. 
+
+In contrast, the fully assimilated scenarios (C4 and D4) show a much tighter clustering of points around reference, especially within the upper layers, where the previous AUV missions had provided dense and temporally relevant observations. This reduction in spread suggests a clear improvement in predictive accuracy, indicating that the assimilation of targeted measurements effectively constrains the thermal structure and captures ongoing physical transitions in the water column. 
+
+
+
+\begin{figure}[!]
+  \centering
+  \includegraphics[scale=0.7]{fig/scatter.png}
+  \caption{Comparison between in situ AUV observations (31 October) and geostatistical model predictions for scenarios C, C4, D, and D4. Shallower layers are shown in warmer colors (red to yellow), while deeper layers (>30 m) are progressively represented in cooler shades (green to blue). The dashed red line provides a reference for perfect agreement.  !not the final figure. need to correct and round values to 1 decimal place!}
+  \label{fig:scatter}
+\end{figure}
+
+
+
+
+\begin{itemize}
+    
+ 
+\end{itemize}

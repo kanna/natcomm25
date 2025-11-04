@@ -68,23 +68,23 @@ horizons.
 As a more practical
 alternative, we employ geostatistical stochastic sequential simulation
 as a computationally efficient surrogate, producing short-term spatial
-predictions of ocean temperature together with estimates of spatial
+predictions of OCEAN VARIABLES INSTEAD OF TEMPERATURE? WE HAVE NOT DISCUSSED TEMPERATURE YET ocean temperature together with estimates of spatial
 uncertainty \cite{deutsch1992}. This approach captures the essential
 variability of local ocean dynamics, based on calibrated deterministic
 dynamic ocean models, at a fraction of the computational cost of full
-numerical models, while remaining flexible enough to assimilate new in
-situ observations quickly \cite{Duarte2025} and coherent with the
+DETERMINISTIC ? numerical models, while remaining flexible enough to QUICKLY assimilate new in
+situ observations ERASE quickly \cite{Duarte2025} and CONSISTENT? coherent with the
 scope of the work approach. However, with this type of surrogate
 models we are not explicitly considering the full-physics of the
-system and the quality of the predictions directly depend on the
+IT IT NOT CLEAR WHAT IS SYSTEM HERE system and the quality of the predictions directly dependS on the
 accuracy of the calibrated model. If the calibrated model is unable to
 capture the true nature of the system the geostatistical predictions
 will also be inaccurate.  Also, if there is a new oceanographic event
 that is not present in the calibrated model, the geostatistical
-approach will ne be able to capture it.
+approach will NOT ne be able to capture it.
 
-The methodology relies on ensembles of geostatistical realizations,
-each representing a state of the ocean temperature field conditioned
+The I SUGGEST BEING MORE SPECIIC ABOUT THE METHODOLOGY - WHICH METHODOLOGY» methodology relies on ensembles of geostatistical realizations,
+each representing a WHAT DO WE MEAN BY STATE OF THE OCEAN state of the ocean ELIMINATE TEMPERATURE temperature field conditioned
 by \emph{a priori} deterministic ocean models \cite{CMEMS2017} and
 direct observations. By computing the pointwise standard deviation
 across the ensemble, we obtain spatial uncertainty maps that highlight
@@ -94,9 +94,9 @@ serve as the basis for identifying areas where new measurements are
 expected to maximize the reduction of forecast error.
 
 Beyond uncertainty prediction, the proposed framework also allows
-direct assimilation of AUV acquired data during oceanographic
+direct assimilation of AUV acquired data CUT THE REST PF THE SENTENCE? during oceanographic
 campaigns. Data collected on a given day are used to update the ocean
-temperature forecast for the following day by combining prior
+ELIMINATE TEMPERATURE temperature forecast for the following day by combining prior
 predictions with new measurements. The simulation grid, in this case,
 includes two temporal layers: the first containing the AUV
 measurements at their spatial locations and the second corresponding
@@ -107,7 +107,7 @@ and temporal variability, we apply direct sequential simulation with
 local means \cite{soares2001direct}, where each simulated value is
 drawn from its conditional distribution, accounting for both prior
 simulated values and local mean models. This enables consistent
-updating of the temperature field while integrating both direct AUV
+updating of the ELIMINATE TEMPERATURE temperature field while integrating both direct AUV
 observations and \textit{priori} information. The ensemble of
 realizations thus provides an updated ocean forecast and a
 quantitative measure of uncertainty.\kcomment{I think this para is
@@ -115,14 +115,14 @@ quantitative measure of uncertainty.\kcomment{I think this para is
   very helpful}
 %%
  
-Example shown here, the geostatistical realizations are produced using
+WHICH EXAMPLE? Example shown here, REPETEAD ABOVE the geostatistical realizations are produced using
 direct sequential simulation \cite{soares2001direct}, a stochastic
-method that draws values from conditional probability distributions
-defined by kriging estimates and variances and conditioned to existing
+method that draws values from conditional probability distributions END OF REPEATED ABOVE 
+defined by SUGGEST ADDING THIS PHRASE TO TEXT ABOVE kriging estimates and variances and conditioned to existing
 direct measurements and a spatial covariance matrix. The continuity of
-the temperature field in space and time is characterized by variogram
+the TEMPERATTURE? temperature field in space and time is characterized by variogram
 models fitted to long-term calibrated ocean model data from
-E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}. At each depth
+E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}. FOR INSTEAD OF AT? At each depth
 of the numerical ocean model, geostatistical simulations are carried
 out independently, using a moving temporal window of fourteen previous
 days as conditioning data (i.e., experimental data) to predict the
@@ -134,12 +134,12 @@ sliding-window strategy strikes a balance between forecast skill and
 computational feasibility, and can be adapted according to the
 complexity of the oceanographic conditions.
 
-The ensemble of realizations provides both a forecast of ocean
-temperature and a quantitative assessment of the prediction
+ELIMINATE THIS PHRThe ensemble of realizations provides both a forecast of ocean
+TEMPERATURE? temperature and a quantitative assessment of the prediction
 uncertainty.  By updating the forecasts with new AUV measurements
 through sequential assimilation, the method progressively refines the
-temperature field while maintaining consistency with prior model
-dynamics. The resulting forecasts and uncertainty maps form the input
+TEMPERATURE temperature field while maintaining consistency with prior model
+dynamics. ELMINATE THIS SENTENCE The resulting forecasts and uncertainty maps form the input
 for the target sampling algorithm, guiding the allocation of AUV
 trajectories towards regions of greatest expected information
 gain. More details about the model, its development, and application

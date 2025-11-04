@@ -242,6 +242,12 @@ Depth & D    & D1   & D2   & D3   & D4   & D    & D1   & D2   & D3   & D4   & D 
   combined dataset (ALL LAUVs)}
 \label{table:Table_D}
 \end{table}
+The results for 31 October, summarized in Tables \ref{table:Table_C} and \ref{table:Table_D}, correspond to the most comprehensive phase of the experiment, in which multiple assimilation scenarios were tested. The C-series uses CMS data up to 30 October, whereas the D-series starts from CMS data up to 29 October, representing a less favorable statistical initial state. In both cases, the assimilation scenarios (C1–C4 and D1–D4) correspond to the incorporation of LAUVs temperature data collected during the previous days by XP2, XP3, and XP5.
+
+A consistent reduction in statistical forecast error is observed across most vehicles and assimilation stages. In the C-series, the average RMSE across all LAUVs decreases from approximately 0.40 \textdegree C in C to 0.31 \textdegree C  in C4, while in the D-series, the mean RMSE drops from 0.55 \textdegree C in D to 0.40 \textdegree C  in D4. These improvements correspond to an average error reduction of 25–30\%, demonstrating that the assimilation of targeted observations can compensate for differences in the initial state and improve predictive accuracy.
+
+It should be noted, however, that the improvement is not uniform across all vehicles. For XP3 and XP5, which performed target-sampling missions in the same area where previous assimilation data were collected, RMSE values show a clear reduction. In contrast, XP2, which on 31 October performed an independent cross-shore transect outside the main target region, exhibits a weaker response to assimilation. The implications of this behavior and its relevance for evaluating the predictive robustness of the framework will be further examined in the Discussion section.
+Vertically, RMSE profiles show similar behavior in both experiment sets: errors tend to increase gradually below 25–30 m, where model uncertainty and unresolved variability are higher. However, this gradient weakens considerably in the fully assimilated cases (C4 and D4), particularly in the upper 30 m, where the assimilation of prior LAUV data significantly improves the representation of the temperature structure and short-term thermal evolution probably associated with the upwelling–relaxation transition.
 
 
 To further interpret the RMSE results presented in the previous table,
@@ -283,7 +289,7 @@ water column.
 
 \begin{figure}[!]
   \centering
-  \includegraphics[scale=0.7]{fig/scatter.png}
+1  \includegraphics[scale=0.7]{fig/scatter.png}
   \caption{Comparison between in situ AUV observations (31 October)
     and geostatistical model predictions for scenarios C, C4, D, and
     D4. Shallower layers are shown in warmer colors (red to yellow),

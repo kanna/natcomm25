@@ -61,11 +61,12 @@ coastal scenario.
 
   \subfigure[Sea surface temperature (SST) and XP2, XP3 and
   XP5 trajectories during the FRESNEL field campaign (29–31
-  October) ADD new subfigure november.]{\label{fig:sst}\includegraphics[width=1\linewidth]{fig/Figure_sst_auv_l3_zoom.pdf}}
+  October) ADD new subfigure november.]
+  {\label{fig:sst}\includegraphics[width=1\linewidth]{fig/Figure_sst_auv_l3_zoom.pdf}}
 
-  \subfigure[Time–depth temperature evolution observed by XP2, XP3, and
-  XP5 during the FRESNEL field campaign (29–31
-  October).]{\label{fig:temperatureprofiles}\includegraphics[width=1\linewidth]{fig/Figure2_100m.pdf}}
+  \subfigure[Time–depth temperature evolution observed by XP2, XP3,
+  and XP5 during the FRESNEL field campaign (29–31 October).]
+  {\label{fig:temperatureprofiles}\includegraphics[width=1\linewidth]{fig/Figure2_100m.pdf}}
 
 \end{figure}
 
@@ -99,30 +100,64 @@ the missions.
 
 %%%%%%% NEED TO INCLUDE HERE THE TABLE AND RESULTS WITH RMS FOR ALL SCENARIOS
 
-To further interpret the RMSE results presented in the previous table, Fig. \ref{fig:scatter} focuses on the most contrasted scenarios: the baseline cases without assimilation (C and D) and those incorporating the full set of AUV observations from previous days (C4 and D4). This comparison highlights the point-wise behaviour of the statistical model under minimum and maximum assimilation influence.
+To further interpret the RMSE results presented in the previous table,
+Fig. \ref{fig:scatter} focuses on the most contrasted scenarios: the
+baseline cases without assimilation (C and D) and those incorporating
+the full set of AUV observations from previous days (C4 and D4). This
+comparison highlights the point-wise behaviour of the statistical
+model under minimum and maximum assimilation influence.
 
-The four scatter plots compares the temperature values acquired in situ by the AUVs on 31 October against the corresponding geostatistical predictions derived from the statistical model under each scenario. The observations include all available measurements collected along the missions of XP2, XP3, and XP5 on that day (see Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate the depth layers associated with the vertical discretization used in the deterministic CMS model, which defines the vertical structure of the statistical model. 
+The four scatter plots compares the temperature values acquired in
+situ by the AUVs on 31 October against the corresponding
+geostatistical predictions derived from the statistical model under
+each scenario. The observations include all available measurements
+collected along the missions of XP2, XP3, and XP5 on that day (see
+Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate
+the depth layers associated with the vertical discretization used in
+the deterministic CMS model, which defines the vertical structure of
+the statistical model.
 
-In the baseline scenarios without assimilation (C and D), the scatter plots exhibit a wide spread of points around the reference line, indicating substantial discrepancies between the model predictions and the observed AUV temperatures. These deviations are particularly evident in ..., where surface temperatures tend to be overestimated. This dispersion reflects the model’s limited ability to accurately reproduce the vertical thermal structure when it relies solely on CMS data without incorporating recent in situ information. 
+In the baseline scenarios without assimilation (C and D), the scatter
+plots exhibit a wide spread of points around the reference line,
+indicating substantial discrepancies between the model predictions and
+the observed AUV temperatures. These deviations are particularly
+evident in ..., where surface temperatures tend to be
+overestimated. This dispersion reflects the model’s limited ability to
+accurately reproduce the vertical thermal structure when it relies
+solely on CMS data without incorporating recent in situ information.
 
-In contrast, the fully assimilated scenarios (C4 and D4) show a much tighter clustering of points around reference, especially within the upper layers, where the previous AUV missions had provided dense and temporally relevant observations. This reduction in spread suggests a clear improvement in predictive accuracy, indicating that the assimilation of targeted measurements effectively constrains the thermal structure and captures ongoing physical transitions in the water column. 
+In contrast, the fully assimilated scenarios (C4 and D4) show a much
+tighter clustering of points around reference, especially within the
+upper layers, where the previous AUV missions had provided dense and
+temporally relevant observations. This reduction in spread suggests a
+clear improvement in predictive accuracy, indicating that the
+assimilation of targeted measurements effectively constrains the
+thermal structure and captures ongoing physical transitions in the
+water column.
 
 
 
 \begin{figure}[!]
   \centering
   \includegraphics[scale=0.7]{fig/scatter.png}
-  \caption{Comparison between in situ AUV observations (31 October) and geostatistical model predictions for scenarios C, C4, D, and D4. Shallower layers are shown in warmer colors (red to yellow), while deeper layers (>30 m) are progressively represented in cooler shades (green to blue). The dashed red line provides a reference for perfect agreement.  !not the final figure. need to correct and round values to 1 decimal place!}
+  \caption{Comparison between in situ AUV observations
+    (31\textsuperscript{st} October) and geostatistical model
+    predictions for scenarios C, C4, D, and D4. Shallower layers are
+    shown in warmer colors (red to yellow), while deeper layers (>30
+    m) are progressively represented in cooler shades (green to
+    blue). The dashed red line provides a reference for perfect
+    agreement.  !not the final figure. need to correct and round
+    values to 1 decimal place!}
   \label{fig:scatter}
 \end{figure}
 
 
 
 
-\begin{itemize}
+% \begin{itemize}
     
  
-\end{itemize}
+% \end{itemize}
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 % \usepackage[table,xcdraw]{xcolor}

@@ -70,42 +70,49 @@ sampling \cite{BinZhang07,Singh09,smith14,fossum19} represents a
 fundamental shift: instead of executing pre-planned missions,
 autonomous vehicles dynamically prioritize areas for observation.
 
-One approach that we articulate here is combining model predictions
-with adaptive AUV sampling. Doing so combines predicted model
-uncertainties in comparison with prior data assimilation process with
-availabe obervations. Model forecasts identify where uncertainty is
-highest or where new observations are expected to have the greatest
-impact in reducing forecast errors. Vehicles are then directed to
-sample these areas, and their data are in turn assimilated back into
-the models, generating improved forecasts for subsequent adaptive
-planning as a virtuous cycle. Doing so closes a critical feedback loop
-between models and observations; model prediction generates a forecast
-and associated uncertainty field while adaptive sampling targets areas
-of maximum predicted uncertainty. Data assimilation from these high
+One approach combines model predictions with adaptive AUV
+sampling. Doing so combines predicted model uncertainties in
+comparison with prior data assimilation process with available
+obervations. Model forecasts identify where uncertainty is highest or
+where new observations are expected to have the greatest impact in
+reducing forecast errors. Vehicles are then directed to sample these
+areas, and their data are in turn assimilated back into the models,
+generating improved forecasts for subsequent adaptive planning as a
+virtuous cycle. Doing so closes a critical feedback loop between
+models and observations; model prediction generates a forecast and
+associated uncertainty field while adaptive sampling targets areas of
+maximum predicted uncertainty. Data assimilation from these high
 uncertainty regions are then incorporated into the model such that new
 predictions benefit from improved in-situ data, closing the loop.
-Such a \textit{data cycle} approach promises to significantly enhance
-the skill of ocean forecasts, especially in the complex coastal
-environment where processes occur over a wide range of scales and
-where human and environmental stakes are high. It also has the
-potential to improve operational efficiency by optimizing the
-deployment of costly and resource-constrained observational assets. 
-WE MAY WANT TO EXPLAIN THAT THIS CAN ONLY BE DONE WITH AUVS AND AT A MODERATE COST IN COMPARISON TO TRADITIONAL SAMPLING METHODS
+Such a \emph{sample-assimilate-predict-direct} data cycle approach
+promises to significantly enhance the skill of ocean forecasts,
+especially in the complex coastal environment where processes occur
+over a wide range of scales and where human and environmental stakes
+are high. It also has the potential to improve operational efficiency
+by optimizing the deployment of expensive and resource-constrained
+observational assets. Additionally, sampling resolution with AUVs
+vastly outweighs data obtained from traditional ship-based
+approaches. Multiple AUVs sampling simultaneously as we do here, also
+makes a dent in spatial as well as temporal coverage of such dynamic
+environments at far moderate costs.
 
+They can provide near real-time data allowing for their rapid
+re-tasking and potentially placement in spatially separated
+regions. Operating multiple vehicles in coastal regions while
+requiring flexibility in operations to avoid marine traffic, nets and
+crab-pots, also allows data collection in complex operating
+environments.
 
-IT MAY ALSO BE A GOOD IDEA TO HAVE A SHORT PARAGRAPH OM INNOVATION CLAIMS: something like
+% This has been done before, but we innovate in several aspects: 
+% \begin{itemize}
+%     \item Near-real time data visualization enable real.time response by operators..
+%     \item Simultaneous deployments in geographically separate subareas in the area of operations.
+%     \item Coordination also included risk minimizing considerations. This enabled operations in tight time intervals to collect data where it was needed taking advantage of openings provided by trawlers between consective legs.
+%     \item Parameterized framework enabling fine tuning of the overall approach. 
+%     \item Dense grid of observations.
+%     \item The sampling algorithm is not based only on position, but on error distributions and closed tours to maximize area coverage and utilization of the auvs.
+%     \end{itemize}
 
-This has been done before, but we innovate in several aspects: 
-\begin{itemize}
-    \item Near-real time data visualization enable real.time response by operators..
-    \item Simultaneous deployments in geographically separate subareas in the area of operations.
-    \item Coordination also included risk minimizing considerations. This enabled operations in tight time intervals to collect data where it was needed taking advantage of openings provided by trawlers between consective legs.
-    \item Parameterized framework enabling fine tuning of the overall approach. 
-    \item Dense grid of observations.
-    \item The sampling algorithm is not based only on position, but on error distributions and closed tours to maximize area coverage and utilization of the auvs.
-    \end{itemize}
-
-WHAT DO YOU THINK?
 
 \begin{figure}[!]
   \centering
@@ -134,9 +141,9 @@ enhance ocean forecasts in highly dynamic coastal environments
 (Fig. \ref{fig:block-diag}). The experimental results obtained within
 \proj serve to illustrate and validate the proposed approach,
 highlighting the practical benefits and challenges of real-world
-adaptive ocean exploration. Furthermore, we demonstrate that this
-sampling robotic system offers unprecedented capabilities for ocean
-studies by providing samples in close to real-time and enabling
-scientists to adaptively re-task AUVs within minutes if some
-interesting feature is detected.
+adaptive ocean exploration. % Furthermore, we demonstrate that this
+% sampling robotic system offers unprecedented capabilities for ocean
+% studies by providing samples in close to real-time and enabling
+% scientists to adaptively re-task AUVs within minutes if some
+% interesting feature is detected.
 

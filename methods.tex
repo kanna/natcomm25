@@ -42,7 +42,7 @@ I SUGGEST BELOW WE ELIMINATE X AND Y AND JUST USE $X \in R^3$
 
 \end{description}
 
-While previous efforts have concentrated on a form OF? on embedded
+While previous efforts have concentrated on a form on embedded
 automated decision-making on AUVs
 \cite{mcgann08a,mcgann08b,ryan10,py10,Das-2010-637,das10,olaya12,rajan12}
 to demonstrate adaptive sampling, here we AUV trajectories are defined
@@ -52,39 +52,45 @@ decisions were made on the AUVs. Loop closure in this work, refers to
 the \emph{sample-assimilate-predict-direct} process as shown in
 Fig. \ref{fig:loop-closure}.
 
-
 \subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
 
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. However, conventional numerical ocean
 models are computationally intensive, and their runtime makes them
-impractical for use in near-real-time mission planning. While similar assimilation cycles could, in
+impractical for use in near-real-time mission planning \kcomment{Need
+  a citation here}. While similar assimilation cycles could, in
 principle, be implemented directly within deterministic numerical
 models, this would require either substantially higher computational
 resources or larger temporal horizons. As a more practical
 alternative, we employ geostatistical stochastic sequential simulation
 as a computationally efficient surrogate, producing short-term spatial
-predictions of ocean temperature, together with estimates of spatial
+predictions of ocean temperature together with estimates of spatial
 uncertainty \cite{deutsch1992}. This approach captures the essential
-variability of local ocean dynamics, based on calibrated deterministic dynamic ocean
-models, at a fraction of the computational cost of full numerical
-models, while remaining flexible enough to assimilate new in situ
-observations quickly \cite{Duarte2025} and coherent with the scope of
-the work approach. However, with this type of surrogate models we are not explicitly considering the full-physics of the system and the quality of the predictions directly depend on the accuracy of the calibrated model. If the calibrated model is unable to capture the true nature of the system the geostatistical predictions will also be inaccurate.  Also, if there is a new oceanographic event that is not present in the calibrated model, the geostatistical approach will ne be able to capture it. 
+variability of local ocean dynamics, based on calibrated deterministic
+dynamic ocean models, at a fraction of the computational cost of full
+numerical models, while remaining flexible enough to assimilate new in
+situ observations quickly \cite{Duarte2025} and coherent with the
+scope of the work approach. However, with this type of surrogate
+models we are not explicitly considering the full-physics of the
+system and the quality of the predictions directly depend on the
+accuracy of the calibrated model. If the calibrated model is unable to
+capture the true nature of the system the geostatistical predictions
+will also be inaccurate.  Also, if there is a new oceanographic event
+that is not present in the calibrated model, the geostatistical
+approach will ne be able to capture it.
 
 The methodology relies on ensembles of geostatistical realizations,
 each representing a state of the ocean temperature field conditioned
 by \emph{a priori} deterministic ocean models \cite{CMEMS2017} and
 direct observations. By computing the pointwise standard deviation
 across the ensemble, we obtain spatial uncertainty maps that highlight
-regions where predictions are less constrained and/or more variable
-and potentially more informative for sampling. These maps serve as the
-basis for identifying areas where new measurements are expected to
-maximize the reduction of forecast error. 
-%% Assimilation part
+regions where predictions are \sout{less constrained} more variable
+and therefore potentially more informative for sampling. These maps
+serve as the basis for identifying areas where new measurements are
+expected to maximize the reduction of forecast error.
 
 Beyond uncertainty prediction, the proposed framework also allows
-direct assimilation of AUV-acquired data during oceanographic
+direct assimilation of AUV acquired data during oceanographic
 campaigns. Data collected on a given day are used to update the ocean
 temperature forecast for the following day by combining prior
 predictions with new measurements. The simulation grid, in this case,
@@ -100,7 +106,9 @@ simulated values and local mean models. This enables consistent
 updating of the temperature field while integrating both direct AUV
 observations and \textit{priori} information. The ensemble of
 realizations thus provides an updated ocean forecast and a
-quantitative measure of uncertainty.
+quantitative measure of uncertainty.\kcomment{I think this para is
+  very important and should be clear. An image of the process would be
+  very helpful}
 %%
  
 Example shown here, the geostatistical realizations are produced using
@@ -112,10 +120,15 @@ the temperature field in space and time is characterized by variogram
 models fitted to long-term calibrated ocean model data from
 E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}. At each depth
 of the numerical ocean model, geostatistical simulations are carried
-out independently, using a moving temporal window of fourteen previous days as
-conditioning data (i.e., experimental data) to predict the subsequent day. The size of the temporal window was achieved by trial-and-error using a calibrated numerical model for the same region and under the same season, and comparing the geostatistical predictions against the response of numerical ocean mode. This sliding-window strategy strikes a balance between forecast
-skill and computational feasibility, and can be adapted according to
-the complexity of the oceanographic conditions.
+out independently, using a moving temporal window of fourteen previous
+days as conditioning data (i.e., experimental data) to predict the
+subsequent day. The size of the temporal window was achieved by
+trial-and-error using a calibrated numerical model for the same region
+and under the same season, and comparing the geostatistical
+predictions against the response of numerical ocean mode. This
+sliding-window strategy strikes a balance between forecast skill and
+computational feasibility, and can be adapted according to the
+complexity of the oceanographic conditions.
 
 The ensemble of realizations provides both a forecast of ocean
 temperature and a quantitative assessment of the prediction
@@ -186,7 +199,11 @@ referenced at
 \kcomment{Ana, we need a paragraph, potentially with a figure on the
   asynchronous data assimilation in the statistical model from
   AUVs. Are any other sources (e.g. remote sensing) assimilated? If
-  so, how so and with what frequency?} \rmcomment{only AUV data was assimilated. the paragraph was included in the previous section Model Forecast, Uncertainty Projection and Data Assimilation (I also changed the name of the section to accomodate the assimlation description}
+  so, how so and with what frequency?} \rmcomment{only AUV data was
+  assimilated. the paragraph was included in the previous section
+  Model Forecast, Uncertainty Projection and Data Assimilation (I also
+  changed the name of the section to accomodate the assimilation
+  description}
 
 % at IH calibration facilities. The
 % Manta communication gateways \cite{} are equipped with acoustic
@@ -527,12 +544,12 @@ from multiple iterations of the
 \emph{sample-assimilate-predict-direct} loop to
 % Although the \proj field campaign extended over a longer period, for
 % the purpose of this paper,
-a three-day sequence of consecutive experiments (29-–31 October,
-2025) (Figure \ref{fig:scheme}). The analysis in this work aims to quantify the impact of
-assimilating AUV-acquired temperature data on the predictive
-performance of the statistical model and to assess the operational
-feasibility of the data cycle approach in a real-world coastal
-setting. To simply the process the model's workflow and the
+a three-day sequence of consecutive experiments (29-–31 October, 2025)
+(Fig. \ref{fig:scheme}). The analysis in this work aims to quantify
+the impact of assimilating AUV-acquired temperature data on the
+predictive performance of the statistical model and to assess the
+operational feasibility of the data cycle approach in a real-world
+coastal setting. To simply the process the model's workflow and the
 assimilation loop was focused only towards temperature data. As a
 consequence this work is univariate in showing the impact of
 assimilated model-driven exploration. We believe that results in Sec
@@ -567,7 +584,12 @@ with and without data assimilation.
 \begin{figure}
     \centering
     \includegraphics[scale=0.12]{fig/scheme.png}
-    \caption{Three-day sequence (29–31 October 2025) of the sample–assimilate–predict–direct loop in \proj. Each cycle integrates CMS-based statistic model prediction, target sampling algorithm, LAUV temperature data acuisition and subsequent assimilation for the next day prediction}
+    \caption{Three-day sequence
+      (29\textsuperscript{th}–31\textsuperscript{st} October 2025) of
+      the sample–assimilate–predict–direct loop in \proj. Each cycle
+      integrates CMS-based statistic model prediction, target sampling
+      algorithm, LAUV temperature data acuisition and subsequent
+      assimilation for the next day prediction}
     \label{fig:scheme}
 \end{figure}
 
@@ -604,7 +626,8 @@ follows:
     \item C1 – assimilation including only XP2 data from 29 October;
     \item C2 – assimilation including XP2 (29 October) and XP5 (30 October) data;
     \item C3 – assimilation including only XP5 data from 30 October;
-    \item C4 – assimilation including all available data from 29 and 30 October (XP2, XP3, and XP5).
+    \item C4 – assimilation including all available data from 29 and
+      30 October (XP2, XP3, and XP5).
 \end{itemize}
 
 An analogous setup was used for scenario D, in which the difference
@@ -612,7 +635,8 @@ from case C is that the statistical predictions for 31 October were
 generated using CMS data available as prior up to different cutoff dates:
 
 \begin{itemize}
-    \item D – forecast for 31 October based on CMS data available as prior until 29 October;
+\item D – forecast for 31 October based on CMS data available as prior
+  until 29 October;
     \item D1–D4 – corresponding to the same assimilation
       configurations as C1–C4, but using CMS data available as prior until 30
       October.

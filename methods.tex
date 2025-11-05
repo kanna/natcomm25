@@ -141,6 +141,15 @@ during the \proj experiment can be found in \cite{Duarte2025}. WHY NO ELIMINATIN
 
 DOES IT MAKE SENSE TO ELIMINATE TARGET IN THE TITLE?
 
+PLEASE READ THESE ITEMS; THIS WAS INSERTED WED AT 1PM
+\begin{itemize}
+    \item WE HAVE NOT DISCUSSED THE FACT THAT THE INPUT TO THE SAMPLING ALGORITHM IS JUST AM HORIZONTAL SLICE OF THE ERROR PREDICTION
+    \item but this can be somewhat compensated in the vertical domain by the YOYO
+    \item but we may need to explain how have we selected the depth to be used in the sampling algorithm
+    \item discussion about the mixed layer depth as suggested by Ajit?
+\end{itemize}
+
+
 \subsection{Target Sampling Algorithm}
 
 The adaptive sampling problem here is posed as the design of vehicle
@@ -200,45 +209,64 @@ referenced at
 
 IT MAY BE WORTH USING AN ABRIDGED VERSION OF THE PARAGRAPH BELOW TO
 EXPLAIN A FEW DETAILS OF THE OPERATION OTHERWISE PEOPLE MAY NOT
-UNDERSTAND WHAT WAS REALLY DONE
+UNDERSTAND WHAT WAS REALLY DONE AND HOW IT WAS DONE
 
 SOMETHING LIKE
 
-Launch and recovery of AUV operations was done with the support of two
-small boats rented in Nazaré, thus minimizing the logistics
-footprint. In addition, to the LSTS command and control center located
-in Porto, another center was installed in Nazaré to support local
-operations.
+The experiment had a small human and support vessels footprint, thus demonstrating that a significant cost reduction in comparison to traditional ship-based methods in addition to higher spatial and temporal resolutions. Operations were conducted non-stop by pairs of operators working 6 hour shift from command and control centers based in Porto, as well as in Nazaré. The intervention of 2 small boats was limited to the launch and recovery of AUVs, that operated not attended for up to 50h+. 
 
+OK????
 
-Challenging meteorological and ocean conditions constrained the team
-from multiple iterations of the
+Challenging meteorological and ocean conditions constrained the NUMbER OF CONSECUTIVE iterations of the
 \emph{sample-assimilate-predict-direct} loop to a three-day sequence
-of consecutive experiments (29-–31 October, 2025)
-(Fig. \ref{fig:scheme}). The analysis in this work aims to quantify
-the impact of assimilating AUV-acquired temperature data on the
-predictive performance of the statistical model and to assess the
-operational feasibility of the data cycle approach in a real-world
-coastal setting. To simply the process the model's workflow and the
-assimilation loop was focused only towards temperature data. As a
+of experiments (29-–31 October, 2025)
+(Fig. \ref{fig:scheme}). 
+
+SWAPPED THE POSITIONS OF THE NEXT TWO PARAGRAPHS - PLEASE READ THE FIRST ONE CAREFULLY 
+FOR THE SAKE OF CLARITY, the PRESENTATION OF THE workflow and 
+assimilation loop IS focused only ON temperature data. As a
 consequence this work is univariate in showing the impact of
 assimilated model-driven exploration. We believe that results in Sec
 \ref{sec:results} are general enough to apply to other critical
-oceanographic variables which would need to be modeled similarly.
+oceanographic variables which would be modeled similarly.
+
+The analysis in this work aims to quantify
+the impact of assimilating AUV-acquired temperature data on the
+predictive performance of the statistical model and to assess the
+operational feasibility of the data cycle approach in a real-world
+coastal setting. 
+
+
+THE FOLLOWING PARAGRAPH DOES NOT READ WELL; 
+
+STARTS BY THE GENERATION OF THE MODEL ???? IS THIS JUST FOR THE FIRST DAY? IF SO NEEDS TO BE EXPLAINED
+
+FOLLOWED BY THE EXECUTION OF THE ALGORITHM 
+
+AND WHERE IS THE ASSIMILATION PRECEEDING THE ADAPTIVE SAMPLING ALGORITHM?
 
 
 Each experimental day followed a structured cycle involving: (i) the
 generation of a statistical model forecast and its associated
 uncertainty field based on the Copernicus Marine Service (CMS)
 \cite{sotillo2021} data available up to the previous day; (ii) the
-execution of the target sampling algorithm to plan the next-day
+execution of the target sampling algorithm to plan the NEXT? next-day
 missions; and (iii) in situ data collection by AUVs following the
-algorithmically determined transects. The data collected within the
+algorithmically determined TOURS. The data collected within the
 previous day were subsequently assimilated into the statistical model
 to produce updated forecasts, enabling comparisons between forecasts
 with and without data assimilation.
 
 
+
+SAME PROBLEM WITH THE CAPTION OF THE NEXT FIGURE
+
+
+WHAT IS TARGET SAMPLING IN THE FIGURE? THIS IS NOT SAMPLING, THIS IS EXECUTING THE TOUR GENERATION ALGORITHM, RIGHT?
+
+LIKEWISE WHAT IS AUV DATA ACQUISITION? DATA AQUISITION HAS BEEN PERFORMED DURING SAMPLING
+
+THIS MAY BE DATA INGESTION AND QC
 \begin{figure}
     \centering
     \includegraphics[scale=0.12]{fig/scheme.png}
@@ -246,14 +274,14 @@ with and without data assimilation.
       (29\textsuperscript{th}–31\textsuperscript{st} October 2025) of
       the sample–assimilate–predict–direct loop in \proj. Each cycle
       integrates CMS-based statistic model prediction, target sampling
-      algorithm, LAUV temperature data acuisition and subsequent
+      algorithm, LAUV temperature data acQuisition and subsequent
       assimilation for the next day prediction}
     \label{fig:scheme}
 \end{figure}
 
 On 29\textsuperscript{th} October, the statistical model produced the
 initial forecast solution (A), which was used to plan the mission
-executed by XP2. The resulting in situ temperature data were later
+executed by XP2. The resulting in CUT IN SITU situ temperature data were later
 assimilated offline to produce an updated statistical model solution
 (B1) for 30 October. Although operational real-time assimilation was
 initially planned, logistical constraints prevented its
@@ -281,15 +309,15 @@ follows:
       30 October (XP2, XP3, and XP5).
 \end{itemize}
 
-An analogous setup was used for scenario D, in which the difference
+An analogous setup was used for SCENARIO OR CASE? scenario D, in which the difference
 from case C is that the statistical predictions for 31 October were
 generated using CMS data available as prior up to different cutoff dates:
 
 \begin{itemize}
 \item D – forecast for 31 October based on CMS data available as prior
   until 29 October;
-    \item D1–D4 – corresponding to the same assimilation
-      configurations as C1–C4, but using CMS data available as prior until 30
+    \item D1–D4 – corresponding to ERASE A FEW WORDS  assimilation
+      configurations as C1–C4, but using CMS data available prior until 30
       October.
 \end{itemize}
 
@@ -304,3 +332,5 @@ error (RMSE) as the primary performance metric for 31 October.
     \label{fig:temperatureprofiles}
 \end{figure}
 
+PLEASE CHECK CAPTION OF FIGURE 3 - I have done this sequentially, except for this mod
+  \label{fig:loop-closure} 

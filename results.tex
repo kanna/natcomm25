@@ -144,7 +144,7 @@ densely sampled by the LAUVs.
   represent forecasts for 30 October without and with the assimilation
   of LAUV observations collected by XP2, respectively. Values are
   shown for each depth level sampled during the missions.}
-  \label{fig:scatter}
+  \label{fig:rms_ABB1}
 \end{figure}
 
 
@@ -155,6 +155,46 @@ A consistent reduction in statistical forecast error is observed across most veh
 It should be noted, however, that the improvement is not uniform across all vehicles. For XP3 and XP5, which performed target-sampling missions in the same area where previous assimilation data were collected, RMSE values show a clear reduction. In contrast, XP2, which on 31 October performed an independent cross-shore transect outside the main target region, exhibits a weaker response to assimilation. The implications of this behavior and its relevance for evaluating the predictive robustness of the framework will be further examined in the Discussion section.
 Vertically, RMSE profiles show similar behavior in both experiment sets: errors tend to increase gradually below 25–30 m, where model uncertainty and unresolved variability are higher. However, this gradient weakens considerably in the fully assimilated cases (C4 and D4), particularly in the upper 30 m, where the assimilation of prior LAUV data significantly improves the representation of the temperature structure and short-term thermal evolution probably associated with the upwelling–relaxation transition.
 
+
+\begin{figure}
+  \centering 
+
+  \subfigure[RMSE (in  $^{\circ}$C) between statistical model forecasts and in situ LAUV temperature observations for 29–30
+  October. Scenario A corresponds to the baseline statistical forecast generated based on CMS data up to 29 October. Scenarios B and B1
+  represent forecasts for 30 October without and with the assimilation
+  of LAUV observations collected by XP2, respectively. Values are
+  shown for each depth level sampled during the missions.]
+  {\label{fig:sst}\includegraphics[width=1\linewidth]{fig/rms_bar_vechicle.png
+  c}}
+
+  \subfigure[Time–depth temperature evolution observed by XP2, XP3,
+  and XP5 during the FRESNEL field campaign (29–31 October).]
+  {\label{fig:temperatureprofiles}\includegraphics[width=1\linewidth]{fig/Figure2_100m.pdf}}
+
+\end{figure}
+
+\begin{figure}[!]
+  \centering
+  \sub
+1  \includegraphics[scale=0.7]{fig/rms_ABB1.png}
+  \caption{RMSE (in  $^{\circ}$C) between statistical model forecasts and in situ LAUV temperature observations for 29–30
+  October. Scenario A corresponds to the baseline statistical forecast generated based on CMS data up to 29 October. Scenarios B and B1
+  represent forecasts for 30 October without and with the assimilation
+  of LAUV observations collected by XP2, respectively. Values are
+  shown for each depth level sampled during the missions.}
+  \label{fig:rms_c}
+\end{figure}
+
+\begin{figure}[!]
+  \centering
+1  \includegraphics[scale=0.7]{fig/rms_ABB1.png}
+  \caption{RMSE (in  $^{\circ}$C) between statistical model forecasts and in situ LAUV temperature observations for 29–30
+  October. Scenario A corresponds to the baseline statistical forecast generated based on CMS data up to 29 October. Scenarios B and B1
+  represent forecasts for 30 October without and with the assimilation
+  of LAUV observations collected by XP2, respectively. Values are
+  shown for each depth level sampled during the missions.}
+  \label{fig:rms_ABB1}
+\end{figure}
 
 To further interpret the RMSE results presented in the previous table,
 Fig. \ref{fig:scatter} focuses on the most contrasted scenarios: the

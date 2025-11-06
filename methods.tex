@@ -77,99 +77,96 @@ be inaccurate.  Equally, if there is a new oceanographic event that is
 not present in the calibrated model, the geostatistical approach will
 not be captured.
 
-The I SUGGEST BEING MORE SPECIIC ABOUT THE METHODOLOGY - WHICH METHODOLOGY» methodology relies on ensembles of geostatistical realizations,
-each representing a WHAT DO WE MEAN BY STATE OF THE OCEAN state of the ocean ELIMINATE TEMPERATURE temperature field conditioned
-by \emph{a priori} deterministic ocean models \cite{CMEMS2017} and
-direct observations. By computing the pointwise standard deviation
-across the ensemble, we obtain spatial uncertainty maps that highlight
-regions where predictions are \sout{less constrained} more variable
-and therefore potentially more informative for sampling. These maps
-serve as the basis for identifying areas where new measurements are
-expected to maximize the reduction of forecast error.
+The methodology relies on ensembles of geostatistical realizations,
+each representing a state of an ocean variable field conditioned by
+\emph{a priori} deterministic ocean models \cite{CMEMS2017} and direct
+observations. By computing the pointwise standard deviation across the
+ensemble, we obtain spatial uncertainty maps that highlight regions
+where predictions are more variable and therefore potentially more
+informative for sampling. These maps serve as the basis for
+identifying areas where new measurements are expected to maximize the
+reduction of forecast error.
 
 Beyond uncertainty prediction, the proposed framework also allows
-direct assimilation of AUV acquired data CUT THE REST PF THE SENTENCE? during oceanographic
-campaigns. Data collected on a given day are used to update the ocean
-ELIMINATE TEMPERATURE temperature forecast for the following day by combining prior
-predictions with new measurements. The simulation grid, in this case,
-includes two temporal layers: the first containing the AUV
-measurements at their spatial locations and the second corresponding
-to the new prediction step. With AUV sampling denser than the grid
-resolution, measurements within the same grid cell are averaged as a
-form of arithmetic upscaling \cite{Duarte2025}. To incorporate spatial
-and temporal variability, we apply direct sequential simulation with
-local means \cite{soares2001direct}, where each simulated value is
-drawn from its conditional distribution, accounting for both prior
-simulated values and local mean models. This enables consistent
-updating of the ELIMINATE TEMPERATURE temperature field while integrating both direct AUV
-observations and \textit{priori} information. The ensemble of
-realizations thus provides an updated ocean forecast and a
-quantitative measure of uncertainty.\kcomment{I think this para is
-  very important and should be clear. An image of the process would be
-  very helpful}
-%%
+direct assimilation of AUV acquired data. Data collected on a given
+day is used to update the ocean variable forecast for the following
+day by combining prior predictions with new measurements. The
+simulation grid, in this case, includes two temporal layers: the first
+containing the AUV measurements at their spatial locations and the
+second corresponding to the new prediction step. With AUV sampling
+denser than the grid resolution, measurements within the same grid
+cell are averaged as a form of arithmetic upscaling
+\cite{Duarte2025}. To incorporate spatial and temporal variability, we
+apply direct sequential simulation with local means
+\cite{soares2001direct}\footnote{Defined by kriging estimates and
+  variances and conditioned to existing direct measurements and a
+  spatial covariance matrix.}, where each simulated value is drawn
+from its conditional distribution, accounting for both prior simulated
+values and local mean models. Doing so enables consistent updating of
+the variable field while integrating both direct AUV observations and
+\textit{priori} information. The ensemble of realizations thus
+provides an updated ocean forecast and a quantitative measure of
+uncertainty.\kcomment{I think this para is very important and should
+  be clear. An image of the process would be very helpful}
  
-WHICH EXAMPLE? Example shown here, REPETEAD ABOVE the geostatistical realizations are produced using
-direct sequential simulation \cite{soares2001direct}, a stochastic
-method that draws values from conditional probability distributions END OF REPEATED ABOVE 
-defined by SUGGEST ADDING THIS PHRASE TO TEXT ABOVE kriging estimates and variances and conditioned to existing
-direct measurements and a spatial covariance matrix. The continuity of
-the TEMPERATTURE? temperature field in space and time is characterized by variogram
-models fitted to long-term calibrated ocean model data from
-E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}. FOR INSTEAD OF AT? At each depth
-of the numerical ocean model, geostatistical simulations are carried
-out independently, using a moving temporal window of fourteen previous
-days as conditioning data (i.e., experimental data) to predict the
-subsequent day. The size of the temporal window was achieved by
-trial-and-error using a calibrated numerical model for the same region
-and under the same season, and comparing the geostatistical
-predictions against the response of numerical ocean mode. This
-sliding-window strategy strikes a balance between forecast skill and
-computational feasibility, and can be adapted according to the
-complexity of the oceanographic conditions. AN EXPLANATION OF THE METHOD THAT PROCEEDS BY DEPTHS MAY BE USEFUL . iS PROPAGRATION DONE ONLY IN THE HORIZONTAL DOMAINS?
+The continuity of the variable field in space and time is
+characterized by variogram models fitted to long-term calibrated ocean
+model data from the E.U. Copernicus Marine Service (CMS)
+\cite{CMEMS2017}. For each depth of the numerical ocean model,
+geostatistical simulations are carried out independently, using a
+moving temporal window of fourteen previous days as conditioning data
+(i.e., experimental data) to predict the subsequent day. The size of
+the temporal window was achieved by trial-and-error using a calibrated
+numerical model for the same region and under the same season, and
+comparing the geostatistical predictions against the response of the
+numerical ocean model. This sliding-window strategy strikes a balance
+between forecast skill and computational feasibility, and can be
+adapted according to the complexity of the oceanographic
+conditions. \kcomment{AN EXPLANATION OF THE METHOD THAT PROCEEDS BY
+  DEPTHS MAY BE USEFUL. Is PROPAGRATION DONE ONLY IN THE HORIZONTAL
+  DOMAINS?}
 
-ELIMINATE THIS PHASE IT IS MENTIONED ABOVE The ensemble of realizations provides both a forecast of ocean
-TEMPERATURE? temperature and a quantitative assessment of the prediction
-uncertainty.  By updating the forecasts with new AUV measurements
-through sequential assimilation, the method progressively refines the
-TEMPERATURE temperature field while maintaining consistency with prior model
-dynamics. ELMINATE THIS SENTENCE The resulting forecasts and uncertainty maps form the input
-for the target sampling algorithm, guiding the allocation of AUV
-trajectories towards regions of greatest expected information
-gain. More details about the model, its development, and application
-during the \proj experiment can be found in \cite{Duarte2025}. WHY NO ELIMINATING THIS PARAGRAPH EXCEPT FOR THE LAST SENTENCE?
+This provides both a forecast of ocean variables being simulated, as
+well as a quantitative assessment of the prediction uncertainty.  By
+updating the forecasts with new AUV measurements through sequential
+assimilation, the method progressively refines the variable field
+while maintaining consistency with prior model dynamics. The resulting
+forecast and uncertainty maps then form the input for the target
+sampling algorithm, guiding the allocation of AUV trajectories towards
+regions of greatest expected information gain. More details about the
+model, its development, and application during the \proj experiment
+can be found in \cite{Duarte2025}. 
 
-DOES IT MAKE SENSE TO ELIMINATE TARGET IN THE TITLE?
-
-PLEASE READ THESE ITEMS; THIS WAS INSERTED WED AT 1PM
+\kcomment{PLEASE READ THESE ITEMS; THIS WAS INSERTED WED AT 1PM
 \begin{itemize}
     \item WE HAVE NOT DISCUSSED THE FACT THAT THE INPUT TO THE SAMPLING ALGORITHM IS JUST AM HORIZONTAL SLICE OF THE ERROR PREDICTION
     \item but this can be somewhat compensated in the vertical domain by the YOYO
     \item but we may need to explain how have we selected the depth to be used in the sampling algorithm
     \item discussion about the mixed layer depth as suggested by Ajit?
 \end{itemize}
+}
 
+\subsection{Sampling Algorithm}
 
-\subsection{Target Sampling Algorithm}
-
-The adaptive sampling problem here is posed as the design of vehicle
+The adaptive sampling problem posed is the design of vehicle
 trajectories that maximize information gain
 \cite{eidsvik2015,fossum18} extracted from a model-derived uncertainty
 map, while satisfying operational AUV constraints. Each day, the
 models provide both a forecast field and its associated uncertainty
 distribution, which together define the reward landscape for the
-planner. The task is then to generate, for each vehicle, a CLOSED PATH, A TOUR, ERASE composed of waypoints END OF ERASE that accumulates the highest possible
-uncertainty values. THE TOUR IS TRAVELED AT A PRESCRIBED SPEED WHILE THE DURATION IS BOUNDED ABOVE BY THE ASSIMILATION PERIOD. THE STARTING AND ENDING POINT IS SELECTED TO SIMPLIFY LOGISTICS FOR LAUNCH AND RECOVERY.
+planner. The task is then to generate, for each vehicle, a tour, that
+accumulates the highest possible uncertainty values. The tour is
+traveled at a prescribed AUV speed while the duration is bounded above
+by the assimilation period. the starting and ending point is selected
+to simplify logistics for launch and recovery.
 
-IT MAY BE WORTH SAYING MORE ABOUT THESE PARAMETERS: DURATION OF THE TOUR, ASSIMILATION PERIOD, ETC.
-
-To address this, the problem is cast as a graph theoretic problem. The
-spatial uncertainty map is first pre-processed to remove obstacles and
+The tour itself is cast as a graph theoretic problem. The spatial
+uncertainty map is first pre-processed to remove obstacles and
 smoothened to highlight large-scale features. Candidate waypoints are
 then identified from the map and used to build a weighted graph, where
 nodes carry a reward proportional to their uncertainty value and edges
 represent travel costs. The trajectory planning task is posed as a
-vehicle TOUR routing problem where routes must balance the rewards obtained
+tour routing problem where routes must balance the rewards obtained
 from visiting nodes with associated costs of traveling between them
 \cite{vidal2013,toth2014vehicle}. By solving this, the algorithm
 returns a set of near-optimal trajectories that prioritize regions of
@@ -181,9 +178,13 @@ data assimilation. Additional insights into the algorithm and its
 deployment during \proj are reported elsewhere in
 \cite{bernacchi2025}.
 
-TITLE: SHOULD IT BE OPERATIONS AND DATA COLLECTION INSTEAD?
-\subsection{Data Collection, Deployment and Operations}
+\kcomment{it MAY BE WORTH SAYING MORE ABOUT THESE PARAMETERS: DURATION
+  OF THE TOUR, ASSIMILATION PERIOD, ETC. The section above is simply
+  highlighting the method; its instantiation could come in the results
+  section.}
 
+
+\subsection{Operations and Data Collection}
 
 \begin{figure}
     \centering
@@ -192,138 +193,131 @@ TITLE: SHOULD IT BE OPERATIONS AND DATA COLLECTION INSTEAD?
     \label{fig:lauvs}
 \end{figure}
 
-In-situ data collection process involved three upper water-column Light Autonomous Underwater Vehicles (LAUV)
-(XP2, XP3 and XP5) which PERFORMED ERASE alternated daily in performing ENDERASE targeted
-sampling missions STARTNEW with durations of up to 60 hours  ENDNEW over the \naz Canyon region. These vehicles designed
-and developed in-house at the University of Porto \cite{sousa2012lauv}
-came equipped with a range of sensors including a CTD
-(Fig. \ref{fig:lauvs}). sTARTERASE Some had in addition fluorometers, turbidity,
-Oxygen, DVL/ADCP sensors ENDERASE and with WiFi and Iridium
-satellite communications; the CTDs mounted on the AUVs were cross-calibrated to
-ensure consistency. In addition to the hardware involved, an extensive
-suite of mature mission planning and command/control tools were used
--- discussion of these is outside the scope of the paper and can be
-referenced at
+In-situ data collection process involved three upper water-column
+Light Autonomous Underwater Vehicles (LAUV) (XP2, XP3 and XP5) which
+performed targeted sampling missions with durations of up to 60 hours
+over the \naz Canyon region. These vehicles designed and developed
+in-house at the University of Porto \cite{sousa2012lauv} came equipped
+with a range of sensors including a CTD (Fig. \ref{fig:lauvs}) and
+with WiFi and Iridium satellite communications; the CTDs mounted on
+the AUVs were cross-calibrated to ensure consistency. In addition to
+the hardware involved, an extensive suite of mature mission planning
+and command/control tools were used -- discussion of these is outside
+the scope of the paper and can be referenced at
 \cite{dias2005neptus,seacons10,toolchain2012,pinto2013lsts,Ferreira2018}.
 
+The experiment had a small human and support vessel footprint,
+demonstrating significant cost reduction in comparison to traditional
+ship-based methods while measuring at higher spatial and temporal
+resolution. Operations were conducted continuously by pairs of
+operators working 6 hour shifts from command and control centers based
+in Porto as well as in \naze. The intervention of small boats was
+limited to the launch and recovery of AUVs, that operated unattended.
 
-IT MAY BE WORTH USING AN ABRIDGED VERSION OF THE PARAGRAPH BELOW TO
-EXPLAIN A FEW DETAILS OF THE OPERATION OTHERWISE PEOPLE MAY NOT
-UNDERSTAND WHAT WAS REALLY DONE AND HOW IT WAS DONE
 
-SOMETHING LIKE
-
-The experiment had a small human and support vessels footprint, thus demonstrating that a significant cost reduction in comparison to traditional ship-based methods in addition to higher spatial and temporal resolutions. Operations were conducted non-stop by pairs of operators working 6 hour shift from command and control centers based in Porto, as well as in Nazaré. The intervention of 2 small boats was limited to the launch and recovery of AUVs, that operated not attended for up to 50h+. 
-
-OK????
-
-Challenging meteorological and ocean conditions constrained the NUMbER OF CONSECUTIVE iterations of the
+Challenging meteorological and ocean conditions constrained the number
+of consecutive iterations of the
 \emph{sample-assimilate-predict-direct} loop to a three-day sequence
-of experiments (29-–31 October, 2025)
-(Fig. \ref{fig:scheme}). 
-
-SWAPPED THE POSITIONS OF THE NEXT TWO PARAGRAPHS - PLEASE READ THE FIRST ONE CAREFULLY 
-FOR THE SAKE OF CLARITY, the PRESENTATION OF THE workflow and 
-assimilation loop IS focused only ON temperature data. As a
-consequence this work is univariate in showing the impact of
-assimilated model-driven exploration. We believe that results in Sec
-\ref{sec:results} are general enough to apply to other critical
-oceanographic variables which would be modeled similarly.
-
-The analysis in this work aims to quantify
-the impact of assimilating AUV-acquired temperature data on the
-predictive performance of the statistical model and to assess the
-operational feasibility of the data cycle approach in a real-world
-coastal setting. 
-
-
-THE FOLLOWING PARAGRAPH DOES NOT READ WELL; 
-
-STARTS BY THE GENERATION OF THE MODEL ???? IS THIS JUST FOR THE FIRST DAY? IF SO NEEDS TO BE EXPLAINED
-
-FOLLOWED BY THE EXECUTION OF THE ALGORITHM 
-
-AND WHERE IS THE ASSIMILATION PRECEEDING THE ADAPTIVE SAMPLING ALGORITHM?
-
+of experiments (29\textsuperscript{th}-–31\textsuperscript{st}
+October, 2025) (Fig. \ref{fig:scheme}). For the sake of clarity, the
+presentation of the workflow and assimilation loop is focused only on
+temperature measurements. As a consequence this work is univariate in
+showing the impact of assimilated model-driven exploration. We believe
+that results in Sec \ref{sec:results} are general enough to apply to
+other critical oceanographic variables which would be modeled
+similarly. The analysis in this work ultimately aims to quantify the
+impact of assimilating AUV-acquired temperature data on the predictive
+performance of the statistical model and to assess the operational
+feasibility of the data cycle approach in a real-world coastal
+setting.
 
 Each experimental day followed a structured cycle involving: (i) the
 generation of a statistical model forecast and its associated
-uncertainty field based on the Copernicus Marine Service (CMS)
-\cite{sotillo2021} data available up to the previous day; (ii) the
-execution of the target sampling algorithm to plan the NEXT? next-day
+uncertainty field based on the Copernicus Marine Service (CMS) data
+available up to the previous day \cite{sotillo2021}; (ii) the
+execution of the target sampling algorithm to plan the next day
 missions; and (iii) in situ data collection by AUVs following the
-algorithmically determined TOURS. The data collected within the
+algorithmically determined tours. The data collected within the
 previous day were subsequently assimilated into the statistical model
 to produce updated forecasts, enabling comparisons between forecasts
 with and without data assimilation.
 
 
+\kcomment{WHAT IS TARGET SAMPLING IN THE FIGURE? THIS IS NOT SAMPLING,
+  THIS IS EXECUTING THE TOUR GENERATION ALGORITHM, RIGHT?  LIKEWISE
+  WHAT IS AUV DATA ACQUISITION? DATA AQUISITION HAS BEEN PERFORMED
+  DURING SAMPLING. THIS MAY BE DATA INGESTION AND QC -- send me the
+  source of the figure and I can fix it --KR}
 
-SAME PROBLEM WITH THE CAPTION OF THE NEXT FIGURE
-
-
-WHAT IS TARGET SAMPLING IN THE FIGURE? THIS IS NOT SAMPLING, THIS IS EXECUTING THE TOUR GENERATION ALGORITHM, RIGHT?
-
-LIKEWISE WHAT IS AUV DATA ACQUISITION? DATA AQUISITION HAS BEEN PERFORMED DURING SAMPLING
-
-THIS MAY BE DATA INGESTION AND QC
 \begin{figure}
     \centering
-    \includegraphics[scale=0.12]{fig/scheme.png}
+    \includegraphics[scale=0.08]{fig/scheme.png}
     \caption{Three-day sequence
-      (29\textsuperscript{th}–31\textsuperscript{st} October 2025) of
-      the sample–assimilate–predict–direct loop in \proj. Each cycle
-      integrates CMS-based statistic model prediction, target sampling
-      algorithm, LAUV temperature data acQuisition and subsequent
-      assimilation for the next day prediction}
+      (29\textsuperscript{th}–-31\textsuperscript{st} October 2025) of
+      the sample–assimilate–predict–direct loop in the \proj
+      experiment. Each cycle integrates CMS-based statistic model
+      prediction, target sampling algorithm, LAUV temperature data
+      acQuisition and subsequent assimilation for the next day
+      prediction}
     \label{fig:scheme}
-\end{figure}
+  \end{figure}
 
 On 29\textsuperscript{th} October, the statistical model produced the
 initial forecast solution (A), which was used to plan the mission
-executed by XP2. The resulting in CUT IN SITU situ temperature data were later
-assimilated offline to produce an updated statistical model solution
-(B1) for 30 October. Although operational real-time assimilation was
-initially planned, logistical constraints prevented its
-implementation. Consequently, all assimilation cases were performed
-offline after mission completion. The target sampling algorithm,
-therefore, relied on statistical forecasts without assimilation (B),
-using pre-existing data as input for daily mission planning. This
-limitation is not expected to have significantly affected the
-experimental outcomes, as the operational area was spatially compact
-and the predicted variability field remained consistent between
-consecutive days. In future implementations, on-board or
-near-real-time assimilation should be considered to fully exploit the
-adaptive potential of the framework.
+executed by XP2. The resulting temperature data were later assimilated
+offline to produce an updated statistical model solution (B1) for 30
+October. Although operational real-time assimilation was initially
+planned, logistical constraints prevented its implementation;
+consequently, all assimilation was performed offline after mission
+completion. The target sampling algorithm, therefore, relied on
+statistical forecasts without assimilation (B), using pre-existing
+data as input for daily mission planning. This limitation is not
+expected to have significantly affected the experimental outcomes, as
+the operational area was spatially compact and the predicted
+variability field remained consistent between consecutive days. In
+future implementations, on-board or near-real-time assimilation would
+need to be considered to fully exploit the adaptive potential of the
+framework.
 
-Data collected by XP3 and XP5 on 30 October were assimilated offline
-to generate new model solutions for 31 October (C1, C2, C3, C4), along
-with a non-assimilated reference case (C). The configurations were as
+
+\kcomment{I think we need a subsection or some material to describe
+  the process above and below. As of now it seems too abrupt.}
+
+Data collected by XP3 and XP5 on 30\textsuperscript{th} October were
+assimilated offline to generate new model solutions for
+31\textsuperscript{st} October (C1, C2, C3, C4), along with a
+non-assimilated reference case (C). The configurations were as
 follows:
 
-\begin{itemize}
-    \item C1 – assimilation including only XP2 data from 29 October;
-    \item C2 – assimilation including XP2 (29 October) and XP5 (30 October) data;
-    \item C3 – assimilation including only XP5 data from 30 October;
-    \item C4 – assimilation including all available data from 29 and
-      30 October (XP2, XP3, and XP5).
-\end{itemize}
+\begin{description}
+\item[C1] – assimilation including only XP2 data from
+  29\textsuperscript{th} October
+\item[C2] – assimilation including XP2 (29\textsuperscript{th} October)
+  and XP5 (30\textsuperscript{th} October) data
+\item[C3] – assimilation including only XP5 data from
+  30\textsuperscript{th} October
+\item[C4] – assimilation including all available data from
+  29\textsuperscript{th} and 30\textsuperscript{th} October (XP2, XP3,
+  and XP5)
+\end{description}
 
-An analogous setup was used for SCENARIO OR CASE? scenario D, in which the difference
-from case C is that the statistical predictions for 31 October were
-generated using CMS data available as prior up to different cutoff dates:
+An analogous setup was used for case D, in which the difference from
+case C is that the statistical predictions for 31\textsuperscript{st}
+October were generated using CMS data available as a prior up to
+different cutoff dates:
 
-\begin{itemize}
-\item D – forecast for 31 October based on CMS data available as prior
-  until 29 October;
-    \item D1–D4 – corresponding to ERASE A FEW WORDS  assimilation
-      configurations as C1–C4, but using CMS data available prior until 30
-      October.
-\end{itemize}
+\begin{description}
+\item[D] – forecast for 31\textsuperscript{st} October based on CMS
+  data available as a prior until 29\textsuperscript{th} October
+\item[D1–-D4] – corresponding to assimilation configurations C1-–C4,
+  but using CMS data available prior until 30\textsuperscript{th}
+  October
+\end{description}
 
 Model performance was evaluated by comparing predicted and observed
 temperature data along the AUV trajectories using the root-mean-square
-error (RMSE) as the primary performance metric for 31 October.
+error (RMSE) as the primary performance metric for
+31\textsuperscript{st} October.
 
 \begin{figure}
     \centering
@@ -332,5 +326,5 @@ error (RMSE) as the primary performance metric for 31 October.
     \label{fig:temperatureprofiles}
 \end{figure}
 
-PLEASE CHECK CAPTION OF FIGURE 3 - I have done this sequentially, except for this mod
-  \label{fig:loop-closure} 
+% PLEASE CHECK CAPTION OF FIGURE 3 - I have done this sequentially, except for this mod
+%   \label{fig:loop-closure} 

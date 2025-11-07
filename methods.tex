@@ -20,7 +20,7 @@ fundamental steps, executed iteratively on a daily basis:
   predicted state and its uncertainty over a predefined grid covering
   the study area. 
 
-\item \textbf{Target Sample Planning}: Using the uncertainty map
+\item \textbf{Targeted Sample Planning}: Using the uncertainty map
   $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, a targeted sampling
   algorithm determines the set of trajectories for a fleet of $N$ AUVs
   for the next operational cycle. The goal is to maximize the
@@ -245,51 +245,58 @@ to produce updated forecasts, enabling comparisons between forecasts
 with and without data assimilation.
 
 
-\kcomment{WHAT IS TARGET SAMPLING IN THE FIGURE? THIS IS NOT SAMPLING,
-  THIS IS EXECUTING THE TOUR GENERATION ALGORITHM, RIGHT?  LIKEWISE
-  WHAT IS AUV DATA ACQUISITION? DATA AQUISITION HAS BEEN PERFORMED
-  DURING SAMPLING. THIS MAY BE DATA INGESTION AND QC -- send me the
-  source of the figure and I can fix it --KR} \rmcomment{i'll need to redo the figure since I don't know where I put the ppt file... but, yes, it is route/tour generation}
+% \kcomment{WHAT IS TARGET SAMPLING IN THE FIGURE? THIS IS NOT SAMPLING,
+%   THIS IS EXECUTING THE TOUR GENERATION ALGORITHM, RIGHT?  LIKEWISE
+%   WHAT IS AUV DATA ACQUISITION? DATA AQUISITION HAS BEEN PERFORMED
+%   DURING SAMPLING. THIS MAY BE DATA INGESTION AND QC -- send me the
+%   source of the figure and I can fix it --KR} \rmcomment{i'll need to
+%   redo the figure since I don't know where I put the ppt file... but,
+%   yes, it is route/tour generation}
 
 \begin{figure}
-    \centering
-    \includegraphics[scale=0.08]{fig/scheme.png}
-    \caption{Three-day sequence
-      (29\textsuperscript{th}–-31\textsuperscript{st} October 2025) of
-      the sample–assimilate–predict–direct loop in the \proj
-      experiment. Each cycle integrates CMS-based statistic model
-      prediction, target sampling algorithm, AUV temperature data
-      acQuisition and subsequent assimilation for the next day
-      prediction}
-    \label{fig:scheme}
-  \end{figure}
+  \centering
+  \includegraphics[scale=0.08]{fig/scheme.png}
+  \caption{Three-day sequence
+    (29\textsuperscript{th}–-31\textsuperscript{st} October 2025) of
+    the sample–assimilate–predict–direct loop in the \proj
+    experiment. Each cycle integrates CMS-based statistic model
+    prediction, target sampling algorithm, AUV temperature data
+    acQuisition and subsequent assimilation for the next day
+    prediction}
+  \label{fig:scheme}
+\end{figure}
 
-  On 29\textsuperscript{th} October, the statistical model produced
-  the initial forecast solution (A), which was used to plan the
-  mission executed by XP2. The resulting temperature data were later
-  assimilated offline to produce an updated statistical model solution
-  (B1) for 30\textsuperscript{th} October. Although operational
-  real-time assimilation was initially planned, logistical constraints
-  prevented its implementation; consequently, all assimilation was
-  performed offline after mission completion. The target sampling
-  algorithm, therefore, relied on statistical forecasts without
-  assimilation (B), using pre-existing data as input for daily mission
-  planning. This limitation is not expected to have significantly
-  affected the experimental outcomes, as the operational area was
-  spatially compact and the predicted variability field remained
-  consistent between consecutive days. In future implementations,
-  on-board or near-real-time assimilation would need to be considered
-  to fully exploit the adaptive potential of the framework.
+\subsubsection{Multi-solution framework}
 
+Given challenges related to weather, assimilation and model
+prediction, while operating multiple AUVs over multiple days, multiple
+case solutions labeled \textbf{'A'} through \textbf{'D'} contribute to
+the final solution set. These largely reflect the impacts of operating
+in the harsh domain of the coastal environment.
 
-\kcomment{I think we need a subsection or some material to describe
-  the process above and below. As of now it seems too abrupt.}
+On 29\textsuperscript{th} October, the statistical model produced the
+initial forecast solution (A), which was used to plan the mission
+executed by XP2 (Fig. \ref{fig:scheme}). The resulting temperature
+data were later assimilated offline to produce an updated statistical
+model solution (\textbf{B1}) for 30\textsuperscript{th}
+October. Although operational real-time assimilation was initially
+planned, logistical constraints prevented its implementation;
+consequently, all assimilation was performed offline after mission
+completion. The targeted sampling algorithm, therefore, relied on
+statistical forecasts \emph{without} assimilation (\textbf{B}), using
+pre-existing data as input for daily mission planning. This limitation
+is not expected to have significantly affected the experimental
+outcomes, as the operational area was spatially compact and the
+predicted variability field remained consistent between consecutive
+days. In future implementations, on-board or near-real-time
+assimilation would need to be considered to fully exploit the adaptive
+potential of the framework.
 
 Data collected by XP3 and XP5 on 30\textsuperscript{th} October were
 assimilated offline to generate new model solutions for
-31\textsuperscript{st} October (C1, C2, C3, C4), along with a
-non-assimilated reference case (C). The configurations were as
-follows:
+31\textsuperscript{st} October (\textbf{C1--C4}), along with a
+non-assimilated reference case (\textbf{C}). The configurations were
+as follows:
 
 \begin{description}
 \item[C1] – assimilation including only XP2 data from
@@ -303,17 +310,17 @@ follows:
   and XP5)
 \end{description}
 
-An analogous setup was used for case D, in which the difference from
-case C is that the statistical predictions for 31\textsuperscript{st}
-October were generated using CMS data available as a prior up to
-different cutoff dates:
+An analogous setup was used for case \textbf{D}, in which the
+difference from case \textbf{C} is that the statistical predictions
+for 31\textsuperscript{st} October were generated using CMS data
+available as a prior up to different cutoff dates:
 
 \begin{description}
 \item[D] – forecast for 31\textsuperscript{st} October based on CMS
   data available as a prior until 29\textsuperscript{th} October
-\item[D1–-D4] – corresponding to assimilation configurations C1-–C4,
-  but using CMS data available prior until 30\textsuperscript{th}
-  October
+\item[D1–-D4] – corresponding to assimilation configurations
+  \textbf{C1-–C4}, but using CMS data available prior until
+  30\textsuperscript{th} October
 \end{description}
 
 Model performance was evaluated by comparing predicted and observed
@@ -321,12 +328,12 @@ temperature data along the AUV trajectories using the root-mean-square
 error (RMSE) as the primary performance metric for
 31\textsuperscript{st} October.
 
-\begin{figure}
-    \centering
-    %\includegraphics[width=.7\linewidth]{fig/temperatureprofiles.png}
-    \caption{INSERT schematic about the 3-day loop}
-    \label{fig:temperatureprofiles}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     %\includegraphics[width=.7\linewidth]{fig/temperatureprofiles.png}
+%     \caption{INSERT schematic about the 3-day loop}
+%     \label{fig:temperatureprofiles}
+% \end{figure}
 
 % PLEASE CHECK CAPTION OF FIGURE 3 - I have done this sequentially, except for this mod
 %   \label{fig:loop-closure} 

@@ -47,6 +47,24 @@ general trend of the shelf and slope
   future studies YES}
 
 
+%%%% SUBgrid variability - the importance of using autonomous systems %%%%%
+Another topic of discussion is the subgrid variability of LAUV temperature observations within the model grid. The analysis of temperature variability within the model grid provides additional insight into the subgrid-scale structure of the observed field and the representativeness of AUV-based measurements. Figure \ref{fig:iqd_3D} depicts the interquartile distance (IQD) of temperature values recorded by the LAUVs within the three-dimensional discretization of the statistical model. Each grid cell represents the maximum spatial resolution available to the model, while the IQR quantifies the local variability of in situ measurements acquired as the vehicles navigated through each cell.
+
+This analysis demonstrates that LAUVs frequently capture significant variability at scales smaller than the model resolution, revealing the existence of fine-scale gradients, in some locations greater than 1$^{\circ}$C, and processes that are unresolved by the model. Although the statistical model provides smoothed, grid-averaged predictions of ocean properties, LAUV measurements highlight fluctuations that occur within individual cells, indicating the presence of relevant subgrid-scale dynamics. These small-scale variations can contribute to local model–data discrepancies and should be taken into account when interpreting or assimilating observations.
+
+Across all missions, LAUVs sampled each grid cell between a few and several hundred times, with median values ranging from 9 to 14 measurements per cell and mean values between 19 and 26. These statistics indicate a relatively uniform and dense sampling pattern, sufficient to characterize the local variability of the water column at the subgrid level. The maximum number of samples per grid cell reached several thousand (up to 8757 on 31 October for XP5), though these extreme values are most probably biased by vehicle behavior near the surface, where the LAUVs temporarily remained stationary to communicate and acquire GPS positioning. As such, these maxima likely reflect oversampling at specific locations rather than representative variability across the full domain.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{iqd_xp5_30oct.png}
+    \caption{Enter Caption}
+    \label{fig:placeholder}
+\end{figure}
+Despite these localized biases, the overall sampling density achieved by the LAUVs provides a detailed depiction of fine-scale ocean variability. The IQD distributions reveal higher variability near the thermocline, where vertical gradients are strongest, while in some instances increased variability could also appear near the surface, potentially corresponding to small-scale frontal zones or localized mixing events. This analysis highlights that the LAUVs, despite having slightly higher sensor uncertainty than traditional ship-based CTD systems, can capture dynamic subgrid processes that are otherwise unresolved in model grids.
+
+Importantly, this subgrid variability is not merely observational noise but a meaningful indicator of local uncertainty and environmental heterogeneity. Incorporating this information—both the variability (IQD) and the spatial sampling density—into data assimilation frameworks could enhance the model’s ability to represent uncertainty at the subgrid scale and improve the realism of short-term forecasts.
+
+
+
  %%%%%%%%%%%%%
 The challenging ocean and meteorological conditions faced as part of
 this experiment precluded cycles of week-long operations, as
@@ -107,8 +125,8 @@ spatial and temporal resolution are considered \cite{Balaji_2022}.
 
 \begin{figure}[!]
   \centering
-  \includegraphics[scale=0.3]{fig/iqd_3D.jpeg}
-  \caption{not the final figure}
+  \includegraphics[scale=0.3]{fig/iqd_xp5_30.png}
+  \caption{Trajectory of the XP5 during the 30 October mission in the Nazaré Canyon region. The color shading represents the interquartile range (IQD) of temperature values recorded within each model grid cell along the vehicle’s path. The grid illustrates the horizontal resolution of the statistical model, and the results are shown for three representative depth layers: near-surface, mid-depth, and around 40 m, capturing distinct vertical regimes of variability. Higher IQD values indicate regions of higher thermal variability within model grid.}
   \label{fig:iqd_3D}
 \end{figure}
 

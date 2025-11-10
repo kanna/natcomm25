@@ -103,17 +103,6 @@ requiring flexibility in operations to avoid marine traffic, nets and
 crab-pots, also allows data collection in complex operating
 environments.
 
-% This has been done before, but we innovate in several aspects: 
-% \begin{itemize}
-%     \item Near-real time data visualization enable real.time response by operators..
-%     \item Simultaneous deployments in geographically separate subareas in the area of operations.
-%     \item Coordination also included risk minimizing considerations. This enabled operations in tight time intervals to collect data where it was needed taking advantage of openings provided by trawlers between consective legs.
-%     \item Parameterized framework enabling fine tuning of the overall approach. 
-%     \item Dense grid of observations.
-%     \item The sampling algorithm is not based only on position, but on error distributions and closed tours to maximize area coverage and utilization of the auvs.
-%     \end{itemize}
-
-
 \begin{figure}[!]
   \centering
   \includegraphics[scale=0.5]{fig/ensemble-2.jpg}
@@ -123,8 +112,6 @@ environments.
     a tight control loop.}
   \label{fig:block-diag}
 \end{figure}
-
-
 
 In this study, we address the challenge of such loop closure by
 implementing and evaluating a complete data cycle — from model
@@ -141,9 +128,15 @@ enhance ocean forecasts in highly dynamic coastal environments
 (Fig. \ref{fig:block-diag}). The experimental results obtained within
 \proj serve to illustrate and validate the proposed approach,
 highlighting the practical benefits and challenges of real-world
-adaptive ocean exploration. % Furthermore, we demonstrate that this
-% sampling robotic system offers unprecedented capabilities for ocean
-% studies by providing samples in close to real-time and enabling
-% scientists to adaptively re-task AUVs within minutes if some
-% interesting feature is detected.
+adaptive ocean exploration.
 
+This manuscript is organized as follows. Section \ref{sec:intro}
+provides an introduction to the problem we're tackling providing a
+motivation for the \emph{sample-assimilate-predict-direct}
+loop. Section \ref{sec:study-area} provides the environmental context
+and the challenge of modeling and operating robotic vehicles in a
+dynamic coastal region such as \naze. Section \ref{sec:methods}
+highlights the details of the forecasting, assimilation, sampling and
+operational strategies which lie at the core of this paper, while
+Section \ref{sec:disc} discusses the results from the experiment with
+conclusions and future work in Section \ref{sec:conclude}.

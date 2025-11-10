@@ -226,32 +226,35 @@ baseline cases without assimilation (\textbf{C} and \textbf{D}) and
 those incorporating the full set of AUV observations from previous
 days (\textbf{C4} and \textbf{D4}). This comparison highlights the
 point-wise behaviour of the statistical model under minimum and
-maximum assimilation influence.
+maximum assimilation influence \kcomment{Not sure what the implication
+  of ``point-wise behavior'' means. Also is it not 'no assimilation'
+  and 'assimilation' rather than minimum/maximum which don't have a
+  meaning here?}.
 
-The four scatter plots compares the temperature values acquired in
-situ by the AUVs on 31\textsuperscript{st} October against the
-corresponding geostatistical predictions derived from the statistical
-model under each scenario. The observations include all available
-measurements collected along the missions on that day (see
-Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate
-the depth layers associated with the vertical discretization used in
-the deterministic CMS model, which defines the vertical structure of
-the statistical model.
+The four scatter plots compare the measurements acquired in situ on
+31\textsuperscript{st} October against the corresponding
+geostatistical predictions derived under each scenario. The
+observations include all available measurements collected along the
+missions on that day (see Fig. \ref{fig:sst} and
+\ref{fig:temperatureprofiles}. Colors indicate the depth layers
+associated with the vertical discretization used in the deterministic
+CMS model which defines the vertical structure of the statistical
+model.
 
 In the baseline scenarios without assimilation (\textbf{C} and
-\textbf{D}), the scatter plots exhibit a wide spread of points around
-the reference line, indicating substantial discrepancies between the
-model predictions and the observed AUV temperatures. These deviations
-are particularly evident in \kcomment{...,????} where surface
-temperatures tend to be overestimated. This dispersion reflects the
-model’s limited ability to accurately reproduce the vertical thermal
-structure when it relies solely on CMS data without incorporating
-recent in situ information.
+\textbf{D}), the plots exhibit a wide spread of points around the
+reference line, indicating substantial discrepancies between the model
+predictions and the observed AUV measurements. These deviations are
+particularly evident in \kcomment{...,????} where surface temperatures
+tend to be overestimated. This dispersion reflects the model’s limited
+ability to accurately reproduce the vertical thermal structure when it
+relies solely on CMS data without incorporating recent in situ
+information.
 
 In contrast, the fully assimilated scenarios (\textbf{C4} and
-\textbf{D4}) show a much tighter clustering of points around
+\textbf{D4}) show a much tighter clustering of points around the
 reference, especially within the upper layers, where the previous AUV
-missions had provided dense and temporally relevant observations. This
+missions provide dense and temporally relevant observations. This
 reduction in spread suggests a clear improvement in predictive
 accuracy, indicating that the assimilation of targeted measurements
 effectively constrains the thermal structure and captures ongoing

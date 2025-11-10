@@ -1,30 +1,26 @@
 \section{Discussion}
 \label{sec:disc}
 
-
-%%%%%%%%%%%% xp2 vs xp3/xp5 results, north and south area %%%%%%%
 Although the overall results indicate that the assimilation procedure
 generally improves model skill, a more detailed and vehicle-specific
-analysis reveals important nuances. % Some
-% of these results highlight aspects that should be carefully considered
-% in the planning and execution of future oceanographic campaigns of this
-% nature.
-Figs. \ref{fig:rms_c} and \ref{fig:rms_d} present the RMSE of
-temperature predictions compared with in-situ data under the different
-assimilation scenarios (\textbf{C}, \textbf{C4}, \textbf{D}, and
-\textbf{D4}) for 31\textsuperscript{st} October. The results are shown
-as a function of depth and vehicle, allowing a direct comparison with
-and without data assimilation.  For XP3 and XP5, a clear and
-consistent trend is observed: the assimilation scenarios (\textbf{C4}
-and \textbf{D4}) improves the model prediction skill, with RMSE
-decreasing across all depths, indicating that the assimilation
-procedure effectively constrains the local dynamics represented in the
-geostatistical model. Although small differences are present between
-\textbf{C4} and \textbf{D4}, they are not statistically significant
-and confirm that assimilation results are robust with respect to
-initial configuration differences.
+analysis reveals important nuances. 
 
-The situation for XP2 is different. In this case, the assimilation
+Figs. \ref{fig:rms_c} and \ref{fig:rms_d} present the RMSE predictions
+compared with in-situ data under the different assimilation scenarios
+(\textbf{C}, \textbf{C4}, \textbf{D}, and \textbf{D4}) for
+31\textsuperscript{st} October. The results are shown as a function of
+depth and vehicle, allowing a direct comparison with and without data
+assimilation.  For XP3 and XP5, a clear and consistent trend is
+observed: the assimilation scenarios (\textbf{C4} and \textbf{D4})
+improves the model prediction skill, with RMSE decreasing across all
+depths, indicating that the assimilation procedure effectively
+constrains the local dynamics represented in the geostatistical
+model. Although small differences are present between \textbf{C4} and
+\textbf{D4}, they are not statistically significant and confirm that
+assimilation results are robust with respect to initial configuration
+differences.
+
+The situation for XP2 was different however. The assimilation
 scenarios (\textbf{C4} and \textbf{D4}) lead to higher prediction
 errors compared with the non-assimilation runs (\textbf{C} and
 \textbf{D}). This counterintuitive result stems from an important
@@ -43,10 +39,11 @@ circulation parallel to the general trend of the shelf and slope
 \cite{tyler2009europe,relvas2007physical,guerreiro2014influence}.
 \rmcomment{we can talk here about the clustering/ allocation by areas
   of different dyNAmics, problems with covergence of the error, etc -
-  future studies YES}
+  future studies YES.} \kcomment{Agree. This is where you might
+  speculate on how to separate out the regions using PCA or some form
+  of clustering but with a clear intended application.}
 
 
-%%%% SUBgrid variability - the importance of using autonomous systems %%%%%
 Another highlight of this experiment is the subgrid variability of AUV
 observations. The analysis of temperature variability within the model
 grid provides additional insight into the subgrid-scale structure of
@@ -56,31 +53,37 @@ measurements. Fig. \ref{fig:iqd_3D} depicts the interquartile distance
 three-dimensional discretization of the statistical model. Each grid
 cell represents the maximum spatial resolution available to the model,
 while the IQR quantifies the local variability of in situ measurements
-acquired as the vehicles navigated through each cell.
+acquired as the vehicles navigated through each
+cell.\kcomment{Fig. \ref{fig:iqd_3D} is very hard to read. Equally,
+  might not there be the argument, that to overcome this variability,
+  perhaps a higher res. model should be used? So it might be
+  worthwhile to make a stronger case for this statistical modeling
+  approach in the methods section. See my comments there.}
 
-This analysis demonstrates that AUVs frequently capture significant
-variability at scales smaller than the model resolution, revealing the
-existence of fine-scale gradients, in some locations greater than
-1$^{\circ}$C, and processes that are unresolved by the model. Although
-the statistical model provides smoothed, grid-averaged predictions of
-ocean properties, AUV measurements highlight fluctuations that occur
-within individual cells, indicating the presence of subgrid-scale
-dynamics. These small-scale variations can contribute to local
-model–data discrepancies and should be taken into account when
-interpreting or assimilating observations.
+This analysis demonstrates that robotic platform can capture
+significant variability at scales smaller than the model resolution,
+revealing the existence of fine-scale gradients, in some locations
+greater than 1$^{\circ}$C, as also processes that are unresolved by
+the model. Although the statistical model provides smoothed,
+grid-averaged predictions of ocean properties, AUV measurements here,
+highlight fluctuations that occur within individual cells, indicating
+the presence of subgrid-scale dynamics. These small-scale variations
+can contribute to local model–data discrepancies \kcomment{We need a
+  citation or something to buttress this claim.} and should be taken
+into account when interpreting or assimilating observations.
 
-Across all missions, the AUVs sampled each grid cell between a few and
-several hundred times, with median values ranging from 9 to 14
-measurements per cell and mean values between 19 and 26. These
-statistics indicate a relatively uniform and dense sampling pattern,
-sufficient to characterize the local variability of the water column
-at the subgrid level. The maximum number of samples per grid cell
-reached several thousand (up to 8757 on 31 October for XP5), though
-these extreme values are most probably biased by vehicle behavior near
-the surface, where the AUVs temporarily remained stationary to
-communicate and acquire GPS positioning. As such, these maxima likely
-reflect oversampling at specific locations rather than representative
-variability across the full domain.
+Across all missions, the AUVs sampled each grid cell with median
+values ranging from 9 to 14 measurements per cell and mean values
+\kcomment{Of temperature?}  between 19 and 26. These statistics
+indicate a relatively uniform and dense sampling pattern, sufficient
+to characterize the local variability of the water column at the
+subgrid level. The maximum number of samples per grid cell reached
+several thousand (for example up to 8757 on 31\textsuperscript{st}
+October for XP5), though these extreme values are most probably biased
+by vehicle behavior near the surface, where the AUVs temporarily
+remained stationary to communicate and acquire GPS. % As such, these
+% maxima likely reflect oversampling at specific locations rather than
+% representative variability across the full domain.
 
 Despite these localized biases, the overall sampling density achieved
 by the AUVs provides a detailed depiction of fine-scale ocean
@@ -89,9 +92,17 @@ thermocline, where vertical gradients are strongest, while in some
 instances increased variability could also appear near the surface,
 potentially corresponding to small-scale frontal zones or localized
 mixing events. This analysis highlights that the AUVs, despite having
-slightly higher sensor uncertainty than traditional ship-based CTD
-systems, can capture dynamic subgrid processes that are otherwise
-unresolved in model grids.
+slightly higher sensor uncertainty \kcomment{What is the evidence for
+  this? When a claim is made, for good or bad, it helps to have it
+  substantiated ideally with a citation or some text that walks thru
+  the reasoning. By saying this, you're making a claim about the
+  resolution of data and immediately deflating your claim. If the
+  claim, rightfully I believe, is that robotic sampling is more
+  efficient and provides higher resolution insights, then we ought to
+  just state it, not make it conditional. In fact unless it is a major
+  takeaway from this experiment, we perhaps not mentioned it.} than
+traditional ship-based CTD systems, can capture dynamic subgrid
+processes that are otherwise unresolved in model grids.
 
 Importantly, this subgrid variability is not merely observational
 noise but a meaningful indicator of local uncertainty and
@@ -99,34 +110,9 @@ environmental heterogeneity. Incorporating this information—both the
 variability (IQD) and the spatial sampling density—into data
 assimilation frameworks could enhance the model’s ability to represent
 uncertainty at the subgrid scale and improve the realism of short-term
-forecasts.
-
-
-
- %%%%%%%%%%%%%
-The challenging ocean and meteorological conditions faced as part of
-this experiment precluded cycles of week-long operations, as
-planned. Nevertheless, we were able to operate for 7 days during the
-3-week long deployment. We demonstrated the overall integrative
-overall approach to close modeling-sampling-assimilation-tasking cycle
-with the goal of improving the skill of oceanographic models by
-leveraging observations from AUVs, traditional methods such as
-ship-based measurements and opportunistic measurements using low-cost
-sensors, and by exploring synergies between dedicated surveys and
-opportunistic observations. ELIMINATE SHIP BASED MEASUREMENTS
-
-Full integration of command and control strategies comprising modeling,
-assimilation and adaptive sampling algorithms was demonstrated with the
-help of the mature software toolchain enabling 24/x operations with
-minimal operator’s support. The deployments were performed to evaluate
-and test the overall approach in an incremental fashion. The last days
-of the deployment demonstrated several iterations of the closed
-modeling-sampling-assimilation-tasking cycle. The accuracy of the
-predictions of the geostatistical model increased after several cycles,
-while the overall prediction errors decreased. However, these results
-still lack statistical significance because of the few consecutive
-cycles in which the overall approach was tested. We observed that we
-never had more than 3 consecutive days of operation.
+forecasts. \kcomment{But did we not assimilate \emph{all} the AUV
+  measurements at the resolution the vehicles sampled in? If so, why
+  the ``could enhance'' as against ``it did enhance''?}
 
 The dense grid of AUV observations enables post-experiment evaluation
 and testing of the assimilation schemes and of the geostatistical model.
@@ -140,28 +126,21 @@ investigate the selection of representative depths for the application
 of the sampling algorithm used to find the horizontal projection of the
 AUV paths. THIS HAS NOT BEEN DISCUSSED BEFORE
 
-This field study provided invaluable lessons in operational procedures,
-refinement of adaptive sampling and algorithms, and risk minimization to
-operate in an area with dense ship traffic and fishing nets. Our AUVs
-were occasionally impacted by strong vertical currents that may have
-resulted from the impact of internal waves that are common in the area,
-namely in stratified regions (which was the case) and that were observed
-with the help of remote sensing imagery during the deployments. Finally,
-the results achieved with this deployment provided additional insights
-and the motivation to further advance the state of the art in refining
-the modeling-sampling-assimilation-tasking cycle with the goal of
-improving the skill of oceanographic models. Furthermore, dense grids of
-sampled oceanographic data have the potential to fuel developments
+This field study provided invaluable lessons in operational
+procedures, refinement of adaptive sampling and algorithms, and risk
+minimization to operate in an area with dense ship traffic and fishing
+nets. Our AUVs were occasionally impacted by strong vertical currents
+that may have resulted from the impact of internal waves that are
+common in the area, and that were observed with the help of remote
+sensing imagery during the experiment. Finally, the results achieved
+with this deployment provided additional insights and the motivation
+to further advance the state of the art in refining the
+\emph{sample-assimilate-predict-direct} cycle with the goal of
+improving the skill of oceanographic models. Furthermore, dense grids
+of sampled oceanographic data have the potential to fuel developments
 targeting existing gaps in modeling skill when different levels of
 spatial and temporal resolution are considered \cite{Balaji_2022}.
 
-
-%\begin{figure}[!]
-%  \centering
-%  \includegraphics[scale=0.3]{fig/rms_bar_vechicle.png}
-%  \caption{not the final figure}
-%  \label{fig:rms_bar_vechicle}
-%\end{figure}
 
 \begin{figure}[!]
   \centering

@@ -4,43 +4,42 @@
 
 %%%%%%%%%%%% xp2 vs xp3/xp5 results, north and south area %%%%%%%
 Although the overall results indicate that the assimilation procedure
-generally improves model performance across most scenarios, a more
-detailed and vehicle-specific analysis reveals important nuances. Some
-of these results highlight aspects that should be carefully considered
-in the planning and execution of future oceanographic campaigns of this
-nature. These points are discussed following. Figures \ref{fig:rms_c}
-and \ref{fig:rms_c} presents the root-mean-square error (RMSE) of
-temperature predictions compared with in-situ data from XP2, XP3, and
-XP5 under the different assimilation scenarios (C, C4, D, and D4) for
-31\textsuperscript{st} October. The results are shown as a function of
-depth and vehicle, allowing a direct comparison between simulations with
-and without data assimilation. I SUGGEST EXPLAINING THIS BETTER
-
-For XP3 and XP5, a clear and consistent trend is observed: the
-assimilation scenarios (C4 and D4) improve the model prediction skill.
-The RMSE error decreases across all depths and vehicles, indicating that
-the assimilation procedure effectively constrains the local dynamics
-represented in the geostatistical model. Although small differences are
-present between C4 and D4, they are not statistically significant,
-confirming that the assimilation results are robust with respect to
+generally improves model skill, a more detailed and vehicle-specific
+analysis reveals important nuances. % Some
+% of these results highlight aspects that should be carefully considered
+% in the planning and execution of future oceanographic campaigns of this
+% nature.
+Figs. \ref{fig:rms_c} and \ref{fig:rms_d} present the RMSE of
+temperature predictions compared with in-situ data under the different
+assimilation scenarios (\textbf{C}, \textbf{C4}, \textbf{D}, and
+\textbf{D4}) for 31\textsuperscript{st} October. The results are shown
+as a function of depth and vehicle, allowing a direct comparison with
+and without data assimilation.  For XP3 and XP5, a clear and
+consistent trend is observed: the assimilation scenarios (\textbf{C4}
+and \textbf{D4}) improves the model prediction skill, with RMSE
+decreasing across all depths, indicating that the assimilation
+procedure effectively constrains the local dynamics represented in the
+geostatistical model. Although small differences are present between
+\textbf{C4} and \textbf{D4}, they are not statistically significant
+and confirm that assimilation results are robust with respect to
 initial configuration differences.
 
-The situation for XP2 is radically different. In this case, the
-assimilation scenarios (C4 and D4) lead to higher prediction errors
-compared with the non-assimilation runs (C and D). This
-counterintuitive result stems from an important spatial mismatch: on
-31\textsuperscript{st} October, XP2 operated north of the \naz Canyon,
-whereas the assimilated data from the previous days
-(29\textsuperscript{th} and 30\textsuperscript{th} October) were
-collected in its southern sector. The \naz Canyon marks a transition
-zone between distinct oceanographic regimes, where circulation
-patterns are strongly influenced by the canyon’s complex topography
-and the interaction between shelf and slope processes. Inside the \naz
-Canyon, residual currents are generally aligned along the canyon axis
-as a result of strong topographical control and this alignment extends
-well above the canyon edges (~150 m depth), implying a substantial
-disturbance of the predominant north–south circulation parallel to the
-general trend of the shelf and slope
+The situation for XP2 is different. In this case, the assimilation
+scenarios (\textbf{C4} and \textbf{D4}) lead to higher prediction
+errors compared with the non-assimilation runs (\textbf{C} and
+\textbf{D}). This counterintuitive result stems from an important
+spatial mismatch: on 31\textsuperscript{st} October, XP2 operated
+north of the \naz Canyon, whereas the assimilated data from the
+previous days (29\textsuperscript{th} and 30\textsuperscript{th}
+October) were collected south of it. The \naz Canyon marks a
+transition zone between distinct oceanographic regimes, where
+circulation patterns are strongly influenced by the canyon’s complex
+topography and the interaction between shelf and slope
+processes. Inside the canyon, residual currents are generally aligned
+along the canyon axis as a result of strong topographical control and
+this alignment extends well above the canyon edges ($\sim150$m depth),
+implying a substantial disturbance of the predominant north–south
+circulation parallel to the general trend of the shelf and slope
 \cite{tyler2009europe,relvas2007physical,guerreiro2014influence}.
 \rmcomment{we can talk here about the clustering/ allocation by areas
   of different dyNAmics, problems with covergence of the error, etc -
@@ -48,17 +47,16 @@ general trend of the shelf and slope
 
 
 %%%% SUBgrid variability - the importance of using autonomous systems %%%%%
-Another topic of discussion is the subgrid variability of AUV
-temperature observations within the model grid. The analysis of
-temperature variability within the model grid provides additional
-insight into the subgrid-scale structure of the observed field and the
-representativeness of AUV-based measurements. Figure \ref{fig:iqd_3D}
-depicts the interquartile distance (IQD) of temperature values
-recorded by the AUVs within the three-dimensional discretization of
-the statistical model. Each grid cell represents the maximum spatial
-resolution available to the model, while the IQR quantifies the local
-variability of in situ measurements acquired as the vehicles navigated
-through each cell.
+Another highlight of this experiment is the subgrid variability of AUV
+observations. The analysis of temperature variability within the model
+grid provides additional insight into the subgrid-scale structure of
+the observed field and the representativeness of AUV-based
+measurements. Fig. \ref{fig:iqd_3D} depicts the interquartile distance
+(IQD) of measurements recorded by the AUVs within the
+three-dimensional discretization of the statistical model. Each grid
+cell represents the maximum spatial resolution available to the model,
+while the IQR quantifies the local variability of in situ measurements
+acquired as the vehicles navigated through each cell.
 
 This analysis demonstrates that AUVs frequently capture significant
 variability at scales smaller than the model resolution, revealing the
@@ -66,9 +64,9 @@ existence of fine-scale gradients, in some locations greater than
 1$^{\circ}$C, and processes that are unresolved by the model. Although
 the statistical model provides smoothed, grid-averaged predictions of
 ocean properties, AUV measurements highlight fluctuations that occur
-within individual cells, indicating the presence of relevant
-subgrid-scale dynamics. These small-scale variations can contribute to
-local model–data discrepancies and should be taken into account when
+within individual cells, indicating the presence of subgrid-scale
+dynamics. These small-scale variations can contribute to local
+model–data discrepancies and should be taken into account when
 interpreting or assimilating observations.
 
 Across all missions, the AUVs sampled each grid cell between a few and

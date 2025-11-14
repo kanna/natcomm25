@@ -20,13 +20,14 @@ fundamental steps, executed iteratively on a daily basis:
   predicted state and its uncertainty over a predefined grid covering
   the study area. 
 
-\item \textbf{Targeted Sample Planning}: Here we define areas of high reward, those associated with larger uncertainty predictions. Using the uncertainty map
-  $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, a targeted sampling
-  algorithm determines the set of trajectories for a fleet of $N$ AUVs
-  for the next operational cycle. The goal is to maximize the
-  accumulated uncertainty sampled along the vehicle paths, while
-  satisfying vehicle-specific constraints. The planned trajectories
-  are transmitted to the vehicles for execution.
+\item \textbf{Targeted Sample Planning}: Here we define areas of high
+  reward, those associated with larger uncertainty predictions. Using
+  the uncertainty map $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, a
+  targeted sampling algorithm determines the set of trajectories for a
+  fleet of $N$ AUVs for the next operational cycle. The goal is to
+  maximize the accumulated uncertainty sampled along the vehicle
+  paths, while satisfying vehicle-specific constraints. The planned
+  trajectories are transmitted to the vehicles for execution.
 
 \item \textbf{Data Collection and Assimilation}: Throughout the
   operational period, each AUV collects measurements of the target
@@ -52,30 +53,32 @@ Fig. \ref{fig:loop-closure}.
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. However, conventional numerical ocean
 models are computationally intensive, and their runtime makes them
-impractical for use with high spatial resolution and in near-real-time mission planning \kcomment{Need
-  a citation here is a must indicating what it takes to model using
-  high res. numerical models. See my comment in the discussion section
-  related to subgrid variability to make a strong case for the model
-  we actually used.}. While similar assimilation cycles could, in
-principle, be implemented directly within deterministic numerical
-models, this would require either substantially higher computational
-resources or larger temporal horizons.
+impractical for use with high spatial resolution and in near-real-time
+mission planning \kcomment{Need a citation here is a must indicating
+  what it takes to model using high res. numerical models. See my
+  comment in the discussion section related to subgrid variability to
+  make a strong case for the model we actually used.}. While similar
+assimilation cycles could, in principle, be implemented directly
+within deterministic numerical models, this would require either
+substantially higher computational resources or larger temporal
+horizons.
 
 As a more practical alternative, we employ geostatistical stochastic
-sequential simulation as a computationally efficient surrogate for short-term spatial predictions of ocean variables together
-with estimates of spatial uncertainty \cite{deutsch1992}. This
-approach captures the essential variability of local ocean dynamics,
-based on calibrated deterministic dynamic ocean models, at a fraction
-of the computational cost of numerical models, while remaining
-flexible enough to rapidly assimilate new in situ observations
+sequential simulation as a computationally efficient surrogate for
+short-term spatial predictions of ocean variables together with
+estimates of spatial uncertainty \cite{deutsch1992}. This approach
+captures the essential variability of local ocean dynamics, based on
+calibrated deterministic dynamic ocean models, at a fraction of the
+computational cost of numerical models, while remaining flexible
+enough to rapidly assimilate new in situ observations
 \cite{Duarte2025}.  However, with this type of surrogate models we are
 not explicitly considering the full-physics of the ecosystem and the
 quality of the predictions directly depends on the accuracy of the
-calibrated model and prediction time length. If the calibrated model is unable to capture the
-true nature of the system the geostatistical predictions will likely
-be inaccurate.  Equally, if there is a new oceanographic event that is
-not present in the calibrated model, the geostatistical approach will
-not be captured.
+calibrated model and prediction time length. If the calibrated model
+is unable to capture the true nature of the system the geostatistical
+predictions will likely be inaccurate.  Equally, if there is a new
+oceanographic event that is not present in the calibrated model, the
+geostatistical approach will not be captured.
 
 The methodology relies on ensembles of geostatistical realizations,
 each representing a state of an ocean variable field conditioned by
@@ -177,12 +180,6 @@ key component in the daily cycle of forecast, adaptive sampling, and
 data assimilation. Additional insights into the algorithm and its
 deployment during \proj are reported elsewhere in
 \cite{bernacchi2025}.
-
-\kcomment{it MAY BE WORTH SAYING MORE ABOUT THESE PARAMETERS: DURATION
-  OF THE TOUR, ASSIMILATION PERIOD, ETC. The section above is simply
-  highlighting the method; its instantiation could come in the results
-  section.}
-
 
 \subsection{Operations and Data Collection}
 

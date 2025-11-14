@@ -273,9 +273,9 @@ with and without data assimilation.
 
 Given challenges related to weather, assimilation and model
 prediction, while operating multiple AUVs over multiple days, multiple
-scenario solutions labeled \textbf{'A'} through \textbf{'D'}
+scenario solutions whicht
 contribute to the final solution set. These largely reflect the
-impacts of operating in the harsh domain of the coastal environment.
+impacts of operating in the harsh domain of the coastal environment. Thescenarios, labelled A through D (and their corresponding assimilation variants), summarised in Table \ref{table:scenarios}, constitute the full scenarios explored in this study. The table provides a compact, colour-coded overview of all configurations, including forecast dates, prior CMS fields, and the specific AUV datasets assimilated at each stage, serving as a quick reference for the results presented in the following sections.
 
 On 29\textsuperscript{th} October, the statistical model produced the
 initial forecast solution (A), which was used to plan the mission
@@ -295,50 +295,36 @@ days. In future implementations, on-board or near-real-time
 assimilation would need to be considered to fully exploit the adaptive
 potential of the framework.
 
-\kcomment{I'm increasingly leaning towards making the following into a
-  table with dates given the importance to the scenarios in the
-  results section. Referring back to this section maybe with a
-  color-coded table for the 3 days might then be useful and a quick
-  visual reference.}
+For 31\textsuperscript{st} October, multiple assimilation configurations were tested to quantify how the information collected on previous days could influence short-term predictive skill. Temperature measurements from XP3 and XP5 on 30\textsuperscript{st} October were assimilated offline to generate scenarios C1–C4, complementing the non-assimilated reference case C. As detailed in Table \ref{table:scenarios}, these cases progressively integrate different subsets of AUV observations, ranging from XP2-only data (C1) to the full multi-vehicle dataset from 29\textsuperscript{st} to 30\textsuperscript{st} October (C4).
 
+A parallel set of scenarios (D and D1–D4) was generated to evaluate the sensitivity of the statistical model to the choice of prior CMS fields. The D-series uses CMS data available only up to 29\textsuperscript{st} October, thus representing a less favourable initial state, and applies the same assimilation configurations as in the C-series. This dual-series approach enables a controlled comparison of how data assimilation interacts with differences in model initialisation.
 
+Model performance was evaluated by comparing predicted and observed temperature data along the AUV trajectories using the Root Mean Square Error (RMSE) as the primary performance metric for 31\textsuperscript{st} October.
 
-Data collected by XP3 and XP5 on 30\textsuperscript{th} October were
-assimilated offline to generate new model solutions for
-31\textsuperscript{st} October (\textbf{C1--C4}), along with a
-non-assimilated reference case (\textbf{C}). The configurations were
-as follows:
-
-\begin{description}
-\item[C1] – assimilation including only XP2 data from
-  29\textsuperscript{th} October
-\item[C2] – assimilation including XP2 (29\textsuperscript{th} October)
-  and XP5 (30\textsuperscript{th} October) data
-\item[C3] – assimilation including only XP5 data from
-  30\textsuperscript{th} October
-\item[C4] – assimilation including all available data from
-  29\textsuperscript{th} and 30\textsuperscript{th} October (XP2, XP3,
-  and XP5)
-\end{description}
-
-An analogous setup was used for case \textbf{D}, in which the
-difference from case \textbf{C} is that the statistical predictions
-for 31\textsuperscript{st} October were generated using CMS data
-available as a prior up to different cutoff dates:
-
-\begin{description}
-\item[D] – forecast for 31\textsuperscript{st} October based on CMS
-  data available as a prior until 29\textsuperscript{th} October
-\item[D1–-D4] – corresponding to assimilation configurations
-  \textbf{C1-–C4}, but using CMS data available prior until
-  30\textsuperscript{th} October
-\end{description}
-
-Model performance was evaluated by comparing predicted and observed
-temperature data along the AUV trajectories using the Root Mean Square
-Error (RMSE) as the primary performance metric for
-31\textsuperscript{st} October.
-
+\begin{table}[]
+\caption{Summary of scenarios and assimilation configurations.}
+\label{table:scenarios}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccc}
+\hline
+\textbf{Scenario}                  & \textbf{Forecast date} & \textbf{CMS prior data up to} & \textbf{Assimilated AUV datasets} \\ \hline
+{\color[HTML]{3531FF} \textbf{A}}  & 29 Oct                 & 28 Oct                        & None (baseline)                   \\ \hline
+{\color[HTML]{9A0000} \textbf{B}}  & 30 Oct                 & 29 Oct                        & None (baseline)                   \\
+{\color[HTML]{FFCB2F} \textbf{B1}} & 30 Oct                 & 29 Oct                        & XP2 (29 Oct)                      \\ \hline
+{\color[HTML]{3531FF} \textbf{C}}  & 31 Oct                 & 30 Oct                        & None (baseline)                   \\
+{\color[HTML]{9A0000} \textbf{C1}} & 31 Oct                 & 30 Oct                        & XP2 (29 Oct)                      \\
+{\color[HTML]{FFCB2F} \textbf{C2}} & 31 Oct                 & 30 Oct                        & XP2 (29 Oct), XP5 (30 Oct)        \\
+{\color[HTML]{6200C9} \textbf{C3}} & 31 Oct                 & 30 Oct                        & XP5 (30 Oct)                      \\
+{\color[HTML]{009901} \textbf{C4}} & 31 Oct                 & 30 Oct                        & XP2, XP3, XP5 (29–30 Oct)         \\ \hline
+{\color[HTML]{3531FF} \textbf{D}}  & 31 Oct                 & 29 Oct                        & None (baseline)                   \\
+{\color[HTML]{9A0000} \textbf{D1}} & 31 Oct                 & 29 Oct                        & XP2 (29 Oct)                      \\
+{\color[HTML]{FFCB2F} \textbf{D2}} & 31 Oct                 & 29 Oct                        & XP2 (29 Oct), XP5 (30 Oct)        \\
+{\color[HTML]{6200C9} \textbf{D3}} & 31 Oct                 & 29 Oct                        & XP5 (30 Oct)                      \\
+{\color[HTML]{009901} \textbf{D4}} & 31 Oct                 & 29 Oct                        & XP2, XP3, XP5 (29–30 Oct)         \\ \hline
+\end{tabular}%
+}
+\end{table}
 % \begin{figure}
 %     \centering
 %     %\includegraphics[width=.7\linewidth]{fig/temperatureprofiles.png}

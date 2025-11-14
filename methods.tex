@@ -41,11 +41,10 @@ fundamental steps, executed iteratively on a daily basis:
 While previous efforts have concentrated on a form on embedded
 automated decision-making on AUVs
 \cite{mcgann08a,mcgann08b,ryan10,py10,Das-2010-637,das10,olaya12,rajan12}
-to demonstrate adaptive sampling, here we AUV trajectories are defined
-by human-in-the-loop decisions apriori, with adaptation focused on
-deployment based on $M_{\sigma_{\hat{\theta}}}(x, y)$. No automated
-decisions were made on the AUVs. Loop closure in this work, refers to
-the \emph{sample-assimilate-predict-direct} process as shown in
+to demonstrate adaptive sampling, here the trajectories are defined by
+human-in-the-loop, with adaptation focused on deployment based on
+$M_{\sigma_{\hat{\theta}}}(x, y)$. Loop closure in this work, refers
+to the \emph{sample-assimilate-predict-direct} process as shown in
 Fig. \ref{fig:loop-closure}.
 
 \subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
@@ -273,15 +272,20 @@ with and without data assimilation.
 
 Given challenges related to weather, assimilation and model
 prediction, while operating multiple AUVs over multiple days, multiple
-scenario solutions whicht
-contribute to the final solution set. These largely reflect the
-impacts of operating in the harsh domain of the coastal environment. Thescenarios, labelled A through D (and their corresponding assimilation variants), summarised in Table \ref{table:scenarios}, constitute the full scenarios explored in this study. The table provides a compact, colour-coded overview of all configurations, including forecast dates, prior CMS fields, and the specific AUV datasets assimilated at each stage, serving as a quick reference for the results presented in the following sections.
+scenario solutions contribute to the final solution set. These
+scenarios, labelled \textbf{A} through \textbf{D} (and their
+corresponding assimilation variants) are summarised in Table
+\ref{table:scenarios}. The table provides a compact, colour-coded
+overview of all configurations, including forecast dates, prior CMS
+fields, and the specific AUV datasets assimilated at each stage,
+serving as a quick reference for the results presented in the
+following sections.
 
 On 29\textsuperscript{th} October, the statistical model produced the
-initial forecast solution (A), which was used to plan the mission
-executed by XP2 (Fig. \ref{fig:scheme}). The resulting temperature
-data were later assimilated offline to produce an updated statistical
-model solution (\textbf{B1}) for 30\textsuperscript{th}
+initial forecast solution (\textbf{A}), which was used to plan the
+mission executed by AUV XP2 (Fig. \ref{fig:scheme}). The resulting
+temperature data were later assimilated offline to produce an updated
+statistical model solution (\textbf{B1}) for 30\textsuperscript{th}
 October. Although operational real-time assimilation was initially
 planned, logistical constraints prevented its implementation;
 consequently, all assimilation was performed offline after mission
@@ -295,11 +299,31 @@ days. In future implementations, on-board or near-real-time
 assimilation would need to be considered to fully exploit the adaptive
 potential of the framework.
 
-For 31\textsuperscript{st} October, multiple assimilation configurations were tested to quantify how the information collected on previous days could influence short-term predictive skill. Temperature measurements from XP3 and XP5 on 30\textsuperscript{st} October were assimilated offline to generate scenarios C1–C4, complementing the non-assimilated reference case C. As detailed in Table \ref{table:scenarios}, these cases progressively integrate different subsets of AUV observations, ranging from XP2-only data (C1) to the full multi-vehicle dataset from 29\textsuperscript{st} to 30\textsuperscript{st} October (C4).
+For 31\textsuperscript{st} October, multiple assimilation
+configurations were tested to quantify how the information collected
+on previous days could influence short-term predictive
+skill. Temperature measurements from XP3 and XP5 on
+30\textsuperscript{st} October were assimilated offline to generate
+scenarios \textbf{C1}-–\textbf{C4}, complementing the non-assimilated
+reference case \textbf{C}. These cases progressively integrate
+different subsets of AUV observations, ranging from XP2-only data
+(\textbf{C1}) to the full multi-vehicle dataset from
+29\textsuperscript{st} to 30\textsuperscript{st} October
+(\textbf{C4}).
 
-A parallel set of scenarios (D and D1–D4) was generated to evaluate the sensitivity of the statistical model to the choice of prior CMS fields. The D-series uses CMS data available only up to 29\textsuperscript{st} October, thus representing a less favourable initial state, and applies the same assimilation configurations as in the C-series. This dual-series approach enables a controlled comparison of how data assimilation interacts with differences in model initialisation.
+A parallel set of scenarios (\textbf{D} and \textbf{D1}–-\textbf{D4})
+was generated to evaluate the sensitivity of the statistical model to
+the choice of prior CMS fields. The \textbf{D}-series uses CMS data
+available only up to 29\textsuperscript{st} October, thus representing
+a less favorable initial state, and applies the same assimilation
+configurations as in the \textbf{C}-series. This dual-series approach
+enables a controlled comparison of how data assimilation interacts
+with differences in model initialization.
 
-Model performance was evaluated by comparing predicted and observed temperature data along the AUV trajectories using the Root Mean Square Error (RMSE) as the primary performance metric for 31\textsuperscript{st} October.
+Model performance was evaluated by comparing predicted and observed
+temperature data along the AUV trajectories using Root Mean Square
+Error (RMSE) as the performance metric for 31\textsuperscript{st}
+October.
 
 \begin{table}[]
 \caption{Summary of scenarios and assimilation configurations.}

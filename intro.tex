@@ -1,10 +1,10 @@
 \section{Introduction}
 \label{sec:intro}
 
-The coastal ocean, the marine areaS extending from the coastline to
+The coastal ocean, the marine areas extending from the coastline to
 the continental slope, encompassing the continental shelf, constitutes
 one of the most dynamic and complex regions of the ocean. These areas
-are characterized by high variabity, intricate topographies, and
+are characterized by high variability, intricate topographies, and
 coastline geometries. They are forced by a wide range of physical and
 biogeochemical processes which occur across diverse spatial and
 temporal scales. They are among the most productive and economically
@@ -60,7 +60,7 @@ logistic footprint
 However, even with these new tools, efficiently gathering data at the
 right spatial and temporal scales remains a complex challenge. AUVs
 are constrained by endurance, communication bandwidth, and operational
-risks such as vessel traffic, high currents and bathymetry. In
+risks such as vessel traffic, high speed currents and bathymetry. In
 addition, the ocean itself remains highly dynamic with key processes
 often evolving faster than traditional sampling strategies can
 capture. This opens the door to adaptive sampling strategies, where
@@ -73,14 +73,14 @@ autonomous vehicles dynamically prioritize areas for observation.
 Our approach combines model predictions with adaptive AUV
 sampling. Doing so combines predicted model uncertainties in
 comparison with prior data assimilation process with available
-obervations. Model forecasts identify where uncertainty is highest or
+observations. Model forecasts identify where uncertainty is highest or
 where new observations are expected to have the greatest impact in
-reducing forecast errors. Vehicles are then directed to sample these
+reducing forecast errors (i.e., higher value of information). Vehicles are then directed to sample these
 areas, and their data are in turn assimilated back into the models,
 % generating improved forecasts for subsequent adaptive planning 
 as a virtuous cycle. Doing so closes a critical feedback loop between
-models and observations; model prediction generates a forecast and
-associated uncertainty field while AUV based adaptive sampling targets
+data acquistion, models and observations; model prediction generates a forecast and
+associated uncertainty field while AUV based adaptive sampling target
 areas of maximum predicted uncertainty. Data assimilation from these
 high uncertainty regions are then incorporated into the model such
 that new predictions benefit from improved in-situ data, closing the
@@ -134,7 +134,7 @@ satellite constellation \cite{rajan21}.
 
 
 This manuscript is organized as follows. Section \ref{sec:intro}
-provides an introduction to the problem we're tackling providing a
+provides an introduction to the problem we are tackling providing a
 motivation for the \emph{sample-assimilate-predict-direct}
 loop. Section \ref{sec:study-area} provides the environmental context
 and the challenge of modeling and operating robotic vehicles in a

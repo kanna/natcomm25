@@ -14,13 +14,13 @@ fundamental steps, executed iteratively on a daily basis:
   of a target oceanic variable $\theta$, along with an associated
   uncertainty field $\sigma_{\hat{\theta}}(k+1, x, y)$, where $k$
   represents the current day and $(x, y)$ denote the geographical
-  coordinates.  These outputs are organized into discrete spatial
+  coordinates. These outputs are organized into discrete spatial
   maps, $M_{\hat{\theta}}(x, y)$ and
   $M_{\sigma_{\hat{\theta}}}(x, y)$, representing, respectively, the
   predicted state and its uncertainty over a predefined grid covering
   the study area. 
 
-\item \textbf{Targeted Sample Planning}: Using the uncertainty map
+\item \textbf{Targeted Sample Planning}: Here we define areas of high reward, those associated with larger uncertainty predictions. Using the uncertainty map
   $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, a targeted sampling
   algorithm determines the set of trajectories for a fleet of $N$ AUVs
   for the next operational cycle. The goal is to maximize the
@@ -52,7 +52,7 @@ Fig. \ref{fig:loop-closure}.
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. However, conventional numerical ocean
 models are computationally intensive, and their runtime makes them
-impractical for use in near-real-time mission planning \kcomment{Need
+impractical for use with high spatial resolution and in near-real-time mission planning \kcomment{Need
   a citation here is a must indicating what it takes to model using
   high res. numerical models. See my comment in the discussion section
   related to subgrid variability to make a strong case for the model
@@ -62,8 +62,7 @@ models, this would require either substantially higher computational
 resources or larger temporal horizons.
 
 As a more practical alternative, we employ geostatistical stochastic
-sequential simulation as a computationally efficient surrogate,
-producing short-term spatial predictions of ocean variables together
+sequential simulation as a computationally efficient surrogate for short-term spatial predictions of ocean variables together
 with estimates of spatial uncertainty \cite{deutsch1992}. This
 approach captures the essential variability of local ocean dynamics,
 based on calibrated deterministic dynamic ocean models, at a fraction
@@ -72,7 +71,7 @@ flexible enough to rapidly assimilate new in situ observations
 \cite{Duarte2025}.  However, with this type of surrogate models we are
 not explicitly considering the full-physics of the ecosystem and the
 quality of the predictions directly depends on the accuracy of the
-calibrated model. If the calibrated model is unable to capture the
+calibrated model and prediction time length. If the calibrated model is unable to capture the
 true nature of the system the geostatistical predictions will likely
 be inaccurate.  Equally, if there is a new oceanographic event that is
 not present in the calibrated model, the geostatistical approach will
@@ -90,7 +89,7 @@ reduction of forecast error.
 
 Beyond uncertainty prediction, the proposed framework also allows
 direct assimilation of AUV acquired data. Data collected on a given
-day is used to update the ocean variable forecast for the following
+day are used to update the ocean variable forecast for the following
 day by combining prior predictions with new measurements. The
 simulation grid, in this case, includes two temporal layers: the first
 containing the AUV measurements at their spatial locations and the
@@ -100,7 +99,7 @@ cell are averaged as a form of arithmetic upscaling
 \cite{Duarte2025}. To incorporate spatial and temporal variability, we
 apply direct sequential simulation with local means
 \cite{soares2001direct}\footnote{Defined by kriging estimates and
-  variances and conditioned to existing direct measurements and a
+  variances, which are conditioned to existing direct measurements and a
   spatial covariance matrix.}, where each simulated value is drawn
 from its conditional distribution, accounting for both prior simulated
 values and local mean models. Doing so enables consistent updating of

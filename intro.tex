@@ -4,21 +4,21 @@
 The coastal ocean, the marine areaS extending from the coastline to
 the continental slope, encompassing the continental shelf, constitutes
 one of the most dynamic and complex regions of the ocean. These areas
-are characterized by highly variable forcing mechanisms, intricate
-topographies, and coastline geometries. They are forced by a wide
-range of physical and biogeochemical processes which occur across
-diverse spatial and temporal scales. They are among the most
-productive and economically significant areas of the world’s oceans,
-benefiting from terrestrial inputs via river discharges and nutrient
-renewal driven by upwelling processes. As a result and in part,
-coastal areas concentrate a great proportion of human maritime
-activities, from fisheries and offshore aquaculture to renewable
-energy exploitation. Moreover, the coastal ocean acts as an interface
-between deep-ocean processes and coastal environment, modulating how
-large-scale phenomena — such as climate-driven changes or extreme
-weather events — impact coastal populations. It also regulates, for
-example, how anthropogenic influences originating on land are
-redistributed and affect marine ecosystems \cite{greene25}.
+are characterized by high variabity, intricate topographies, and
+coastline geometries. They are forced by a wide range of physical and
+biogeochemical processes which occur across diverse spatial and
+temporal scales. They are among the most productive and economically
+significant areas of the world’s oceans, benefiting from terrestrial
+inputs via river discharges and nutrient renewal driven by upwelling
+processes. As a result and in part, coastal areas concentrate a great
+proportion of human activities including leisure, to fisheries and
+offshore aquaculture to renewable energy exploitation. Moreover, the
+coastal ocean acts as an interface between deep-ocean processes and
+coastal environment, modulating how large-scale phenomena — such as
+climate-driven changes or extreme weather events — impact coastal
+populations. It also regulates, for example, how anthropogenic
+influences originating on land are redistributed and affect marine
+ecosystems \cite{greene25}.
 
 The complex interplay between physical, chemical, and biological
 processes in the coastal ocean can rapidly amplify or modulate the
@@ -29,12 +29,12 @@ consequences for coastal ecosystems. Accurately forecasting the state
 of the coastal ocean is therefore essential not only for safeguarding
 environmental and economic interests, but also for enhancing
 resilience to climate variability, natural hazards, and human-induced
-pressures.  Achieving this, however, remains a major scientific and
-technological challenge, given the high variability, rapid dynamics,
-and observational constraints inherent to these regions.
+pressures.  % Achieving this, however, remains a major scientific and
+% technological challenge, given the high variability, rapid dynamics,
+% and observational constraints inherent to these regions.
 
-Ocean models have become essential tools for predicting the ocean
-state and underpin a wide range of societal applications, from climate
+Ocean models have become essential tools for predicting ocean state
+and underpin a wide range of societal applications, from climate
 forecasting to pollution monitoring and resource management. However,
 these models are inherently imperfect representations of complex
 reality. Data assimilation techniques — where observational data are
@@ -43,7 +43,7 @@ adjusting model errors and improving their forecasting
 capabilities. Yet, the success of data assimilation depends heavily on
 the availability, quality, and relevance of observations.
 
-Observations of the ocean are obtained through multiple sources.
+% Observations of the ocean are obtained through multiple sources.
 Satellite remote sensing offers extensive spatial coverage but is
 limited to surface measurements with usually low spatial resolution
 and often compromised by atmospheric conditions. In situ observations,
@@ -70,38 +70,36 @@ sampling \cite{BinZhang07,Singh09,smith14,fossum19} represents a
 fundamental shift: instead of executing pre-planned missions,
 autonomous vehicles dynamically prioritize areas for observation.
 
-One approach combines model predictions with adaptive AUV
+Our approach combines model predictions with adaptive AUV
 sampling. Doing so combines predicted model uncertainties in
 comparison with prior data assimilation process with available
 obervations. Model forecasts identify where uncertainty is highest or
 where new observations are expected to have the greatest impact in
 reducing forecast errors. Vehicles are then directed to sample these
 areas, and their data are in turn assimilated back into the models,
-generating improved forecasts for subsequent adaptive planning as a
-virtuous cycle. Doing so closes a critical feedback loop between
+% generating improved forecasts for subsequent adaptive planning 
+as a virtuous cycle. Doing so closes a critical feedback loop between
 models and observations; model prediction generates a forecast and
-associated uncertainty field while adaptive sampling targets areas of
-maximum predicted uncertainty. Data assimilation from these high
-uncertainty regions are then incorporated into the model such that new
-predictions benefit from improved in-situ data, closing the loop.
-Such a \emph{sample-assimilate-predict-direct} data cycle approach
-promises to significantly enhance the skill of ocean forecasts,
-especially in the complex coastal environment where processes occur
-over a wide range of scales and where human and environmental stakes
-are high. It also has the potential to improve operational efficiency
-by optimizing the deployment of expensive and resource-constrained
-observational assets. Additionally, sampling resolution with AUVs
-vastly outweighs data obtained from traditional ship-based
-approaches. Multiple AUVs sampling simultaneously as we do here, also
-makes a dent in spatial as well as temporal coverage of such dynamic
-environments at far moderate costs.
-
-They can provide near real-time data allowing for their rapid
-re-tasking and potentially placement in spatially separated
-regions. Operating multiple vehicles in coastal regions while
-requiring flexibility in operations to avoid marine traffic, nets and
-crab-pots, also allows data collection in complex operating
-environments.
+associated uncertainty field while AUV based adaptive sampling targets
+areas of maximum predicted uncertainty. Data assimilation from these
+high uncertainty regions are then incorporated into the model such
+that new predictions benefit from improved in-situ data, closing the
+loop.  Such a \emph{sample-assimilate-predict-direct} data cycle
+approach promises to significantly enhance the skill of ocean
+forecasts, especially in the complex coastal environment where
+processes occur over a wide range of scales. % It also has the potential
+% to improve operational efficiency by optimizing the deployment of
+% expensive and resource-constrained observational assets.
+Additionally, sampling resolution with AUVs vastly outweighs data
+obtained from traditional ship-based approaches. Multiple AUVs
+sampling simultaneously as we do here, also makes a dent in spatial as
+well as temporal coverage of such dynamic environments at far moderate
+costs. Further, AUVs can provide near real-time data allowing for
+their rapid re-tasking and potentially placement in spatially
+separated regions. % Operating multiple vehicles in coastal regions
+% while requiring flexibility in operations to avoid marine traffic,
+% nets and crab-pots, also allows data collection in complex operating
+% environments.
 
 \begin{figure}[!]
   \centering
@@ -119,20 +117,20 @@ prediction, to uncertainty projection, to adaptive sampling and data
 assimilation — in a coastal ocean environment. The work was conducted
 within the framework of \proj (\textbf{F}ield expe\textbf{R}iments for
 mod\textbf{E}ling, a\textbf{S}similatio\textbf{N} and
-adaptiv\textbf{E} samp\textbf{L}ing), a project specifically designed
-to explore and test model-driven robotic exploration strategies. \proj
-provided the experimental setting and operational assets to
-demonstrate how model-based uncertainty fields can drive adaptive
-sampling missions aimed at improving ocean model predictive skills to
-enhance ocean forecasts in highly dynamic coastal environments
-(Fig. \ref{fig:block-diag}). The experimental results obtained within
-\proj serve to illustrate and validate the proposed approach,
-highlighting the practical benefits and challenges of real-world
-adaptive ocean exploration. \proj itself is part of a larger concept
-for multi-domain sensing, observation and ocean exploration, which
-couples ocean models, autonomous robotics, Artificial Intelligence and
-Machine Learning coupled with a small satellite constellation
-\cite{rajan21}.
+adaptiv\textbf{E} samp\textbf{L}ing), specifically designed to explore
+and test model-driven robotic exploration strategies
+(Fig. \ref{fig:block-diag}).% \proj provided
+% the experimental setting and operational assets to demonstrate how
+% model-based uncertainty fields can drive adaptive sampling missions
+% aimed at improving ocean model predictive skills to enhance ocean
+% forecasts in highly dynamic coastal environments
+The experimental results obtained within \proj serve to illustrate and
+validate the proposed approach, highlighting the practical benefits
+and challenges of real-world adaptive ocean exploration. \proj itself
+is part of a larger concept for multi-domain sensing, observation and
+ocean exploration, which couples ocean models, autonomous robotics,
+Artificial Intelligence and Machine Learning coupled with a small
+satellite constellation \cite{rajan21}.
 
 
 This manuscript is organized as follows. Section \ref{sec:intro}

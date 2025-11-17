@@ -115,19 +115,13 @@ uncertainty.\kcomment{I think this para is very important and should
 The continuity of the variable field in space and time is
 characterized by variogram models fitted to long-term calibrated ocean
 model data from the E.U. Copernicus Marine Service (CMS)
-\cite{CMEMS2017}. For each depth of the numerical ocean model,
-geostatistical simulations are carried out independently, using a
-moving temporal window of fourteen previous days as conditioning data
-(i.e., experimental data) to predict the subsequent day. The size of
-the temporal window was achieved by trial-and-error using a calibrated
-numerical model for the same region and under the same season, and
-comparing the geostatistical predictions against the response of the
-numerical ocean model. This sliding-window strategy strikes a balance
-between forecast skill and computational feasibility, and can be
-adapted according to the complexity of the oceanographic
-conditions. \kcomment{AN EXPLANATION OF THE METHOD THAT PROCEEDS BY
+\cite{CMEMS2017}. For each depth layer of the deterministic model, geostatistical simulations are performed independently using a moving temporal window of the previous 14 days as conditioning data. The window length was selected through comparison with the deterministic model’s short-term evolution under similar seasonal conditions, striking a balance between forecast stability and computational feasibility. Spatial propagation occurs only horizontally within each depth level, while vertical consistency is implicitly maintained through the depth-specific variogram structures derived from the 3D deterministic model.
+
+%For each depth of the numerical ocean model,
+%geostatistical simulations are carried out independently, using a moving temporal window of fourteen previous days as conditioning data (i.e., experimental data) to predict the subsequent day. The size of the temporal window was achieved by trial-and-error using a calibrated numerical model for the same region and under the same season, and comparing the geostatistical predictions against the response of the numerical ocean model. This sliding-window strategy strikes a balance between forecast skill and computational feasibility, and can be adapted according to the complexity of the oceanographic conditions. 
+\kcomment{AN EXPLANATION OF THE METHOD THAT PROCEEDS BY
   DEPTHS MAY BE USEFUL. Is PROPAGRATION DONE ONLY IN THE HORIZONTAL
-  DOMAINS?}
+  DOMAINS?}, \rmcomment{corrected}
 
 This provides both a forecast of ocean variables being simulated, as
 well as a quantitative assessment of the prediction uncertainty.  By
@@ -142,10 +136,10 @@ can be found in \cite{Duarte2025}.
 
 \kcomment{PLEASE READ THESE ITEMS; THIS WAS INSERTED WED AT 1PM
 \begin{itemize}
-    \item WE HAVE NOT DISCUSSED THE FACT THAT THE INPUT TO THE SAMPLING ALGORITHM IS JUST AM HORIZONTAL SLICE OF THE ERROR PREDICTION
-    \item but this can be somewhat compensated in the vertical domain by the YOYO
-    \item but we may need to explain how have we selected the depth to be used in the sampling algorithm
-    \item discussion about the mixed layer depth as suggested by Ajit?
+    \item WE HAVE NOT DISCUSSED THE FACT THAT THE INPUT TO THE SAMPLING ALGORITHM IS JUST AM HORIZONTAL SLICE OF THE ERROR PREDICTION \rmcomment{it is not. the sampling algorithm is based on an average of the horizontal slices between surface and 40 m - i introduced some text in next section}
+    \item but this can be somewhat compensated in the vertical domain by the YOYO \rmcomment{done in The Sampling Algorithm section}
+    \item but we may need to explain how have we selected the depth to be used in the sampling algorithm \rmcomment{done in The Sampling Algorithm section}
+    \item discussion about the mixed layer depth as suggested by Ajit? \rmcomment{partially done in The Sampling Algorithm section}
 \end{itemize}
 }
 
@@ -160,8 +154,12 @@ distribution, which together define the reward landscape for the
 planner. The task is then to generate, for each vehicle, a tour, that
 accumulates the highest possible uncertainty values. The tour is
 traveled at a prescribed AUV speed while the duration is bounded above
-by the assimilation period. the starting and ending point is selected
+by the assimilation period. The starting and ending point is selected
 to simplify logistics for launch and recovery.
+
+Although the underlying deterministic model (CMS model) is fully three-dimensional and the statistical solution also provides predictions across multiple depth layers (as discussed in the previous subsection), in this work, the sampling algorithm operates on a 2D horizontal field derived from the 3D uncertainty structure of the statistical solution. This field is obtained by averaging the horizontal slices of uncertainty between the surface and 40 m depth, a depth interval chosen to represent the upper mixed layer in the study region. Within this layer, turbulent mixing typically maintains relatively weak vertical gradients, and most of the temperature variability relevant for mission planning is concentrated near the surface and upper thermocline. Averaging across this depth range, therefore, yields a stable and physically meaningful 2D representation of the uncertainty field.
+
+Although the trajectory planning itself is carried out in two dimensions, the yo-yo motion executed by the AUVs along each transect naturally restores vertical sampling capability, compensating for the 2D planning approximation and enabling the acquisition of high-vertical-resolution profiles at all visited locations. This strategy also aligns with the dominant physical and biogeochemical processes occurring within the mixed layer, where air–sea interactions, nutrient entrainment, and local thermal structure exert primary control on short-term dynamics.
 
 The tour itself is cast as a graph theoretic problem. The spatial
 uncertainty map is first pre-processed to remove obstacles and

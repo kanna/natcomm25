@@ -14,39 +14,36 @@ fundamental steps, executed iteratively on a daily basis:
   of a target oceanic variable $\theta$, along with an associated
   uncertainty field $\sigma_{\hat{\theta}}(k+1, x, y)$, where $k$
   represents the current day and $(x, y)$ denote the geographical
-  coordinates. These outputs are organized into discrete spatial
-  maps, $M_{\hat{\theta}}(x, y)$ and
-  $M_{\sigma_{\hat{\theta}}}(x, y)$, representing, respectively, the
-  predicted state and its uncertainty over a predefined grid covering
-  the study area. 
+  coordinates. These outputs are organized into discrete spatial maps,
+  $M_{\hat{\theta}}(x, y)$ and $M_{\sigma_{\hat{\theta}}}(x, y)$,
+  representing respectively, the predicted state and its uncertainty
+  over a predefined grid covering the study area.
 
-\item \textbf{Targeted Sample Planning}: Here we define areas of high
-  reward, those associated with larger uncertainty predictions. Using
-  the uncertainty map $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, a
+\item \textbf{Targeted Sampling}: We define areas of high reward,
+  those associated with larger uncertainty predictions. Using the
+  uncertainty map $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, the
   targeted sampling algorithm determines the set of trajectories for a
   fleet of $N$ AUVs for the next operational cycle. The goal is to
-  maximize the accumulated uncertainty sampled along the vehicle
-  paths, while satisfying vehicle-specific constraints. The planned
-  trajectories are transmitted to the vehicles for execution.
+  maximize the accumulated uncertainty sampled along the vehicles
+  trajectories, while satisfying vehicle-specific constraints. 
 
 \item \textbf{Data Collection and Assimilation}: Throughout the
   operational period, each AUV collects measurements of the target
-  variable $\theta$ along its assigned path. After the mission is
-  completed, the collected measurements are assimilated into the
-  numerical model using an appropriate data assimilation scheme. This
-  updated model state serves as the new initial condition for the next
-  forecasting cycle, closing the loop.
+  variable $\theta$ along its assigned path. After mission completion,
+  the collected measurements are assimilated into the numerical model
+  using an appropriate data assimilation scheme. This updated model
+  state serves as the new initial condition for the next forecasting
+  cycle, closing the loop.
 
 \end{description}
 
-While previous efforts have concentrated on a form on embedded
-automated decision-making on AUVs
-\cite{mcgann08a,mcgann08b,ryan10,py10,Das-2010-637,das10,olaya12,rajan12}
-to demonstrate adaptive sampling, here the trajectories are defined by
-human-in-the-loop, with adaptation focused on deployment based on
-$M_{\sigma_{\hat{\theta}}}(x, y)$. Loop closure in this work, refers
-to the \emph{sample-assimilate-predict-direct} process as shown in
-Fig. \ref{fig:loop-closure}.
+While previous efforts have concentrated on a form of embedded and
+automated decision-making for AUV-based adaptive sampling
+\cite{mcgann08a,mcgann08b,ryan10,py10,Das-2010-637,das10,olaya12,rajan12},
+the trajectories in this work are defined manually, with adaptation
+focused on deployment based on $M_{\sigma_{\hat{\theta}}}(x, y)$. Loop
+closure in this work, therefore, refers to the
+\emph{sample-assimilate-predict-direct} process.
 
 \subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
 
@@ -54,14 +51,13 @@ Sampling strategies rely on timely information about the spatial
 variability of ocean properties. However, conventional numerical ocean
 models are computationally intensive, and their runtime makes them
 impractical for use with high spatial resolution and in near-real-time
-mission planning \kcomment{Need a citation here is a must indicating
-  what it takes to model using high res. numerical models. See my
-  comment in the discussion section related to subgrid variability to
-  make a strong case for the model we actually used.}. While similar
-assimilation cycles could, in principle, be implemented directly
-within deterministic numerical models, this would require either
-substantially higher computational resources or larger temporal
-horizons.
+mission planning \cite{agarwal21} \kcomment{Need a citation here is a
+  must indicating what it takes to model using high res. numerical
+  models. I've put one in for now, but not exactly the citation I was
+  hoping for.}. While similar assimilation cycles could, in principle,
+be implemented directly within deterministic numerical models, this
+would require either substantially higher computational resources or
+larger temporal horizons.
 
 As a more practical alternative, we employ geostatistical stochastic
 sequential simulation as a computationally efficient surrogate for
@@ -70,7 +66,7 @@ estimates of spatial uncertainty \cite{deutsch1992}. This approach
 captures the essential variability of local ocean dynamics, based on
 calibrated deterministic dynamic ocean models, at a fraction of the
 computational cost of numerical models, while remaining flexible
-enough to rapidly assimilate new in situ observations
+enough to rapidly assimilate new in-situ observations
 \cite{Duarte2025}.  However, with this type of surrogate models we are
 not explicitly considering the full-physics of the ecosystem and the
 quality of the predictions directly depends on the accuracy of the
@@ -78,7 +74,7 @@ calibrated model and prediction time length. If the calibrated model
 is unable to capture the true nature of the system the geostatistical
 predictions will likely be inaccurate.  Equally, if there is a new
 oceanographic event that is not present in the calibrated model, the
-geostatistical approach will not be captured.
+geostatistical approach will not be able to capture it.
 
 The methodology relies on ensembles of geostatistical realizations,
 each representing a state of an ocean variable field conditioned by
@@ -86,9 +82,9 @@ each representing a state of an ocean variable field conditioned by
 observations. By computing the pointwise standard deviation across the
 ensemble, we obtain spatial uncertainty maps that highlight regions
 where predictions are more variable and therefore potentially more
-informative for sampling. These maps serve as the basis for
-identifying areas where new measurements are expected to maximize the
-reduction of forecast error.
+informative for robotic sampling. These maps then, serve as the basis
+for identifying areas where new measurements are expected to maximize
+the reduction of forecast error.
 
 Beyond uncertainty prediction, the proposed framework also allows
 direct assimilation of AUV acquired data. Data collected on a given
@@ -102,69 +98,67 @@ cell are averaged as a form of arithmetic upscaling
 \cite{Duarte2025}. To incorporate spatial and temporal variability, we
 apply direct sequential simulation with local means
 \cite{soares2001direct}\footnote{Defined by kriging estimates and
-  variances, which are conditioned to existing direct measurements and a
-  spatial covariance matrix.}, where each simulated value is drawn
+  variances, which are conditioned to existing direct measurements and
+  a spatial covariance matrix.}, where each simulated value is drawn
 from its conditional distribution, accounting for both prior simulated
 values and local mean models. Doing so enables consistent updating of
 the variable field while integrating both direct AUV observations and
-\textit{priori} information. The ensemble of realizations thus
-provides an updated ocean forecast and a quantitative measure of
-uncertainty.\kcomment{I think this para is very important and should
-  be clear. An image of the process would be very helpful}
+a priori information. The ensemble of realizations thus provides an
+updated ocean forecast and a quantitative measure of
+uncertainty.
  
 The continuity of the variable field in space and time is
 characterized by variogram models fitted to long-term calibrated ocean
 model data from the E.U. Copernicus Marine Service (CMS)
 \cite{CMEMS2017}. For each depth layer of the deterministic model,
 geostatistical simulations are performed independently using a moving
-temporal window of the previous 14 days as conditioning data. The
+temporal window of the previous 14 days as conditioning data. This
 window length was selected through comparison with the deterministic
 model’s short-term evolution under similar seasonal conditions,
 striking a balance between forecast stability and computational
-feasibility. Spatial propagation occurs only horizontally within each
-depth level, while vertical consistency is implicitly maintained
-through the depth-specific variogram structures derived from the 3D
-deterministic model.
-
+cost. Spatial propagation occurs only horizontally within each depth
+level, while vertical consistency is implicitly maintained through the
+depth-specific variogram structures derived from the 3D deterministic
+model.
 
 This provides both a forecast of ocean variables being simulated, as
 well as a quantitative assessment of the prediction uncertainty.  By
-updating the forecasts with new AUV measurements through sequential
-assimilation, the method progressively refines the variable field
-while maintaining consistency with prior model dynamics. The resulting
-forecast and uncertainty maps then form the input for the target
-sampling algorithm, guiding the allocation of AUV trajectories towards
-regions of greatest expected information gain. More details about the
-model, its development, and application during the \proj experiment
-can be found in \cite{Duarte2025}. 
+updating the forecasts with new in-situ measurements through
+sequential assimilation, the method progressively refines the variable
+field while maintaining consistency with prior model dynamics. The
+resulting forecast and uncertainty maps then form the input for the
+targeted sampling algorithm, guiding the allocation of AUV
+trajectories towards regions of greatest expected information
+gain. More details about the model, its development, and application
+during the \proj experiment can be found in \cite{Duarte2025}.
 
-\kcomment{PLEASE READ THESE ITEMS; THIS WAS INSERTED WED AT 1PM
-\begin{itemize}
-    \item WE HAVE NOT DISCUSSED THE FACT THAT THE INPUT TO THE SAMPLING ALGORITHM IS JUST AM HORIZONTAL SLICE OF THE ERROR PREDICTION \rmcomment{it is not. the sampling algorithm is based on an average of the horizontal slices between surface and 40 m - i introduced some text in next section}
-    \item but this can be somewhat compensated in the vertical domain by the YOYO \rmcomment{done in The Sampling Algorithm section}
-    \item but we may need to explain how have we selected the depth to be used in the sampling algorithm \rmcomment{done in The Sampling Algorithm section}
-    \item discussion about the mixed layer depth as suggested by Ajit? \rmcomment{partially done in The Sampling Algorithm section}
-\end{itemize}
-}
+% \kcomment{PLEASE READ THESE ITEMS; THIS WAS INSERTED WED AT 1PM
+% \begin{itemize}
+%     \item WE HAVE NOT DISCUSSED THE FACT THAT THE INPUT TO THE SAMPLING ALGORITHM IS JUST AM HORIZONTAL SLICE OF THE ERROR PREDICTION \rmcomment{it is not. the sampling algorithm is based on an average of the horizontal slices between surface and 40 m - i introduced some text in next section}
+%     \item but this can be somewhat compensated in the vertical domain by the YOYO \rmcomment{done in The Sampling Algorithm section}
+%     \item but we may need to explain how have we selected the depth to be used in the sampling algorithm \rmcomment{done in The Sampling Algorithm section}
+%     \item discussion about the mixed layer depth as suggested by Ajit? \rmcomment{partially done in The Sampling Algorithm section}
+% \end{itemize}
+% }
 
 \subsection{The Sampling Algorithm}
 
-The adaptive sampling problem posed is the design of vehicle
+The adaptive sampling problem we pose here, is the design of vehicle
 trajectories that maximize information gain
 \cite{eidsvik2015,fossum18} extracted from a model-derived uncertainty
 map, while satisfying operational AUV constraints. Each day, the
 models provide both a forecast field and its associated uncertainty
 distribution, which together define the reward landscape for the
-planner. The task is then to generate, for each vehicle, a tour, that
-accumulates the highest possible uncertainty values. The tour is
+trajectory planner. The task is to generate, for each vehicle, a tour,
+that accumulates the highest possible uncertainty values. The tour is
 traveled at a prescribed AUV speed while the duration is bounded above
 by the assimilation period. The starting and ending point is selected
 to simplify logistics for launch and recovery.
 
-Although the underlying deterministic model (CMS model) is fully
+Although the underlying deterministic CMS model is fully
 three-dimensional and the statistical solution also provides
-predictions across multiple depth layers (as discussed in the previous
-subsection), in this work, the sampling algorithm operates on a 2D
+predictions across multiple depth layers (as noted above), in this
+work, the sampling algorithm operates on a 2-Dimensional (2D)
 horizontal field derived from the 3D uncertainty structure of the
 statistical solution. This field is obtained by averaging the
 horizontal slices of uncertainty between the surface and 40 m depth, a
@@ -172,19 +166,19 @@ depth interval chosen to represent the upper mixed layer in the study
 region. Within this layer, turbulent mixing typically maintains
 relatively weak vertical gradients, and most of the temperature
 variability relevant for mission planning is concentrated near the
-surface and upper thermocline. Averaging across this depth range,
+surface and the upper thermocline. Averaging across this depth range
 therefore, yields a stable and physically meaningful 2D representation
 of the uncertainty field.
 
 Although the trajectory planning itself is carried out in two
 dimensions, the yo-yo motion executed by the AUVs along each transect
 naturally restores vertical sampling capability, compensating for the
-2D planning approximation and enabling the acquisition of
-high-vertical-resolution profiles at all visited locations. This
-strategy also aligns with the dominant physical and biogeochemical
-processes occurring within the mixed layer, where air–sea
-interactions, nutrient entrainment, and local thermal structure exert
-primary control on short-term dynamics.
+2D approximation and enabling the acquisition of high
+vertical-resolution profiles at all visited locations. This strategy
+also aligns with the dominant physical and biogeochemical processes
+occurring within the mixed layer, where air–sea interactions, nutrient
+entrainment, and local thermal structure exert primary control on
+short-term dynamics \kcomment{Need a citation}.
 
 The tour itself is cast as a graph theoretic problem. The spatial
 uncertainty map is first pre-processed to remove obstacles and
@@ -199,8 +193,8 @@ returns a set of near-optimal trajectories that prioritize regions of
 greatest uncertainty, while ensuring vehicle endurance and safety
 constraints. This provides a principled way of steering autonomous
 platforms toward the most informative sampling locations, forming a
-key component in the daily cycle of forecast, adaptive sampling, and
-data assimilation. Additional insights into the algorithm and its
+key component in the daily cycle of forecast, sampling, and
+assimilation. Additional insights into the algorithm and its
 deployment during \proj are reported elsewhere in
 \cite{bernacchi2025}.
 
@@ -259,7 +253,7 @@ generation of a statistical model forecast and its associated
 uncertainty field based on the Copernicus Marine Service (CMS) data
 available up to the previous day \cite{sotillo2021}; (ii) the
 execution of the target sampling algorithm to plan the next day
-missions; and (iii) in situ data collection by AUVs following the
+missions; and (iii) in-situ data collection by AUVs following the
 algorithmically determined tours. The data collected within the
 previous day were subsequently assimilated into the statistical model
 to produce updated forecasts, enabling comparisons between forecasts

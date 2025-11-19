@@ -1,12 +1,10 @@
 \section{Experimental Results}
 \label{sec:results}
 
-This section highlights the results of the \proj experiment, focusing
-on the integration of model forecasts, sampling, and data assimilation
-using autonomous underwater vehicles (AUVs). The analysis combines CMS
-and statistical model forecasts with in situ observations to assess
-how the proposed data-cycle approach can enhance short-term ocean
-prediction in a dynamic coastal environment.
+In this section we analyze the results with the combination of CMS
+data, the statistical model forecasts and in situ observations to
+assess the impact to short-term ocean prediction in a dynamic coastal
+environment like \naze.
 
 Fig. \ref{fig:sst} provides an overview of the environmental
 conditions observed during the three-day experimental window
@@ -16,12 +14,16 @@ background fields correspond to the Level-3 Sea Surface Temperature
 (SST) product from CMS. The operational area was compact, covering
 approximately 100 km\textsuperscript{2} south of the \naz Canyon.
 While all missions were planned using the sampling algorithm to
-explore the temperature variability predicted by the statistical
-model, on 31\textsuperscript{st} October, XP2 followed cross-shore
-transect of approximately 13 km to sample an internal wave hotspot,
-but, for the purpose of this study, it serves as an independent
-ground-truth dataset. These observations are thus used as a reference
-for evaluating the forecast cases \textbf{C1-–C4} and \textbf{D1–-D4}.
+explore temperature variability predicted by the statistical model, on
+31\textsuperscript{st} October, XP2 followed a cross-shore transect of
+approximately 13 km to sample an internal wave hotspot; for the
+purpose of this study, it serves as an independent ground-truth
+dataset. \kcomment{Not sure I understand. Above the reference is for
+  the op area being south of the canyon. So what was the intent to
+  send XP2 and how is it fitting into the op area (or not)? This para
+  could do with some clarity.}
+These observations are thus used as a reference for
+evaluating the forecast cases \textbf{C1-–C4} and \textbf{D1–-D4}.
 
 During this period, the coastal ocean was influenced by a late-season
 upwelling–relaxation cycle. At the beginning of the sequence
@@ -29,8 +31,7 @@ upwelling–relaxation cycle. At the beginning of the sequence
 characteristic signature of coastal upwelling, with colder water
 masses extending offshore due to wind-driven Ekman transport that
 brings subsurface, nutrient-rich waters to the surface. In the
-following days (30\textsuperscript{th}-–31\textsuperscript{st}
-October), the weakening of upwelling-favorable winds led to a
+following days, the weakening of upwelling-favorable winds led to a
 relaxation phase, during which warmer offshore waters gradually
 advanced toward the coast. This transition is reflected in the SST
 maps by an overall warming trend in the nearshore region, particularly
@@ -39,18 +40,18 @@ evident on 1\textsuperscript{st} November (Fig. \ref{fig:sst}).
 It is important to note that the SST imagery is partially affected by
 cloud coverage, which limits the availability and accuracy of
 satellite-derived temperature data. These gaps arise from the
-radiometric constraints of indirect SST retrieval, resulting in reduced
-spatial continuity and increased uncertainty near cloudy regions.
-Despite these limitations, the SST patterns clearly capture the dominant
-mesoscale features and coastal processes driving the observed
-variability during the experiment.
-
-These evolving conditions provided a natural setting for testing the
-adaptive sampling and data assimilation framework.  The pronounced
-temperature gradients associated with the upwelling front generated
-well-defined spatial and temporal variability, allowing the evaluation
-of how AUV-based targeted observations can improve the predictive
-skill of the statistical model in a real-world coastal scenario.
+radiometric constraints of indirect SST retrieval, resulting in
+reduced spatial continuity and increased uncertainty near cloudy
+regions.  Despite these limitations, the SST patterns clearly capture
+the dominant mesoscale features and coastal processes driving the
+observed variability during the experiment.
+% These evolving conditions provided a natural setting for testing the
+% adaptive sampling and data assimilation framework.  
+The pronounced temperature gradients associated with the upwelling
+front generated well-defined spatial and temporal variability,
+allowing the evaluation of how targeted in-situ observations can
+improve the predictive skill of the statistical model in a coastal
+environment.
 
 
 \begin{figure}

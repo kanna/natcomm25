@@ -67,7 +67,7 @@ environment.
   XP3, and XP5 during the \proj experiment
   (29\textsuperscript{th}–-31\textsuperscript{st} October).]
   {\label{fig:temperatureprofiles}\includegraphics[width=1\linewidth]{fig/Figure2_100m.pdf}}
-  \caption{}
+  \caption{{\kcomment{needs a consolidated caption}}}
 \end{figure}
 
 Fig.\ref{fig:temperatureprofiles} shows the vertical temperature
@@ -122,9 +122,6 @@ all experimental configurations examined in this study. % providing a
   \label{fig:rms_ABB1}
 \end{wrapfigure}
 
-% \kcomment{There were a number of typos in the following para. RM to
-%   check that my fixes are accurate}
-
 Fig. \ref{fig:rms_ABB1}, corresponds to the initial phase of the
 experiments on the 29\textsuperscript{th} and the
 30\textsuperscript{th}. Scenario \textbf{A} represents the baseline
@@ -138,21 +135,22 @@ to 1.33$^{\circ}$C at 40m, with a mean RMSE of about
 model skill in reproducing the subsurface thermal structure.  The
 non-assimilated \textbf{B} scenario remains similar to \textbf{A} in
 the upper layers but diverges below 20m. After assimilation, the
-\textbf{B1} case shows a consistent improvement throughout the column
-compared to the non-assimilated \textbf{B} scenario, with RMSE values
-between 0.31$^{\circ}$C and 0.55$^{\circ}$C and an average of
-0.39$^{\circ}$C, representing an overall reduction of nearly 50\%
+\textbf{B1} case shows a consistent improvement throughout the water
+column compared to the non-assimilated \textbf{B} scenario, with RMSE
+values between 0.31$^{\circ}$C and 0.55$^{\circ}$C and an average of
+0.39$^{\circ}$C representing an overall reduction of nearly 50\%
 relative to \textbf{B}. This improvement is most pronounced in the
 5–-20m layers, coinciding with the strongest vertical temperature
-gradients and the region most densely sampled by the AUVs, and in turn
-confirming that the assimilation of recent AUV data substantially
-improves the short-term forecast skill and internal consistency of the
-model.
+gradients and the region most densely sampled by the
+AUVs. % and in turn
+% confirming that the assimilation of recent AUV data substantially
+% improves the short-term forecast skill and internal consistency of the
+% model.
 
 The results for 31\textsuperscript{st} October, summarized in
 Fig. \ref{fig:rms}, correspond to the phase of the experiment in which
 multiple assimilation scenarios were tested. The \textbf{C}-series
-uses CMS data up to 30\textsuperscript{th} October, whereas the
+used CMS data up to 30\textsuperscript{th} October, whereas the
 \textbf{D}-series uses CMS up to 29\textsuperscript{th} October,
 representing a less favorable statistical initial state. In both
 cases, the assimilation scenarios (\textbf{C1-–C4} and
@@ -170,17 +168,18 @@ reduction of 25–-30\%, demonstrating that the assimilation of targeted
 observations can compensate for differences in the initial state and
 improve predictive accuracy.
 
-It should be noted, however, that the improvement is not uniform
-across all vehicles. For XP3 and XP5, which performed targeted
-sampling in the same area where previous assimilation data were
-collected, RMSE values show a clear reduction. In contrast, XP2, which
-on 31\textsuperscript{st} October performed an independent cross-shore
-transect outside the main target region, exhibits a weaker response to
-assimilation. The implications of this behavior and its relevance for
-evaluating the predictive robustness of the framework are examined in
-the Section \ref{sec:disc}.  Vertically, RMSE profiles show similar
-behavior in both experiment sets: errors tend to increase gradually
-below 25–30m, where model uncertainty and unresolved variability are
+% It should be noted, however, that the improvement is not uniform
+% across all vehicles.
+For XP3 and XP5, which performed targeted sampling in the same area
+where previous assimilation data were collected, RMSE values show a
+consistent reduction. In contrast, XP2, which on the
+31\textsuperscript{st} performed a cross-shore transect outside the
+main target region, exhibits a weaker response to assimilation. The
+implications of this behavior and its relevance for evaluating the
+predictive robustness of the framework are examined in the Section
+\ref{sec:disc}.  Vertically, RMSE profiles show similar behavior in
+both experiment sets: errors tend to increase gradually below 25–30m,
+where model uncertainty and unresolved variability are
 higher. However, this gradient weakens considerably in the fully
 assimilated cases (\textbf{C4} and \textbf{D4}), particularly in the
 upper 30m, where the assimilation of prior AUV data significantly
@@ -209,30 +208,27 @@ upwelling–relaxation transition.
   collected on previous days. Results are presented for each vehicle
   individually and for the combined dataset (all AUVs).]
   {\label{fig:rms_d}\includegraphics[width=1\linewidth]{fig/rms_d.png}}
-  \caption{}
+  \caption{\kcomment{needs a consolidated caption}}
   \label{fig:rms}
   % above is necessary to get the figure numbering right.
 \end{figure}
 
-To further interpret the RMSE results presented in Fig. \ref{fig:rms},
-Fig. \ref{fig:scatter} focuses on the most contrasted scenarios: the
-baseline cases without assimilation (\textbf{C} and \textbf{D}) and
-those incorporating the full set of AUV observations from previous
-days (\textbf{C4} and \textbf{D4}). This comparison illustrates the
-model's ability to reproduce the observed temperatures at each
-measurement point accurately, contrasting the non-assimilated cases
-(\textbf{C} and \textbf{D}) with the partially and fully assimilated
-ones (\textbf{C1-4} and \textbf{D1-4}). 
-
-The four scatter plots compare the measurements acquired in situ on
-31\textsuperscript{st} October against the corresponding
-geostatistical predictions derived under each scenario. The
-observations include all available measurements collected along the
-missions on that day (see Fig. \ref{fig:sst} and
-\ref{fig:temperatureprofiles}. Colors indicate the depth layers
-associated with the vertical discretization used in the deterministic
-CMS model which defines the vertical structure of the statistical
-model.
+In Fig. \ref{fig:scatter}, four scatter plots compare the measurements
+acquired in situ on 31\textsuperscript{st} October against the
+corresponding geostatistical predictions derived under each
+scenario. They focus on the most contrasted scenarios: the baseline
+cases without assimilation (\textbf{C} and \textbf{D}) and those
+incorporating the full set of AUV observations from previous days
+(\textbf{C4} and \textbf{D4}). The observations include all available
+measurements collected along the missions on that day (see
+Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate
+the depth layers associated with the vertical discretization used in
+the deterministic CMS model which defines the vertical structure of
+the statistical model.  This comparison illustrates the model's
+ability to reproduce the observed temperatures at each measurement
+point accurately, contrasting the non-assimilated cases (\textbf{C}
+and \textbf{D}) with the partially and fully assimilated
+(\textbf{C1-4} and \textbf{D1-4}).
 
 In the baseline scenarios without assimilation (\textbf{C} and
 \textbf{D}), the plots exhibit a wide spread of points around the
@@ -241,8 +237,7 @@ predictions and the observed AUV measurements. These deviations are
 particularly evident in \kcomment{...,????} where surface temperatures
 tend to be overestimated. This dispersion reflects the model’s limited
 ability to accurately reproduce the vertical thermal structure when it
-relies solely on CMS data without incorporating recent in situ
-information.
+relies solely on CMS data without incorporating in situ information.
 
 In contrast, the fully assimilated scenarios (\textbf{C4} and
 \textbf{D4}) show a much tighter clustering of points around the

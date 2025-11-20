@@ -51,13 +51,10 @@ Sampling strategies rely on timely information about the spatial
 variability of ocean properties. However, conventional numerical ocean
 models are computationally intensive, and their runtime makes them
 impractical for use with high spatial resolution and in near-real-time
-mission planning \cite{agarwal21} \kcomment{Need a citation here is a
-  must indicating what it takes to model using high res. numerical
-  models. I've put one in for now, but not exactly the citation I was
-  hoping for.}. While similar assimilation cycles could, in principle,
-be implemented directly within deterministic numerical models, this
-would require either substantially higher computational resources or
-larger temporal horizons.
+mission planning \cite{agarwal21}. While similar assimilation cycles
+could, in principle, be implemented directly within deterministic
+numerical models, this would require either substantially higher
+computational resources or larger temporal horizons.
 
 As a more practical alternative, we employ geostatistical stochastic
 sequential simulation as a computationally efficient surrogate for
@@ -131,15 +128,6 @@ targeted sampling algorithm, guiding the allocation of AUV
 trajectories towards regions of greatest expected information
 gain. More details about the model, its development, and application
 during the \proj experiment can be found in \cite{Duarte2025}.
-
-% \kcomment{PLEASE READ THESE ITEMS; THIS WAS INSERTED WED AT 1PM
-% \begin{itemize}
-%     \item WE HAVE NOT DISCUSSED THE FACT THAT THE INPUT TO THE SAMPLING ALGORITHM IS JUST AM HORIZONTAL SLICE OF THE ERROR PREDICTION \rmcomment{it is not. the sampling algorithm is based on an average of the horizontal slices between surface and 40 m - i introduced some text in next section}
-%     \item but this can be somewhat compensated in the vertical domain by the YOYO \rmcomment{done in The Sampling Algorithm section}
-%     \item but we may need to explain how have we selected the depth to be used in the sampling algorithm \rmcomment{done in The Sampling Algorithm section}
-%     \item discussion about the mixed layer depth as suggested by Ajit? \rmcomment{partially done in The Sampling Algorithm section}
-% \end{itemize}
-% }
 
 \subsection{The Sampling Algorithm}
 
@@ -291,9 +279,10 @@ prediction, and multiple AUVs, a number of scenario solutions
 contribute to the final solution set. These scenarios, labelled
 \textbf{A} through \textbf{D} (and their corresponding assimilation
 variants) are summarised in Table \ref{table:scenarios}. The table
-provides a compact, colour-coded overview of all configurations,
-including forecast dates, prior CMS fields, and the specific AUV
-datasets assimilated at each stage.
+provides a compact, color-coded overview of all configurations (used
+in Figs. \ref{fig:rms_ABB1} and \ref{fig:rms}), including forecast
+dates, prior CMS fields, and the specific AUV datasets assimilated at
+each stage.
 
 On 29\textsuperscript{th} October, the statistical model produced the
 initial forecast solution (\textbf{A}), which was used to plan the
@@ -339,9 +328,8 @@ Error (RMSE) as the performance metric for 31\textsuperscript{st}
 October.
 
 \begin{table}[]
-\centering
-\resizebox{\columnwidth}{!}{%
-\footnotesize{
+  \centering \resizebox{\columnwidth}{!}{%
+    \footnotesize{
 \begin{tabular}{cccc}
 \hline
 \textbf{Scenario}                  & \textbf{Forecast date} & \textbf{CMS prior data up to} & \textbf{Assimilated AUV datasets} \\ \hline
@@ -360,7 +348,9 @@ October.
 {\color[HTML]{009901} \textbf{D4}} & 31 Oct                 & 29 Oct                        & XP2, XP3, XP5 (29–30 Oct)         \\ \hline
 \end{tabular}%
 }}
-\caption{Summary of scenarios and assimilation configurations.}
+\caption{Summary of scenarios and assimilation configurations. The
+  color codes are referred to in Figs. \ref{fig:rms_ABB1} and
+  \ref{fig:rms} to disambiguate RMSE plots.}
 \label{table:scenarios}
 \end{table}
 

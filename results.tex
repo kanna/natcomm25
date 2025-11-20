@@ -2,32 +2,27 @@
 \label{sec:results}
 
 In this section we analyze the results with the combination of CMS
-data, the statistical model forecasts and in situ observations to
+data, the statistical model forecasts and in-situ observations to
 assess the impact to short-term ocean prediction in a dynamic coastal
 environment like \naze.
 
 Fig. \ref{fig:sst} provides an overview of the environmental
 conditions observed during the three-day experimental window
-considered in this study
-(29\textsuperscript{th}–-31\textsuperscript{st} October). The
-background fields correspond to the Level-3 Sea Surface Temperature
-(SST) product from CMS. The operational area was compact, covering
-approximately 100 km\textsuperscript{2} south of the \naz Canyon.
-While all missions were planned using the sampling algorithm to
-explore temperature variability predicted by the statistical model, on
-31\textsuperscript{st} October, XP2 followed a cross-shore transect of
-approximately 13 km to sample an internal wave hotspot; for the
-purpose of this study, it serves as an independent ground-truth
-dataset. \kcomment{Not sure I understand. Above the reference is for
-  the op area being south of the canyon. So what was the intent to
-  send XP2 and how is it fitting into the op area (or not)? This para
-  could do with some clarity.}
-These observations are thus used as a reference for
-evaluating the forecast cases \textbf{C1-–C4} and \textbf{D1–-D4}.
+considered in this study. The background fields correspond to the
+Level-3 Sea Surface Temperature (SST) product from CMS. The
+operational area covers approximately 100 km\textsuperscript{2} south
+of the \naz Canyon.  While all missions were planned using the
+sampling algorithm to explore temperature variability predicted by the
+statistical model, on 31\textsuperscript{st} October, XP2 was deployed
+for a cross-shore transect of approximately 13 km to sample an
+internal wave hotspot; for the purpose of this study, it serves as an
+independent ground-truth dataset. These observations are thus used as
+a reference for evaluating the forecast cases \textbf{C1-–C4} and
+\textbf{D1–-D4}.
 
-During this period, the coastal ocean was influenced by a late-season
-upwelling–relaxation cycle. At the beginning of the sequence
-(29\textsuperscript{th} October), the SST field reveals the
+During the experimentation, the coastal ocean was influenced by a
+late-season upwelling–relaxation cycle. At the beginning of the
+sequence (29\textsuperscript{th} October), the SST field reveals the
 characteristic signature of coastal upwelling, with colder water
 masses extending offshore due to wind-driven Ekman transport that
 brings subsurface, nutrient-rich waters to the surface. In the
@@ -44,14 +39,11 @@ radiometric constraints of indirect SST retrieval, resulting in
 reduced spatial continuity and increased uncertainty near cloudy
 regions.  Despite these limitations, the SST patterns clearly capture
 the dominant mesoscale features and coastal processes driving the
-observed variability during the experiment.
-% These evolving conditions provided a natural setting for testing the
-% adaptive sampling and data assimilation framework.  
-The pronounced temperature gradients associated with the upwelling
-front generated well-defined spatial and temporal variability,
-allowing the evaluation of how targeted in-situ observations can
-improve the predictive skill of the statistical model in a coastal
-environment.
+observed variability during the experiment.  The pronounced
+temperature gradients associated with the upwelling front generated
+well-defined spatial and temporal variability, allowing the evaluation
+of how targeted in-situ observations can improve the predictive skill
+of the statistical model in a coastal environment.
 
 
 \begin{figure}
@@ -99,7 +91,7 @@ afternoon during XP5’s mission.
 % The following section summarizes the quantitative evaluation of the
 % model’s predictive performance across all tested scenarios. 
 Figs.  \ref{fig:rms_ABB1}, \ref{fig:rms_c}, and \ref{fig:rms_d} present
-the RMSE between the statistical model forecasts and the in situ
+the RMSE between the statistical model forecasts and the in-situ
 temperature observations collected by the AUVs. These figures cover
 all experimental configurations examined in this study. % providing a
 % comprehensive overview of how the assimilation of targeted AUV data
@@ -110,7 +102,7 @@ all experimental configurations examined in this study. % providing a
   \centering
   \includegraphics[scale=0.5]{fig/rms_ABB1.png}
   \caption{Root Mean Square Error (RMSE) (in $^{\circ}$C) between
-    statistical model forecasts and in situ AUV temperature
+    statistical model forecasts and in-situ AUV temperature
     observations for 29\textsuperscript{th}–-30\textsuperscript{st}
     October. Scenario \textbf{A} corresponds to the baseline
     statistical forecast generated based on CMS data up to
@@ -127,7 +119,7 @@ experiments on the 29\textsuperscript{th} and the
 30\textsuperscript{th}. Scenario \textbf{A} represents the baseline
 statistical forecast based on CMS data. The \textbf{B} and \textbf{B1}
 scenarios correspond to forecasts for the 30\textsuperscript{th}
-without and with the assimilation of in situ observations during the
+without and with the assimilation of in-situ observations during the
 previous day.  Across the vertical profile, RMSE values in scenario
 \textbf{A} range from approximately 0.48$^{\circ}$C near the surface
 to 1.33$^{\circ}$C at 40m, with a mean RMSE of about
@@ -192,7 +184,7 @@ upwelling–relaxation transition.
   \centering 
 
   \subfigure[RMSE (in $^{\circ}$C) between statistical model forecasts
-  and in situ AUV temperature measurements for 31\textsuperscript{st}
+  and in-situ AUV temperature measurements for 31\textsuperscript{st}
   October, scenarios \textbf{C}, \textbf{C1-–C4}. The forecasts were
   initialized using CMS data available up to 30\textsuperscript{th}
   October, and the assimilation steps progressively include AUV data
@@ -201,7 +193,7 @@ upwelling–relaxation transition.
   {\label{fig:rms_c}\includegraphics[width=1\linewidth]{fig/rms_c.png}}
 
   \subfigure[RMSE (in $^{\circ}$C) between statistical model forecasts
-  and in situ AUV temperature measurements for 31\textsuperscript{st}
+  and in-situ AUV temperature measurements for 31\textsuperscript{st}
   October, scenarios \textbf{D}, \textbf{D1-–D4}. The forecasts were
   initialized using CMS data available up to 30\textsuperscript{th}
   October, and the assimilation steps progressively include AUV data
@@ -214,7 +206,7 @@ upwelling–relaxation transition.
 \end{figure}
 
 In Fig. \ref{fig:scatter}, four scatter plots compare the measurements
-acquired in situ on 31\textsuperscript{st} October against the
+acquired in-situ on 31\textsuperscript{st} October against the
 corresponding geostatistical predictions derived under each
 scenario. They focus on the most contrasted scenarios: the baseline
 cases without assimilation (\textbf{C} and \textbf{D}) and those
@@ -237,7 +229,7 @@ predictions and the observed AUV measurements. These deviations are
 particularly evident in \kcomment{...,????} where surface temperatures
 tend to be overestimated. This dispersion reflects the model’s limited
 ability to accurately reproduce the vertical thermal structure when it
-relies solely on CMS data without incorporating in situ information.
+relies solely on CMS data without incorporating in-situ information.
 
 In contrast, the fully assimilated scenarios (\textbf{C4} and
 \textbf{D4}) show a much tighter clustering of points around the
@@ -251,7 +243,7 @@ physical transitions in the water column.
 \begin{figure}[!]
   \centering
   \includegraphics[scale=0.7]{fig/scatter.png}
-  \caption{Comparison between in situ AUV observations
+  \caption{Comparison between in-situ AUV observations
     (31\textsuperscript{st} October) and geostatistical model
     predictions for scenarios \textbf{C}, \textbf{C4}, \textbf{D}, and
     \textbf{D4}. Shallower layers are shown in warmer colors (red to
@@ -259,11 +251,7 @@ physical transitions in the water column.
     represented in cooler shades (green to blue). The dashed red line
     provides a reference for perfect agreement.  \rmcomment{!not the
       final figure. need to correct and round values to 1 decimal
-      place!}\kcomment{Also see my comment about making the scenarios
-      into a Table instead of the text at the end of the methods
-      section. If you have that table, it would be useful to have a
-      copy of that same table highlighting the differences between the
-      scenarios to make the figures (and text) more readable.}}
+      place!}}
   \label{fig:scatter}
 \end{figure}
 

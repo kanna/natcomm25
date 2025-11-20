@@ -39,9 +39,7 @@ circulation parallel to the general trend of the shelf and slope
 \cite{tyler2009europe,relvas2007physical,guerreiro2014influence}.
 \rmcomment{we can talk here about the clustering/ allocation by areas
   of different dyNAmics, problems with covergence of the error, etc -
-  future studies YES.} \kcomment{Agree. This is where you might
-  speculate on how to separate out the regions using PCA or some form
-  of clustering but with a clear intended application.}
+  future studies YES.}
 
 
 Another highlight of this experiment was in the visibility of
@@ -50,8 +48,8 @@ the subgrid-scale structure of the observed
 field. Fig. \ref{fig:iqd_3D} depicts the interquartile distance (IQD)
 of measurements recorded by the AUVs within the three-dimensional
 discretization of the statistical model. Each grid cell represents the
-maximum spatial resolution available in the model, while the IQR
-quantifies the local variability of in situ measurements acquired as
+maximum spatial resolution available in the model, while the IQD
+quantifies the local variability of in-situ measurements acquired as
 the vehicles navigated through each
 cell.\kcomment{Fig. \ref{fig:iqd_3D} is very hard to read. Equally,
   might not there be the argument from a reviewer/reader, that to
@@ -81,9 +79,7 @@ subgrid level. The maximum number of samples per grid cell reached
 several thousand (for example up to 8757 on 31\textsuperscript{st}
 October for XP5), though these extreme values are most probably biased
 by vehicle behavior near the surface, where the AUVs temporarily
-remained stationary to communicate and acquire GPS. % As such, these
-% maxima likely reflect oversampling at specific locations rather than
-% representative variability across the full domain.
+remained stationary to communicate and acquire GPS. 
 
 Despite these localized biases, the overall sampling density achieved
 by the AUVs provides a detailed depiction of fine-scale ocean
@@ -107,24 +103,12 @@ processes that are otherwise unresolved in model grids.
 Importantly, this subgrid variability is not merely observational
 noise but a meaningful indicator of local uncertainty and
 environmental heterogeneity. Incorporating this information—both the
-variability (IQD) and the spatial sampling density—into data
+variability (i.e. IQD) and the spatial sampling density—into data
 assimilation frameworks could enhance the model’s ability to represent
 uncertainty at the subgrid scale and improve the realism of short-term
 forecasts. \kcomment{But did we not assimilate \emph{all} the AUV
   measurements at the resolution the vehicles sampled in? If so, why
   the ``could enhance'' as against ``it did enhance''?}
-
-The dense grid of AUV observations enables post-experiment evaluation
-and testing of the assimilation schemes and of the geostatistical model.
-While we are still lacking the desired statistical significance of a
-long series of consecutive cycles, these post-experiment activities will
-lead to a better understanding of the overall procedures and the
-identification of improvements, namely the optimization of the
-parameters used for the coordinated integration of the algorithms used
-in the modeling-sample-assimilation-tasking cycles. We will further
-investigate the selection of representative depths for the application
-of the sampling algorithm used to find the horizontal projection of the
-AUV paths. THIS HAS NOT BEEN DISCUSSED BEFORE
 
 This field study provided invaluable lessons in operational
 procedures, refinement of adaptive sampling and algorithms, and risk

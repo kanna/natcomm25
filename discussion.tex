@@ -1,9 +1,7 @@
 \section{Discussion}
 \label{sec:disc}
 
-Although the overall results indicate that the assimilation procedure
-generally improves model skill, a more detailed and vehicle-specific
-analysis reveals important nuances. 
+Understanding the impact of targeted AUV observations on short-term ocean forecasts requires examining not only overall model–data agreement but also how assimilation effects vary across vehicles and across distinct dynamical environments. While the general trend indicates that assimilation improves model skill, vehicle-specific results reveal important differences tied to the spatial distribution of sampling relative to dynamically coherent regions. 
 
 Figs. \ref{fig:rms_c} and \ref{fig:rms_d} present the RMSE predictions
 compared with in-situ data under the different assimilation scenarios
@@ -36,11 +34,21 @@ along the canyon axis as a result of strong topographical control and
 this alignment extends well above the canyon edges ($\sim150$m depth),
 implying a substantial disturbance of the predominant north–south
 circulation parallel to the general trend of the shelf and slope
-\cite{tyler2009europe,relvas2007physical,guerreiro2014influence}.
+\cite{tyler2009europe,relvas2007physical,guerreiro2014influence}. 
+
+A broader interpretation of this result is provided by the CMS fields shown in Figure \ref{fig:north_south}, which compare temperature distributions in the northern and southern sectors during the days preceding and during the \proj experiment. Before 26\textsuperscript{th} October, although mean temperatures differ between the two regions, their variability is highly consistent, indicating that the system was evolving coherently across the canyon. After 26\textsuperscript{th} October, however, the temperature evolution in the two regions diverges substantially, with the CMS model showing increasingly decorrelated variability between North and South. This loss of coherence coincides with the onset of the upwelling–relaxation transition and highlights a shift toward slightly distinct dynamical regimes on either side of the canyon. This transition can explain why assimilation of southern data—collected under a single dynamical regime—fails to improve and, in fact, degrades forecasts.
+
+This spatial decoupling between sampling and assimilated information also highlights the potential value of trajectory-planning strategies that explicitly seek to maximise class separation among distinct dynamical regimes, as proposed by \cite{fossum19b} using hierarchical clustering methods. Such approaches, based on criteria such as expected reduction of variance, mutual information, or entropy, could help identify routes that better discriminate between competing oceanographic states and mitigate situations where assimilation may propagate misleading information if relying solely on uncertainty fields.
 \rmcomment{we can talk here about the clustering/ allocation by areas
   of different dyNAmics, problems with covergence of the error, etc -
-  future studies YES.}
+  future studies YES. DONE}
 
+\begin{figure}[!]
+  \centering
+  \includegraphics[scale=0.2]{fig/north_south.png}
+  \caption{Temperature distributions from the CMS model for the northern and southern sectors of the study area between 18\textsuperscript{th}–31\textsuperscript{th} October. The division between regions follows the boundary shown in the onset map (top right). Only grid points shallower than 200 m were retained to avoid including the canyon interface. Boxplots show the spatial distribution of CMS temperature within each region, capturing both the median and the spread of variability.}
+  \label{fig:north_south}
+\end{figure}
 
 Another highlight of this experiment was in the visibility of
 variability within the model grid providing additional insight into
@@ -65,14 +73,11 @@ greater than 1$^{\circ}$C, as also processes that are unresolved by
 the model. Although the statistical model provides smoothed,
 grid-averaged predictions of ocean properties, AUV measurements here,
 highlight fluctuations that occur within individual cells, indicating
-the presence of subgrid-scale dynamics. These small-scale variations
-can contribute to local model–data discrepancies \kcomment{We need a
-  citation or something to buttress this claim.} and should be taken
-into account when interpreting or assimilating observations.
+the presence of subgrid-scale dynamics. Such unresolved variability is a well-known source of representativeness error in data assimilation systems: numerical forecasts and statistical surrogates inevitably smooth or filter variability occurring below their grid scale, so observations that resolve submesoscale or turbulent features will often disagree locally with grid-averaged model fields \cite{oke2008representation,janjic2018representation}. These considerations underscore that high-resolution observations from AUVs should not be interpreted solely through coarse model fields; instead, subgrid variability itself provides valuable information about local forecast uncertainty and should be explicitly accounted for when assimilating observations into coarser-resolution predictive systems.\kcomment{We need a citation or something to buttress this claim.}\rmcomment{review done}
 
 Across all missions, the AUVs sampled each grid cell with median
 values ranging from 9 to 14 measurements per cell and mean values
-\kcomment{Of temperature?}  between 19 and 26. These statistics
+\kcomment{Of temperature?}\rmcomment{no. measurements per cell} between 19 and 26. These statistics
 indicate a relatively uniform and dense sampling pattern, sufficient
 to characterize the local variability of the water column at the
 subgrid level. The maximum number of samples per grid cell reached
@@ -87,8 +92,7 @@ variability. The IQD distributions reveal higher variability near the
 thermocline, where vertical gradients are strongest, while in some
 instances increased variability could also appear near the surface,
 potentially corresponding to small-scale frontal zones or localized
-mixing events. This analysis highlights that the AUVs, despite having
-slightly higher sensor uncertainty \kcomment{What is the evidence for
+mixing events. Because AUVs sample continuously along their trajectories, they resolve spatial and temporal scales that often fall between CTD stations in traditional ship-based surveys, thereby capturing subgrid processes that remain unresolved in numerical models. \kcomment{What is the evidence for
   this? When a claim is made, for good or bad, it helps to have it
   substantiated ideally with a citation or some text that walks thru
   the reasoning. By saying this, you're making a claim about the
@@ -96,19 +100,17 @@ slightly higher sensor uncertainty \kcomment{What is the evidence for
   claim, rightfully I believe, is that robotic sampling is more
   efficient and provides higher resolution insights, then we ought to
   just state it, not make it conditional. In fact unless it is a major
-  takeaway from this experiment, we perhaps not mentioned it.} than
-traditional ship-based CTD systems, can capture dynamic subgrid
-processes that are otherwise unresolved in model grids.
+  takeaway from this experiment, we perhaps not mentioned it.} \rmcomment{review done}
 
 Importantly, this subgrid variability is not merely observational
 noise but a meaningful indicator of local uncertainty and
 environmental heterogeneity. Incorporating this information—both the
 variability (i.e. IQD) and the spatial sampling density—into data
-assimilation frameworks could enhance the model’s ability to represent
+assimilation frameworks enhances the model’s ability to represent
 uncertainty at the subgrid scale and improve the realism of short-term
 forecasts. \kcomment{But did we not assimilate \emph{all} the AUV
   measurements at the resolution the vehicles sampled in? If so, why
-  the ``could enhance'' as against ``it did enhance''?}
+  the ``could enhance'' as against ``it did enhance''?} \rmcomment{We did not assimilate \textit{all} individual measurements; instead, we assimilated grid-averaged observations within each model cell.}
 
 This field study provided invaluable lessons in operational
 procedures, refinement of adaptive sampling and algorithms, and risk

@@ -54,11 +54,11 @@ of the statistical model in a coastal environment.
 
   \subfigure[]
   {\label{fig:temperatureprofiles}\includegraphics[width=1\linewidth]{fig/Figure2_100m.pdf}}
-  \caption{{(a) Sea surface temperature (SST) and XP2, XP3 and XP5
-  trajectories during the \proj experiment
-  (29\textsuperscript{th}-–31\textsuperscript{st} October). (b)Time–-depth temperature evolution observed by AUVs XP2,
-  XP3, and XP5 during the \proj experiment
-  (29\textsuperscript{th}–-31\textsuperscript{st} October).}}
+  \caption{{\subref{fig:sst} Sea surface temperature (SST) and AUV
+      trajectories during the \proj experiment
+      (29\textsuperscript{th}-–31\textsuperscript{st}
+      October). \subref{fig:temperatureprofiles} Time–-depth
+      temperature evolution observed by AUVs in the same period.}}
 \end{figure}
 
 Fig.\ref{fig:temperatureprofiles} shows the vertical temperature
@@ -101,15 +101,14 @@ all experimental configurations examined in this study. % providing a
   \centering
   \includegraphics[scale=0.5]{fig/rms_ABB1.png}
   \caption{Root Mean Square Error (RMSE) (in $^{\circ}$C) between
-    statistical model forecasts and in-situ AUV temperature
-    observations for 29\textsuperscript{th}–-30\textsuperscript{st}
-    October. Scenario \textbf{A} corresponds to the baseline
-    statistical forecast generated based on CMS data up to
-    29\textsuperscript{th} October. Scenarios \textbf{B} and
-    \textbf{B1} represent forecasts for 30\textsuperscript{th} October
-    without and with the assimilation of AUV observations collected by
-    XP2, respectively. Values are shown for each depth level sampled
-    during the missions.}
+    model forecasts and in-situ AUV temperature observations for
+    29\textsuperscript{th}–-30\textsuperscript{st} October. Scenario
+    \textbf{A} corresponds to the baseline statistical forecast
+    generated based on CMS data up to the
+    29\textsuperscript{th}. Scenarios \textbf{B} and \textbf{B1}
+    represent forecasts for the 30\textsuperscript{th} without and
+    with the assimilation of AUV observations collected by XP2,
+    respectively. Values are shown for each depth level sampled.}
   \label{fig:rms_ABB1}
 \end{wrapfigure}
 
@@ -133,10 +132,7 @@ values between 0.31$^{\circ}$C and 0.55$^{\circ}$C and an average of
 relative to \textbf{B}. This improvement is most pronounced in the
 5–-20m layers, coinciding with the strongest vertical temperature
 gradients and the region most densely sampled by the
-AUVs. % and in turn
-% confirming that the assimilation of recent AUV data substantially
-% improves the short-term forecast skill and internal consistency of the
-% model.
+AUVs.
 
 The results for 31\textsuperscript{st} October, summarized in
 Fig. \ref{fig:rms}, correspond to the phase of the experiment in which
@@ -159,8 +155,6 @@ reduction of 25–-30\%, demonstrating that the assimilation of targeted
 observations can compensate for differences in the initial state and
 improve predictive accuracy.
 
-% It should be noted, however, that the improvement is not uniform
-% across all vehicles.
 For XP3 and XP5, which performed targeted sampling in the same area
 where previous assimilation data were collected, RMSE values show a
 consistent reduction. In contrast, XP2, which on the
@@ -203,9 +197,23 @@ upwelling–relaxation transition.
   %individually and for the combined dataset (all AUVs).
   ]
   {\label{fig:rms_d}\includegraphics[width=1\linewidth]{fig/rms_d.png}}
-  \caption{(a) Root-mean-square error (RMSE, in °C) between the statistical model forecasts and in-situ AUV temperature measurements for 31\textsuperscript{th} October, for scenarios C and C1–C4. These forecasts were initialized using CMS data available up to 30 October, and the assimilation steps progressively incorporate AUV observations collected on previous days. Results are shown for each vehicle (XP2, XP3, XP5) and for the combined dataset (“All AUVs”). (b) Same as (a), but for scenarios D and D1–D4, in which forecasts for 31\textsuperscript{th} October were initialized using CMS data available only up to 29\textsuperscript{th} October. Assimilation configurations D1–D4 mirror those of the C-series but start from this less favorable prior state. Results are again presented per vehicle and for the aggregated dataset.}
+  \caption{\subref{fig:rms_c} Root-mean-square error (RMSE, in
+    $^{\circ}$C) between the statistical model forecasts and in-situ
+    AUV temperature measurements for 31\textsuperscript{th} October,
+    for scenarios \textbf{C} and \textbf{C1-–C4}. These forecasts were
+    initialized using CMS data available up to the
+    30\textsuperscript{th}, and the assimilation steps progressively
+    incorporate AUV observations collected on previous days. Results
+    are shown for each vehicle and for the combined dataset (“All
+    AUVs”). \subref{fig:rms_d} Same as \subref{fig:rms_c}, but for
+    scenarios \textbf{D} and \textbf{D1-–D4}, in which forecasts for
+    31\textsuperscript{th} October were initialized using CMS data
+    available only up to the 29\textsuperscript{th}. Assimilation
+    configurations \textbf{D1-–D4} mirror those of the
+    \textbf{C}--series but start from this less favorable prior
+    state. Results are again presented per vehicle and for the
+    aggregated dataset.}
   \label{fig:rms}
-  % above is necessary to get the figure numbering right.
 \end{figure}
 
 In Fig. \ref{fig:scatter}, four scatter plots compare the measurements
@@ -257,12 +265,13 @@ physical transitions in the water column.
     \subfigure[]
   {\label{fig:scatter_d4}\includegraphics[width=.55\linewidth]{fig/scatter_d4.png}}
 %
-\caption{Comparison between in-situ AUV observations
-    (31\textsuperscript{st} October) and geostatistical model
-    predictions for scenarios \textbf{C} \ref{fig:scatter_c}, \textbf{C4} (\ref{fig:scatter_c4}), \textbf{D} (\ref{fig:scatter_d}), and
-    \textbf{D4} (\ref{fig:scatter_d4}). Shallower layers are shown in warmer colors (red to
-    yellow), while deeper layers ($>$ 30m) are progressively
-    represented in cooler shades (green to blue). The dashed red line
-    provides a reference for perfect agreement.}
+  \caption{Comparison between in-situ AUV observations
+    (31\textsuperscript{st} October) and model predictions for
+    scenarios \textbf{C} \ref{fig:scatter_c}, \textbf{C4}
+    (\ref{fig:scatter_c4}), \textbf{D} (\ref{fig:scatter_d}), and
+    \textbf{D4} (\ref{fig:scatter_d4}). Shallower layers are shown in
+    warmer colors (red to yellow), while deeper layers ($>$ 30m) are
+    progressively represented in cooler shades (green to blue). The
+    dashed red line provides a reference for correlation.}
 \end{figure}
 

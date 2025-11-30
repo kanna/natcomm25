@@ -8,33 +8,38 @@ robotic platforms. Figs. \ref{fig:rms_ABB1} and \ref{fig:rms} show
 clear indications of increase in predictive skill when high resolution
 data from AUVs are assimilated in a geostatistical model. By choosing
 such a modeling approach, this effort offers a window into the rapid
-process of assimilating and prediction, the primary goal of \proj with
-and doing so with minimal robotic operation support. The accuracy of
-the predictions of the geostatistical model increased after several
+process of assimilating and prediction, the primary goal of \proje,
+and doing so with minimal operational support. The accuracy of the
+predictions of the geostatistical model increased after several
 cycles, while the overall prediction errors decreased as noted.
-
 Importantly, this effort puts us on a viable path towards continuous
 ocean prediction when obtaining high resolution in-situ data as
 conceptualized in the \met framework \cite{rajan21}.
 
-While a number of challenges remain in our approach, including near
-real-time assimilation and continuous model prediction especially to
-capture dynamic coastal events, the dense grid of AUV observations
-enables post-experiment evaluation and testing of the assimilation
-schemes as well of the geostatistical model.  While we are still
-lacking the desired statistical significance of a long series of
-consecutive cycles, our future work will target the optimization of
-the parameters used for deeper integration of the algorithms used in
-the cycle. We will further investigate the selection of representative
-depths for the application of the sampling algorithm used to find the
-horizontal projection of the AUV paths.
+A confluence of factors well outside our control, influenced our short
+three day observation cycle down from a planned three week experiment,
+primarily driven by weather, availability of platforms and
+personnel. Future work will extend this period of observation to
+gather more data from the promising results presented.
 
-% The \proj experiment carried out in challenging ocean and
-% meteorological conditions precluded cycles of week-long operations, as
-% originally planned. This effort nevertheless demonstrates the overall
-% integration to close the \emph{sample-assimilate-predict-direct} cycle
-% with the goal of improving oceanographic model skill by leveraging
-% observations from robotic platforms. 
+Other challenges that remain to be addressed include near real-time
+assimilation and continuous model prediction especially to capture
+dynamic coastal events. % the dense grid of AUV observations enables
+% post-experiment evaluation and testing of the assimilation schemes as
+% well of the model.
+While we are still lacking the desired statistical significance of a
+long series of consecutive cycles, our future work will target the
+optimization of the parameters used for deeper integration of the
+algorithms used in the cycle. For instance, we will investigate the
+selection of representative depths for the application of the sampling
+algorithm \cite{bernacchi2025} used to find the horizontal projection
+of the AUV paths. Another potential outcome to be investigated is the
+use of a higher resolution numerical model and the implication of a
+longer lead time to prediction given the challenges of computability
+on such mode. Our ultimate direction is in encapsulating a model
+surrogate embedded within the control system of one or more AUVs to
+capture coastal dynamism at fine scales \cite{frolov09,fossum19b},
+while complementing an increase in shore based model skill assessment.
 
 
 % Full integration of command and

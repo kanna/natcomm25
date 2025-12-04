@@ -68,25 +68,30 @@ sampling \cite{BinZhang07,Singh09,smith14,fossum19} represents a
 fundamental shift: instead of executing pre-planned missions,
 autonomous vehicles dynamically prioritize areas for observation.
 
-Our approach combines model predictions with adaptive AUV
-sampling. Doing so combines predicted model uncertainties in
-comparison with prior data assimilation process with available
-observations. Model forecasts identify where uncertainty is highest or
-where new observations are expected to have the greatest impact in
-reducing forecast errors (i.e., higher value of information). Vehicles
-are then directed to sample these areas, and their data are in turn
-assimilated back into the models, as a virtuous cycle. Doing so closes
-a critical feedback loop between data acquistion, models and
-observations; model prediction generates a forecast and associated
-uncertainty field while AUV based adaptive sampling targets areas of
-maximum predicted uncertainty. Data assimilation from these high
-uncertainty regions are then incorporated into the model such that new
-predictions benefit from improved in-situ data, closing the loop.
-Such a \emph{sample-assimilate-predict-direct} data cycle approach
-promises to significantly enhance the skill of ocean forecasts,
-especially in the complex coastal environment where processes occur
-over a wide range of scales. Additionally, sampling resolution with
-AUVs vastly outweighs data obtained from traditional ship-based
+Our approach combines model predictions with adaptive sampling with
+propelled AUVs. \cite{lermusiaux07} explores such a concept; however
+the novelty of our work is in demonstrating the applicability using
+propelled AUVs which can control its trajectory using onboard
+computation and doing so in a dynamic coastal
+environment. % In doing so
+% combines predicted model uncertainties in comparison with prior data
+% assimilation process with available observations.
+Model forecasts identify where uncertainty is highest or where new
+observations are expected to have the greatest impact in reducing
+forecast errors i.e., higher value of information. Vehicles are then
+directed to sample these areas, and their data are in turn assimilated
+back into the models, as a virtuous cycle. Doing so closes a critical
+feedback loop between data acquistion, models and observations; model
+prediction generates a forecast and associated uncertainty field while
+AUV based adaptive sampling targets areas of maximum predicted
+uncertainty. Data assimilation from these high uncertainty regions are
+then incorporated into the model such that new predictions benefit
+from improved in-situ data, closing the loop.  Such a
+\emph{sample-assimilate-predict-direct} data cycle approach promises
+to significantly enhance the skill of ocean forecasts, especially in
+the complex coastal environment where processes occur over a wide
+range of scales. Additionally, sampling resolution with AUVs vastly
+outweighs data obtained from traditional ship-based
 approaches. Multiple AUVs sampling simultaneously as we do here, also
 makes a dent in spatial as well as temporal coverage of such dynamic
 environments at far moderate costs. Further, AUVs can provide near

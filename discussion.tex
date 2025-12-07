@@ -86,22 +86,23 @@ fields.
 Another highlight of this experiment was in the visibility of
 variability within the model grid providing additional insight into
 the subgrid-scale structure of the observed
-field. Fig. \ref{fig:iqd3D} and \ref{fig:iqd3D_zoom} depicts the interquartile distance (IQD)
-of measurements recorded by the AUVs within the three-dimensional
-discretization of the statistical model. Each grid cell represents the
-maximum spatial resolution available in the model, while the IQD
-quantifies the local variability of in-situ measurements acquired as
-the vehicles navigated through each cell.
+field. Fig. \ref{fig:iqd3D} % and \ref{fig:iqd3D_zoom}
+depicts the interquartile distance (IQD) of measurements recorded by
+the AUVs within the three-dimensional discretization of the
+statistical model. Each grid cell represents the maximum spatial
+resolution available in the model, while the IQD quantifies the local
+variability of in-situ measurements acquired as the vehicles navigated
+through each cell.
 
-This analysis demonstrates that robotic platform can capture
-significant variability at scales smaller than the model resolution,
-revealing the existence of fine-scale gradients, in some locations
-greater than 1$^{\circ}$C, as also processes that are unresolved by
-the model. Although the statistical model provides smoothed,
-grid-averaged predictions of ocean properties, AUV measurements
-highlight fluctuations that occur within individual cells, indicating
-the presence of subgrid-scale dynamics. Such unresolved variability is
-a well-known source of error in data assimilation systems; numerical
+This figure illustrates how robotic platform can capture significant
+variability at scales smaller than the model resolution, revealing the
+existence of fine-scale gradients, in some locations greater than
+1$^{\circ}$C, as also processes that are unresolved by the
+model. Although the statistical model provides smoothed, grid-averaged
+predictions of ocean properties, AUV measurements highlight
+fluctuations that occur within individual cells, indicating the
+presence of subgrid-scale dynamics. Such unresolved variability is a
+well-known source of error in data assimilation systems; numerical
 forecasts and statistical surrogates inevitably smoothen or filter
 such variability occurring below their grid scale, so observations
 that resolve submesoscale or turbulent features will often disagree
@@ -157,15 +158,51 @@ targeting existing gaps in modeling skill when different levels of
 spatial and temporal resolution are considered \cite{Balaji_2022}.
 
 
+% \begin{figure}[!]
+%   \centering
+%   \subfigure[]
+%   {\label{fig:iqd3D}\includegraphics[scale=0.2]{fig/fig3d_newA.png}}
+  
+%   \subfigure[]
+%   {\label{fig:iqd3D_zoom}\includegraphics[scale=0.2]{fig/fig3D_new_zoom.jpeg}}
+  
+%   \caption{{\subref{fig:iqd3D}} Trajectory of XP5 AUV, during the
+%     30\textsuperscript{th} October mission in the \naz Canyon
+%     region. The color shading represents the interquartile range (IQD)
+%     of temperature values recorded within each model grid cell along
+%     the vehicle’s path. The grid illustrates the horizontal resolution
+%     of the statistical model. Results are shown for three
+%     representative depth layers: near-surface, mid-depth (20 m), and
+%     40 m, capturing distinct vertical regimes. Higher IQD values
+%     indicate regions of higher thermal variability within the model
+%     grid. {\subref{fig:iqd3D_zoom}} Close-up view of the mid-depth
+%     layer ($\sim20$ m) showing individual model grid cells intersected
+%     by the XP5 trajectory (red dots), revealing marked fine-scale
+%     fluctuations occurring inside single grid elements. This zoomed
+%     perspective illustrates how AUV sampling captures subgrid-scale
+%     thermal structure that the model’s horizontal resolution does not
+%     resolve.}
+% \end{figure}
+
+
+
 \begin{figure}[!]
   \centering
-  \subfigure[]
-  {\label{fig:iqd3D}\includegraphics[scale=0.2]{fig/fig3d_newA.png}}
-  
-  \subfigure[]
-  {\label{fig:iqd3D_zoom}\includegraphics[scale=0.2]{fig/fig3D_new_zoom.jpeg}}
-  
-  \caption{{\subref{fig:iqd3D}} Trajectory of XP5 AUV, during the 30\textsuperscript{th}
-    October mission in the \naz Canyon region. The color shading represents the interquartile range (IQD) of temperature values recorded within each model grid cell along the vehicle’s path. The grid illustrates the horizontal resolution of the statistical model. Results are shown for three representative depth layers: near-surface, mid-depth (20 m), and 40 m, capturing distinct vertical regimes. Higher IQD values indicate regions of higher thermal variability within the model grid. {\subref{fig:iqd3D_zoom}} Close-up view of the mid-depth layer (~20 m) showing individual model grid cells intersected by the XP5 trajectory (red dots), revealing marked fine-scale fluctuations occurring inside single grid elements. This zoomed perspective illustrates how AUV sampling captures subgrid-scale thermal structure that the model’s horizontal resolution does not resolve.}
+  \includegraphics[scale=0.06]{fig/fig3D-inset.jpg}
+  \caption{Trajectory of XP5 AUV, during the 30\textsuperscript{th}
+    October mission in the \naz Canyon region. The color shading
+    represents the interquartile range (IQD) of temperature values
+    recorded within each model grid cell along the vehicle’s path. The
+    grid illustrates the horizontal resolution of the statistical
+    model. Results are shown for three representative depth layers:
+    near-surface, mid-depth (20 m), and 40 m, capturing distinct
+    vertical regimes. Higher IQD values indicate regions of higher
+    thermal variability within the model grid. Close-up view of the
+    mid-depth layer ($\sim20$ m) shows individual model grid cells
+    intersected by vehicle trajectory, revealing marked fine-scale
+    fluctuations occurring inside single grid elements and
+    illustrating how AUV sampling captures subgrid-scale thermal
+    structure that the model’s horizontal resolution does not
+    resolve.}  
+  {\label{fig:iqd3D}}
 \end{figure}
-

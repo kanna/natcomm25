@@ -1,0 +1,87 @@
+\documentclass[10pt,stdletter]{newlfm}
+\usepackage{charter}
+\usepackage{times}
+
+\widowpenalty=1000
+\clubpenalty=1000
+
+\newsavebox{\Luiuc}
+\sbox{\Luiuc}{%
+	\parbox[b]{1.75in}{%
+		\vspace{0.5in}%
+		\includegraphics[scale=0.8]
+		{fig/uporto.png}%
+	}%
+}%
+\makeletterhead{Uiuc}{\Lheader{\usebox{\Luiuc}}}
+
+\newlfmP{headermarginskip=10pt}
+\newlfmP{sigsize=10pt}
+\newlfmP{dateskipafter=30pt}
+\newlfmP{addrfromphone}
+\newlfmP{addrfromemail}
+\PhrPhone{Phone}
+\PhrEmail{Email}
+
+\lthUiuc
+
+\namefrom{\vspace{-1.2cm}Renato Mendes}
+\addrfrom{LSTS, University of Porto\\
+	Rua Dr. Roberto Frias s/n, sala I203/4\\
+	Porto, Portugal
+}
+\phonefrom{(+47) 98 678 309}
+\emailfrom{\emph{rpmendes@inegi.up.pt}}
+
+\addrto{%
+Editor-in-Chief\\
+Oceanography\\
+}
+
+\greetto{Dear Editor,}
+\closeline{Yours faithfully,}
+
+\Lfooter{University of Porto, Portugal\\
+Underwater Systems and Technology Laboratory\\
+4200-465 Porto, Portugal \\
+}
+
+\Rheader{1 of 1}
+
+\begin{document}
+\begin{newlfm}
+
+  Please see our manuscript % \textbf{Towards Autonomous Adaptive Sampling
+  %   of Phytoplankton in the Coastal Ocean} submitted for possible
+  % publication in \emph{Science Robotics}. The overall context of the
+  % work is in oceanographic Sampling, using an autonomous robotic
+  % platform for upper water-column observation. The work is novel in
+  % multiple ways. First, it uses Gaussian Process theory to track and
+  % map phytoplankton biomass concentrations (measured as Chlorophyll
+  % \emph{a}) in a 3D volume of water with the autonomous robotic
+  % platform, in characterizing an important scientific problem. Second,
+  % the work is verified and supplemented with multiple sources of data,
+  % from buoys, remote sensing, and ship based observations (including
+  % particle imaging systems) which contributes to demonstrating a novel
+  % perspective for conducting interdisciplinary coastal ecological
+  % studies, while combining new techologies to achieve a detailed
+  % environmental picture of the water-column.
+
+  % The article is a result of field work conducted in the coastal ocean and
+  % includes in its authorship, biological and physical oceanographers,
+  % as well as technologists and theorists.
+
+  % The method is shown to successfully map and track the layer of high
+  % Chlorophyll \emph{a} concentration, rendering a high resolution of
+  % distribution within the water-column. The results point to effective
+  % and practical benefits from leveraging methods from Statistics (GPs)
+  % with robotic autonomy to simplify and focus sampling resources in a
+  % volume of water.
+
+  We believe such a work to be representative of new methods and
+  approaches which are necessary and critical to understand our
+  changing oceans.
+
+\end{newlfm}
+\vspace{-1cm}
+\end{document}

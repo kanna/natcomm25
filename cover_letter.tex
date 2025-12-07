@@ -1,6 +1,8 @@
-\documentclass[10pt,stdletter]{newlfm}
+\documentclass[11pt,stdletter]{newlfm}
 \usepackage{charter}
 \usepackage{times}
+\usepackage{nonumonpart}
+% \pagenumbering{gobble}
 
 \widowpenalty=1000
 \clubpenalty=1000
@@ -9,8 +11,7 @@
 \sbox{\Luiuc}{%
 	\parbox[b]{1.75in}{%
 		\vspace{0.5in}%
-		\includegraphics[scale=0.8]
-		{fig/uporto.png}%
+		\includegraphics[scale=0.8]{fig/uporto.png}%
 	}%
 }%
 \makeletterhead{Uiuc}{\Lheader{\usebox{\Luiuc}}}
@@ -22,7 +23,6 @@
 \newlfmP{addrfromemail}
 \PhrPhone{Phone}
 \PhrEmail{Email}
-
 \lthUiuc
 
 \namefrom{\vspace{-1.2cm}Renato Mendes}
@@ -41,19 +41,19 @@ Oceanography\\
 \greetto{Dear Editor,}
 \closeline{Yours faithfully,}
 
-\Lfooter{University of Porto, Portugal\\
-Underwater Systems and Technology Laboratory\\
-4200-465 Porto, Portugal \\
+\Lfooter{University of Porto, Portugal, Underwater Systems and
+  Technology Laboratory, 4200-465 Porto, Portugal \\
 }
 
 \Rheader{1 of 1}
+\pagenumbering{gobble}
 
 \begin{document}
 \begin{newlfm}
 
-  Please see our manuscript % \textbf{Towards Autonomous Adaptive Sampling
-  %   of Phytoplankton in the Coastal Ocean} submitted for possible
-  % publication in \emph{Science Robotics}. The overall context of the
+  Please see our manuscript \textbf{Towards Ocean Model-Driven Robotic
+    Exploration} submitted for possible publication in
+  \emph{Oceanography}. The overall context of the
   % work is in oceanographic Sampling, using an autonomous robotic
   % platform for upper water-column observation. The work is novel in
   % multiple ways. First, it uses Gaussian Process theory to track and

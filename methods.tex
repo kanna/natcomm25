@@ -95,13 +95,13 @@ cell are averaged as a form of arithmetic upscaling
 apply direct sequential simulation with local means
 \cite{soares2001direct}\footnote{Defined by kriging estimates and
   variances, which are conditioned to existing direct measurements and
-  a spatial covariance matrix.\kcomment{Citation would be good here}},
-where each simulated value is drawn from its conditional distribution,
-accounting for both prior simulated values and local mean
-models. Doing so enables consistent updating of the variable field
-while integrating both direct AUV observations and a priori
-information. The ensemble of realizations thus provides an updated
-ocean forecast and a quantitative measure of uncertainty.
+  a spatial covariance matrix.\cite{cressie93}}, where each simulated
+value is drawn from its conditional distribution, accounting for both
+prior simulated values and local mean models. Doing so enables
+consistent updating of the variable field while integrating both
+direct AUV observations and a priori information. The ensemble of
+realizations thus provides an updated ocean forecast and a
+quantitative measure of uncertainty.
  
 The continuity of the variable field in space and time is
 characterized by variogram models fitted to long-term calibrated ocean

@@ -12,19 +12,23 @@ significant areas of the world’s oceans, benefiting from terrestrial
 inputs via river discharges and nutrient renewal driven by upwelling
 processes. As a result and in part, coastal areas concentrate a great
 proportion of human activities including leisure, to fisheries and
-offshore aquaculture to renewable energy exploitation. The coastal ocean mediates interactions between deep-ocean processes and
-coastal environment, influencing how large-scale phenomena — such as
+offshore aquaculture to renewable energy exploitation. The coastal
+ocean mediates interactions between deep-ocean processes and coastal
+environment, influencing how large-scale phenomena — such as
 climate-driven changes or extreme weather events — affect the coastal
-population. It also governs, for example, how anthropogenic
-influences originating on land are redistributed and affect marine
-ecosystems \cite{greene25}.
+population. It also governs, for example, how anthropogenic influences
+originating on land are redistributed and affect marine ecosystems
+\cite{greene25}. 
 
-Interactions among physical, chemical, and biological processes in the coastal ocean can amplify or mitigate the impacts of extreme events, including storms, flooding, and pollution. Furthermore, the coastal ocean serves as a key interface
-where large-scale oceanic and atmospheric changes manifest their
-consequences for coastal ecosystems. Accurately forecasting the state
-of the coastal ocean is therefore essential not only for safeguarding
-environmental and economic interests, but also for enhancing
-resilience to climate variability, natural hazards, and anthropogenic stressors.
+Interactions among physical, chemical, and biological processes in the
+coastal ocean can amplify or mitigate the impacts of extreme events,
+including storms, flooding, and pollution. Furthermore, the coastal
+ocean serves as a key interface where large-scale oceanic and
+atmospheric changes manifest their consequences for coastal
+ecosystems. Accurately forecasting the state of the coastal ocean is
+therefore essential not only for safeguarding environmental and
+economic interests, but also for enhancing resilience to climate
+variability, natural hazards, and anthropogenic stressors.
 
 Ocean models have become essential tools for predicting ocean state
 and underpin a wide range of societal applications, from climate
@@ -49,7 +53,6 @@ sampling ocean properties with high spatiotemporal resolution and low
 logistic footprint
 \cite{das10,das11b,olaya12,graham12,jdas13,das15,sousa16,fossum18,fossum19b}.
 
-
 However, even with these new tools, efficiently gathering data at the
 right spatial and temporal scales remains a complex challenge. AUVs
 are constrained by endurance, communication bandwidth, and operational
@@ -64,33 +67,42 @@ fundamental shift: instead of executing pre-planned missions,
 autonomous vehicles dynamically prioritize areas for observation.
 
 Our approach combines model predictions with adaptive sampling with
-propelled AUVs. \cite{lermusiaux07} explores such a concept; however the novelty of our work is in demonstrating the applicability using
-propelled AUVs, which can control their trajectory using onboard
-computation and doing so in a dynamic coastal
-environment. % In doing so
+propelled AUVs. \cite{lermusiaux07} explores such a concept; however
+the novelty of our work is in demonstrating the applicability using
+our AUVs can control their trajectory using onboard computation and
+doing so in a dynamic coastal environment. % In doing so
 % combines predicted model uncertainties in comparison with prior data
 % assimilation process with available observations.
+
 Model forecasts identify where uncertainty is highest or where new
 observations are expected to have the greatest impact in reducing
 forecast errors, i.e., higher value of information. Vehicles are then
 directed to sample these areas, and their data are in turn assimilated
-back into the models, as a virtuous cycle. Doing so closes a critical
-feedback loop between data acquisition, models and observations; model
-prediction generates a forecast and associated uncertainty field while
-AUV-based adaptive sampling targets areas of maximum predicted
-uncertainty. Data assimilation from these high uncertainty regions is
-then incorporated into the model such that new predictions benefit
-from improved in-situ data, closing the loop. Such a
-\emph{sample-assimilate-predict-direct} data cycle approach promises
-to significantly enhance the skill of ocean forecasts, especially in
-the complex coastal environment where processes occur over a wide
-range of scales. Additionally, sampling resolution with AUVs vastly
-outweighs data obtained from traditional ship-based
+back into the models, as a virtuous cycle. % ; model
+% prediction generates a forecast and associated uncertainty field while
+% AUV-based adaptive sampling targets areas of maximum predicted
+% uncertainty.
+Data assimilation from these high uncertainty regions is then
+incorporated into the model such that new predictions benefit from
+improved in-situ data. Such a data cycle approach promises to
+significantly enhance the skill of ocean forecasts, especially in the
+complex coastal environment where processes occur over a wide range of
+scales.
+
+Our work has three significant results. First it demonstrates the
+importance of coupling ocean models with high resolution AUV
+sampling. Second, it highlights the importance of targeted adaptive
+sampling based on model uncertainty. Third, it demonstrates the impact
+of assimilation to prediction and closing the
+\emph{sample-assimilate-predict-direct} loop
+(Fig. \ref{fig:block-diag}). Additionally, sampling resolution with
+AUVs vastly outweighs data obtained from traditional ship-based
 approaches. Multiple AUVs sampling simultaneously, as we do here, also
 makes a dent in spatial as well as temporal coverage of such dynamic
-environments at relatively moderate costs. Further, AUVs can provide near
-real-time data, allowing for their rapid re-tasking and potentially
-placement in spatially separated regions.
+environments at relatively moderate costs. Additionally, AUVs can
+provide near real-time data, allowing for their rapid re-tasking and
+potentially placement in evolving spatially separated regions.
+
 
 \begin{figure}[!t]
   \centering
@@ -100,27 +112,6 @@ placement in spatially separated regions.
     model skill and prediction within a tight control loop.}
   \label{fig:block-diag}
 \end{figure}
-
-In this study, we address the challenge of such loop closure by
-implementing and evaluating a complete data cycle — from model
-prediction, to uncertainty projection, to adaptive sampling and data
-assimilation — in a coastal ocean environment. The work was conducted
-within the framework of \proj (\textbf{F}ield expe\textbf{R}iments for
-mod\textbf{E}ling, a\textbf{S}similatio\textbf{N} and
-adaptiv\textbf{E} samp\textbf{L}ing), specifically designed to explore
-and test model-driven robotic exploration strategies
-(Fig. \ref{fig:block-diag}). The experimental results obtained within
-\proj serve to illustrate and validate the proposed approach,
-highlighting the practical benefits and challenges of real-world
-adaptive ocean exploration. \proj itself is part of a larger concept
-for multi-domain sensing, observation and exploration, which couples
-ocean models, autonomous robotics, Artificial Intelligence and Machine
-Learning coupled with a small satellite constellation
-\cite{rajan21}. Our end goal is to democratize ocean model prediction
-by lowering costs, providing access to a range of stakeholders, by
-integrating methods in low-cost computation of modeling services
-coupled with spatio-temporal data assimilation from mobile or immobile
-robots.
 
 This manuscript is organized as follows. Section \ref{sec:intro}
 provides an introduction to the problem we are tackling providing a

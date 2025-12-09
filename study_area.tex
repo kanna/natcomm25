@@ -29,18 +29,51 @@
 %   \label{fig:loop-closure} 
 % \end{wrapfigure}
 
+In this study, we address the challenge of loop closure by
+implementing and evaluating a complete data cycle — from model
+prediction, to uncertainty projection, to adaptive sampling and data
+assimilation. The work was conducted within the framework of \proj
+(\textbf{F}ield expe\textbf{R}iments for mod\textbf{E}ling,
+a\textbf{S}similatio\textbf{N} and adaptiv\textbf{E}
+samp\textbf{L}ing), specifically designed to explore and test
+model-driven robotic exploration strategies. The experimental results
+obtained within \proj serve to illustrate and validate the proposed
+approach, highlighting the practical benefits and challenges of
+real-world adaptive ocean exploration. 
+
+\proj itself is part of a larger concept for multi-domain sensing,
+observation and exploration, which couples ocean models, autonomous
+robotics, Artificial Intelligence and Machine Learning coupled with a
+small satellite constellation \cite{rajan21}. Our end goal is to
+democratize ocean model prediction by lowering costs, providing access
+to a range of stakeholders, by integrating methods in low-cost
+computation of modeling services coupled with spatio-temporal data
+assimilation from mobile or immobile robots across space, aerial,
+surface and underwater domains.
+
 The study was conducted in the coastal ocean off central Portugal,
-focusing on the region influenced by the \naz Canyon (39.2$^{\circ}$
-- 39.9$^{\circ}$N) (Fig. \ref{fig:studyarea-1}) during fall of
-2024. While the experiment considered the measurable impact of model-driven robotic sampling to both the bio-geochemistry of the canyon
-region, this manuscript is focused on the implications of closing the
-\emph{sample-assimilate-predict-direct} loop closure.
+focusing on the region influenced by the \naz Canyon (39.2$^{\circ}$ -
+39.9$^{\circ}$N) (Fig. \ref{fig:studyarea-1}) during fall of
+2024. While the experiment considered the measurable impact of
+model-driven robotic sampling to both the bio-geochemistry of the
+canyon region, this manuscript is focused on the implications of
+closing the \emph{sample-assimilate-predict-direct} loop closure.
 % (Fig. \ref{fig:loop-closure}).
 
-Implementing such a closed-loop system in a dynamic coastal environment presents substantial challenges. These included the need for high-resolution numerical models capable of rapidly generating uncertainty projections, robust algorithms for exploration under a range of constraints, reliable communication links for mission updates, and assimilation frameworks that integrate heterogeneous real-time data streams. Furthermore, marine operations face logistical risks and communication limitations — such as low bandwidth, intermittent connectivity, and unpredictable weather — that further constrain the execution of adaptive sampling missions.
+Implementing such a closed-loop system in a dynamic coastal
+environment presents substantial challenges. These included the need
+for high-resolution numerical models capable of rapidly generating
+uncertainty projections, robust algorithms for exploration under a
+range of constraints, reliable communication links for mission
+updates, and assimilation frameworks that integrate heterogeneous
+real-time data streams. Furthermore, marine operations face logistical
+risks and communication limitations — such as low bandwidth,
+intermittent connectivity, and unpredictable weather — that further
+constrain the execution of adaptive sampling missions.
 
 The \naz area features pronounced topographic contrasts: the
-transition from the wide Estremadura Plateau to the narrower northern shelf, the long and narrow \naz submarine canyon that incises the
+transition from the wide Estremadura Plateau to the narrower northern
+shelf, the long and narrow \naz submarine canyon that incises the
 shelf and extends more than 200km offshore, and the Berlengas
 archipelago, a UNESCO Biosphere Reserve with high ecological
 value. These features contribute to enhanced biological productivity

@@ -2,10 +2,7 @@
 \label{sec:methods}
 
 
-Our methodology is based on the implementation of a complete data cycle
-to enhance model predictions in a coastal ocean domain through robotic
-adaptive sampling and data assimilation. The approach consists of three
-fundamental steps, executed iteratively on a daily basis:
+Our methodology is based on implementing a data cycle to improve predictions from coastal ocean models through robotic adaptive sampling and data assimilation. The approach consists of three fundamental steps, executed iteratively on a daily basis:
 
 \begin{description}
 
@@ -41,9 +38,8 @@ While previous efforts have concentrated on a form of embedded and
 automated decision-making for AUV-based adaptive sampling
 \cite{mcgann08a,mcgann08b,ryan10,py10,Das-2010-637,das10,olaya12,rajan12},
 the trajectories in this work are defined manually, with adaptation
-focused on deployment based on $M_{\sigma_{\hat{\theta}}}(x, y)$. Loop
-closure in this work, therefore, refers to the
-\emph{sample-assimilate-predict-direct} process.
+focused on deployment based on $M_{\sigma_{\hat{\theta}}}(x, y)$. Here, loop
+closure refers to the \emph{sample-assimilate-predict-direct} process.
 
 \subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
 
@@ -56,7 +52,7 @@ could, in principle, be implemented directly within numerical models,
 this would require either substantially larger computational resources
 or larger temporal horizons.
 
-As a more practical alternative, we employ geostatistical stochastic
+As a practical alternative, we use geostatistical stochastic
 sequential simulation as a computationally efficient surrogate for
 short-term spatial predictions of ocean variables together with
 estimates of spatial uncertainty \cite{deutsch1992}. This approach
@@ -169,9 +165,9 @@ entrainment, and local thermal structure exert primary control on
 short-term dynamics
 \cite{mahadevan2016impact,behrenfeld2014resurrecting}.
 
-The tour itself is cast as a graph theoretic problem. The spatial
+The tour is formulated as a graph theoretic problem. The spatial
 uncertainty map is first pre-processed to remove obstacles and
-smoothened to highlight large-scale features. Candidate waypoints are
+smoothed to highlight large-scale features. Candidate waypoints are
 then identified from the map and used to build a weighted graph, where
 nodes carry a reward proportional to their uncertainty value and edges
 represent travel costs. The trajectory planning task is posed as a
@@ -192,7 +188,7 @@ deployment during \proj are reported elsewhere in
 \begin{figure}
     \centering
     \includegraphics[width=.7\linewidth]{fig/DSC_8342.JPG}
-    \caption{Multiple Light Autonomous Underwater Vehicle's such as
+    \caption{Multiple Light Autonomous Underwater Vehicles such as
       the one shown above, were used in \proje. This low-cost platform
       designed at the University of Porto has demonstrated its
       robustness and integration to a number of oceanographic sensors
@@ -203,7 +199,7 @@ deployment during \proj are reported elsewhere in
 The in-situ data collection process involved three upper water-column
 Light Autonomous Underwater Vehicles (LAUV) (XP2, XP3 and
 XP5)\footnote{We will refer to these specific vehicles across the
-  three day period given the diversity ans specificity of their
+  three day period given the diversity and specificity of their
   operating environments and measurements.} which performed targeted
 sampling missions with durations of up to 60 hours over the \naz
 Canyon region, with all vehicles sampling the upper 100m of the water
@@ -229,7 +225,7 @@ of AUVs, that operated unattended.
 Challenging meteorological and ocean conditions constrained the number
 of consecutive iterations of the
 \emph{sample-assimilate-predict-direct} loop to a three-day sequence
-of experiments (29\textsuperscript{th}-–31\textsuperscript{st}
+of experiments (29\textsuperscript{th} – 31\textsuperscript{st}
 October, 2025) (Fig. \ref{fig:scheme}). For the sake of clarity, the
 presentation of the workflow and assimilation loop is focused only on
 temperature measurements. As a consequence this work is univariate in
@@ -269,7 +265,7 @@ comparisons between forecasts with and without data assimilation.
   \centering
   \includegraphics[scale=0.3]{fig/scheme.png}
   \caption{Three-day sequence
-    (29\textsuperscript{th}–-31\textsuperscript{st} October 2025) of
+    (29\textsuperscript{th} - 31\textsuperscript{st} October 2025) of
     the \emph{sample-–assimilate–-predict-–direct} loop in the \proj
     experiment. Each cycle integrated CMS derived statistical model
     prediction, targeted sampling, AUV data acquisition and subsequent
@@ -316,9 +312,9 @@ were assimilated offline to generate scenarios
 case \textbf{C}. These cases progressively integrate different subsets
 of AUV observations, ranging from XP2-only data (\textbf{C1}) to the
 full multi-vehicle dataset from 29\textsuperscript{st} to
-30\textsuperscript{st} October (\textbf{C4}).
+30\textsuperscript{th} October (\textbf{C4}).
 
-A parallel set of scenarios (\textbf{D} and \textbf{D1}–-\textbf{D4})
+A parallel set of scenarios (\textbf{D} and \textbf{D1} - \textbf{D4})
 was generated to evaluate the sensitivity of the statistical model to
 the choice of prior CMS fields. The \textbf{D}-series uses CMS data
 available only up to 29\textsuperscript{st} October, thus representing

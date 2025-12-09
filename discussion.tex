@@ -1,13 +1,8 @@
 \section{Discussion}
 \label{sec:disc}
 
-Understanding the impact of targeted AUV observations on short-term
-ocean forecasts requires examining not only overall model–data
-agreement but also how assimilation effects vary across vehicles and
-distinct dynamical environments. While the general trend indicates
-that assimilation improves model skill, vehicle-specific results
-reveal important differences tied to the spatial distribution of
-sampling relative to coherent regions.
+Assessing the impact of targeted AUV observations on short-term
+ocean forecasts require evaluating both overall model–data agreement and how assimilation effects vary across vehicles and dynamical regimes. Although assimilation generally improves model skill, vehicle-specific results highlight differences linked to sampling distribution and regional dynamics.
 
 Figs. \ref{fig:rms_c} and \ref{fig:rms_d} present the RMSE predictions
 compared with in-situ data under the different assimilation scenarios
@@ -27,9 +22,9 @@ differences.
 The situation for XP2 was different however. The assimilation
 scenarios (\textbf{C4} and \textbf{D4}) lead to higher prediction
 errors compared with the non-assimilation runs (\textbf{C} and
-\textbf{D}). This counterintuitive result stems from an important
+\textbf{D}). This counterintuitive result reflects a
 spatial mismatch: on 31\textsuperscript{st} October, XP2 operated
-north of the \naz Canyon, whereas the assimilated data from the
+north of the \naz Canyon, while assimilated data from the
 previous days (29\textsuperscript{th} and 30\textsuperscript{th}
 October) were collected south of it. The \naz Canyon marks a
 transition zone between distinct oceanographic regimes, where
@@ -42,9 +37,7 @@ implying a substantial disturbance of the predominant north–south
 circulation parallel to the general trend of the shelf and slope
 \cite{tyler2009europe,relvas2007physical,guerreiro2014influence}. 
 
-A broader interpretation of this result is provided by the CMS fields
-shown in Fig. \ref{fig:north_south}, which compare temperature
-distributions in the northern and southern regions of the study area
+CMS fields (Fig. \ref{fig:north_south}) provide a broader context, comparing temperature distributions in northern and southern regions of the study area
 during the days preceding and during the experiment. Before
 26\textsuperscript{th} October, although mean temperatures differ
 between the two regions, their variability is consistent, indicating
@@ -58,12 +51,8 @@ transition can explain why assimilation of southern data—collected
 under a single dynamical regime—fails to improve and, in fact,
 degrades forecasts.
 
-This spatial decoupling between sampling and assimilated information
-also highlights the potential value of trajectory-planning strategies
-that explicitly seek to maximise class separation among distinct
-dynamical regimes, as proposed by \cite{fossum19b} using hierarchical
-clustering methods. Such approaches, based on criteria such as
-expected reduction of variance, mutual information, or entropy, could
+This spatial mismatch underscores the need for trajectory-planning strategies that maximize class separation between distinct dynamical regimes, as proposed by \cite{fossum19b} using hierarchical
+clustering methods. Such approaches, based on criteria including variance reduction, mutual information, or entropy, could
 help identify routes that better discriminate between competing
 oceanographic states and mitigate situations where assimilation may
 propagate misleading information if relying solely on uncertainty
@@ -101,10 +90,7 @@ existence of fine-scale gradients, in some locations greater than
 model. Although the statistical model provides smoothed, grid-averaged
 predictions of ocean properties, AUV measurements highlight
 fluctuations that occur within individual cells, indicating the
-presence of subgrid-scale dynamics. Such unresolved variability is a
-well-known source of error in data assimilation systems; numerical
-forecasts and statistical surrogates inevitably smoothen or filter
-such variability occurring below their grid scale, so observations
+presence of subgrid-scale dynamics. Unresolved variability is a known source of error in data assimilation systems; numerical forecasts and statistical surrogates inevitably smooth or filter variability below grid scale, so observations
 that resolve submesoscale or turbulent features will often disagree
 locally with grid-averaged model fields
 \cite{oke2008representation,janjic2018representation}. These
@@ -118,8 +104,7 @@ Across all missions, the AUVs sampled each grid cell with median
 values ranging from 9 to 14 measurements per cell and mean values
 between 19 and 26. These statistics indicate a relatively uniform and
 dense sampling pattern, sufficient to characterize the local
-variability of the water column at the subgrid level. The maximum
-number of samples per grid cell reached several thousand, though these
+variability of the water column at the subgrid level. The maximum number of samples per grid cell reached several thousand, though these
 values are biased by vehicle behavior near the surface, to
 communicate and geolocate.
 
@@ -135,9 +120,7 @@ between CTD stations in traditional ship-based surveys, thereby
 capturing subgrid processes that remain unresolved in numerical
 models.
 
-Importantly, this subgrid variability is not merely observational
-noise but a meaningful indicator of local uncertainty and
-environmental heterogeneity. Incorporating both the variability
+This subgrid variability is not observational noise; it provides valuable insight into local uncertainty and environmental heterogeneity. Incorporating both the variability
 (i.e. IQD) and the spatial sampling density into data assimilation
 frameworks enhances the model’s ability to represent uncertainty at
 the subgrid scale and improve the realism of short-term forecasts.
@@ -188,7 +171,7 @@ spatial and temporal resolution are considered \cite{Balaji_2022}.
 
 \begin{figure}[!]
   \centering
-  \includegraphics[scale=0.06]{fig/fig3D-inset.jpg}
+  \includegraphics[scale=0.3]{fig/fig3D-inset_v2.png}
   \caption{Trajectory of XP5 AUV, during the 30\textsuperscript{th}
     October mission in the \naz Canyon region. The color shading
     represents the interquartile range (IQD) of temperature values

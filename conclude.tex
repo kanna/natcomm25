@@ -1,26 +1,18 @@
 \section{Conclusions}
 \label{sec:conclude}
-
 This effort demonstrates the overall integration to close the
-\emph{sample-assimilate-predict-direct} cycle with the goal of
-improving oceanographic model skill by leveraging observations from
+\emph{sample-assimilate-predict-direct} cycle to improve oceanographic model skill by leveraging observations from
 robotic platforms. Figs. \ref{fig:rms_ABB1} and \ref{fig:rms} show
-clear indications of increase in predictive skill when high resolution
-data from AUVs are assimilated in a geostatistical model. By choosing
+clear indications of an increase in predictive skill when high-resolution data from AUVs are assimilated in a geostatistical model. By choosing
 such a modeling approach, this effort offers a window into the rapid
-process of assimilating and prediction, the primary goal of \proje,
+process of assimilating and predicting, the primary goal of \proje,
 and doing so with minimal operational support. The accuracy of the
 predictions of the geostatistical model increased after several
-cycles, while the overall prediction errors decreased as noted.
-Importantly, this effort puts us on a viable path towards continuous
-ocean prediction when obtaining high resolution in-situ data as
-conceptualized in the \met framework \cite{rajan21}.
+cycles, while the overall prediction errors decreased as noted. These results provide a foundation for continuous ocean prediction when obtaining high-resolution in-situ data as conceptualized in the \met framework \cite{rajan21}.
 
-A confluence of factors well outside our control, influenced our short
-three day observation cycle down from a planned three week experiment,
-primarily driven by weather, availability of platforms and
-personnel. Future work will extend this period of observation to
-gather more data from the promising results presented.
+A confluence of external factors reduced the observation period from the planned three weeks to three days, primarily due to weather, platform availability, and personnel constraints. %A confluence of factors well outside our control, influenced our short %three day observation cycle down from a planned three week experiment, %primarily driven by weather, availability of platforms and
+%personnel. 
+Future work will extend the observation period to validate and expand upon these promising results.
 
 Other challenges that remain to be addressed include near real-time
 assimilation and continuous model prediction especially to capture
@@ -34,17 +26,15 @@ algorithms used in the cycle. For instance, we will investigate the
 selection of representative depths for the application of the sampling
 algorithm \cite{bernacchi2025} used to find the horizontal projection
 of the AUV paths. Another potential outcome to be investigated is the
-use of a higher resolution numerical model and the implication of a
-longer lead time to prediction given the challenges of using larger
-computational resources.  In doing so, we would also like to
+use of higher-resolution numerical models and longer prediction horizons, considering computational trade-offs. In doing so, we would also like to
 demonstrate the viability of \emph{portable} low (computational) cost
 models running in the cloud, which can be initialized for any region
 rapidly to demonstrate the loop-closure we set out to validate.
 
-Along these lines, one interesting direction is in encapsulating a
+Along these lines, an additional research direction involves encapsulating a
 model surrogate embedded within the control system of one or more AUVs
 to capture coastal dynamism at fine scales \cite{frolov09,fossum19b},
-while complementing an increase in shore based model skill assessment.
+while complementing an increase in the assessment of shore-based model skill.
 
 
 % Full integration of command and

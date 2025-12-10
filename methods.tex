@@ -138,21 +138,41 @@ and application during the \proj experiment can be found in
 
 \subsection{The Sampling Algorithm}
 
-The adaptive sampling problem we pose here, is the design of vehicle
+Our adaptive sampling problem involves the design of vehicle
 trajectories that maximize information gain
-\cite{eidsvik2015,fossum18} extracted from the statistical model-derived uncertainty
-map, while satisfying operational AUV constraints. Each day, the
-model provides both a forecast field and its associated uncertainty
-distribution, which together define the reward landscape for the
-trajectory planner. The task is to generate, for each vehicle, a tour,
-that accumulates the highest possible uncertainty values. The tour is
-traveled at a prescribed AUV speed while the duration is bounded above
-by the assimilation period. The starting and ending point is selected
-to simplify logistics for launch and recovery.
+\cite{eidsvik2015,fossum18} extracted from the statistical
+model-derived uncertainty map, while simultaneously satisfying
+operational AUV constraints. Each day, the model provides both a
+forecast field and its associated uncertainty distribution, which
+together define the reward landscape for the trajectory planner. The
+task is to generate, for each vehicle, a tour, that accumulates the
+highest possible uncertainty values. The tour is traveled at a
+prescribed AUV speed while the duration is bounded above by the
+assimilation period. The starting and ending point is selected to
+simplify logistics for launch and recovery.
 
-Although the underlying numerical CMS model is fully three-dimensional and the statistical solution also provides predictions across multiple depth layers (as noted above), in this work, the sampling algorithm operates on a 2-Dimensional (2D) horizontal field derived from the 3D uncertainty structure of the statistical solution. This field is obtained by averaging the horizontal slices of uncertainty between the surface and 40m depth, a depth interval chosen to represent the upper mixed layer in the study region. Within this layer, turbulent mixing typically maintains relatively weak vertical gradients, and most of the temperature variability relevant for mission planning is concentrated near the surface and the upper thermocline. Averaging across this depth range, therefore, yields a stable and physically meaningful 2D representation of the uncertainty field.
+Although the underlying numerical CMS model is fully three-dimensional
+and the statistical solution also provides predictions across multiple
+depth layers, in this work, the sampling algorithm operates on a
+2-Dimensional (2D) horizontal field derived from the 3D uncertainty
+structure of the statistical solution. This field is obtained by
+averaging the horizontal slices of uncertainty between the surface and
+40m depth, a depth interval chosen to represent the upper mixed layer
+in the \naz study region. Within this layer, turbulent mixing
+typically maintains relatively weak vertical gradients, and most of
+the temperature variability relevant for mission planning is
+concentrated near the surface and the upper thermocline. Averaging
+across this depth range, therefore, yields a stable and physically
+meaningful representation of the uncertainty field.
 
-Although the trajectory planning itself is carried out in two dimensions, the yo-yo motion executed by the AUVs along each transect naturally restores vertical sampling capability, compensating for the 2D approximation and enabling the acquisition of high vertical-resolution profiles at all visited locations. This strategy also aligns with the dominant physical and biogeochemical processes occurring within the mixed layer, where air–sea interactions, nutrient entrainment, and local thermal structure exert primary control on short-term dynamics
+While the trajectory planning itself is carried out in two dimensions,
+the yo-yo motion executed by the AUVs along each transect naturally
+restores vertical sampling capability, compensating for the 2D
+approximation and enabling the acquisition of high vertical-resolution
+profiles at all visited locations. This strategy also aligns with the
+dominant physical and biogeochemical processes occurring within the
+mixed layer, where air–sea interactions, nutrient entrainment, and
+local thermal structure exert primary control on short-term dynamics
 \cite{mahadevan2016impact,behrenfeld2014resurrecting}.
 
 The tour is formulated as a graph theoretic problem. The spatial
@@ -163,15 +183,16 @@ nodes carry a reward proportional to their uncertainty value and edges
 represent travel costs. The trajectory planning task is posed as a
 tour routing problem where routes must balance the rewards obtained
 from visiting nodes with associated costs of traveling between them
-\cite{vidal2013,toth2014vehicle}. By solving this, the algorithm
-returns a set of near-optimal trajectories that prioritize regions of
-greatest uncertainty, while ensuring vehicle endurance and safety
-constraints. This provides a principled way of steering autonomous
-platforms toward the most informative sampling locations, forming a
-key component in the daily cycle of forecast, sampling, and
-assimilation. Additional insights into the algorithm and its
-deployment during \proj are reported elsewhere in
-\cite{bernacchi2025}.
+\cite{vidal2013,toth2014vehicle}. By solving this graph traversal
+problem, the algorithm returns a set of near-optimal trajectories that
+prioritize regions of greatest uncertainty, while ensuring vehicle
+endurance and safety
+constraints. % This provides a principled way of steering autonomous
+% platforms toward the most informative sampling locations, forming a
+% key component in the daily cycle of forecast, sampling, and
+% assimilation.
+Additional insights into the algorithm and its employment during \proj
+are reported elsewhere in \cite{bernacchi2025}.
 
 \subsection{Operations and Data Collection}
 
@@ -192,69 +213,103 @@ XP5)\footnote{We will refer to these specific vehicles across the
   three day period given the diversity and specificity of their
   operating environments and measurements.} which performed targeted
 sampling missions with durations of up to 60 hours over the \naz
-Canyon region, with all vehicles sampling the upper 100m of the water column. These vehicles were designed and developed in-house at the University of Porto \cite{sousa2012lauv}. They were equipped with a range of sensors, including a CTD (Fig. \ref{fig:lauvs}), along with Wi-Fi and Iridium satellite communications; the CTDs mounted on the AUVs were cross-calibrated to ensure consistency. In addition to the hardware involved, an extensive suite of mature mission planning and command/control tools was used -- discussion of these is outside the
-scope of the paper and can be referenced in
+Canyon region, with all vehicles sampling the upper 100m of the water
+column. These vehicles were designed and developed in-house at the
+University of Porto \cite{sousa2012lauv} and are equipped with a range
+of sensors, including a CTD (Fig. \ref{fig:lauvs}), along with Wi-Fi
+and Iridium satellite communications. The CTDs mounted on the AUVs
+were cross-calibrated to ensure consistency. In addition to the
+hardware involved, an extensive suite of mature mission planning and
+command/control tools was used -- discussion of these is outside the
+scope of the paper and can be found in
 \cite{dias2005neptus,seacons10,toolchain2012,pinto2013lsts,Ferreira2018}.
 
 The experiment had a small human and support vessel footprint,
 demonstrating significant cost reduction in comparison to traditional
 ship-based methods while measuring at higher spatial and temporal
 resolution. Operations were conducted continuously by pairs of
-operators working 6-hour shifts based in Porto as well as in \naz -- the intervention of small boats was limited to the launch and recovery of AUVs, which operated unattended.
-
+operators working 6-hour shifts based in Porto as well as locally in
+\naz -- the intervention of small boats was limited to the launch and
+recovery of AUVs, which operated unattended.
 
 Challenging meteorological and ocean conditions constrained the number
 of consecutive iterations of the
 \emph{sample-assimilate-predict-direct} loop to a three-day sequence
 of experiments (29\textsuperscript{th} – 31\textsuperscript{st}
-October, 2025) (Fig. \ref{fig:scheme}). For simplicity and clarity in this experiment, we focused on a single variable: temperature measurements. As a consequence, this work is univariate in showing the impact of assimilated model-driven exploration. We believe that the results in Sec \ref{sec:results} are general enough to apply to other critical oceanographic variables, which would be modeled similarly. The analysis in this work, therefore, ultimately aims to quantify the impact of assimilating AUV-acquired temperature data on the predictive performance of the statistical model and to assess the operational feasibility of the data cycle approach in a coastal setting.
+October, 2025) (Fig. \ref{fig:scheme}). Also for simplicity and
+clarity, we focused on a single variable: temperature measurements. As
+a consequence, this work is univariate in showing the impact of
+assimilated model-driven exploration. We believe that the results in
+Sec \ref{sec:results} are general enough to apply to other critical
+oceanographic variables, which would be modeled similarly. The
+analysis in this work, therefore, ultimately aims to quantify the
+impact of assimilating AUV-acquired temperature data on the predictive
+performance of the statistical model and to assess the operational
+feasibility of the data cycle approach in a coastal setting.
 
-Each experimental day followed a structured cycle involving: (i) the generation of a statistical model forecast and its associated uncertainty field using as prior the CMS numerical model data available up to the previous day \cite{sotillo2021}; (ii) the execution of the target sampling algorithm to plan the next day missions; and (iii) in-situ data collection by AUVs following the algorithmically determined tours. The data collected within the previous day were subsequently assimilated into the statistical model to produce updated forecasts, enabling comparisons between forecasts with and without data assimilation.
-
-% \begin{wrapfigure}{!h}{4.4in}
-%   \centering
-%   \includegraphics[scale=0.38]{fig/scheme.png}
-%   \caption{Three-day sequence
-%     (29\textsuperscript{th}–-31\textsuperscript{st} October 2025) of
-%     the \emph{sample-–assimilate–-predict-–direct} loop in the \proj
-%     experiment. Each cycle integrated CMS derived statistical model
-%     prediction, targeted sampling, AUV data acquisition and subsequent
-%     assimilation for prediction for the following day.}
-%   \label{fig:scheme}
-% \end{wrapfigure}
-
+Each experimental day followed a structured cycle involving: (i) the
+generation of a statistical model forecast and its associated
+uncertainty field using as prior CMS model data available up to the
+previous day \cite{sotillo2021}; (ii) the execution of the target
+sampling algorithm to plan the next day missions; and (iii) in-situ
+data collection by AUVs following the algorithmically determined
+tours. The data collected within the previous day were subsequently
+assimilated into the statistical model to produce updated forecasts,
+enabling comparisons between forecasts with and without data
+assimilation.
 
 \begin{figure}[!t]
   \centering
   \includegraphics[scale=0.3]{fig/scheme.png}
-  \caption{Three-day sequence
-    (29\textsuperscript{th} - 31\textsuperscript{st} October 2025) of
-    the \emph{sample-–assimilate–-predict-–direct} loop in the \proj
-    experiment. Each cycle integrated statistical model predictions using the CMS numerical model as a prior, targeted sampling, AUV data acquisition, and subsequent assimilation to predict the following day.}
+  \caption{Three-day sequence (29\textsuperscript{th} -
+    31\textsuperscript{st} October 2025) of the
+    \emph{sample-–assimilate–-predict-–direct} loop in the \proj
+    experiment. Each cycle integrated statistical model predictions
+    using the CMS model as a prior, targeted sampling, AUV data
+    acquisition, and subsequent assimilation for the following day's
+    predict.}
   \label{fig:scheme}
 \end{figure}
 
 \subsubsection{A Multi-scenario framework}
 
-Given challenges related to weather, assimilation and model prediction, and multiple AUVs, a number of scenario solutions contribute to the final solution set. These scenarios, labelled \textbf{A} through \textbf{D} (and their corresponding assimilation variants), are summarised in Table \ref{table:scenarios}. The table provides a compact, color-coded overview of all configurations (used in Figs. \ref{fig:rms_ABB1} and \ref{fig:rms}), including statistical forecast dates, prior CMS fields, and the specific AUV datasets assimilated at
-each stage.
+Given the logistical and weather related challenges, a number of
+scenarios contribute to the final solution set. These labelled
+\textbf{A} through \textbf{D} (and their corresponding assimilation
+variants), are summarised in Table \ref{table:scenarios} which
+provides a compact, color-coded overview of all configurations (used
+in Figs. \ref{fig:rms_ABB1} and \ref{fig:rms}), including statistical
+forecast dates, prior CMS fields, and the specific AUV datasets
+assimilated at each stage.
 
 On 29\textsuperscript{th} October, the statistical model produced the
 initial forecast solution (\textbf{A}), which was used to plan the
 mission executed by XP2 (Fig. \ref{fig:scheme}). The resulting data
 was assimilated offline to produce an updated statistical model
-solution (\textbf{B1}) for 30\textsuperscript{th} October. Although operational real-time assimilation was initially planned, logistical constraints prevented its implementation; consequently, all assimilation was performed offline after AUV mission completion. The targeted sampling algorithm, therefore, relied on statistical forecasts \emph{without} assimilation (\textbf{B}), using pre-existing data as input for daily mission planning. This limitation is not expected to have significantly affected the experimental outcomes, as the operational area was compact and the predicted variability field remained consistent between consecutive days\footnote{In future implementations, on-board or near-real-time assimilation would need to be considered to fully exploit the framework's adaptive potential}.
+solution (\textbf{B1}) for 30\textsuperscript{th} October. Although
+operational real-time assimilation was initially planned, logistical
+constraints prevented its implementation; consequently, all
+assimilations were performed offline after AUV mission completion. The
+targeted sampling algorithm, therefore, relied on statistical
+forecasts \emph{without} assimilation (\textbf{B}), using pre-existing
+data as input for daily mission planning. This limitation is not
+expected to have significantly affected the experimental outcomes, as
+the operational area was compact and the predicted variability field
+remained consistent between consecutive days\footnote{In future
+  implementations, on-board or near-real-time assimilation would need
+  to be considered to fully exploit the framework's adaptive
+  potential}.
 
 For 31\textsuperscript{st} October, multiple assimilation
 configurations were tested to quantify how the information collected
 on previous days could influence short-term predictive
-skill. Measurements from XP3 and XP5 on 30\textsuperscript{st} October
+skill. Measurements from XP3 and XP5 on the 30\textsuperscript{st}
 were assimilated offline to generate scenarios
 \textbf{C1}-–\textbf{C4}, complementing the non-assimilated reference
 case \textbf{C}. These cases progressively integrate different subsets
 of AUV observations, ranging from XP2-only data (\textbf{C1}) to the
-full multi-vehicle dataset from 29\textsuperscript{st} to
-30\textsuperscript{th} October (\textbf{C4}).
+full multi-vehicle dataset from the 29\textsuperscript{st} to the
+30\textsuperscript{th} (\textbf{C4}).
 
 A parallel set of scenarios (\textbf{D} and \textbf{D1} - \textbf{D4})
 was generated to evaluate the sensitivity of the statistical model to
@@ -296,14 +351,4 @@ October.
   \ref{fig:rms} to disambiguate RMSE plots.}
 \label{table:scenarios}
 \end{table}
-
-
-% \begin{figure}
-%     \centering
-%     %\includegraphics[width=.7\linewidth]{fig/temperatureprofiles.png}
-%     \caption{INSERT schematic about the 3-day loop}
-%     \label{fig:temperatureprofiles}
-% \end{figure}
-
-% PLEASE CHECK CAPTION OF FIGURE 3 - I have done this sequentially, except for this mod
-%   \label{fig:loop-closure} 
+\

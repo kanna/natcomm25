@@ -58,56 +58,46 @@ y)$. Here, loop closure refers to the
 
 \subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
 
-Sampling strategies rely on timely information about the spatial
-variability of ocean properties. \kcomment{This is very
-  confusing. What we need is some text here about ``models'' typically
-  being of the numerical variety e.g. ROMS. THEN you can pivot to use
-  the following sentence about how they're computationally intensive.}
-However, conventional numerical ocean models are computationally
-intensive, and their runtime makes them impractical for use with high
-spatial resolution and in near real-time mission planning
-\cite{agarwal21}. While similar assimilation cycles could, in
-principle, be implemented directly within numerical models, this would
-require either substantially larger computational resources or larger
-temporal horizons.
+Sampling strategies rely on timely information about the spatial variability of ocean properties. Conventional numerical ocean circulation models, based on the primitive equations of fluid dynamics, such as E.U. Copernicus Marine Service (CMS)
+\cite{CMEMS2017}, Regional Ocean Modeling System (ROMS)\cite{shchepetkin2005regional}, and Hybrid Coordinate Ocean Model (HYCOM)\cite{wallcraft2009software}, for example, are widely used by the scientific community for operational forecasting and research. These models provide physically consistent simulations of ocean state variables (e.g., temperature, salinity, currents) and underpin applications ranging from climate prediction to coastal management. However, numerical ocean models are computationally intensive, and their runtime makes them impractical for use with high spatial resolution and in near real-time mission planning \cite{agarwal21}. While similar assimilation cycles could, in principle, be implemented directly within numerical models, this would require either substantially larger computational resources or larger temporal horizons.
+
+
+%Sampling strategies rely on timely information about the spatial
+%ariability of ocean properties. \kcomment{This is very
+%  confusing. What we need is some text here about ``models'' typically
+%  being of the numerical variety e.g. ROMS. THEN you can pivot to use
+%  the following sentence about how they're computationally intensive.}
+%However, conventional numerical ocean models are computationally
+%intensive, and their runtime makes them impractical for use with high
+%spatial resolution and in near real-time mission planning
+%\cite{agarwal21}. While similar assimilation cycles could, in
+%principle, be implemented directly within numerical models, this would
+%require either substantially larger computational resources or larger
+%temporal horizons.
 
 As a practical alternative, we use geostatistical stochastic
 sequential simulation as a computationally efficient surrogate for
 short-term spatial predictions of ocean variables together with
 estimates of spatial uncertainty \cite{deutsch1992}. This approach
 captures the essential variability of local ocean dynamics, based on
-calibrated deterministic dynamic ocean models, at a fraction of the
+a prior numerical ocean model solution, at a fraction of the
 computational cost of numerical models, while remaining flexible
 enough to rapidly assimilate new in-situ observations
-\cite{Duarte2025}.  However, with this type of surrogate models we are
-not explicitly considering the full-physics of the ecosystem and the
-quality of the predictions directly depends on the accuracy of the
-calibrated model and prediction time length. If the calibrated model
-is unable to capture the true nature of the system the geostatistical
-predictions will likely be inaccurate.  \kcomment{The following
+\cite{Duarte2025}.  However, with this type of surrogate models, we are not explicitly considering the full-physics of the system, and the quality of the predictions directly depends on the accuracy of the numerical model and prediction time length. If the numerical model
+is unable to capture the true nature of the system, the geostatistical predictions will likely be inaccurate.  \kcomment{The following
   commented out, doesn't need to be said, does it? See the
-  source.}% Equally, if there is a new
+  source.} \rmcomment{yes}% Equally, if there is a new
 % oceanographic event that is not present in the calibrated model, the
 % geostatistical approach will not be able to capture it.
 
-Our methodology relies on ensembles of geostatistical realizations,
-each representing a state of an ocean variable field conditioned by
-\emph{a priori} deterministic ocean models \kcomment{This is also
-  confusing. Isn't CMEMS a \underline{single} model, i.e. why the
-  plural? And isn't CMEMS a numerical model? If so, a simpler sentence
-  structure could be easier to understand.} \cite{CMEMS2017} and
-direct \kcomment{What does 'direct' mean?} observations. By computing
-the pointwise standard deviation across the ensemble, we obtain
-spatial uncertainty maps that highlight regions where predictions are
-more variable and therefore potentially a target for robotic
-sampling. These maps then, serve as the basis for identifying areas
-where new measurements are expected to maximize the reduction of
-forecast error.
+Our methodology relies on ensembles of geostatistical realizations, each representing a state of an ocean variable field conditioned by \emph{a priori} deterministic numerical ocean model \cite{CMEMS2017} and observations. By computing the pointwise standard deviation across the ensemble, we obtain spatial uncertainty maps that highlight regions where predictions are more variable and therefore potentially a target for robotic sampling. These maps then, serve as the basis for identifying areas where new measurements are expected to maximize the reduction of forecast error.
 
-Beyond uncertainty prediction, the \st{proposed framework}
-\kcomment{This is NOT the framework we talk about later in the paper,
-  correct? If so, then perhaps use another phrase?} also allows direct
-assimilation of AUV acquired data. Data collected on a given day is
+Beyond uncertainty prediction, the statistical approach incorporates AUV data through sequential assimilation, refining forecasts for subsequent cycles.
+%the \st{proposed framework}
+%\kcomment{This is NOT the framework we %talk about later in the paper,
+%  correct? If so, then perhaps use another phrase?} also allows direct
+%assimilation of AUV acquired data. 
+Data collected on a given day is
 used to update the ocean variable forecast for the following day by
 combining prior predictions with new measurements. The simulation
 grid, in this case, includes two temporal layers: the first containing
@@ -127,21 +117,21 @@ priori information. The ensemble of realizations thus provides an
 updated ocean forecast and a quantitative measure of uncertainty.
  
 The continuity of the variable field in space and time is
-characterized by variogram models fitted to long-term calibrated ocean
-model data from the E.U. Copernicus Marine Service (CMS)
-\cite{CMEMS2017}. For each depth layer of the deterministic model,
+characterized by variogram models fitted to long-term numerical ocean
+model data from the CMS
+\cite{CMEMS2017}. For each depth layer of the numerical model (CMS),
 geostatistical simulations are performed independently using a moving
 temporal window of the previous 14 days as conditioning data. This
-window length was selected through comparison with the deterministic
-model’s short-term evolution under similar seasonal conditions,
+window length was selected through comparison with the numerical
+model’s (CMS) short-term evolution under similar seasonal conditions,
 striking a balance between forecast stability and computational
 cost. Spatial propagation occurs only horizontally within each depth
 level, while vertical consistency is implicitly maintained through the
-depth-specific variogram structures derived from the 3D deterministic
-model. \kcomment{I for one am quiet confused here. What is the 3D
+depth-specific variogram structures derived from the 3D numerical
+model (CMS). \kcomment{I for one am quiet confused here. What is the 3D
   deterministic model? What is the 'calibrated ocean model' from above
   in this paragraph? Having a consistent terminology and making it
-  clear what/where/how CMEMS is used would help.} This provides both a
+  clear what/where/how CMEMS is used would help.} \rmcomment{done} This provides both a
 forecast of ocean variables being simulated, as well as a quantitative
 assessment of the prediction uncertainty.  By updating the forecasts
 with new in-situ measurements through sequential assimilation, the
@@ -149,22 +139,22 @@ method progressively refines the variable field while maintaining
 consistency with prior model dynamics. The resulting forecast and
 uncertainty maps then form the input for the targeted sampling
 algorithm, guiding the allocation of AUV trajectories towards regions
-of greatest expected information gain. More details about the model,
+of greatest expected information gain. More details about the geostatistical model,
 its development, and application during the \proj experiment can be
 found in \cite{Duarte2025}.
 
 \kcomment{I do think the above is a critical and important part of the
   m/s and sets up the process in the mind of the reviewer, most likely
   a physical oceanographer. So having the terms clarified, using them
-  precisely (i.e. not use 'framework' here) will be important.}
+  precisely (i.e. not use 'framework' here) will be important.}\rmcomment{done}
 
 \subsection{The Sampling Algorithm}
 
 The adaptive sampling problem we pose here, is the design of vehicle
 trajectories that maximize information gain
-\cite{eidsvik2015,fossum18} extracted from a model-derived uncertainty
+\cite{eidsvik2015,fossum18} extracted from the statistical model-derived uncertainty
 map, while satisfying operational AUV constraints. Each day, the
-models provide both a forecast field and its associated uncertainty
+model provides both a forecast field and its associated uncertainty
 distribution, which together define the reward landscape for the
 trajectory planner. The task is to generate, for each vehicle, a tour,
 that accumulates the highest possible uncertainty values. The tour is
@@ -172,30 +162,9 @@ traveled at a prescribed AUV speed while the duration is bounded above
 by the assimilation period. The starting and ending point is selected
 to simplify logistics for launch and recovery.
 
-Although the underlying deterministic CMS model is fully
-three-dimensional and the statistical solution also provides
-predictions across multiple depth layers (as noted above), in this
-work, the sampling algorithm operates on a 2-Dimensional (2D)
-horizontal field derived from the 3D uncertainty structure of the
-statistical solution. This field is obtained by averaging the
-horizontal slices of uncertainty between the surface and 40m depth, a
-depth interval chosen to represent the upper mixed layer in the study
-region. Within this layer, turbulent mixing typically maintains
-relatively weak vertical gradients, and most of the temperature
-variability relevant for mission planning is concentrated near the
-surface and the upper thermocline. Averaging across this depth range
-therefore, yields a stable and physically meaningful 2D representation
-of the uncertainty field.
+Although the underlying numerical CMS model is fully three-dimensional and the statistical solution also provides predictions across multiple depth layers (as noted above), in this work, the sampling algorithm operates on a 2-Dimensional (2D) horizontal field derived from the 3D uncertainty structure of the statistical solution. This field is obtained by averaging the horizontal slices of uncertainty between the surface and 40m depth, a depth interval chosen to represent the upper mixed layer in the study region. Within this layer, turbulent mixing typically maintains relatively weak vertical gradients, and most of the temperature variability relevant for mission planning is concentrated near the surface and the upper thermocline. Averaging across this depth range, therefore, yields a stable and physically meaningful 2D representation of the uncertainty field.
 
-Although the trajectory planning itself is carried out in two
-dimensions, the yo-yo motion executed by the AUVs along each transect
-naturally restores vertical sampling capability, compensating for the
-2D approximation and enabling the acquisition of high
-vertical-resolution profiles at all visited locations. This strategy
-also aligns with the dominant physical and biogeochemical processes
-occurring within the mixed layer, where air–sea interactions, nutrient
-entrainment, and local thermal structure exert primary control on
-short-term dynamics
+Although the trajectory planning itself is carried out in two dimensions, the yo-yo motion executed by the AUVs along each transect naturally restores vertical sampling capability, compensating for the 2D approximation and enabling the acquisition of high vertical-resolution profiles at all visited locations. This strategy also aligns with the dominant physical and biogeochemical processes occurring within the mixed layer, where air–sea interactions, nutrient entrainment, and local thermal structure exert primary control on short-term dynamics
 \cite{mahadevan2016impact,behrenfeld2014resurrecting}.
 
 The tour is formulated as a graph theoretic problem. The spatial
@@ -235,14 +204,7 @@ XP5)\footnote{We will refer to these specific vehicles across the
   three day period given the diversity and specificity of their
   operating environments and measurements.} which performed targeted
 sampling missions with durations of up to 60 hours over the \naz
-Canyon region, with all vehicles sampling the upper 100m of the water
-column. These vehicles designed and developed in-house at the
-University of Porto \cite{sousa2012lauv} came equipped with a range of
-sensors including a CTD (Fig. \ref{fig:lauvs}) along with WiFi and
-Iridium satellite communications; the CTDs mounted on the AUVs were
-cross-calibrated to ensure consistency. In addition to the hardware
-involved, an extensive suite of mature mission planning and
-command/control tools were used -- discussion of these is outside the
+Canyon region, with all vehicles sampling the upper 100m of the water column. These vehicles were designed and developed in-house at the University of Porto \cite{sousa2012lauv}. They were equipped with a range of sensors, including a CTD (Fig. \ref{fig:lauvs}), along with Wi-Fi and Iridium satellite communications; the CTDs mounted on the AUVs were cross-calibrated to ensure consistency. In addition to the hardware involved, an extensive suite of mature mission planning and command/control tools was used -- discussion of these is outside the
 scope of the paper and can be referenced in
 \cite{dias2005neptus,seacons10,toolchain2012,pinto2013lsts,Ferreira2018}.
 
@@ -250,35 +212,16 @@ The experiment had a small human and support vessel footprint,
 demonstrating significant cost reduction in comparison to traditional
 ship-based methods while measuring at higher spatial and temporal
 resolution. Operations were conducted continuously by pairs of
-operators working 6 hour shifts based in Porto as well as in \naz --
-the intervention of small boats was limited to the launch and recovery
-of AUVs, that operated unattended.
+operators working 6-hour shifts based in Porto as well as in \naz -- the intervention of small boats was limited to the launch and recovery of AUVs, which operated unattended.
 
 
 Challenging meteorological and ocean conditions constrained the number
 of consecutive iterations of the
 \emph{sample-assimilate-predict-direct} loop to a three-day sequence
 of experiments (29\textsuperscript{th} – 31\textsuperscript{st}
-October, 2025) (Fig. \ref{fig:scheme}). For simplicity and clarity in
-this experiment, we focused on one variable, namely temperature
-measurements. As a consequence this work is univariate in showing the
-impact of assimilated model-driven exploration. We believe that
-results in Sec \ref{sec:results} are general enough to apply to other
-critical oceanographic variables which would be modeled similarly. The
-analysis in this work therefore, ultimately aims to quantify the
-impact of assimilating AUV-acquired temperature data on the predictive
-performance of the statistical model and to assess the operational
-feasibility of the data cycle approach in a coastal setting.
+October, 2025) (Fig. \ref{fig:scheme}). For simplicity and clarity in this experiment, we focused on a single variable: temperature measurements. As a consequence, this work is univariate in showing the impact of assimilated model-driven exploration. We believe that the results in Sec \ref{sec:results} are general enough to apply to other critical oceanographic variables, which would be modeled similarly. The analysis in this work, therefore, ultimately aims to quantify the impact of assimilating AUV-acquired temperature data on the predictive performance of the statistical model and to assess the operational feasibility of the data cycle approach in a coastal setting.
 
-Each experimental day followed a structured cycle involving: (i) the
-generation of a statistical model forecast and its associated
-uncertainty field based on the CMS data available up to the previous
-day \cite{sotillo2021}; (ii) the execution of the target sampling
-algorithm to plan the next day missions; and (iii) in-situ data
-collection by AUVs following the algorithmically determined tours. The
-data collected within the previous day were subsequently assimilated
-into the statistical model to produce updated forecasts, enabling
-comparisons between forecasts with and without data assimilation.
+Each experimental day followed a structured cycle involving: (i) the generation of a statistical model forecast and its associated uncertainty field using as prior the CMS numerical model data available up to the previous day \cite{sotillo2021}; (ii) the execution of the target sampling algorithm to plan the next day missions; and (iii) in-situ data collection by AUVs following the algorithmically determined tours. The data collected within the previous day were subsequently assimilated into the statistical model to produce updated forecasts, enabling comparisons between forecasts with and without data assimilation.
 
 % \begin{wrapfigure}{!h}{4.4in}
 %   \centering
@@ -299,41 +242,20 @@ comparisons between forecasts with and without data assimilation.
   \caption{Three-day sequence
     (29\textsuperscript{th} - 31\textsuperscript{st} October 2025) of
     the \emph{sample-–assimilate–-predict-–direct} loop in the \proj
-    experiment. Each cycle integrated CMS derived statistical model
-    prediction, targeted sampling, AUV data acquisition and subsequent
-    assimilation for prediction for the following day.}
+    experiment. Each cycle integrated statistical model predictions using the CMS numerical model as a prior, targeted sampling, AUV data acquisition, and subsequent assimilation to predict the following day.}
   \label{fig:scheme}
 \end{figure}
 
 \subsubsection{A Multi-scenario framework}
 
-Given challenges related to weather, assimilation and model
-prediction, and multiple AUVs, a number of scenario solutions
-contribute to the final solution set. These scenarios, labelled
-\textbf{A} through \textbf{D} (and their corresponding assimilation
-variants) are summarised in Table \ref{table:scenarios}. The table
-provides a compact, color-coded overview of all configurations (used
-in Figs. \ref{fig:rms_ABB1} and \ref{fig:rms}), including forecast
-dates, prior CMS fields, and the specific AUV datasets assimilated at
+Given challenges related to weather, assimilation and model prediction, and multiple AUVs, a number of scenario solutions contribute to the final solution set. These scenarios, labelled \textbf{A} through \textbf{D} (and their corresponding assimilation variants), are summarised in Table \ref{table:scenarios}. The table provides a compact, color-coded overview of all configurations (used in Figs. \ref{fig:rms_ABB1} and \ref{fig:rms}), including statistical forecast dates, prior CMS fields, and the specific AUV datasets assimilated at
 each stage.
 
 On 29\textsuperscript{th} October, the statistical model produced the
 initial forecast solution (\textbf{A}), which was used to plan the
 mission executed by XP2 (Fig. \ref{fig:scheme}). The resulting data
 was assimilated offline to produce an updated statistical model
-solution (\textbf{B1}) for 30\textsuperscript{th} October. Although
-operational real-time assimilation was initially planned, logistical
-constraints prevented its implementation; consequently, all
-assimilation was performed offline after AUV mission completion. The
-targeted sampling algorithm, therefore, relied on statistical
-forecasts \emph{without} assimilation (\textbf{B}), using pre-existing
-data as input for daily mission planning. This limitation is not
-expected to have significantly affected the experimental outcomes, as
-the operational area was spatially compact and the predicted
-variability field remained consistent between consecutive
-days\footnote{In future implementations, on-board or near-real-time
-  assimilation would need to be considered to fully exploit the
-  adaptive potential of the framework}.
+solution (\textbf{B1}) for 30\textsuperscript{th} October. Although operational real-time assimilation was initially planned, logistical constraints prevented its implementation; consequently, all assimilation was performed offline after AUV mission completion. The targeted sampling algorithm, therefore, relied on statistical forecasts \emph{without} assimilation (\textbf{B}), using pre-existing data as input for daily mission planning. This limitation is not expected to have significantly affected the experimental outcomes, as the operational area was compact and the predicted variability field remained consistent between consecutive days\footnote{In future implementations, on-board or near-real-time assimilation would need to be considered to fully exploit the framework's adaptive potential}.
 
 For 31\textsuperscript{st} October, multiple assimilation
 configurations were tested to quantify how the information collected

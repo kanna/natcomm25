@@ -76,6 +76,66 @@ afternoon during XP5’s mission.
 % The following section summarizes the quantitative evaluation of the
 % model’s predictive performance across all tested scenarios. 
 
+In Fig. \ref{fig:scatter}, four scatter plots compare the measurements
+acquired in-situ on 31\textsuperscript{st} October against the
+corresponding geostatistical predictions derived under each
+scenario. They focus on the most contrasted scenarios: the baseline
+cases without assimilation (\textbf{C} and \textbf{D}) and those
+incorporating the full set of AUV observations from previous days
+(\textbf{C4} and \textbf{D4}). The observations include all available
+measurements collected by the missions on that day (see
+Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate
+the depth layers associated with the vertical discretization used in
+the deterministic CMS model which defines the vertical structure of
+the statistical model.  This comparison illustrates the model's
+ability to reproduce the observed temperatures at each measurement
+point accurately, contrasting the non-assimilated cases (\textbf{C}
+and \textbf{D}) with the partially and fully assimilated
+(\textbf{C1–4} and \textbf{D1–4}).
+
+In the baseline scenarios without assimilation (\textbf{C} and
+\textbf{D}), the plots exhibit a wide spread of points around the
+reference line, indicating substantial discrepancies between the model
+predictions and the observed AUV measurements. These deviations are
+particularly evident in XP3 and XP5 data, where temperatures around
+20-30 m depth tend to be overestimated by almost 1$^{\circ}$C)
+(Figs. \ref{fig:rms_c} and \ref{fig:rms_d}). This dispersion reflects
+the model’s limited ability to accurately reproduce the vertical
+thermal structure when it relies solely on CMS data without
+incorporating in-situ information.
+
+In contrast, the fully assimilated scenarios (\textbf{C4} and
+\textbf{D4}) show a much tighter clustering of points around the
+reference, especially within the studied upper layers, where the previous AUV
+missions provide dense and temporally relevant observations. This
+reduction in spread suggests a clear improvement in predictive
+accuracy, indicating that the assimilation of targeted measurements
+effectively constrains the thermal structure and captures ongoing
+physical transitions in the water column.
+
+\begin{figure}[!]
+  \centering
+  \subfigure[]
+  {\label{fig:scatter_c}\includegraphics[width=.425\linewidth]{fig/scatter_c.png}}
+  \subfigure[]
+  {\label{fig:scatter_c4}\includegraphics[width=.55\linewidth]{fig/scatter_c4.png}}
+    \subfigure[]
+  {\label{fig:scatter_d}\includegraphics[width=.43\linewidth]{fig/scatter_d.png}}
+    \subfigure[]
+  {\label{fig:scatter_d4}\includegraphics[width=.42\linewidth]{fig/scatter_d4.png}}
+  \caption{Comparison between in-situ AUV observations
+    (31\textsuperscript{st} October) and model predictions for
+    scenarios \textbf{C} \subref{fig:scatter_c}, \textbf{C4}
+    (\subref{fig:scatter_c4}), \textbf{D} (\subref{fig:scatter_d}),
+    and \textbf{D4} (\subref{fig:scatter_d4}). Shallower layers are
+    shown in warmer colors (red to yellow), while deeper layers ($>$
+    30m) are progressively represented in cooler shades (green to
+    blue). The dashed red line provides a reference for correlation.}
+  \label{fig:scatter}
+\end{figure}
+
+
+
 \begin{wrapfigure}{!h}{2.75in}
   \centering
   \includegraphics[scale=0.5]{fig/rms_ABB1.png}
@@ -106,20 +166,10 @@ scenarios correspond to forecasts for the 30\textsuperscript{th}
 without and with the assimilation of in-situ observations during the
 previous day (see Table \ref{table:scenarios}). RMSE values in scenario \textbf{A} range from approximately 0.48$^{\circ}$C near the surface to 1.33$^{\circ}$C at 40m, with a mean RMSE of about 0.74$^{\circ}$C. The errors increase with depth, indicating reduced model skill in reproducing the subsurface thermal structure.  The non-assimilated \textbf{B} scenario remains similar to \textbf{A} in the upper layers but diverges below 20m. Assimilation in scenario \textbf{B1} consistently improves predictions across the water column compared to the non-assimilated \textbf{B} scenario with RMSE values between 0.31$^{\circ}$C and 0.55$^{\circ}$C and an average of 0.39$^{\circ}$C representing an overall reduction of nearly 50\% relative to \textbf{B}. This improvement is most pronounced in the 5–-20m layers, coinciding with the strongest vertical temperature gradients and the region most densely sampled by the AUVs.
 
-The results for 31\textsuperscript{st} October, summarized in
-Fig. \ref{fig:rms}, correspond to the phase of the experiment in which
-multiple assimilation scenarios were tested. The \textbf{C}-series
-used CMS data up to the 30\textsuperscript{th}, whereas the
-\textbf{D}-series uses CMS up to the 29\textsuperscript{th},
-representing a less favorable statistical initial state. In both
-cases, the assimilation scenarios (\textbf{C1–C4} and
-\textbf{D1–D4}) correspond to the incorporation of AUV data collected
-during previous days (see Table \ref{table:scenarios}).
+The results for 31\textsuperscript{st} October, summarized in Fig. \ref{fig:rms}, correspond to the phase of the experiment in which multiple assimilation scenarios were tested. The \textbf{C}-series
+used CMS data up to the 30\textsuperscript{th}, whereas the \textbf{D}-series uses CMS up to the 29\textsuperscript{th}, representing a less favorable statistical initial state. In both cases, the assimilation scenarios (\textbf{C1–C4} and \textbf{D1–D4}) correspond to the incorporation of AUV data collected during previous days (see Table \ref{table:scenarios}).
 
-A consistent reduction in statistical forecast error is observed
-across most vehicles and assimilation stages. In the
-\textbf{C}-series, the average RMSE across all AUVs decreases from
-approximately 0.40$^{\circ}$C in \textbf{C} to 0.31$^{\circ}$C in
+A consistent reduction in statistical forecast error is observed across most vehicles and assimilation stages. In the \textbf{C}-series, the average RMSE across all AUVs decreases from approximately 0.40$^{\circ}$C in \textbf{C} to 0.31$^{\circ}$C in
 \textbf{C4}, while in the \textbf{D}-series, the mean RMSE drops from
 0.55$^{\circ}$C in \textbf{D} to 0.40$^{\circ}$C in \textbf{D4} (see
 Table \ref{table:scenarios}). These improvements correspond to an
@@ -188,63 +238,7 @@ upwelling–-relaxation transition.
   \label{fig:rms}
 \end{figure}
 
-In Fig. \ref{fig:scatter}, four scatter plots compare the measurements
-acquired in-situ on 31\textsuperscript{st} October against the
-corresponding geostatistical predictions derived under each
-scenario. They focus on the most contrasted scenarios: the baseline
-cases without assimilation (\textbf{C} and \textbf{D}) and those
-incorporating the full set of AUV observations from previous days
-(\textbf{C4} and \textbf{D4}). The observations include all available
-measurements collected by the missions on that day (see
-Fig. \ref{fig:sst} and \ref{fig:temperatureprofiles}. Colors indicate
-the depth layers associated with the vertical discretization used in
-the deterministic CMS model which defines the vertical structure of
-the statistical model.  This comparison illustrates the model's
-ability to reproduce the observed temperatures at each measurement
-point accurately, contrasting the non-assimilated cases (\textbf{C}
-and \textbf{D}) with the partially and fully assimilated
-(\textbf{C1–4} and \textbf{D1–4}).
 
-In the baseline scenarios without assimilation (\textbf{C} and
-\textbf{D}), the plots exhibit a wide spread of points around the
-reference line, indicating substantial discrepancies between the model
-predictions and the observed AUV measurements. These deviations are
-particularly evident in XP3 and XP5 data, where temperatures around
-20-30 m depth tend to be overestimated by almost 1$^{\circ}$C)
-(Figs. \ref{fig:rms_c} and \ref{fig:rms_d}). This dispersion reflects
-the model’s limited ability to accurately reproduce the vertical
-thermal structure when it relies solely on CMS data without
-incorporating in-situ information.
-
-In contrast, the fully assimilated scenarios (\textbf{C4} and
-\textbf{D4}) show a much tighter clustering of points around the
-reference, especially within the studied upper layers, where the previous AUV
-missions provide dense and temporally relevant observations. This
-reduction in spread suggests a clear improvement in predictive
-accuracy, indicating that the assimilation of targeted measurements
-effectively constrains the thermal structure and captures ongoing
-physical transitions in the water column.
-
-\begin{figure}[!]
-  \centering
-  \subfigure[]
-  {\label{fig:scatter_c}\includegraphics[width=.425\linewidth]{fig/scatter_c.png}}
-  \subfigure[]
-  {\label{fig:scatter_c4}\includegraphics[width=.55\linewidth]{fig/scatter_c4.png}}
-    \subfigure[]
-  {\label{fig:scatter_d}\includegraphics[width=.43\linewidth]{fig/scatter_d.png}}
-    \subfigure[]
-  {\label{fig:scatter_d4}\includegraphics[width=.42\linewidth]{fig/scatter_d4.png}}
-  \caption{Comparison between in-situ AUV observations
-    (31\textsuperscript{st} October) and model predictions for
-    scenarios \textbf{C} \subref{fig:scatter_c}, \textbf{C4}
-    (\subref{fig:scatter_c4}), \textbf{D} (\subref{fig:scatter_d}),
-    and \textbf{D4} (\subref{fig:scatter_d4}). Shallower layers are
-    shown in warmer colors (red to yellow), while deeper layers ($>$
-    30m) are progressively represented in cooler shades (green to
-    blue). The dashed red line provides a reference for correlation.}
-  \label{fig:scatter}
-\end{figure}
 
 
 

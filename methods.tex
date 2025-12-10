@@ -7,17 +7,6 @@ improve predictions from a coastal ocean model via robotic adaptive
 sampling and data assimilation. The approach consists of three
 fundamental steps, executed iteratively on a daily basis:
 
-\kcomment{Renato, this confusion between CMEMS and the statistical
-  model needs to be clarified. Recall I took away 'numerical' in the
-  text below. Thats because we need to focus on what we did. I think
-  you can mention, something like ``we use a numerical model like CMEMS
-  to seed the initial conditions.....'' or something like that. But
-  the ``model'' here should be construed to clearly imply the
-  statistical model from Leonardo. Otherwise it'll be confusing. The
-  bullet items below should target what we're doing, hence the 'model'
-  should be clear to the reader here. Besides CMEMS wasn't generating
-  uncertainty maps. The statistical model was. Correct?}
-
 \begin{description}
 
 \item [Model Forecast and Uncertainty Projection]: An ocean model
@@ -58,95 +47,94 @@ y)$. Here, loop closure refers to the
 
 \subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
 
-Sampling strategies rely on timely information about the spatial variability of ocean properties. Conventional numerical ocean circulation models, based on the primitive equations of fluid dynamics, such as E.U. Copernicus Marine Service (CMS)
-\cite{CMEMS2017}, Regional Ocean Modeling System (ROMS)\cite{shchepetkin2005regional}, and Hybrid Coordinate Ocean Model (HYCOM)\cite{wallcraft2009software}, for example, are widely used by the scientific community for operational forecasting and research. These models provide physically consistent simulations of ocean state variables (e.g., temperature, salinity, currents) and underpin applications ranging from climate prediction to coastal management. However, numerical ocean models are computationally intensive, and their runtime makes them impractical for use with high spatial resolution and in near real-time mission planning \cite{agarwal21}. While similar assimilation cycles could, in principle, be implemented directly within numerical models, this would require either substantially larger computational resources or larger temporal horizons.
-
-
-%Sampling strategies rely on timely information about the spatial
-%ariability of ocean properties. \kcomment{This is very
-%  confusing. What we need is some text here about ``models'' typically
-%  being of the numerical variety e.g. ROMS. THEN you can pivot to use
-%  the following sentence about how they're computationally intensive.}
-%However, conventional numerical ocean models are computationally
-%intensive, and their runtime makes them impractical for use with high
-%spatial resolution and in near real-time mission planning
-%\cite{agarwal21}. While similar assimilation cycles could, in
-%principle, be implemented directly within numerical models, this would
-%require either substantially larger computational resources or larger
-%temporal horizons.
+Sampling strategies rely on timely information about the spatial
+variability of ocean properties. Conventional numerical ocean
+circulation models, based on the primitive equations of fluid
+dynamics, such as E.U. Copernicus Marine Service (CMS)
+\cite{CMEMS2017}, Regional Ocean Modeling System
+(ROMS)\cite{shchepetkin2005regional}, and Hybrid Coordinate Ocean
+Model (HYCOM)\cite{wallcraft2009software}, for example, are widely
+used by the scientific community for operational forecasting and
+research. These models provide physically consistent simulations of
+ocean state variables (e.g., temperature, salinity, currents) and
+underpin applications ranging from climate prediction to coastal
+management. However, numerical ocean models are computationally
+intensive, and their runtime makes them impractical for use with high
+spatial resolution and in near real-time mission planning
+\cite{agarwal21}. While similar assimilation cycles could, in
+principle, be implemented directly within numerical models, this would
+require either substantially larger computational resources or larger
+temporal horizons.
 
 As a practical alternative, we use geostatistical stochastic
 sequential simulation as a computationally efficient surrogate for
 short-term spatial predictions of ocean variables together with
 estimates of spatial uncertainty \cite{deutsch1992}. This approach
-captures the essential variability of local ocean dynamics, based on
-a prior numerical ocean model solution, at a fraction of the
+captures the essential variability of local ocean dynamics, based on a
+prior numerical ocean model solution, at a fraction of the
 computational cost of numerical models, while remaining flexible
 enough to rapidly assimilate new in-situ observations
-\cite{Duarte2025}.  However, with this type of surrogate models, we are not explicitly considering the full-physics of the system, and the quality of the predictions directly depends on the accuracy of the numerical model and prediction time length. If the numerical model
-is unable to capture the true nature of the system, the geostatistical predictions will likely be inaccurate.  \kcomment{The following
-  commented out, doesn't need to be said, does it? See the
-  source.} \rmcomment{yes}% Equally, if there is a new
-% oceanographic event that is not present in the calibrated model, the
-% geostatistical approach will not be able to capture it.
+\cite{Duarte2025}.  However, with this type of surrogate models, we
+are not explicitly considering the full-physics of the system, and the
+quality of the predictions directly depends on the accuracy of the
+numerical model and prediction time length. If the numerical model is
+unable to capture the true nature of the system, the geostatistical
+predictions will likely be inaccurate.  
 
-Our methodology relies on ensembles of geostatistical realizations, each representing a state of an ocean variable field conditioned by \emph{a priori} deterministic numerical ocean model \cite{CMEMS2017} and observations. By computing the pointwise standard deviation across the ensemble, we obtain spatial uncertainty maps that highlight regions where predictions are more variable and therefore potentially a target for robotic sampling. These maps then, serve as the basis for identifying areas where new measurements are expected to maximize the reduction of forecast error.
+Our methodology relies on ensembles of geostatistical realizations,
+each representing a state of an ocean variable field conditioned
+\emph{a priori} by the deterministic CMS model. By computing the
+pointwise standard deviation across the ensemble, we obtain spatial
+uncertainty maps that highlight regions where predictions are more
+variable and therefore potentially a target for robotic
+sampling. These maps then, serve as the basis for identifying areas
+where new measurements are expected to maximize the reduction of
+forecast error.
 
-Beyond uncertainty prediction, the statistical approach incorporates AUV data through sequential assimilation, refining forecasts for subsequent cycles.
-%the \st{proposed framework}
-%\kcomment{This is NOT the framework we %talk about later in the paper,
-%  correct? If so, then perhaps use another phrase?} also allows direct
-%assimilation of AUV acquired data. 
-Data collected on a given day is
-used to update the ocean variable forecast for the following day by
-combining prior predictions with new measurements. The simulation
-grid, in this case, includes two temporal layers: the first containing
-the AUV measurements at their spatial locations and the second
-corresponding to the new prediction step. With AUV sampling denser
-than the grid resolution, measurements within the same grid cell are
-averaged as a form of arithmetic upscaling \cite{Duarte2025}. To
-incorporate spatial and temporal variability, we apply sequential
-simulation with local means \cite{soares2001direct}\footnote{Defined
-  by kriging estimates and variances, which are conditioned to
-  existing direct measurements and a spatial covariance
-  matrix.\cite{cressie93}}, where each simulated value is drawn from
-its conditional distribution, accounting for both prior simulated
-values and local mean models. Doing so enables consistent updating of
-the variable field while integrating both AUV observations and a
-priori information. The ensemble of realizations thus provides an
-updated ocean forecast and a quantitative measure of uncertainty.
+Beyond uncertainty prediction, the statistical approach incorporates
+AUV data through sequential assimilation, refining forecasts for
+subsequent cycles.  Data collected on a given day is used to update
+the ocean variable forecast for the following day by combining prior
+predictions with new measurements. The simulation grid, in this case,
+includes two temporal layers: the first containing the AUV
+measurements at their spatial locations and the second corresponding
+to the new prediction step. With AUV sampling denser than the grid
+resolution, measurements within the same grid cell are averaged as a
+form of arithmetic upscaling \cite{Duarte2025}. To incorporate spatial
+and temporal variability, we apply sequential simulation with local
+means \cite{soares2001direct}\footnote{Defined by kriging estimates
+  and variances, which are conditioned to existing direct measurements
+  and a spatial covariance matrix.\cite{cressie93}}, where each
+simulated value is drawn from its conditional distribution, accounting
+for both prior simulated values and local mean models. Doing so
+enables consistent updating of the variable field while integrating
+both AUV observations and a priori information. The ensemble of
+realizations thus provides an updated ocean forecast and a
+quantitative measure of uncertainty.
  
 The continuity of the variable field in space and time is
 characterized by variogram models fitted to long-term numerical ocean
-model data from the CMS
-\cite{CMEMS2017}. For each depth layer of the numerical model (CMS),
+model data from CMS. For each depth layer of this numerical model,
 geostatistical simulations are performed independently using a moving
 temporal window of the previous 14 days as conditioning data. This
 window length was selected through comparison with the numerical
-model’s (CMS) short-term evolution under similar seasonal conditions,
+model’s short-term evolution under similar seasonal conditions,
 striking a balance between forecast stability and computational
 cost. Spatial propagation occurs only horizontally within each depth
 level, while vertical consistency is implicitly maintained through the
 depth-specific variogram structures derived from the 3D numerical
-model (CMS). \kcomment{I for one am quiet confused here. What is the 3D
-  deterministic model? What is the 'calibrated ocean model' from above
-  in this paragraph? Having a consistent terminology and making it
-  clear what/where/how CMEMS is used would help.} \rmcomment{done} This provides both a
-forecast of ocean variables being simulated, as well as a quantitative
-assessment of the prediction uncertainty.  By updating the forecasts
-with new in-situ measurements through sequential assimilation, the
-method progressively refines the variable field while maintaining
-consistency with prior model dynamics. The resulting forecast and
-uncertainty maps then form the input for the targeted sampling
-algorithm, guiding the allocation of AUV trajectories towards regions
-of greatest expected information gain. More details about the geostatistical model,
-its development, and application during the \proj experiment can be
-found in \cite{Duarte2025}.
+model.  This provides both a forecast of ocean variables being
+simulated, as well as a quantitative assessment of the prediction
+uncertainty.  By updating the forecasts with new in-situ measurements
+through sequential assimilation, the method progressively refines the
+variable field while maintaining consistency with prior model
+dynamics. The resulting forecast and uncertainty maps then form the
+input for the targeted sampling algorithm, guiding the allocation of
+AUV trajectories towards regions of greatest expected information
+gain. More details about the geostatistical model, its development,
+and application during the \proj experiment can be found in
+\cite{Duarte2025}.
 
-\kcomment{I do think the above is a critical and important part of the
-  m/s and sets up the process in the mind of the reviewer, most likely
-  a physical oceanographer. So having the terms clarified, using them
-  precisely (i.e. not use 'framework' here) will be important.}\rmcomment{done}
 
 \subsection{The Sampling Algorithm}
 

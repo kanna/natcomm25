@@ -66,70 +66,74 @@ principle, be implemented directly within numerical models, this would
 require either substantially larger computational resources or larger
 temporal horizons.
 
-As a practical alternative, we use geostatistical simulation (i.e., direct sequential simulation \cite{soares2001direct}) as a computationally efficient surrogate for
-short-term spatial predictions of ocean variables together with
-estimates of spatial uncertainty \cite{deutsch1992}. This approach
-captures the essential spatiotemporal variability of local ocean dynamics, based on a
-prior numerical ocean model solution, at a fraction of the
-computational cost of numerical models, while remaining flexible
-enough to rapidly assimilate new in-situ observations
-\cite{Duarte2025}.  However, with this type of surrogate models, we
-are not explicitly considering the full-physics of the system, and the
-quality of the predictions directly depends on the accuracy of the
-numerical model and prediction time length. If the numerical model is
-unable to capture the true nature of the system, the geostatistical
-predictions will likely be inaccurate.  
+As a practical alternative, we use geostatistical simulation (i.e.,
+direct sequential simulation \cite{soares2001direct}) as a
+computationally efficient surrogate for short-term spatial predictions
+of ocean variables together with estimates of spatial uncertainty
+\cite{deutsch1992}. This approach captures the essential
+spatiotemporal variability of local ocean dynamics, based on a prior
+numerical ocean model solution, at a fraction of the computational
+cost of numerical models, while remaining flexible enough to rapidly
+assimilate new in-situ observations \cite{Duarte2025}.  However, with
+this type of surrogate models, we are not explicitly considering the
+full-physics of the system, and the quality of the predictions
+directly depends on the accuracy of the numerical model and prediction
+time length. If the numerical model is unable to capture the true
+nature of the system, the geostatistical predictions will likely be
+inaccurate.
 
 Our methodology relies on ensembles of geostatistical realizations,
 each representing a state of an ocean variable field conditioned to
-\emph{a priori} by the deterministic CMS model (i.e., ocean models outputs of the previous 14 days) with a variogram model describing the temporal dependency between days. By computing the
-pointwise standard deviation across the ensemble, we obtain spatial
-uncertainty maps that highlight regions where predictions are more
-variable and therefore potentially a target for robotic
-sampling. These maps then, serve as the basis for identifying areas
-where new measurements are expected to maximize the reduction of
-forecast error.
+\emph{a priori} by the deterministic CMS model (i.e., ocean models
+outputs of the previous 14 days) with a variogram model describing the
+temporal dependency between days. By computing the pointwise standard
+deviation across the ensemble, we obtain spatial uncertainty maps that
+highlight regions where predictions are more variable and therefore
+potentially a target for robotic sampling. These maps then, serve as
+the basis for identifying areas where new measurements are expected to
+maximize the reduction of forecast error.
 
 Beyond uncertainty prediction, the statistical approach incorporates
 AUV data through sequential assimilation, refining forecasts for
 subsequent cycles.  Data collected on a given day is used to update
 the ocean variable forecast for the following day by combining prior
-predictions with new measurements. The geostatistical simulation grid, in this case,
-includes two temporal layers: the first containing the AUV
-measurements at their spatial locations and the second corresponding
-to the new prediction step. With AUV sampling denser than the grid
-resolution, measurements within the same grid cell are averaged as a
-form of arithmetic upscaling \cite{Duarte2025}. To incorporate spatial
-and temporal variability, we apply sequential simulation with local
-means \cite{soares2001direct}\footnote{Defined by kriging estimates
-  and variances, which are conditioned to existing direct measurements
-  and a spatial covariance matrix.\cite{cressie93}}, where each
-simulated value is drawn from its conditional distribution, accounting
-for both prior simulated values and local mean models. Doing so
-enables consistent updating of the variable field while integrating
-both AUV observations and a priori information. The ensemble of
-realizations thus provides an updated ocean forecast and a
-quantitative measure of uncertainty.
+predictions with new measurements. The geostatistical simulation grid,
+in this case, includes two temporal layers: the first containing the
+AUV measurements at their spatial locations and the second
+corresponding to the new prediction step. With AUV sampling denser
+than the grid resolution, measurements within the same grid cell are
+averaged as a form of arithmetic upscaling \cite{Duarte2025}. To
+incorporate spatial and temporal variability, we apply sequential
+simulation with local means \cite{soares2001direct}\footnote{Defined
+  by kriging estimates and variances, which are conditioned to
+  existing direct measurements and a spatial covariance
+  matrix.\cite{cressie93}}, where each simulated value is drawn from
+its conditional distribution, accounting for both prior simulated
+values and local mean models. Doing so enables consistent updating of
+the variable field while integrating both AUV observations and a
+priori information. The ensemble of realizations thus provides an
+updated ocean forecast and a quantitative measure of uncertainty.
  
-The continuity of the variable field in space and time is simultaneously
-characterized by variogram models fitted to long-term numerical ocean
-model data from CMS. For each depth layer of the numerical model where the AUV navigation is defined,
-geostatistical simulations are performed independently using a moving
-temporal window of the previous 14 days as conditioning data. This
-window length was selected through comparison with the numerical
-model’s short-term evolution under similar seasonal conditions,
-striking a balance between forecast stability and computational
-cost. Spatial propagation occurs only horizontally within each depth
-level, while vertical consistency is implicitly maintained through the
-depth-specific variogram structures derived from the 3D numerical
-model.  This provides both a forecast of ocean variables being
-simulated, as well as a quantitative assessment of the prediction
-uncertainty.  By updating the forecasts with new in-situ measurements
-through sequential assimilation, the method progressively refines the
-variable field while maintaining consistency with prior model
-dynamics. The resulting forecast and uncertainty maps then form the
-input for the targeted sampling algorithm, guiding the allocation of
-AUV trajectories towards regions of greatest expected information
+The continuity of the variable field in space and time is
+simultaneously characterized by variogram models fitted to long-term
+numerical ocean model data from CMS. For each depth layer of the
+numerical model where the AUV navigation is defined, geostatistical
+simulations are performed independently using a moving temporal window
+of the previous 14 days as conditioning data. This window length was
+selected through comparison with the numerical model’s short-term
+evolution under similar seasonal conditions, striking a balance
+between forecast stability and computational cost. Spatial propagation
+occurs only horizontally within each depth level, while vertical
+consistency is implicitly maintained through the depth-specific
+variogram structures derived from the 3D numerical model.  This
+provides both a forecast of ocean variables being simulated, as well
+as a quantitative assessment of the prediction uncertainty.  By
+updating the forecasts with new in-situ measurements through
+sequential assimilation, the method progressively refines the variable
+field while maintaining consistency with prior model dynamics. The
+resulting forecast and uncertainty maps then form the input for the
+targeted sampling algorithm, guiding the allocation of AUV
+trajectories towards regions of greatest expected information
 gain. More details about the geostatistical model, its development,
 and application during the \proj experiment can be found in
 \cite{Duarte2025}.
@@ -139,16 +143,16 @@ and application during the \proj experiment can be found in
 
 Our adaptive sampling problem involves the design of vehicle
 trajectories that maximize information gain
-\cite{eidsvik2015,fossum18} extracted from the spatial uncertainty model provided by the geostatistical
-simulation, while simultaneously satisfying
-operational AUV constraints. Each day, the model provides both a
-forecast field and its associated uncertainty distribution, which
-together define the reward landscape for the trajectory planner. The
-task is to generate, for each vehicle, a tour, that accumulates the
-highest possible uncertainty values. The tour is traveled at a
-prescribed AUV speed while the duration is bounded above by the
-assimilation period. The starting and ending point is selected to
-simplify logistics for launch and recovery.
+\cite{eidsvik2015,fossum18} extracted from the spatial uncertainty
+model provided by the geostatistical simulation, while simultaneously
+satisfying operational AUV constraints. Each day, the model provides
+both a forecast field and its associated uncertainty distribution,
+which together define the reward landscape for the trajectory
+planner. The task is to generate, for each vehicle, a tour, that
+accumulates the highest possible uncertainty values. The tour is
+traveled at a prescribed AUV speed while the duration is bounded above
+by the assimilation period. The starting and ending point is selected
+to simplify logistics for launch and recovery.
 
 Although the underlying numerical CMS model is fully three-dimensional
 and the statistical solution also provides predictions across multiple

@@ -66,11 +66,10 @@ principle, be implemented directly within numerical models, this would
 require either substantially larger computational resources or larger
 temporal horizons.
 
-As a practical alternative, we use geostatistical stochastic
-sequential simulation as a computationally efficient surrogate for
+As a practical alternative, we use geostatistical simulation (i.e., direct sequential simulation \cite{soares2001direct}) as a computationally efficient surrogate for
 short-term spatial predictions of ocean variables together with
 estimates of spatial uncertainty \cite{deutsch1992}. This approach
-captures the essential variability of local ocean dynamics, based on a
+captures the essential spatiotemporal variability of local ocean dynamics, based on a
 prior numerical ocean model solution, at a fraction of the
 computational cost of numerical models, while remaining flexible
 enough to rapidly assimilate new in-situ observations
@@ -82,8 +81,8 @@ unable to capture the true nature of the system, the geostatistical
 predictions will likely be inaccurate.  
 
 Our methodology relies on ensembles of geostatistical realizations,
-each representing a state of an ocean variable field conditioned
-\emph{a priori} by the deterministic CMS model. By computing the
+each representing a state of an ocean variable field conditioned to
+\emph{a priori} by the deterministic CMS model (i.e., ocean models outputs of the previous 14 days) with a variogram model describing the temporal dependency between days. By computing the
 pointwise standard deviation across the ensemble, we obtain spatial
 uncertainty maps that highlight regions where predictions are more
 variable and therefore potentially a target for robotic
@@ -95,7 +94,7 @@ Beyond uncertainty prediction, the statistical approach incorporates
 AUV data through sequential assimilation, refining forecasts for
 subsequent cycles.  Data collected on a given day is used to update
 the ocean variable forecast for the following day by combining prior
-predictions with new measurements. The simulation grid, in this case,
+predictions with new measurements. The geostatistical simulation grid, in this case,
 includes two temporal layers: the first containing the AUV
 measurements at their spatial locations and the second corresponding
 to the new prediction step. With AUV sampling denser than the grid
@@ -112,9 +111,9 @@ both AUV observations and a priori information. The ensemble of
 realizations thus provides an updated ocean forecast and a
 quantitative measure of uncertainty.
  
-The continuity of the variable field in space and time is
+The continuity of the variable field in space and time is simultaneously
 characterized by variogram models fitted to long-term numerical ocean
-model data from CMS. For each depth layer of this numerical model,
+model data from CMS. For each depth layer of the numerical model where the AUV navigation is defined,
 geostatistical simulations are performed independently using a moving
 temporal window of the previous 14 days as conditioning data. This
 window length was selected through comparison with the numerical
@@ -140,8 +139,8 @@ and application during the \proj experiment can be found in
 
 Our adaptive sampling problem involves the design of vehicle
 trajectories that maximize information gain
-\cite{eidsvik2015,fossum18} extracted from the statistical
-model-derived uncertainty map, while simultaneously satisfying
+\cite{eidsvik2015,fossum18} extracted from the spatial uncertainty model provided by the geostatistical
+simulation, while simultaneously satisfying
 operational AUV constraints. Each day, the model provides both a
 forecast field and its associated uncertainty distribution, which
 together define the reward landscape for the trajectory planner. The
@@ -156,7 +155,7 @@ and the statistical solution also provides predictions across multiple
 depth layers, in this work, the sampling algorithm operates on a
 2-Dimensional (2D) horizontal field derived from the 3D uncertainty
 structure of the statistical solution. This field is obtained by
-averaging the horizontal slices of uncertainty between the surface and
+averaging the horizontal depth slices of uncertainty between the surface and
 40m depth, a depth interval chosen to represent the upper mixed layer
 in the \naz study region. Within this layer, turbulent mixing
 typically maintains relatively weak vertical gradients, and most of

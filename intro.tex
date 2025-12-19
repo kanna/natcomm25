@@ -40,29 +40,15 @@ adjusting model errors and improving their forecasting
 capabilities. Yet, the success of data assimilation depends heavily on
 the availability, quality, and relevance of observations.
 
-Satellite remote sensing offers extensive spatial coverage but is
-limited to surface measurements with usually low spatial resolution
-and often compromised by atmospheric conditions. In situ observations,
-whether from ships, moorings, or drifting platforms, provide higher
-accuracy but suffer from limited spatial and temporal coverage, high
-operational costs, and logistical constraints — particularly high in
-coastal regions. Recent technological advances have enabled the use of
+Satellite remote sensing provides extensive spatial coverage but is generally limited to surface observations and constrained by atmospheric conditions. In situ observations from ships, moorings, or drifting platforms, although spatially sparse and logistically demanding, complement satellite data by providing higher spatial or temporal resolution and access to subsurface processes, adding a critical three-dimensional component to the observing system. Recent technological advances have enabled the use of
 autonomous underwater vehicles (AUVs) and other robotic platforms,
 offering flexible, mobile, and increasingly autonomous means of
 sampling ocean properties with high spatiotemporal resolution and low
 logistic footprint
 \cite{das10,das11b,olaya12,graham12,jdas13,das15,sousa16,fossum18,fossum19b}.
 
-However, even with these new tools, efficiently collecting data for modeling
-at the optimal spatial and temporal scales remains a complex
-challenge. AUVs are constrained by endurance, communication bandwidth,
-and operational risks such as vessel traffic, high-speed currents and
-bathymetry. In addition, the ocean itself remains highly dynamic, with
-key processes often evolving faster than traditional sampling
-strategies can capture. This opens the door to adaptive sampling
-strategies, where observation efforts are guided by model outputs and
-uncertainty estimates to maximize the relevance of collected
-data. Adaptive sampling \cite{BinZhang07,Singh09,smith14,fossum19}
+However, even with these new tools, efficiently collecting data for modeling at optimal spatial and temporal scales remains a complex challenge. AUVs are constrained not only by endurance and communication bandwidth, but also by limited transit speed (typically on the order of 1-2 ms\textsuperscript{-1}), comparable to ambient current velocities and thus limits synopticity. This limitation is even more pronounced for gliders, which operate at lower effective speeds. Operational risks further restrict deployment, including vessel traffic, fishing activity, strong currents, and complex bathymetry. In addition, the ocean itself remains highly dynamic, with key processes often evolving faster than traditional sampling strategies can capture. This opens the door to adaptive sampling strategies, where observation efforts are guided by model outputs and
+uncertainty estimates to maximize the relevance of collected data. Adaptive sampling \cite{BinZhang07,Singh09,smith14,fossum19}
 represents a fundamental shift: instead of executing pre-planned
 missions, autonomous vehicles dynamically prioritize areas for
 observation.

@@ -101,7 +101,7 @@ predictions with new measurements. The geostatistical simulation grid,
 in this case, includes two temporal layers: the first containing the
 AUV measurements at their spatial locations and the second
 corresponding to the new prediction step. With AUV sampling denser
-than the grid resolution, measurements within the same grid cell are
+than the grid resolution (approximately 0.0035$^{\circ}$, corresponding to about 300–400 m at the study latitude), measurements within the same grid cell are
 averaged as a form of arithmetic upscaling \cite{Duarte2025}. To
 incorporate spatial and temporal variability, we apply sequential
 simulation with local means \cite{soares2001direct}\footnote{Defined
@@ -113,6 +113,7 @@ values and local mean models. Doing so enables consistent updating of
 the variable field while integrating both AUV observations and a
 priori information. The ensemble of realizations thus provides an
 updated ocean forecast and a quantitative measure of uncertainty.
+
  
 The continuity of the variable field in space and time is
 simultaneously characterized by variogram models fitted to long-term
@@ -254,8 +255,7 @@ October, 2025) (Fig. \ref{fig:scheme}). Also for simplicity and
 clarity, we focused on a single variable: temperature measurements. As
 a consequence, this work is univariate in showing the impact of
 assimilated model-driven exploration. We believe that the results in
-Sec \ref{sec:results} are general enough to apply to other critical
-oceanographic variables, which would be modeled similarly. The
+Sec \ref{sec:results} are general enough to apply to other critical physical oceanographic variables, which would be modeled similarly. The
 analysis in this work, therefore, ultimately aims to quantify the
 impact of assimilating AUV-acquired temperature data on the predictive
 performance of the statistical model and to assess the operational

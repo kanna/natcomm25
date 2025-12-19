@@ -35,14 +35,10 @@ generated well-defined spatial and temporal variability, making the
 impact of targeted in-situ observations on predictive model skill
 visible.
 
-
-
 \begin{figure}
   \centering 
-
   \subfigure[]
   {\label{fig:sst}\includegraphics[width=1\linewidth]{fig/Figure_sst_auv_l3_zoom4.pdf}}
-
   \subfigure[]
   {\label{fig:temperatureprofiles}\includegraphics[width=1\linewidth]{fig/Figure2_100m_zoom2.pdf}}
   \caption{{\subref{fig:sst} Sea surface temperature (SST) and AUV
@@ -108,12 +104,12 @@ predictive accuracy, indicating that the assimilation of targeted
 measurements effectively constrains the thermal structure and captures
 ongoing physical transitions in the water column.
 
-\begin{figure}[!]
+\begin{figure}[!t]
   \centering
-  \subfigure[]{\label{fig:scatter_c}\includegraphics[scale=0.52]{fig/scatter_c.png}}
-  \subfigure[]{\label{fig:scatter_c4}\includegraphics[scale=0.52]{fig/scatter_c4.png}}
-  \subfigure[]{\label{fig:scatter_d}\includegraphics[scale=0.52]{fig/scatter_d.png}}
-  \subfigure[]{\label{fig:scatter_d4}\includegraphics[scale=0.52]{fig/scatter_d4.png}}
+  \subfigure[]{\label{fig:scatter_c}\includegraphics[scale=0.58]{fig/scatter_c.png}}
+  \subfigure[]{\label{fig:scatter_c4}\includegraphics[scale=0.58]{fig/scatter_c4.png}}
+  \subfigure[]{\label{fig:scatter_d}\includegraphics[scale=0.58]{fig/scatter_d.png}}
+  \subfigure[]{\label{fig:scatter_d4}\includegraphics[scale=0.58]{fig/scatter_d4.png}}
   \caption{Comparison between in-situ AUV observations
     (31\textsuperscript{st} October) and model predictions for
     scenarios \textbf{C} \subref{fig:scatter_c}, \textbf{C4}
@@ -125,21 +121,6 @@ ongoing physical transitions in the water column.
   \label{fig:scatter}
 \end{figure}
 
-% \begin{wrapfigure}{!h}{2.75in}
-%   \vspace{-1cm}
-%   \centering
-%   \includegraphics[scale=0.3]{fig/rms_ABB1.png}
-%   \caption{Root Mean Square Error (RMSE) (in $^{\circ}$C) between
-%     model forecasts and in-situ AUV temperature observations for
-%     29\textsuperscript{th}–-30\textsuperscript{st} October. Scenario
-%     \textbf{A} corresponds to the baseline statistical forecast
-%     generated based on CMS data up to the
-%     29\textsuperscript{th}. Scenarios \textbf{B} and \textbf{B1}
-%     represent forecasts for the 30\textsuperscript{th} without and
-%     with respectively, the assimilation of AUV observations collected
-%     by XP2.}
-%   \label{fig:rms_ABB1}
-% \end{wrapfigure}
 
 Figs.  \ref{fig:rms_ABB1}, \ref{fig:rms} present the RMSE between the
 statistical model forecasts and the in-situ temperature observations
@@ -167,39 +148,34 @@ the strongest vertical temperature gradients and the region most
 densely sampled by the AUVs.
 
 
-\begin{figure}
+\begin{figure}[!t]
   \centering 
-
-  % \subfigure[]{\label{fig:rms_c}\includegraphics[width=1\linewidth]{fig/rms_c.png}}
-  % \subfigure[]{\label{fig:rms_d}\includegraphics[width=1\linewidth]{fig/rms_d.png}}
-  \vspace{-1cm}
   \subfigure[]{\label{fig:rms_ABB1}\includegraphics[scale=0.23]{fig/rms_ABB1.png}}
   \subfigure[]{\label{fig:rms_c}\includegraphics[scale=0.25]{fig/rms_c.png}}
   \subfigure[]{\label{fig:rms_d}\includegraphics[scale=0.25]{fig/rms_d.png}}
-  \caption{Root Mean Square Error (RMSE) (in $^{\circ}$C) between
-      model forecasts and in-situ AUV temperature observations for
-      29\textsuperscript{th}–-30\textsuperscript{st} October. Scenario
-      \textbf{A} corresponds to the baseline statistical forecast
-      generated based on CMS data up to the
-      29\textsuperscript{th}. Scenarios \textbf{B} and \textbf{B1}
-      represent forecasts for the 30\textsuperscript{th} without and
-      with respectively, the assimilation of AUV observations
-      collected by XP2. \subref{fig:rms_c} RMSE, between the
-      statistical model forecasts and in-situ AUV temperature
-      measurements for 31\textsuperscript{th} October, for scenarios
-      \textbf{C} and \textbf{C1-–C4}. These forecasts were initialized
-      using CMS data available up to the 30\textsuperscript{th}, and
-      the assimilation steps progressively incorporate AUV
-      observations collected on previous days. Results are shown for
-      each vehicle and for the combined dataset (“All
-      AUVs”). \subref{fig:rms_d} Same as \subref{fig:rms_c}, but for
-      scenarios \textbf{D} and \textbf{D1-–D4}, in which forecasts for
-      the 31\textsuperscript{th} were initialized using CMS data
-      available only up to the 29\textsuperscript{th}. Assimilation
-      configurations \textbf{D1-–D4} mirror those of the
-      \textbf{C}--series but start from this less favorable prior
-      state. Results are again presented per vehicle and for the
-      aggregated dataset.}
+  \caption{\subref{fig:rms_ABB1} Root Mean Square Error (RMSE) (in
+    $^{\circ}$C) between model forecasts and in-situ AUV temperature
+    observations for 29\textsuperscript{th}–-30\textsuperscript{st}
+    October. Scenario \textbf{A} corresponds to the baseline
+    statistical forecast generated based on CMS data up to the
+    29\textsuperscript{th}. Scenarios \textbf{B} and \textbf{B1}
+    represent forecasts for the 30\textsuperscript{th} without and
+    with respectively, the assimilation of AUV observations collected
+    by XP2. \subref{fig:rms_c} RMSE, between the statistical model
+    forecasts and in-situ AUV temperature measurements for
+    31\textsuperscript{th} October, for scenarios \textbf{C} and
+    \textbf{C1-–C4}. These forecasts were initialized using CMS data
+    available up to the 30\textsuperscript{th}, and the assimilation
+    steps progressively incorporate AUV observations collected on
+    previous days. Results are shown for each vehicle and for the
+    combined dataset (“All AUVs”). \subref{fig:rms_d} Same as
+    \subref{fig:rms_c}, but for scenarios \textbf{D} and
+    \textbf{D1-–D4}, in which forecasts for the 31\textsuperscript{th}
+    were initialized using CMS data available only up to the
+    29\textsuperscript{th}. Assimilation configurations
+    \textbf{D1-–D4} mirror those of the \textbf{C}--series but start
+    from this less favorable prior state. Results are again presented
+    per vehicle and for the aggregated dataset.}
   \label{fig:rms}
 \end{figure}
 

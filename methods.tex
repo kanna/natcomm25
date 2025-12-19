@@ -39,11 +39,10 @@ fundamental steps, executed iteratively on a daily basis:
 
 While previous efforts have concentrated on a form of embedded and
 automated decision-making for AUV-based adaptive sampling
-\cite{mcgann08a,mcgann08b,ryan10,py10,Das-2010-637,das10,olaya12,rajan12},
-the trajectories in this work are generated manually, with adaptation
-focused on deployment based on $M_{\sigma_{\hat{\theta}}}(x,
-y)$. Here, loop closure refers to the
-\emph{sample-assimilate-predict-direct} process.
+\cite{mcgann08b,ryan10,olaya12,rajan12}, the trajectories in this
+work are generated offline, with adaptation focused on deployment
+based on $M_{\sigma_{\hat{\theta}}}(x, y)$. Here, loop closure refers
+to the \emph{sample-assimilate-predict-direct} process.
 
 \subsection{Model Forecast, Uncertainty Projection and Data Assimilation}
 
@@ -192,26 +191,41 @@ from visiting nodes with associated costs of traveling between them
 \cite{vidal2013,toth2014vehicle}. By solving this graph traversal
 problem, the algorithm returns a set of near-optimal trajectories that
 prioritize regions of greatest uncertainty, while ensuring vehicle
-endurance and safety
-constraints. % This provides a principled way of steering autonomous
-% platforms toward the most informative sampling locations, forming a
-% key component in the daily cycle of forecast, sampling, and
-% assimilation.
-Additional insights into the algorithm and its employment during \proj
-are reported elsewhere in \cite{bernacchi2025}.
+endurance and safety constraints \cite{bernacchi2025}.
 
 \subsection{Operations and Data Collection}
 
-\begin{wrapfigure}{!h}{3.5in}
-    \centering
-    \includegraphics[scale=0.25]{fig/DSC_8342.JPG}
-    \caption{Multiple Light Autonomous Underwater Vehicles such as
-      the one shown above, were used in \proje. This low-cost platform
-      designed at the University of Porto has demonstrated its
-      robustness and integration to a number of oceanographic sensors
-      and comes with a sizable open source command/control software.}
-    \label{fig:lauvs}
+% \begin{wrapfigure}{!h}{3.5in}
+%     \centering
+%     \includegraphics[scale=0.25]{fig/DSC_8342.JPG}
+%     \caption{Multiple Light Autonomous Underwater Vehicles such as
+%       the one shown above, were used in \proje. This low-cost platform
+%       designed at the University of Porto has demonstrated its
+%       robustness and integration to a number of oceanographic sensors
+%       and comes with a sizable open source command/control software.}
+%     \label{fig:lauvs}
+% \end{wrapfigure}
+
+% {3.5in}
+\begin{wrapfigure}{o}{0.5\textwidth}
+  \centering
+  \vspace{-2cm}
+  \subfigure[]{\label{fig:lauvs}\includegraphics[scale=0.25]{fig/DSC_8342.JPG}}
+  \subfigure[]{\label{fig:scheme}\includegraphics[scale=0.28]{fig/scheme.png}}
+  \caption{\subref{fig:lauvs} Multiple Light Autonomous Underwater
+    Vehicles such as the one shown above, were used in \proje. This
+    low-cost platform designed at the University of Porto has
+    demonstrated its robustness and integration to a number of
+    oceanographic sensors and comes with a sizable open source
+    command/control software. \subref{fig:scheme} Three-day sequence
+    (29\textsuperscript{th} - 31\textsuperscript{st} October 2024) of
+    the \emph{sample-–assimilate–-predict-–direct} loop in the \proj
+    experiment. Each cycle integrated statistical model predictions
+    using the CMS model as a prior, targeted sampling, AUV data
+    acquisition, and subsequent assimilation for the following day's
+    predict.}
 \end{wrapfigure}
+
 
 The in-situ data collection process involved three upper water-column
 Light Autonomous Underwater Vehicles (LAUV) (XP2, XP3 and
@@ -228,7 +242,8 @@ were cross-calibrated to ensure consistency. In addition to the
 hardware involved, an extensive suite of mature mission planning and
 command/control tools was used -- discussion of these is outside the
 scope of the paper and can be found in
-\cite{dias2005neptus,seacons10,toolchain2012,pinto2013lsts,Ferreira2018}.
+\cite{dias2005neptus,seacons10,pinto2013lsts}.
+
 
 The experiment had a small human and support vessel footprint,
 demonstrating significant cost reduction in comparison to traditional
@@ -241,8 +256,8 @@ recovery of AUVs, which operated unattended.
 Challenging meteorological and ocean conditions constrained the number
 of consecutive iterations of the
 \emph{sample-assimilate-predict-direct} loop to a three-day sequence
-of experiments (29\textsuperscript{th} – 31\textsuperscript{st}
-October, 2025) (Fig. \ref{fig:scheme}). Also for simplicity and
+of experiments (29\textsuperscript{th} -– 31\textsuperscript{st}
+October, 2024) (Fig. \ref{fig:scheme}). Also for simplicity and
 clarity, we focused on a single variable: temperature measurements. As
 a consequence, this work is univariate in showing the impact of
 assimilated model-driven exploration. We believe that the results in
@@ -266,32 +281,18 @@ enabling comparisons between forecasts with and without data
 assimilation.
 
 
-% \begin{wrapfigure}{!}{3in}
+% \begin{figure}[!t]
 %   \centering
-%   \includegraphics[scale=0.28]{fig/scheme.png}
+%   \includegraphics[scale=0.3]{fig/scheme.png}
 %   \caption{Three-day sequence (29\textsuperscript{th} -
-%     31\textsuperscript{st} October 2025) of the
+%     31\textsuperscript{st} October 2024) of the
 %     \emph{sample-–assimilate–-predict-–direct} loop in the \proj
 %     experiment. Each cycle integrated statistical model predictions
 %     using the CMS model as a prior, targeted sampling, AUV data
 %     acquisition, and subsequent assimilation for the following day's
 %     predict.}
 %   \label{fig:scheme}
-% \end{wrapfigure}
-
-
-\begin{figure}[!t]
-  \centering
-  \includegraphics[scale=0.3]{fig/scheme.png}
-  \caption{Three-day sequence (29\textsuperscript{th} -
-    31\textsuperscript{st} October 2025) of the
-    \emph{sample-–assimilate–-predict-–direct} loop in the \proj
-    experiment. Each cycle integrated statistical model predictions
-    using the CMS model as a prior, targeted sampling, AUV data
-    acquisition, and subsequent assimilation for the following day's
-    predict.}
-  \label{fig:scheme}
-\end{figure}
+% \end{figure}
 
 \subsubsection{A Multi-scenario framework}
 

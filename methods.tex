@@ -53,7 +53,7 @@ circulation models, based on the primitive equations of fluid
 dynamics, such as E.U. Copernicus Marine Service (CMS)
 \cite{CMEMS2017}, Regional Ocean Modeling System
 (ROMS)\cite{shchepetkin2005regional}, and Hybrid Coordinate Ocean
-Model (HYCOM)\cite{wallcraft2009software}, for example, are widely
+Model (HYCOM)\cite{wallcraft09}, for example, are widely
 used by the scientific community for operational forecasting and
 research. These models provide physically consistent simulations of
 ocean state variables (e.g., temperature, salinity, currents) and
@@ -101,18 +101,20 @@ predictions with new measurements. The geostatistical simulation grid,
 in this case, includes two temporal layers: the first containing the
 AUV measurements at their spatial locations and the second
 corresponding to the new prediction step. With AUV sampling denser
-than the grid resolution (approximately 0.0035$^{\circ}$, corresponding to about 300–400 m at the study latitude), measurements within the same grid cell are
-averaged as a form of arithmetic upscaling \cite{Duarte2025}. To
-incorporate spatial and temporal variability, we apply sequential
-simulation with local means \cite{soares2001direct}\footnote{Defined
-  by kriging estimates and variances, which are conditioned to
-  existing direct measurements and a spatial covariance
-  matrix.\cite{cressie93}}, where each simulated value is drawn from
-its conditional distribution, accounting for both prior simulated
-values and local mean models. Doing so enables consistent updating of
-the variable field while integrating both AUV observations and a
-priori information. The ensemble of realizations thus provides an
-updated ocean forecast and a quantitative measure of uncertainty.
+than the grid resolution (approximately 0.0035$^{\circ}$,
+corresponding to about 300-–400 m at the study latitude), measurements
+within the same grid cell are averaged as a form of arithmetic
+upscaling \cite{Duarte2025}. To incorporate spatial and temporal
+variability, we apply sequential simulation with local means
+\cite{soares2001direct}\footnote{Defined by kriging estimates and
+  variances, which are conditioned to existing direct measurements and
+  a spatial covariance matrix.\cite{cressie93}}, where each simulated
+value is drawn from its conditional distribution, accounting for both
+prior simulated values and local mean models. Doing so enables
+consistent updating of the variable field while integrating both AUV
+observations and a priori information. The ensemble of realizations
+thus provides an updated ocean forecast and a quantitative measure of
+uncertainty.
 
  
 The continuity of the variable field in space and time is
@@ -200,9 +202,9 @@ are reported elsewhere in \cite{bernacchi2025}.
 
 \subsection{Operations and Data Collection}
 
-\begin{wrapfigure}{!h}{2.75in}
+\begin{wrapfigure}{!h}{3.5in}
     \centering
-    \includegraphics[scale=0.2]{fig/DSC_8342.JPG}
+    \includegraphics[scale=0.25]{fig/DSC_8342.JPG}
     \caption{Multiple Light Autonomous Underwater Vehicles such as
       the one shown above, were used in \proje. This low-cost platform
       designed at the University of Porto has demonstrated its
@@ -210,17 +212,6 @@ are reported elsewhere in \cite{bernacchi2025}.
       and comes with a sizable open source command/control software.}
     \label{fig:lauvs}
 \end{wrapfigure}
-
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=.7\linewidth]{fig/DSC_8342.JPG}
-%     \caption{Multiple Light Autonomous Underwater Vehicles such as
-%       the one shown above, were used in \proje. This low-cost platform
-%       designed at the University of Porto has demonstrated its
-%       robustness and integration to a number of oceanographic sensors
-%       and comes with a sizable open source command/control software.}
-%     \label{fig:lauvs}
-% \end{figure}
 
 The in-situ data collection process involved three upper water-column
 Light Autonomous Underwater Vehicles (LAUV) (XP2, XP3 and
@@ -255,11 +246,13 @@ October, 2025) (Fig. \ref{fig:scheme}). Also for simplicity and
 clarity, we focused on a single variable: temperature measurements. As
 a consequence, this work is univariate in showing the impact of
 assimilated model-driven exploration. We believe that the results in
-Sec \ref{sec:results} are general enough to apply to other critical physical oceanographic variables, which would be modeled similarly. The
-analysis in this work, therefore, ultimately aims to quantify the
-impact of assimilating AUV-acquired temperature data on the predictive
-performance of the statistical model and to assess the operational
-feasibility of the data cycle approach in a coastal setting.
+Sec \ref{sec:results} are general enough to apply to other critical
+physical oceanographic variables, which would be modeled
+similarly. The analysis in this work, therefore, ultimately aims to
+quantify the impact of assimilating AUV-acquired temperature data on
+the predictive performance of the statistical model and to assess the
+operational feasibility of the data cycle approach in a coastal
+setting.
 
 Each experimental day followed a structured cycle involving: (i) the
 generation of a statistical model forecast and its associated
@@ -272,22 +265,10 @@ assimilated into the statistical model to produce updated forecasts,
 enabling comparisons between forecasts with and without data
 assimilation.
 
-\begin{wrapfigure}{!h}{3in}
-  \centering
-  \includegraphics[scale=0.25]{fig/scheme.png}
-  \caption{Three-day sequence (29\textsuperscript{th} -
-    31\textsuperscript{st} October 2025) of the
-    \emph{sample-–assimilate–-predict-–direct} loop in the \proj
-    experiment. Each cycle integrated statistical model predictions
-    using the CMS model as a prior, targeted sampling, AUV data
-    acquisition, and subsequent assimilation for the following day's
-    predict.}
-  \label{fig:scheme}
-\end{wrapfigure}
 
-% \begin{figure}[!t]
+% \begin{wrapfigure}{!}{3in}
 %   \centering
-%   \includegraphics[scale=0.3]{fig/scheme.png}
+%   \includegraphics[scale=0.28]{fig/scheme.png}
 %   \caption{Three-day sequence (29\textsuperscript{th} -
 %     31\textsuperscript{st} October 2025) of the
 %     \emph{sample-–assimilate–-predict-–direct} loop in the \proj
@@ -296,7 +277,21 @@ assimilation.
 %     acquisition, and subsequent assimilation for the following day's
 %     predict.}
 %   \label{fig:scheme}
-% \end{figure}
+% \end{wrapfigure}
+
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[scale=0.3]{fig/scheme.png}
+  \caption{Three-day sequence (29\textsuperscript{th} -
+    31\textsuperscript{st} October 2025) of the
+    \emph{sample-–assimilate–-predict-–direct} loop in the \proj
+    experiment. Each cycle integrated statistical model predictions
+    using the CMS model as a prior, targeted sampling, AUV data
+    acquisition, and subsequent assimilation for the following day's
+    predict.}
+  \label{fig:scheme}
+\end{figure}
 
 \subsubsection{A Multi-scenario framework}
 
@@ -345,12 +340,10 @@ available only up to 29\textsuperscript{st} October, thus representing
 a less favorable initial state, and applies the same assimilation
 configurations as in the \textbf{C}-series. This dual-series approach
 enables a controlled comparison of how data assimilation interacts
-with differences in model initialization.
-
-Model performance was evaluated by comparing predicted and observed
-temperature data along the AUV trajectories using Root Mean Square
-Error (RMSE) as the performance metric for 31\textsuperscript{st}
-October.
+with differences in model initialization.  Model performance was
+evaluated by comparing predicted and observed temperature data along
+the AUV trajectories using Root Mean Square Error (RMSE) as the
+performance metric for 31\textsuperscript{st} October.
 
 \begin{table}[]
   \centering \resizebox{\columnwidth}{!}{%

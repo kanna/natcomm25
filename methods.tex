@@ -24,11 +24,12 @@ fundamental steps, executed iteratively on a daily basis:
   desired to sample. Using the uncertainty map
   $M_{\sigma_{\hat{\theta}}}(x, y)$ as input, the targeted sampling
   algorithm determines the set of trajectories for $N$ AUVs for the
-  next operational cycle. The goal is to maximize the accumulated
-  uncertainty sampled along the vehicle trajectories.
+  next operational cycle, typically the following day. The goal is to
+  maximize the accumulated uncertainty sampled along the vehicle
+  trajectories.
 
 \item [Data Collection and Assimilation]: Throughout the operational
-  period, each AUV collects measurements of the target variable
+  cycle, each AUV collects measurements of the target variable
   $\theta$ along its assigned path. After mission completion, the
   collected measurements are assimilated into the model using an
   appropriate data assimilation scheme. This updated model state
@@ -48,22 +49,22 @@ to the \emph{sample-assimilate-predict-direct} process.
 
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. Conventional numerical ocean
-circulation models, based on the primitive equations of fluid
-dynamics, such as E.U. Copernicus Marine Service (CMS)
-\cite{CMEMS2017}, Regional Ocean Modeling System
-(ROMS)\cite{shchepetkin2005regional}, and Hybrid Coordinate Ocean
-Model (HYCOM)\cite{wallcraft09}, for example, are widely
-used by the scientific community for operational forecasting and
-research. These models provide physically consistent simulations of
-ocean state variables (e.g., temperature, salinity, currents) and
+circulation models, based on the fluid dynamics, such as
+E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}, Regional Ocean
+Modeling System (ROMS)\cite{shchepetkin2005regional}, and Hybrid
+Coordinate Ocean Model (HYCOM)\cite{wallcraft09}, for example, are
+widely used by the scientific community for operational forecasting
+and research. These models provide physically consistent simulations
+of ocean state variables (e.g., temperature, salinity, currents) and
 underpin applications ranging from climate prediction to coastal
 management. However, numerical ocean models are computationally
 intensive, and their runtime makes them impractical for use with high
 spatial resolution and in near real-time mission planning
-\cite{agarwal21}. While similar assimilation cycles could, in
-principle, be implemented directly within numerical models, this would
-require either substantially larger computational resources or larger
-temporal horizons.
+\cite{agarwal21}. While such assimilation-prediction cycles such as
+the one we propose could, in principle, be implemented within such
+models, it would require either substantially larger computational
+resources or larger temporal horizons \kcomment{What does 'larger
+  temporal...' mean in this context?}.
 
 As a practical alternative, we use geostatistical simulation (i.e.,
 direct sequential simulation \cite{soares2001direct}) as a
@@ -153,8 +154,8 @@ which together define the reward landscape for the trajectory
 planner. The task is to generate, for each vehicle, a tour, that
 accumulates the highest possible uncertainty values. The tour is
 traveled at a prescribed AUV speed while the duration is bounded above
-by the assimilation period. The starting and ending point is selected
-to simplify logistics for launch and recovery.
+by the assimilation period. The starting and ending points are
+selected to simplify logistics for launch and recovery.
 
 Although the underlying numerical CMS model is fully three-dimensional
 and the statistical solution also provides predictions across multiple
@@ -186,12 +187,13 @@ smoothed to highlight large-scale features. Candidate waypoints are
 then identified from the map and used to build a weighted graph, where
 nodes carry a reward proportional to their uncertainty value and edges
 represent travel costs. The trajectory planning task is posed as a
-tour routing problem where routes must balance the rewards obtained
-from visiting nodes with associated costs of traveling between them
-\cite{vidal2013,toth2014vehicle}. By solving this graph traversal
-problem, the algorithm returns a set of near-optimal trajectories that
-prioritize regions of greatest uncertainty, while ensuring vehicle
-endurance and safety constraints \cite{bernacchi2025}.
+multi-vehicle multi-depot tour routing problem where routes must
+balance the rewards obtained from visiting nodes with associated costs
+of traveling between them \cite{vidal2013,toth2014vehicle}. By solving
+this graph traversal problem, the algorithm returns a set of
+near-optimal trajectories that prioritize regions of greatest
+uncertainty, while ensuring vehicle endurance and safety constraints
+\cite{bernacchi2025}.
 
 \subsection{Operations and Data Collection}
 

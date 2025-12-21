@@ -29,16 +29,14 @@
 \usepackage[hmargin=1in,vmargin=1.2in]{geometry}
 \usepackage{url}
 \usepackage{multirow}
-\usepackage[ruled,noline,linesnumbered]{algorithm2e}
+% \usepackage[ruled,noline,linesnumbered]{algorithm2e}
 \usepackage[bottom]{footmisc}
 \usepackage{afterpage}
 %\usepackage[caption=false]{caption}
 \usepackage{eurosym}
 \usepackage{enumitem}
 \usepackage{soul}
-\usepackage{fancyhdr}
-\usepackage{dashrule}
-% \usepackage{lineno}
+\usepackage{lineno}
 % \usepackage[stable]{footmisc}
 % \usepackage{placeins}
 % \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
@@ -139,16 +137,16 @@
 
 \newcounter{quotenumber}
 
-\newenvironment{numquote}{%
-    \begin{enumerate}%
-     \setcounter{enumi}{\value{quotenumber}}%
-     \color{darkgray}
-    \item \begin{quote}%
-}{%
-    \end{quote}%
-    \setcounter{quotenumber}{\value{enumi}}
-    \end{enumerate}%
-}%
+% \newenvironment{numquote}{%
+%     \begin{enumerate}%
+%      \setcounter{enumi}{\value{quotenumber}}%
+%      \color{darkgray}
+%     \item \begin{quote}%
+% }{%
+%     \end{quote}%
+%     \setcounter{quotenumber}{\value{enumi}}
+%     \end{enumerate}%
+% }%
 
 \makeatletter
 \def\myitem{%

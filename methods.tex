@@ -145,27 +145,27 @@ and application during the \proj experiment can be found in
 
 Our adaptive sampling problem involves the design of vehicle
 trajectories that maximize information gain
-\cite{eidsvik2015,fossum18} extracted from the spatial uncertainty
-model provided by the geostatistical simulation, while simultaneously
-satisfying operational AUV constraints. Each day, the model provides
-both a forecast field and its associated uncertainty distribution,
-which together define the reward landscape for the trajectory
-planner. The task is to generate, for each vehicle, a tour, that
-accumulates the highest possible uncertainty values. The tour is
-traveled at a prescribed AUV speed while the duration is bounded above
-by the assimilation period. The starting and ending points are
-selected to simplify logistics for launch and recovery.
+\cite{eidsvik2015,fossum18} extracted from the uncertainty map
+provided by the model, while satisfying operational AUV
+constraints. Each day, the model provides both a forecast field and
+its associated uncertainty distribution, which together define the
+reward landscape for the trajectory planner. The task is to generate,
+for each vehicle, a tour, that accumulates the highest possible
+uncertainty values. The tour is traveled at a prescribed AUV speed
+while the duration is bounded above by the assimilation period. The
+starting and ending points are selected to simplify logistics for
+launch and recovery.
 
 Although the underlying numerical CMS model is fully three-dimensional
 and the statistical solution also provides predictions across multiple
 depth layers, in this work, the sampling algorithm operates on a
-2-Dimensional (2D) horizontal field derived from the 3D uncertainty
+2-Dimensional (2D) horizontal field derived from the uncertainty
 structure of the statistical solution. This field is obtained by
-averaging the horizontal depth slices of uncertainty between the surface and
-40m depth, a depth interval chosen to represent the upper mixed layer
-in the \naz study region. Within this layer, turbulent mixing
-typically maintains relatively weak vertical gradients, and most of
-the temperature variability relevant for mission planning is
+averaging the horizontal depth slices of uncertainty between the
+surface and 40m depth, a depth interval chosen to represent the upper
+mixed layer in the \naz study region. Within this layer, turbulent
+mixing typically maintains relatively weak vertical gradients, and
+most of the temperature variability relevant for mission planning is
 concentrated near the surface and the upper thermocline. Averaging
 across this depth range, therefore, yields a stable and physically
 meaningful representation of the uncertainty field.
@@ -196,18 +196,7 @@ uncertainty, while ensuring vehicle endurance and safety constraints
 
 \subsection{Operations and Data Collection}
 
-% \begin{wrapfigure}{!h}{3.5in}
-%     \centering
-%     \includegraphics[scale=0.25]{fig/DSC_8342.JPG}
-%     \caption{Multiple Light Autonomous Underwater Vehicles such as
-%       the one shown above, were used in \proje. This low-cost platform
-%       designed at the University of Porto has demonstrated its
-%       robustness and integration to a number of oceanographic sensors
-%       and comes with a sizable open source command/control software.}
-%     \label{fig:lauvs}
-% \end{wrapfigure}
 
-% {3.5in}
 \begin{wrapfigure}{o}{0.5\textwidth}
   \centering
   \vspace{-2cm}
@@ -216,7 +205,7 @@ uncertainty, while ensuring vehicle endurance and safety constraints
   \caption{\subref{fig:lauvs} Multiple Light Autonomous Underwater
     Vehicles such as the one shown above, were used in \proje. This
     low-cost platform designed at the University of Porto has
-    demonstrated its robustness and integration to a number of
+    demonstrated its robustness and integrates with a number of
     oceanographic sensors and comes with a sizable open source
     command/control software. \subref{fig:scheme} Three-day sequence
     (29\textsuperscript{th} - 31\textsuperscript{st} October 2024) of
@@ -274,26 +263,14 @@ Each experimental day followed a structured cycle involving: (i) the
 generation of a statistical model forecast and its associated
 uncertainty field using as prior CMS model data available up to the
 previous day \cite{sotillo2021}; (ii) the execution of the target
-sampling algorithm to plan the next day missions; and (iii) in-situ
-data collection by AUVs following the algorithmically determined
-tours. The data collected within the previous day were subsequently
-assimilated into the statistical model to produce updated forecasts,
-enabling comparisons between forecasts with and without data
-assimilation.
+sampling algorithm to plan the next day missions; (iii) in-situ data
+collection by AUVs following the algorithmically determined tours;
+(iv) and finally data from the tour assimilated into the
+model. % The data collected
+% within the previous day were subsequently assimilated into the
+% statistical model to produce updated forecasts, enabling comparisons
+% between forecasts with and without data assimilation.
 
-
-% \begin{figure}[!t]
-%   \centering
-%   \includegraphics[scale=0.3]{fig/scheme.png}
-%   \caption{Three-day sequence (29\textsuperscript{th} -
-%     31\textsuperscript{st} October 2024) of the
-%     \emph{sample-–assimilate–-predict-–direct} loop in the \proj
-%     experiment. Each cycle integrated statistical model predictions
-%     using the CMS model as a prior, targeted sampling, AUV data
-%     acquisition, and subsequent assimilation for the following day's
-%     predict.}
-%   \label{fig:scheme}
-% \end{figure}
 
 \subsubsection{A Multi-scenario framework}
 

@@ -1,7 +1,10 @@
 \section{Discussion}
 \label{sec:disc}
 
-Assessing the impact of targeted AUV observations on short-term ocean forecasts requires evaluating both overall model–data agreement and how assimilation effects vary across vehicles and dynamical oceanographic regimes. Although assimilation generally improves model skill,
+Assessing the impact of targeted AUV observations on short-term ocean
+forecasts requires evaluating both model–data agreement and how
+assimilation effects vary across regions and dynamical oceanographic
+regimes. Although assimilation generally improves model skill,
 vehicle-specific results highlight differences linked to sampling
 patterns and regional dynamics.
 
@@ -65,32 +68,27 @@ of the study area during the days preceding and during the
 experiment. Before 26\textsuperscript{th} October, although mean
 temperatures differ between the two regions, their variability is
 consistent, indicating that the system was evolving coherently across
-the canyon, with systematically colder waters (by about 1$^{\circ}$C) in the northern region. After 26\textsuperscript{th}, the temperature evolution in the two regions diverges, with the CMS model showing relatively warmer conditions in the north compared to the south. This divergence coincides with the onset of the upwelling–relaxation transition and highlights a shift toward slightly distinct dynamical regimes on either side of the canyon. This transition can explain why assimilation of southern
-data—collected under a single dynamical regime—fails to improve and, in fact, degrades forecasts.
+the canyon, with systematically colder waters (by about 1$^{\circ}$C)
+in the northern region. After 26\textsuperscript{th}, the temperature
+evolution in the two regions diverges, with the CMS model showing
+relatively warmer conditions in the north compared to the south. This
+divergence coincides with the onset of the upwelling–relaxation
+transition and highlights a shift toward slightly distinct dynamical
+regimes on either side of the canyon. This transition can explain why
+assimilation of southern data—collected under a single dynamical
+regime—fails to improve and, in fact, degrades forecasts.
 
-% \begin{figure}[!t]
-%   \centering
-%   \includegraphics[scale=0.16]{fig/fig3D-inset_v2.png}
-%   \caption{Trajectory of XP5 AUV, during the 30\textsuperscript{th}
-%     October mission in the \naz Canyon region. The color shading
-%     represents the interquartile range (IQD) of temperature values
-%     recorded within each model grid cell along the vehicle’s path. The
-%     grid illustrates the horizontal resolution of the statistical
-%     model. Results are shown for three representative depth layers:
-%     near-surface, mid-depth (20 m), and 40 m, capturing distinct
-%     vertical regimes. Higher IQD values indicate regions of higher
-%     thermal variability within the model grid. Close-up view of the
-%     mid-depth layer ($\sim20$ m) shows individual model grid cells
-%     intersected by vehicle trajectory, revealing marked fine-scale
-%     fluctuations occurring inside single grid elements and
-%     illustrating how AUV sampling captures subgrid-scale thermal
-%     structure that the model’s horizontal resolution does not
-%     resolve.}
-%   {\label{fig:iqd3D}}
-% \end{figure}
-
+This spatial mismatch underscores the need for trajectory-planning
+strategies that maximize class separation between distinct dynamical
+regimes, as proposed by \cite{fossum19b} using hierarchical clustering
+methods. Such approaches, based on criteria including variance
+reduction, mutual information, or entropy, could help identify routes
+that better discriminate between competing oceanographic states and
+mitigate situations where assimilation may propagate misleading
+information if relying solely on uncertainty fields.
 
 \begin{wrapfigure}{o}{0.5\textwidth}
+  \vspace{-0.5cm}
   \centering
   \includegraphics[scale=0.16]{fig/fig3D-inset_v2.png}
   \caption{Trajectory of XP5 AUV, during the 30\textsuperscript{th}
@@ -107,15 +105,6 @@ data—collected under a single dynamical regime—fails to improve and, in fact
     resolve.}
   {\label{fig:iqd3D}}
 \end{wrapfigure}
-
-This spatial mismatch underscores the need for trajectory-planning
-strategies that maximize class separation between distinct dynamical
-regimes, as proposed by \cite{fossum19b} using hierarchical clustering
-methods. Such approaches, based on criteria including variance
-reduction, mutual information, or entropy, could help identify routes
-that better discriminate between competing oceanographic states and
-mitigate situations where assimilation may propagate misleading
-information if relying solely on uncertainty fields.
 
 Another highlight of this experiment was in showing the variability
 within the model grid, providing additional insight into the

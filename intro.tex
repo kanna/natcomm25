@@ -34,8 +34,8 @@ Ocean models have become essential tools for predicting ocean state
 and underpin a wide range of societal applications, from climate
 forecasting to pollution monitoring and resource management. However,
 these models are inherently imperfect representations of complex
-reality. Data assimilation techniques — where observational data are
-integrated to update models — play a critical role in correcting or
+reality. Data assimilation techniques, where observational data are
+integrated to update models, play a critical role in correcting or
 adjusting model errors and improving their forecasting
 capabilities. Yet, the success of data assimilation depends heavily on
 the availability, quality, and relevance of observations.
@@ -56,44 +56,35 @@ with high spatiotemporal resolution and low logistic footprint
 However, even with these new tools, efficiently collecting data for
 modeling at optimal spatial and temporal scales remains a complex
 challenge. AUVs are constrained not only by endurance and
-communication bandwidth, but also by limited transit speed (typically
-on the order of 1-2 ms\textsuperscript{-1}), comparable to ambient
-current velocities and thus limits synopticity. This limitation is
-even more pronounced for gliders, which operate at lower effective
-speeds. Operational risks further restrict deployment, including
-vessel traffic, fishing activity, strong currents, and complex
-bathymetry. In addition, the ocean itself remains highly dynamic, with
-key processes often evolving faster than traditional ship-based
-sampling strategies can capture. This opens the door to adaptive
-sampling strategies, where observation efforts are guided by model
-outputs and uncertainty estimates to maximize the relevance of
-collected data. Adaptive sampling \cite{BinZhang07,Singh09,fossum19}
-represents a fundamental shift: instead of executing pre-planned
-missions, autonomous vehicles dynamically prioritize areas for
-observation.
+communication bandwidth, but also by speed (typically on the order of
+1-2 ms\textsuperscript{-1}), comparable to ambient current velocities,
+limiting synopticity. This limitation is even more pronounced for
+gliders, which operate at lower effective speeds. Operational risks
+further restrict deployment, including vessel traffic, fishing
+activity, strong currents, and complex bathymetry. In addition, the
+ocean itself remains highly dynamic, with key processes often evolving
+faster than traditional ship-based sampling strategies can
+capture. This opens the door to adaptive sampling strategies, where
+observation efforts are guided by model outputs and uncertainty
+estimates to maximize the relevance of collected data. Adaptive
+sampling \cite{BinZhang07,Singh09,fossum19} represents a fundamental
+shift: instead of executing pre-planned missions, autonomous vehicles
+dynamically prioritize areas for observation.  Our approach combines
+model predictions with adaptive sampling with propelled
+AUVs. \cite{lermusiaux07} explores such a concept; however the novelty
+of our work is in demonstrating the applicability of using our AUVs
+that can control their trajectory using onboard computation and doing
+so in a dynamic coastal environment.
 
-Our approach combines model predictions with adaptive sampling with
-propelled AUVs. \cite{lermusiaux07} explores such a concept; however
-the novelty of our work is in demonstrating the applicability of using
-our AUVs that can control their trajectory using onboard computation
-and doing so in a dynamic coastal environment. % In doing so
-% combines predicted model uncertainties in comparison with prior data
-% assimilation process with available observations.
-
-Model forecasts identify where spatial uncertainty is highest or where new
-observations are expected to have the greatest impact in reducing
-forecast errors, i.e., higher value of information. Vehicles are then
-directed to sample these areas, and their data are in turn assimilated
-back into the models, as a virtuous cycle. % ; model
-% prediction generates a forecast and associated uncertainty field while
-% AUV-based adaptive sampling targets areas of maximum predicted
-% uncertainty.
-Data assimilation from these high uncertainty regions is then
+Model forecasts identify where spatial uncertainty is highest or where
+new observations are expected to have the greatest impact in reducing
+forecast errors. Vehicles are then directed to sample these areas, and
+their data are in turn assimilated back into the models, as a virtuous
+cycle. Data assimilation from these high uncertainty regions is then
 incorporated into the model such that new predictions benefit from
-improved in-situ data. Such a data cycle approach promises to
-significantly enhance the skill of ocean forecasts, especially in the
-complex coastal environment where processes occur over a wide range of
-scales.
+improved in-situ data. Such an approach promises to significantly
+enhance the skill of ocean forecasts, especially in the complex
+coastal environment where processes occur over a wide range of scales.
 
 Our work has three significant results. First it demonstrates the
 importance of coupling ocean models with high resolution AUV
@@ -104,10 +95,10 @@ of assimilation to predict and close the
 (Fig. \ref{fig:block-diag}). Additionally, sampling resolution with
 AUVs vastly outweigh the data obtained from traditional ship-based
 approaches. Multiple AUVs sampling simultaneously, as we do here, also
-makes a dent in spatial as well as temporal coverage of such dynamic
-environments at relatively moderate costs. Additionally, AUVs can
-provide near real-time data, allowing for their rapid re-tasking and
-potentially placement in evolving spatially separated regions.
+makes a dent in spatial as well as temporal coverage of dynamic
+environments at relatively moderate costs. Finally, AUVs can provide
+near real-time data, allowing for their rapid re-tasking and potential
+placement in evolving spatially separated regions.
 
 \begin{figure}[!t]
   \vspace{-0.5cm}

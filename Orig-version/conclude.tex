@@ -1,0 +1,50 @@
+\section{Conclusions}
+\label{sec:conclude}
+
+
+This effort demonstrates the overall integration to close the
+\emph{sample-assimilate-predict-direct} cycle to improve oceanographic
+model skill by leveraging observations from robotic
+platforms. Figs. \ref{fig:rms_ABB1} and \ref{fig:rms} show clear
+indications of an increase in predictive skill when high-resolution
+data from AUVs are assimilated in a geostatistical model. By choosing
+such a modeling approach, this effort offers a window into the rapid
+process of assimilating and predicting, the primary goal of \proje,
+and doing so with minimal operational support. The accuracy of the
+predictions of the geostatistical model increased after several
+cycles, while the overall prediction errors decreased as noted. These
+results provide a foundation for continuous ocean prediction when
+obtaining high-resolution in-situ data as conceptualized in the \met
+framework \cite{rajan21}.
+
+A confluence of external factors reduced the observation period from
+the planned three weeks to three days, primarily due to weather,
+platform availability, and personnel constraints.  Future work will
+extend the observation period to validate and expand upon these
+promising results.
+
+Other challenges that remain to be addressed include near real-time
+assimilation and continuous model prediction especially to capture
+dynamic coastal events.  While we are still lacking the desired
+statistical significance of a long series of consecutive cycles, our
+future work will target the optimization of the parameters used for
+deeper integration of the algorithms used in the cycle. For instance,
+we hope to investigate the selection of representative depths for the
+application of the sampling algorithm used to find the horizontal
+projection of the AUV paths \cite{bernacchi2025}. Another potential
+outcome to be investigated is the use of higher-resolution numerical
+models and longer prediction horizons, considering computational
+trade-offs. In doing so, we would also like to demonstrate the
+viability of \emph{portable} low (computational) cost models running
+in the cloud, which can be initialized for any region rapidly to
+demonstrate the loop-closure we set out to validate.
+
+Along these lines, an additional research direction involves
+encapsulating a model surrogate embedded within the control system of
+one or more AUVs to capture coastal dynamism at fine scales
+\cite{frolov09,fossum19b}, while complementing an increase in the
+assessment of shore-based model skill.
+
+
+
+

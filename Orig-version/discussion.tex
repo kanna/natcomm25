@@ -1,0 +1,187 @@
+\section{Discussion}
+\label{sec:disc}
+
+Assessing the impact of targeted AUV observations on short-term ocean
+forecasts requires evaluating both model–data agreement and how
+assimilation effects vary across regions and dynamical oceanographic
+regimes. Although assimilation generally improves model skill,
+vehicle-specific results highlight differences linked to sampling
+patterns and regional dynamics.
+
+Figs. \ref{fig:rms_c} and \ref{fig:rms_d} present the RMSE predictions
+compared with in-situ data under the different assimilation scenarios
+(\textbf{C}, \textbf{C4}, \textbf{D}, and \textbf{D4}) for
+31\textsuperscript{st} October. The results are shown as a function of
+depth and vehicle, allowing a direct comparison with and without data
+assimilation.  For XP3 and XP5, a clear and consistent trend is
+observed: the assimilation scenarios (\textbf{C4} and \textbf{D4})
+improves the model prediction skill, with RMSE decreasing across all
+depths, indicating that the assimilation procedure effectively
+constrains the local dynamics represented in the statistical
+model. Although small differences are present between \textbf{C4} and
+\textbf{D4}, they are not statistically significant and confirm that
+assimilation results are robust with respect to initial configuration
+differences.
+
+The situation for XP2 was different, however. The assimilation
+scenarios (\textbf{C4} and \textbf{D4}) lead to higher prediction
+errors compared with the non-assimilation runs (\textbf{C} and
+\textbf{D}). This counterintuitive result reflects a spatial mismatch:
+on 31\textsuperscript{st} October, XP2 operated north of the \naz
+Canyon, while assimilated data from the previous days
+(29\textsuperscript{th} and 30\textsuperscript{th} October) were
+collected south of it. The \naz Canyon marks a transition zone between
+distinct oceanographic regimes, where circulation patterns are
+strongly influenced by the canyon’s complex topography and the
+interaction between shelf and slope processes. Inside the canyon,
+residual currents are generally aligned along the canyon axis as a
+result of strong topographical forcing and this alignment extends well
+above the canyon edges ($\sim150$m depth), implying a substantial
+disturbance of the predominant north–south circulation parallel to the
+general trend of the shelf and slope
+\cite{tyler2009europe,relvas2007physical,guerreiro2014influence}. This
+topographic forcing not only alters circulation but also serves as a
+conduit for transporting organic matter and sediment from the shelf to
+the deep sea. The divergence in physical regimes at the canyon likely
+supports distinct biological assemblages, or 'hotspots' of
+productivity, that would be misrepresented by a model that fails to
+capture these subgrid dynamics \cite{stigterr07,cunha11}.
+
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[scale=0.15]{fig/north_south.pdf}
+  \caption{Temperature distributions from CMS for the northern and
+    southern regions of the study area between the
+    18\textsuperscript{th} and 31\textsuperscript{th} October. The
+    division between regions follows the line boundary shown in the
+    inset map, top right. Only grid points shallower than 200m were
+    retained to avoid including the canyon interface. Boxplots show
+    the spatial distribution of CMS temperature within each region,
+    capturing both the median and the spread of variability.}
+  \label{fig:north_south}
+\end{figure}
+
+CMS fields (Fig. \ref{fig:north_south}) provide a broader context,
+comparing temperature distributions in northern and southern regions
+of the study area during the days preceding and during the
+experiment. Before 26\textsuperscript{th} October, although mean
+temperatures differ between the two regions, their variability is
+consistent, indicating that the system was evolving coherently across
+the canyon, with systematically colder waters (by about 1$^{\circ}$C)
+in the northern region. After 26\textsuperscript{th}, the temperature
+evolution in the two regions diverges, with the CMS model showing
+relatively warmer conditions in the north compared to the south. This
+divergence coincides with the onset of the upwelling–relaxation
+transition and highlights a shift toward slightly distinct dynamical
+regimes on either side of the canyon. This transition can explain why
+assimilation of southern data—collected under a single dynamical
+regime—fails to improve and, in fact, degrades forecasts.
+
+This spatial mismatch underscores the need for trajectory-planning
+strategies that maximize class separation between distinct dynamical
+regimes, as proposed by \cite{fossum19b} using hierarchical clustering
+methods. Such approaches, based on criteria including variance
+reduction, mutual information, or entropy, could help identify routes
+that better discriminate between competing oceanographic states and
+mitigate situations where assimilation may propagate misleading
+information if relying solely on uncertainty fields.
+
+\begin{wrapfigure}{o}{0.5\textwidth}
+  \vspace{-0.5cm}
+  \centering
+  \includegraphics[scale=0.16]{fig/fig3D-inset_v2.png}
+  \caption{Trajectory of XP5 AUV, during the 30\textsuperscript{th}
+    October mission in the \naz Canyon region. The color shading
+    represents the interquartile range (IQD) of temperature values
+    recorded within each model grid cell illustrating the horizontal
+    resolution of the statistical model. Results are shown for three
+    representative depth layers: near-surface, 20 m, and 40 m,
+    capturing distinct vertical regimes. Higher IQD values indicate
+    regions of higher thermal variability within the model
+    grid. Close-up view of the 20 m layer reveal fine-scale
+    fluctuations occurring inside single grid elements illustrating
+    AUVs capture subgrid-scale structure that the model does not
+    resolve.}
+  {\label{fig:iqd3D}}
+\end{wrapfigure}
+
+Another highlight of this experiment was in showing the variability
+within the model grid, providing additional insight into the
+subgrid-scale structure of the observed field. Fig. \ref{fig:iqd3D}
+depicts the interquartile distance (IQD) of measurements recorded by
+the AUVs within the three-dimensional discretization of the
+statistical model. Each grid cell represents the maximum spatial
+resolution available in the model, while the IQD quantifies the local
+variability of in-situ measurements acquired as the vehicles navigated
+through each cell.
+
+This figure illustrates how robotic platforms can capture significant
+variability at scales smaller than the model resolution, revealing the
+existence of fine-scale gradients, in some locations greater than
+1$^{\circ}$C, as also processes that are unresolved by the
+model. Although the statistical model provides smoothed, grid-averaged
+predictions of ocean properties, AUV measurements highlight
+fluctuations that occur within individual cells, indicating the
+presence of subgrid-scale dynamics. Unresolved variability is a known
+source of error in data assimilation systems; numerical forecasts and
+statistical surrogates inevitably smooth or filter variability below
+grid scale, so observations that resolve submesoscale or turbulent
+features will often disagree locally with grid-averaged model fields
+\cite{oke2008representation,janjic2018representation}. These
+considerations underscore that high-resolution observations from AUVs
+should not be interpreted solely through coarse model fields. Instead,
+subgrid variability itself provides valuable information about local
+forecast uncertainty and should be explicitly accounted for when
+assimilating observations into coarser-resolution predictive systems.
+
+Across all missions, the AUVs sampled each grid cell with median
+values ranging from 9 to 14 measurements per cell and mean values
+between 19 and 26. These statistics indicate a relatively uniform and
+dense sampling pattern, sufficient to characterize the local
+variability of the water column at the subgrid level. The maximum
+number of samples per grid cell reached several thousand, though these
+values are biased by vehicle behavior near the surface, to communicate
+and geolocate.
+
+Despite these localized biases, the overall sampling density achieved
+by the AUVs provide a detailed depiction of fine-scale ocean
+variability. The IQD distributions reveal higher variability near the
+thermocline (30-40 m), where vertical gradients are strongest, while in some
+instances increased variability could also appear near the surface,
+potentially corresponding to small-scale frontal zones or localized
+mixing events. Because AUVs sample continuously along their
+trajectories, they resolve spatial and temporal scales that often fall
+between CTD stations in traditional ship-based surveys, thereby
+capturing subgrid processes that remain unresolved in numerical
+models.
+
+This subgrid variability is not observational noise; it provides
+valuable insight into local uncertainty and environmental
+heterogeneity. For example, quantifying this subgrid-scale variability
+is essential for biological oceanography, as many marine
+organisms—from zooplankton to fish larvae — aggregate in micro-fronts
+or thermal patches that are often smaller than model
+resolution. Understanding this 'noise' helps distinguish biological
+aggregations from physical turbulence
+\cite{visser2002turbulence}. Incorporating both the variability (such
+as IQD) and the spatial sampling density into data assimilation
+frameworks enhances the model’s ability to represent uncertainty at
+the subgrid scale and improve the realism of short-term forecasts.
+
+This field study provided invaluable lessons in operational
+procedures, refinement of adaptive sampling and algorithms, and risk
+minimization to operate in an area with dense ship traffic and fishing
+nets. Our AUVs were occasionally affected by strong vertical currents
+that may have resulted from the impact of internal waves that are
+common in the area, and that were observed with the help of remote
+sensing imagery during the experiment.
+
+Finally, the results achieved with this deployment provided additional
+insights and the motivation to further advance the state of the art in
+refining the \emph{sample-assimilate-predict-direct} cycle with the
+goal of improving the skill of oceanographic models. Furthermore,
+dense grids of sampled oceanographic data have the potential to fuel
+developments targeting existing gaps in modeling skill when different
+levels of spatial and temporal resolution are considered
+\cite{Balaji_2022}.

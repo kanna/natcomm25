@@ -39,13 +39,48 @@ the previous re-submitted manuscript.
 %======================================================================
 \section*{Answers to Reviewer 1}
 %======================================================================
-All changes requested from Reviewer 1 are marked as \onecomment{red text} in the updated manuscript. \setcounter{reviewer}{1}
+All changes requested from Reviewer 1 are marked as \onecomment{red text} in the updated manuscript. \setcounter{reviewer}{1} \\
+
+%----------------------------------------------------------------------
 
 \begin{answers}
 
-%----------------------------------------------------------------------
-\item {\it }
+\textbf{General Comments}
 
+\item {\it Abstract should be re-written to reflect the findings of the study. The literature review can be extended (e.g. Ford et al. 2022) in the introduction section. In the methodology, the authors challenge the fully dynamical ocean models with a geostatical model. I understand the constraints to use a dynamical model. However, the authors should carefully demonstrate various aspects of the statistical model. They estimate the uncertainty via an ensemble. How is this ensemble generated? How reliable is it? Can we see a temperature prediction of the geostatistical model to be compared with CMEMS model to investigate where are the major dierences?\\} 
+
+\rmcomment{ 
+\begin{itemize}
+    \item Abstract - RM
+    \item Literature review - RM / KR
+    \item Methodology - LEONARDO (LA) \& FILIPA (AFD) - check how this was explained on the previous paper and how we can introduce that here in a very simple manner.
+\end{itemize}}\\
+
+\textbf{Specific Comments}
+\item{\it L65: This paragraph may be better placed in the abstract or conclusions to serve as a summary of the work’s contribution.} \rmcomment{ok}
+\item{\it L100/L105: For better geographical context, please mark the locations (Berlengas archipelago, Obidos lagoon, etc.) on Figure 1 for readers unfamiliar with the region.} \rmcomment{RM will take care}
+\item{\it L116: This paragraph appears to be more appropriate for the Methods section, as it describes the system’s operational aspects.} \rmcomment{RM and KR will take care}
+\item{\it L118: Please clarify the phrase “to democritize ocean model prediction.” Does this imply providing more cost-effective prediction systems?} \rmcomment{RM and KR will take care}
+\item{\it L129: Detail the specific methodology used for the uncertainty estimate.} \rmcomment{LA and AFD - related to General Comments}
+\item{\it L147: The correct acronym for the E.U. Copernicus Marine Service is CMEMS, not CMS; please correct this throughout the text. Furthermore, CMEMS is a service, not a model. Please adapt the text to refer to the specific model (e.g., NEMO, ROMS, or HYCOM) and the system name (e.g., IBI-MFC system), and include explicit citations to their scientific publications.} \rmcomment{RM - not really but ok}
+\item{\it L157: Please provide a figure showing the temperature fields after the geostatistical simulation.} \rmcomment{AFD will take care}
+\item{\it L166: Elaborate on the process used to generate the ensemble of geostatistical realizations.} \rmcomment{AFD - we need to be careful here because the paper is already super long.}
+\item{\it L173: The description of “sequential assimilation” is unclear. Please specify the exact scheme used (e.g., Ensemble Kalman Filter) and clarify whether differences with observations are calculated before or after assimilation.} \rmcomment{LA and AFD will take care}
+\item{\it L192: The statement on spatial propagation being horizontal with implicit vertical consistency is not immediately intuitive. A figure illustrating this concept would be very helpful to the reader.} \rmcomment{LA and AFD - I think you have this figure in the previous paper. It will be impossible to add one more figure, so we will cite it. Make sure that I'm thinking right.}
+\item{\it L204: Please provide a demonstration or figure of the “uncertainty map provided by the model.”} \rmcomment{LA, AFD and LB - I think we have this both in Lucrecia and Filipa's papers}
+\item{\it L231: The text mentions that the algorithm ensures “vehicle endurance and safety constraints.” Please describe how you constrain the algorithm for safety.} \rmcomment{RM and JBS will take care}\\
+
+\textbf{Minor corrections} 
+\item{\it L16: Correct “worlds oceans” to world’s ocean.}
+\item{\it L47: Please be more precise with a quantitative assessment to define “lower effective speeds.”}
+\item{\it L56: Explain the meaning of onboard computation.}
+\item{\it L112: Correct “physicalbiogeochemical” to physical-biogeochemical.}
+\item{\it L285: A panel number for the figure is missing.}
+\item{\it L336: Note that XP2 was also operated on the 31st.}
+\item{\it L348: Correct the trajectory labels from C14 to C1-4 and D14 to D1-4. Fig. 4: Provide more details on the sea surface temperature (SST) datasets in the caption (e.g., CMEMS satellite SST L3?). Fig. 5: The colorbar description (“Shallower layers are shown in warmer colors…”) seems to contradict the visual representation. Please verify the description against the colorbar.}
+\item{\it L362 / Fig. 6: A panel code is missing for Figure 6. Please also add an x-axis label to panel (c) of Figure 6.}
+\item{\it L432: Correct the compound word to data collected.}
+\item{\it L433: Correct the compound word to regime fails.}
 
 \end{answers}
 
@@ -55,11 +90,35 @@ All changes requested from Reviewer 1 are marked as \onecomment{red text} in the
 \section*{Answers to Reviewer 2}
 %======================================================================
 All changes requested from Reviewer 2 are marked as \twocomment{blue text}
-in the updated manuscript. 
+in the updated manuscript. \\
 
 \setcounter{reviewer}{2}
+\textbf{General Comments}
+\begin{answers}
 
-  
+\item {\it The paper is generally well constructed, well written and accurate. I appreciate the authors’ efforts. For real-time ocean awareness, glider missions are part of a sample-assimilate predict-direct loop. Here, the authors review an experiment where they demonstrate an ability to send gliders on sampling missions, assimilate the data, predict the next day with a low computational cost forecast model, and then generate guidance based on the forecast. All of these components have been developed by the authors and their collaborators. Bring all these components together represents a significant accomplishment. Some parts of their work are novel - the forecast model has low computational cost, and thus appropriate for low-powered/limited-resource environments. The forecast model can also generate uncertainty maps, which are useful for generating glider guidance. The gliders are of their own design. I also appreciate the discussion of the observed subgridscale variability in section 5. Some parts of the paper would benefit additional attention. There is no discussion of the gliders speed through water nor typical water velocities in the region. There is no comparison of predicted glider trajectories versus guidance fields. Also, there is no comparison of predicted trajectories with actual glider trajectories. The combination of these things makes it hard for me to evaluate how well the guidance was followed. There is no comparison of the low-cost forecast model versus the global forecast that the low-cost model is based on. So, it makes it hard to say if this approach improves forecast skill over the global model forecast. I think the paper would be strengthed by showing how well the gliders followed their guidance, showing that the observations reduce uncertainty (maybe just put the glider trajectories on the uncertainty maps?), and showing the performance of the low-cost model versus the parent model.} \\ 
+
+\textbf{Are the figures and references suitable? }
+\item{\it The figures are mostly suitable. Figure 6 needs some clarification. The references are suitable. For Figure 6, part (a) is a di erent size than all the other parts of Figure 6. Additionally, comparing to 6(a) to 6(bc), there is no specification of the data that the forecasts are compared to. For part (c), the units are missing.}\\
+
+\textbf{Specific Comments}
+\item{\it After reviewing the references, it looks like all the components of this system - the low-cost model, the assimilation, the guidance, and the gliders - have been build and integrated by the authors and colleagues. This study looks like a first end-to-end demonstration. If that is true, I think it is okay to strongly and clearly state that in the introduction. That is a significant achievement.}
+\item{\it It would be valuable to see maps of the uncertainty and the predicted and actual glider paths on the uncertainty maps - c.f. Figure 4. }
+\item{\it Figures 5 and 6 demonstrate that assimilating glider data results in lower forecast error than not assimilating glider data. It would be nice to see that  the system outperforms CMS. Also, Fig. 6c needs unit labels.  }
+\item{\it Lines 410-439: An alternative explanation for assimilation experiments C4 and D4 performing worse than the free run is that the background error horizontal covariance length scales are over large. When the update is made to the background in experiments C4 and D4, how far away is the background corrected? Is that typical of feature size in the region? Fig. 4a suggests eddies of ~15 km in diameter. That said, construction of 
+background error covariances remains a rich topic.}\\
+
+\textbf{Minor Comments}
+\item{\it At lines 74-79, section 4 is not mentioned}
+\item{\it At line 178: “With AUV sampling denser than the grid resultion 
+(approximately 0.0035 deg., corresponding to about 300-400 m at the study 
+latitude)…” Unclear to me if this is the model horizontal resolution or the 
+typical distance between glider surfacings/profiles. }
+\item{\it Line 521-523. I don’t understand the motivation to demonstrate the viaibility of low-cost models in the cloud. Once it is solved on a dedicated system, running it in the cloud is a software engineering task. It sounds to me that the benefit of portable, low-cost models is not necessarily running in the cloud but “containerization” - able to running a wide range of computer hardware, independent of the specific hardware details. This includes AUVs, as you point out. I think there are two benefits of cloud computing for ocean forecasting. First, access an ocean model anywhere there is an internet connection and second, acquire varying computer resources 
+proportional to compute need (or forecast need), whether it is low cost or 
+high cost. I strongly agree with the motivation to look at forecast skill at a range of time horizons and compute costs }
+
+\end{answers}
 % ======================================================================
  \section*{Author Changes}
 % ======================================================================

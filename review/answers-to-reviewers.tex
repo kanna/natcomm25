@@ -45,32 +45,55 @@ All changes requested from Reviewer 1 are marked as \onecomment{red text} in the
 
 \begin{answers}
 
-\textbf{General Comments}
+\item {\it Major comment:}
 
-\item {\it Abstract should be re-written to reflect the findings of the study. The literature review can be extended (e.g. Ford et al. 2022) in the introduction section. In the methodology, the authors challenge the fully dynamical ocean models with a geostatical model. I understand the constraints to use a dynamical model. However, the authors should carefully demonstrate various aspects of the statistical model. They estimate the uncertainty via an ensemble. How is this ensemble generated? How reliable is it? Can we see a temperature prediction of the geostatistical model to be compared with CMEMS model to investigate where are the major dierences?} 
+\reply: Abstract should be re-written to reflect the findings of the study. The literature review can be extended (e.g. Ford et al. 2022) in the introduction section. In the methodology, the authors challenge the fully dynamical ocean models with a geostatical model. I understand the constraints to use a dynamical model. However, the authors should carefully demonstrate various aspects of the statistical model. They estimate the uncertainty via an ensemble. How is this ensemble generated? How reliable is it? Can we see a temperature prediction of the geostatistical model to be compared with CMEMS model to investigate where are the major differences?
 
-\rmcomment{ 
-\begin{itemize}
-    \item Abstract - RM
-    \item Literature review - RM / KR
-    \item Methodology - LEONARDO (LA) and FILIPA (AFD) - check how this was explained on the previous paper and how we can introduce that here in a very simple manner.
-\end{itemize}}
+\action: 
 
-\textbf{Specific Comments}
-\item{\it L65: This paragraph may be better placed in the abstract or conclusions to serve as a summary of the work’s contribution.} \rmcomment{ok}
-\item{\it L100/L105: For better geographical context, please mark the locations (Berlengas archipelago, Obidos lagoon, etc.) on Figure 1 for readers unfamiliar with the region.} \rmcomment{RM will take care}
-\item{\it L116: This paragraph appears to be more appropriate for the Methods section, as it describes the system’s operational aspects.} \rmcomment{RM and KR will take care}
-\item{\it L118: Please clarify the phrase “to democritize ocean model prediction.” Does this imply providing more cost-effective prediction systems?} \rmcomment{RM and KR will take care}
-\item{\it L129: Detail the specific methodology used for the uncertainty estimate.} \rmcomment{LA and AFD - related to General Comments}
-\item{\it L147: The correct acronym for the E.U. Copernicus Marine Service is CMEMS, not CMS; please correct this throughout the text. Furthermore, CMEMS is a service, not a model. Please adapt the text to refer to the specific model (e.g., NEMO, ROMS, or HYCOM) and the system name (e.g., IBI-MFC system), and include explicit citations to their scientific publications.} \rmcomment{RM - not really but ok}
-\item{\it L157: Please provide a figure showing the temperature fields after the geostatistical simulation.} \rmcomment{AFD will take care}
-\item{\it L166: Elaborate on the process used to generate the ensemble of geostatistical realizations.} \rmcomment{AFD - we need to be careful here because the paper is already super long.}
-\item{\it L173: The description of “sequential assimilation” is unclear. Please specify the exact scheme used (e.g., Ensemble Kalman Filter) and clarify whether differences with observations are calculated before or after assimilation.} \rmcomment{LA and AFD will take care}
-\item{\it L192: The statement on spatial propagation being horizontal with implicit vertical consistency is not immediately intuitive. A figure illustrating this concept would be very helpful to the reader.} \rmcomment{LA and AFD - I think you have this figure in the previous paper. It will be impossible to add one more figure, so we will cite it. Make sure that I'm thinking right.}
-\item{\it L204: Please provide a demonstration or figure of the “uncertainty map provided by the model.”} \rmcomment{LA, AFD and LB - I think we have this both in Lucrecia and Filipa's papers}
-\item{\it L231: The text mentions that the algorithm ensures “vehicle endurance and safety constraints.” Please describe how you constrain the algorithm for safety.} \rmcomment{RM and JBS will take care}\\
+  Abstract - RM\\
+  Literature review - RM / KR\\
+  Methodology - LEONARDO (LA) and FILIPA (AFD) - check how this was explained on the previous paper and how we can introduce that here in a very simple manner.
 
-\textbf{Minor corrections} 
+\item {\it Specific Comments:}
+
+\reply: This paragraph may be better placed in the abstract or conclusions to serve as a summary of the work’s contribution.\\
+\action: ok
+
+\reply: L100/L105: For better geographical context, please mark the locations (Berlengas archipelago, Obidos lagoon, etc.) on Figure 1 for readers unfamiliar with the region. \\
+\action: RM will take care
+
+\reply: L116: This paragraph appears to be more appropriate for the Methods section, as it describes the system’s operational aspects.\\
+\action: RM and KR will take care
+
+\reply: L118: Please clarify the phrase “to democritize ocean model prediction.” Does this imply providing more cost-effective prediction systems?\\
+\action: RM and KR will take care
+
+\reply: L129: Detail the specific methodology used for the uncertainty estimate.\\\action: LA and AFD - related to General Comments
+
+\reply: L147: The correct acronym for the E.U. Copernicus Marine Service is CMEMS, not CMS; please correct this throughout the text. Furthermore, CMEMS is a service, not a model. Please adapt the text to refer to the specific model (e.g., NEMO, ROMS, or HYCOM) and the system name (e.g., IBI-MFC system), and include explicit citations to their scientific publications.
+\action: RM - not really but ok
+
+\reply: L157: Please provide a figure showing the temperature fields after the geostatistical simulation.
+\action: AFD will take care
+
+\reply: L166: Elaborate on the process used to generate the ensemble of geostatistical realizations.
+\action: AFD - we need to be careful here because the paper is already super long.
+
+\reply: L173: The description of “sequential assimilation” is unclear. Please specify the exact scheme used (e.g., Ensemble Kalman Filter) and clarify whether differences with observations are calculated before or after assimilation.\\\action: LA and AFD will take care
+
+\reply: L192: The statement on spatial propagation being horizontal with implicit vertical consistency is not immediately intuitive. A figure illustrating this concept would be very helpful to the reader.\\
+\action: LA and AFD - I think you have this figure in the previous paper. It will be impossible to add one more figure, so we will cite it. Make sure that I'm thinking right.
+
+\reply: L204: Please provide a demonstration or figure of the “uncertainty map provided by the model.”\\
+\action: LA, AFD and LB - I think we have this both in Lucrecia and Filipa's papers
+
+\reply: L231: The text mentions that the algorithm ensures “vehicle endurance and safety constraints.” Please describe how you constrain the algorithm for safety.\\
+\action: RM and JBS will take care
+
+\item{\it Minor corrections:} 
+
+
 \item{\it L16: Correct “worlds oceans” to world’s ocean.}
 \item{\it L47: Please be more precise with a quantitative assessment to define “lower effective speeds.”}
 \item{\it L56: Explain the meaning of onboard computation.}

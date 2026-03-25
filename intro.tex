@@ -70,11 +70,17 @@ estimates to maximize the relevance of collected data. Adaptive
 sampling \cite{BinZhang07,Singh09,fossum19} represents a fundamental
 shift: instead of executing pre-planned missions, autonomous vehicles
 dynamically prioritize areas for observation.  Our approach combines
-model predictions with adaptive sampling with propelled
-AUVs. \cite{lermusiaux07} explores such a concept; however the novelty
-of our work is in demonstrating the applicability of using our AUVs
-that can control their trajectory using onboard computation and doing
-so in a dynamic coastal environment.
+model predictions with adaptive sampling with propelled AUVs. \rone{
+  \cite{lermusiaux07} and \cite{ford22} explore such a concept, the
+  former in simulation, the latter focusing on chlorophyll while we
+  targeted temperature gradients; moreover the novelty of our work is
+  in demonstrating the applicability of using our AUVs that can
+  control their trajectory using onboard computation. Our setup is
+  also simpler with CMEMS seeding the stochastic model augmenting the
+  need to show this \emph{sample-assimilate-predict-direct} loop in a
+  cost effective manner relying on small boats, the use of multiple
+  AUVs while relying on our mature technology suite for
+  command/control of vehicles.}
 
 Model forecasts identify where spatial uncertainty is highest or where
 new observations are expected to have the greatest impact in reducing

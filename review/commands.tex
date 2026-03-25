@@ -20,18 +20,26 @@
 \newcounter{reviewer}
 \def\reply{\textbf{Reviewer query}}
 \def\action{\textbf{Action taken}}
-\newcommand{\comment}[1]{{\color{red}{#1}}}
+
 
 \newlist{answers}{enumerate}{10}
 \setlist[answers]{leftmargin=*, label=\arabic{reviewer}.\arabic*}
 
-\newcommand{\onecomment}[1]{{\color{red}{\{R1: #1\}}}}
-\newcommand{\twocomment}[1]{{\color{blue}{\{R2: #1\}}}}
-\newcommand{\kcomment}[1]{{\color{red}{KR: #1}}}
-\newcommand{\rmcomment}[1]{{\color{blue}{RM: #1}}}
+\newcommand{\comment}[1]{{\color{red}{\{#1\}}}}
+\newcommand{\rone}[1]{{\color{blue}{\{R1: #1\}}}}
+\newcommand{\rtwo}[1]{{\color{red}{\{R2: #1\}}}}
+\newcommand{\kcomment}[1]{{\color{green}{\{KR: #1\}}}}
+\newcommand{\kc}{\kcomment}
+\newcommand{\rmcomment}[1]{{\color{purple}{\{RM: #1\}}}}
+\newcommand{\me}[1]{{\color{green}{\{#1\}}}}
+
+% \newcommand{\onecomment}[1]{{\color{blue}{\{R1: #1\}}}}
+% \newcommand{\twocomment}[1]{{\color{red}{\{R2: #1\}}}}
+% \newcommand{\kcomment}[1]{{\color{red}{KR: #1}}}
+% \newcommand{\rmcomment}[1]{{\color{blue}{RM: #1}}}
 
 % \newcommand{\me}[1]{{\color\end{answers}{violet}{\{#1\}}}}
-\newcommand{\me}[1]{{\color{violet}{\{#1\}}}}
+% \newcommand{\me}[1]{{\color{violet}{\{#1\}}}}
 
 \newcommand{\ba}{ {\boldsymbol a} }
 \newcommand{\bA}{ {\boldsymbol A} }

@@ -4,14 +4,14 @@
 Fig. \ref{fig:sst} summarizes environmental conditions observed during
 the three-day experimental window considered in this study. The
 background fields correspond to the Level-3 Sea Surface Temperature
-(SST) product from CMS. The operational area covers approximately 100
-km\textsuperscript{2} south of the \naz Canyon. While all missions
-focused on temperature variability predicted by the model, on
-31\textsuperscript{st} October XP2 was deployed for a cross-shore
-transect of approximately 13 km to sample an internal-wave hotspot; in
-this study, it serves as an independent ground-truth dataset. These
-observations are used as a reference for evaluating the forecast cases
-\textbf{C1–-C4} and \textbf{D1–-D4}.
+(SST) product from \rone{CMEMS}. The operational area covers
+approximately 100 km\textsuperscript{2} south of the \naz
+Canyon. While all missions focused on temperature variability
+predicted by the model, on 31\textsuperscript{st} October XP2 was
+deployed for a cross-shore transect of approximately 13 km to sample
+an internal-wave hotspot; in this study, it serves as an independent
+ground-truth dataset. These observations are used as a reference for
+evaluating the forecast cases \textbf{C1–-C4} and \textbf{D1–-D4}.
 
 During the experimentation, the coastal ocean was influenced by a
 late-season upwelling-relaxation cycle. At the beginning of the
@@ -57,15 +57,15 @@ logistics in multi-vehicle operations, where scheduling, resources,
 and environmental constraints together determine the actual temporal
 coverage of the vehicles.
 
-XP2 operated on the 29\textsuperscript{th}, XP5 on the
-29\textsuperscript{th}, 30\textsuperscript{th}, and
-31\textsuperscript{st}, and XP3 on 30\textsuperscript{th} and
-31\textsuperscript{st} October.  The temperature fields reveal a
-thermocline and a progressive warming of the surface layer down to
-approximately 40m depth, with temperatures ranging from around
-14$^{\circ}$C in deeper layers to about 18$^{\circ}$C near the
-surface, reaching their maximum on the 30\textsuperscript{th}
-afternoon during XP5’s mission.
+XP2 operated on the 29\textsuperscript{th} and
+\rone{31\textsuperscript{st}}, XP5 on the 29\textsuperscript{th},
+30\textsuperscript{th}, and 31\textsuperscript{st}, and XP3 on
+30\textsuperscript{th} and 31\textsuperscript{st} October.  The
+temperature fields reveal a thermocline and a progressive warming of
+the surface layer down to approximately 40m depth, with temperatures
+ranging from around 14$^{\circ}$C in deeper layers to about
+18$^{\circ}$C near the surface, reaching their maximum on the
+30\textsuperscript{th} afternoon during XP5’s mission.
 
 
 In Fig. \ref{fig:scatter}, four scatter plots compare the measurements
@@ -77,12 +77,13 @@ incorporating the full set of AUV observations from previous days
 (\textbf{C4} and \textbf{D4}). The observations include all available
 data collected by the missions on that day (see Fig. \ref{fig:sst} and
 \ref{fig:temperatureprofiles}). Colors indicate the depth layers
-associated with the vertical discretization used in the CMS model
-which defines the vertical structure of the statistical model.  This
-comparison illustrates the statistical model's ability to reproduce
-the observed temperatures at each measurement point accurately,
-contrasting the non-assimilated cases (\textbf{C} and \textbf{D}) with
-the partially and fully assimilated (\textbf{C1–4} and \textbf{D1–4}).
+associated with the vertical discretization used in the \rone{CMEMS}
+model which defines the vertical structure of the statistical model.
+This comparison illustrates the statistical model's ability to
+reproduce the observed temperatures at each measurement point
+accurately, contrasting the non-assimilated cases (\textbf{C} and
+\textbf{D}) with the partially and fully assimilated (\textbf{C1–4}
+and \textbf{D1–4}).
 
 In the baseline scenarios without assimilation (\textbf{C} and
 \textbf{D}), the plots exhibit a wide spread of points around the
@@ -92,7 +93,7 @@ particularly evident in XP3 and XP5 data, where temperatures around
 20--30 m depth tend to be overestimated by almost 1$^{\circ}$C)
 (Figs. \ref{fig:rms_c} and \ref{fig:rms_d}). This dispersion reflects
 the model’s limited ability to accurately reproduce the vertical
-thermal structure when it relies solely on CMS data without
+thermal structure when it relies solely on \rone{CMEMS} data without
 incorporating in-situ information.
 
 In contrast, the fully assimilated scenarios (\textbf{C4} and
@@ -122,16 +123,16 @@ ongoing physical transitions in the water column.
 \end{figure}
 
 
-Figs.  \ref{fig:rms_ABB1}, \ref{fig:rms} present the RMSE between the
-statistical model forecasts and the in-situ temperature observations
-collected by the AUVs. These figures cover all experimental
-configurations examined in this study.  Fig. \ref{fig:rms_ABB1},
-corresponds to the initial phase of the experiments on the
-29\textsuperscript{th} and the 30\textsuperscript{th}. Scenario
-\textbf{A} represents the baseline statistical forecast based on CMS
-data. \textbf{B} and \textbf{B1} scenarios correspond to forecasts for
-the 30\textsuperscript{th} without and with the assimilation of
-in-situ observations during the previous day (see Table
+Fig. \rone{\ref{fig:rms}} presents the RMSE between the statistical
+model forecasts and the in-situ temperature observations collected by
+the AUVs. These figures cover all experimental configurations examined
+in this study.  Fig. \ref{fig:rms_ABB1}, corresponds to the initial
+phase of the experiments on the 29\textsuperscript{th} and the
+30\textsuperscript{th}. Scenario \textbf{A} represents the baseline
+statistical forecast based on \rone{CMEMS} data. \textbf{B} and
+\textbf{B1} scenarios correspond to forecasts for the
+30\textsuperscript{th} without and with the assimilation of in-situ
+observations during the previous day (see Table
 \ref{table:scenarios}). RMSE values in scenario \textbf{A} range from
 approximately 0.48$^{\circ}$C near the surface to 1.33$^{\circ}$C at
 40m, with a mean RMSE of about 0.74$^{\circ}$C. The errors increase
@@ -157,21 +158,21 @@ densely sampled by the AUVs.
     $^{\circ}$C) between model forecasts and in-situ AUV temperature
     observations for 29\textsuperscript{th}–-30\textsuperscript{st}
     October. Scenario \textbf{A} corresponds to the baseline
-    statistical forecast generated based on CMS data up to the
-    29\textsuperscript{th}. Scenarios \textbf{B} and \textbf{B1}
+    statistical forecast generated based on \rone{CMEMS} data up to
+    the 29\textsuperscript{th}. Scenarios \textbf{B} and \textbf{B1}
     represent forecasts for the 30\textsuperscript{th} without and
     with respectively, the assimilation of AUV observations collected
     by XP2. \subref{fig:rms_c} RMSE, between the statistical model
     forecasts and in-situ AUV temperature measurements for
     31\textsuperscript{th} October, for scenarios \textbf{C} and
-    \textbf{C1-–C4}. These forecasts were initialized using CMS data
-    available up to the 30\textsuperscript{th}, and the assimilation
-    steps progressively incorporate AUV observations collected on
-    previous days. Results are shown for each vehicle and for the
-    combined dataset (“All AUVs”). \subref{fig:rms_d} Same as
+    \textbf{C1-–C4}. These forecasts were initialized using
+    \rone{CMEMS} data available up to the 30\textsuperscript{th}, and
+    the assimilation steps progressively incorporate AUV observations
+    collected on previous days. Results are shown for each vehicle and
+    for the combined dataset (“All AUVs”). \subref{fig:rms_d} Same as
     \subref{fig:rms_c}, but for scenarios \textbf{D} and
     \textbf{D1-–D4}, in which forecasts for the 31\textsuperscript{th}
-    were initialized using CMS data available only up to the
+    were initialized using \rone{CMEMS} data available only up to the
     29\textsuperscript{th}. Assimilation configurations
     \textbf{D1-–D4} mirror those of the \textbf{C}--series but start
     from this less favorable prior state. Results are again presented
@@ -183,8 +184,8 @@ densely sampled by the AUVs.
 The results for 31\textsuperscript{st} October, summarized in
 Fig. \ref{fig:rms}, correspond to the phase of the experiment in which
 multiple assimilation scenarios were tested. The \textbf{C}-series
-used CMS data up to the 30\textsuperscript{th}, whereas the
-\textbf{D}-series uses CMS up to the 29\textsuperscript{th},
+used \rone{CMEMS} data up to the 30\textsuperscript{th}, whereas the
+\textbf{D}-series uses \rone{CMEMS} up to the 29\textsuperscript{th},
 representing a less favorable statistical initial state. In both
 cases, the assimilation scenarios (\textbf{C1-–C4} and
 \textbf{D1-–D4}) correspond to the incorporation of AUV data collected

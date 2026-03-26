@@ -155,11 +155,22 @@ of the Methods section.
   system name (e.g., IBI-MFC system), and include explicit citations to
   their scientific publications.
 
-  \action: Our effort leveraged the NEMO model within CMEMS. This has
+  \action: Our effort leveraged the NEMO model within CMEMS using the
+  IB-MFC domain. This has
   now been clarified in the Methods section including citations as
-  suggested. The reference to CMS have been replaced manuscript-wide
-  with CMEMS. \kc{I take it this is for the IBI-MFC domain?}
+  suggested with the following text: 
 
+  \begin{quote}
+
+    Our methodology relies on ensembles of geostatistical realizations,
+    each representing a state of an ocean variable field conditioned to
+    \emph{a priori} by the deterministic CMEMS NEMO model
+  \cite{madec97,madec15} using the Iberian Biscay Irish domain. We use
+  models \dots
+    \end{quote}
+
+    The reference to CMS have been replaced manuscript-wide
+    with CMEMS.
 
 \item \reply: L157: Please provide a figure showing the temperature
   fields after the geostatistical simulation.
@@ -224,14 +235,21 @@ of the Methods section.
     on board, akin to a standard laptop; this is not the case with the
     current generation of gliders. For instance, our AUVs carry a Intel
     Core i7-1065G7 CPU rated at 1.30GHz running the Linux operating
-    system. Advanced methods of embedded reasoning such as we show in
-    \cite{das11b,rajan12,chrpa15,fossum18,fossum19,fossum19b} among
-    others allow onboard computing. While embedded reasoning was neither
+    system. Advanced methods of embedded reasoning such as in our
+    earlier work \cite{das11b,rajan12,chrpa15,fossum18,fossum19,fossum19b} among
+    others, allow onboard computing. While embedded reasoning was neither
     the highlight nor used in this work, the vehicles used allow for
     such capability. We have modified the text to read:
 
     \begin{quote}
-      \kc{Lucrezia what onboard computation did we actually do?}
+
+      \ldots moreover the novelty of our work is
+  in demonstrating the applicability of using our AUVs that can
+  control their trajectory using onboard computation. While well
+  suited for embedded reasoning for adaptive sampling
+  \cite{das11b,rajan12,chrpa15,fossum18,fossum19,fossum19b}, this
+  effort used shore-generated waypoints distributed to all AUVs, a
+  task which could be moved onboard in the future. 
 
     \end{quote}
 

@@ -50,20 +50,20 @@ to the \emph{sample-assimilate-predict-direct} process.
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. Conventional numerical ocean
 circulation models, based on the fluid dynamics, such as
-E.U. Copernicus Marine Service (CMS) \cite{CMEMS2017}, Regional Ocean
-Modeling System (ROMS)\cite{shchepetkin2005regional}, and Hybrid
-Coordinate Ocean Model (HYCOM)\cite{wallcraft09}, for example, are
-widely used by the scientific community for operational forecasting
-and research. These models provide physically consistent simulations
-of ocean state variables (e.g., temperature, salinity, currents) and
-underpin applications ranging from climate prediction to coastal
-management. However, numerical ocean models are computationally
-intensive, and their runtime makes them impractical for use with high
-spatial resolution and in near real-time mission planning
-\cite{agarwal21}. While such assimilation-prediction cycles such as
-the one we propose could, in principle, be implemented within such
-models, it would require either substantially larger computational
-resources or longer execution times.
+E.U. Copernicus Marine Service (\rone{CMEMS}) \cite{CMEMS2017},
+Regional Ocean Modeling System (ROMS)\cite{shchepetkin2005regional},
+and Hybrid Coordinate Ocean Model (HYCOM)\cite{wallcraft09}, for
+example, are widely used by the scientific community for operational
+forecasting and research. These models provide physically consistent
+simulations of ocean state variables (e.g., temperature, salinity,
+currents) and underpin applications ranging from climate prediction to
+coastal management. However, numerical ocean models are
+computationally intensive, and their runtime makes them impractical
+for use with high spatial resolution and in near real-time mission
+planning \cite{agarwal21}. While such assimilation-prediction cycles
+such as the one we propose could, in principle, be implemented within
+such models, it would require either substantially larger
+computational resources or longer execution times.
 
 As a practical alternative, we use geostatistical simulation (i.e.,
 direct sequential simulation \cite{soares2001direct}) as a
@@ -83,14 +83,15 @@ inaccurate.
 
 Our methodology relies on ensembles of geostatistical realizations,
 each representing a state of an ocean variable field conditioned to
-\emph{a priori} by the deterministic CMS model (i.e., ocean models
-outputs of the previous 14 days) with a variogram model describing the
-temporal dependency between days. By computing the pointwise standard
-deviation across the ensemble, we obtain spatial uncertainty maps that
-highlight regions where predictions are more variable and therefore
-potentially a target for robotic sampling. These maps then, serve as
-the basis for identifying areas where new measurements are expected to
-maximize the reduction of forecast error.
+\emph{a priori} by the deterministic \rone{CMEMS NEMO model
+  \cite{madec97,madec15}} (i.e., ocean models outputs of the previous
+14 days) with a variogram model describing the temporal dependency
+between days. By computing the pointwise standard deviation across the
+ensemble, we obtain spatial uncertainty maps that highlight regions
+where predictions are more variable and therefore potentially a target
+for robotic sampling. These maps then, serve as the basis for
+identifying areas where new measurements are expected to maximize the
+reduction of forecast error.
 
 Beyond uncertainty prediction, the statistical approach incorporates
 AUV data through sequential assimilation, refining forecasts for
@@ -118,24 +119,24 @@ uncertainty.
  
 The continuity of the variable field in space and time is
 simultaneously characterized by variogram models fitted to long-term
-numerical ocean model data from CMS. For each depth layer of the
-numerical model where the AUV navigation is defined, geostatistical
-simulations are performed independently using a moving temporal window
-of the previous 14 days as conditioning data. This window length was
-selected through comparison with the numerical model’s short-term
-evolution under similar seasonal conditions, striking a balance
-between forecast stability and computational cost. Spatial propagation
-occurs only horizontally within each depth level, while vertical
-consistency is implicitly maintained through the depth-specific
-variogram structures derived from the 3D numerical model.  This
-provides both a forecast of ocean variables being simulated, as well
-as a quantitative assessment of the prediction uncertainty.  By
-updating the forecasts with new in-situ measurements through
-sequential assimilation, the method progressively refines the variable
-field while maintaining consistency with prior model dynamics. The
-resulting forecast and uncertainty maps then form the input for the
-targeted sampling algorithm, guiding the allocation of AUV
-trajectories towards regions of greatest expected information
+numerical ocean model data from \rone{CMEMS}. For each depth layer of
+the numerical model where the AUV navigation is defined,
+geostatistical simulations are performed independently using a moving
+temporal window of the previous 14 days as conditioning data. This
+window length was selected through comparison with the numerical
+model’s short-term evolution under similar seasonal conditions,
+striking a balance between forecast stability and computational
+cost. Spatial propagation occurs only horizontally within each depth
+level, while vertical consistency is implicitly maintained through the
+depth-specific variogram structures derived from the 3D numerical
+model.  This provides both a forecast of ocean variables being
+simulated, as well as a quantitative assessment of the prediction
+uncertainty.  By updating the forecasts with new in-situ measurements
+through sequential assimilation, the method progressively refines the
+variable field while maintaining consistency with prior model
+dynamics. The resulting forecast and uncertainty maps then form the
+input for the targeted sampling algorithm, guiding the allocation of
+AUV trajectories towards regions of greatest expected information
 gain. More details about the geostatistical model, its development,
 and application during the \proj experiment can be found in
 \cite{Duarte2025}.
@@ -156,19 +157,20 @@ while the duration is bounded above by the assimilation period. The
 starting and ending points are selected to simplify logistics for
 launch and recovery.
 
-Although the underlying numerical CMS model is fully three-dimensional
-and the statistical solution also provides predictions across multiple
-depth layers, in this work, the sampling algorithm operates on a
-2-Dimensional (2D) horizontal field derived from the uncertainty
-structure of the statistical solution. This field is obtained by
-averaging the horizontal depth slices of uncertainty between the
-surface and 40m depth, a depth interval chosen to represent the upper
-mixed layer in the \naz study region. Within this layer, turbulent
-mixing typically maintains relatively weak vertical gradients, and
-most of the temperature variability relevant for mission planning is
-concentrated near the surface and the upper thermocline. Averaging
-across this depth range, therefore, yields a stable and physically
-meaningful representation of the uncertainty field.
+Although the underlying numerical \rone{CMEMS} model is fully
+three-dimensional and the statistical solution also provides
+predictions across multiple depth layers, in this work, the sampling
+algorithm operates on a 2-Dimensional (2D) horizontal field derived
+from the uncertainty structure of the statistical solution. This field
+is obtained by averaging the horizontal depth slices of uncertainty
+between the surface and 40m depth, a depth interval chosen to
+represent the upper mixed layer in the \naz study region. Within this
+layer, turbulent mixing typically maintains relatively weak vertical
+gradients, and most of the temperature variability relevant for
+mission planning is concentrated near the surface and the upper
+thermocline. Averaging across this depth range, therefore, yields a
+stable and physically meaningful representation of the uncertainty
+field.
 
 While the trajectory planning itself is carried out in two dimensions,
 the yo-yo motion executed by the AUVs along each transect naturally
@@ -211,7 +213,7 @@ uncertainty, while ensuring vehicle endurance and safety constraints
     (29\textsuperscript{th} - 31\textsuperscript{st} October 2024) of
     the \emph{sample-–assimilate–-predict-–direct} loop in the \proj
     experiment. Each cycle integrated statistical model predictions
-    using the CMS model as a prior, targeted sampling, AUV data
+    using the \rone{CMEMS} model as a prior, targeted sampling, AUV data
     acquisition, and subsequent assimilation for the following day's
     predict.}
 \end{wrapfigure}
@@ -261,11 +263,11 @@ setting.
 
 Each experimental day followed a structured cycle involving: (i) the
 generation of a statistical model forecast and its associated
-uncertainty field using as prior CMS model data available up to the
-previous day \cite{sotillo2021}; (ii) the execution of the target
-sampling algorithm to plan the next day missions; (iii) in-situ data
-collection by AUVs following the algorithmically determined tours;
-(iv) and finally data from the tour assimilated into the
+uncertainty field using as prior \rone{CMEMS} model data available up
+to the previous day \cite{sotillo2021}; (ii) the execution of the
+target sampling algorithm to plan the next day missions; (iii) in-situ
+data collection by AUVs following the algorithmically determined
+tours; (iv) and finally data from the tour assimilated into the
 model. % The data collected
 % within the previous day were subsequently assimilated into the
 % statistical model to produce updated forecasts, enabling comparisons
@@ -279,8 +281,8 @@ scenarios contribute to the final solution set. These labelled
 \textbf{A} through \textbf{D} (and their corresponding assimilation
 variants), are summarised in Table \ref{table:scenarios} which
 provides a compact, color-coded overview of all configurations (used
-in Figs. \ref{fig:rms_ABB1} and \ref{fig:rms}), including statistical
-forecast dates, prior CMS fields, and the specific AUV datasets
+in Fig. \rone{\ref{fig:rms})}, including statistical forecast dates,
+prior \rone{CMEMS NEMO} fields, and the specific AUV datasets
 assimilated at each stage.
 
 On 29\textsuperscript{th} October, the statistical model produced the
@@ -314,15 +316,16 @@ full multi-vehicle dataset from the 29\textsuperscript{st} to the
 
 A parallel set of scenarios (\textbf{D} and \textbf{D1} - \textbf{D4})
 was generated to evaluate the sensitivity of the statistical model to
-the choice of prior CMS fields. The \textbf{D}-series uses CMS data
-available only up to 29\textsuperscript{st} October, thus representing
-a less favorable initial state, and applies the same assimilation
-configurations as in the \textbf{C}-series. This dual-series approach
-enables a controlled comparison of how data assimilation interacts
-with differences in model initialization.  Model performance was
-evaluated by comparing predicted and observed temperature data along
-the AUV trajectories using Root Mean Square Error (RMSE) as the
-performance metric for 31\textsuperscript{st} October.
+the choice of prior \rone{CMEMS} fields. The \textbf{D}-series uses
+\rone{CMEMS} data available only up to 29\textsuperscript{st} October,
+thus representing a less favorable initial state, and applies the same
+assimilation configurations as in the \textbf{C}-series. This
+dual-series approach enables a controlled comparison of how data
+assimilation interacts with differences in model initialization.
+Model performance was evaluated by comparing predicted and observed
+temperature data along the AUV trajectories using Root Mean Square
+Error (RMSE) as the performance metric for 31\textsuperscript{st}
+October.
 
 \rone{ \proj itself is part of a larger concept for multi-domain
   sensing, observation and exploration, which couples ocean models,
@@ -338,7 +341,7 @@ performance metric for 31\textsuperscript{st} October.
     \footnotesize{
 \begin{tabular}{cccc}
 \hline
-\textbf{Scenario}                  & \textbf{Forecast date} & \textbf{CMS prior data up to} & \textbf{Assimilated AUV datasets} \\ \hline
+\textbf{Scenario}                  & \textbf{Forecast date} & \textbf{\rone{CMEMS}prior data up to} & \textbf{Assimilated AUV datasets} \\ \hline
 {\color[HTML]{3531FF} \textbf{A}}  & 29 Oct                 & 28 Oct                        & None (baseline)                   \\ \hline
 {\color[HTML]{9A0000} \textbf{B}}  & 30 Oct                 & 29 Oct                        & None (baseline)                   \\
 {\color[HTML]{FFCB2F} \textbf{B1}} & 30 Oct                 & 29 Oct                        & XP2 (29 Oct)                      \\ \hline
@@ -346,17 +349,17 @@ performance metric for 31\textsuperscript{st} October.
 {\color[HTML]{9A0000} \textbf{C1}} & 31 Oct                 & 30 Oct                        & XP2 (29 Oct)                      \\
 {\color[HTML]{FFCB2F} \textbf{C2}} & 31 Oct                 & 30 Oct                        & XP2 (29 Oct), XP5 (30 Oct)        \\
 {\color[HTML]{6200C9} \textbf{C3}} & 31 Oct                 & 30 Oct                        & XP5 (30 Oct)                      \\
-{\color[HTML]{009901} \textbf{C4}} & 31 Oct                 & 30 Oct                        & XP2, XP3, XP5 (29–30 Oct)         \\ \hline
+{\color[HTML]{009901} \textbf{C4}} & 31 Oct                 & 30 Oct                        & XP2, XP3, XP5 (29–-30 Oct)         \\ \hline
 {\color[HTML]{3531FF} \textbf{D}}  & 31 Oct                 & 29 Oct                        & None (baseline)                   \\
 {\color[HTML]{9A0000} \textbf{D1}} & 31 Oct                 & 29 Oct                        & XP2 (29 Oct)                      \\
 {\color[HTML]{FFCB2F} \textbf{D2}} & 31 Oct                 & 29 Oct                        & XP2 (29 Oct), XP5 (30 Oct)        \\
 {\color[HTML]{6200C9} \textbf{D3}} & 31 Oct                 & 29 Oct                        & XP5 (30 Oct)                      \\
-{\color[HTML]{009901} \textbf{D4}} & 31 Oct                 & 29 Oct                        & XP2, XP3, XP5 (29–30 Oct)         \\ \hline
+{\color[HTML]{009901} \textbf{D4}} & 31 Oct                 & 29 Oct                        & XP2, XP3, XP5 (29–-30 Oct)         \\ \hline
 \end{tabular}%
 }}
 \caption{Summary of scenarios and assimilation configurations. The
-  color codes are referred to in Figs. \ref{fig:rms_ABB1} and
-  \ref{fig:rms} to disambiguate RMSE plots.}
+  color codes are referred to in \rone{Fig. \ref{fig:rms}} to
+  disambiguate RMSE plots.}
 \label{table:scenarios}
 \end{table}
 .

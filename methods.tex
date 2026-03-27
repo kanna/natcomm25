@@ -50,7 +50,7 @@ to the \emph{sample-assimilate-predict-direct} process.
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. Conventional numerical ocean
 circulation models, based on the fluid dynamics, such as
-E.U. Copernicus Marine Service (\rone{CMEMS}) \cite{CMEMS2017},
+E.U. Copernicus Marine Service (\rone{NEMO-CMEMS}) \cite{CMEMS2017},
 Regional Ocean Modeling System (ROMS)\cite{shchepetkin2005regional},
 and Hybrid Coordinate Ocean Model (HYCOM)\cite{wallcraft09}, for
 example, are widely used by the scientific community for operational
@@ -83,8 +83,7 @@ inaccurate.
 
 Our methodology relies on ensembles of geostatistical realizations,
 each representing a state of an ocean variable field conditioned to
-\emph{a priori} by the deterministic \rone{CMEMS NEMO model
-  \cite{madec97,madec15} using the Iberian Biscay Irish domain} (i.e.,
+\emph{a priori} by the deterministic \rone{NEMO-CMEMS model using the Iberian Biscay Irish domain \cite{madec97,madec15,CMEMS_IBI_MFC}} (i.e.,
 ocean models outputs of the previous 14 days) with a variogram model
 describing the temporal dependency between days. By computing the
 pointwise standard deviation across the ensemble, we obtain spatial

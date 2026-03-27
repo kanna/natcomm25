@@ -60,7 +60,7 @@ All changes requested from Reviewer 1 are marked as \rone{blue text} in the upda
   is this ensemble generated? How reliable is it? Can we see a
   temperature prediction of the geostatistical model to be compared with
   CMEMS model to investigate where are the major differences?
-
+AA
   \begin{enumerate}
 
   \item {\it Literature review}
@@ -208,7 +208,7 @@ of the Methods section.
   “vehicle endurance and safety constraints.” Please describe how you
   constrain the algorithm for safety.
 
-  \action: \kc{RM and JBS will take care}
+  \action: \kc{RM and LB}
 
 \end{enumerate}
 
@@ -220,7 +220,7 @@ of the Methods section.
   \item
     \reply: L16: Correct “worlds oceans” to world’s ocean.
     
-    \action: Fixed.
+    \action: Corrected.
 
   \item \reply: L47: Please be more precise with a quantitative
     assessment to define “lower effective speeds.”
@@ -263,7 +263,7 @@ of the Methods section.
     
     \action: Corrected in this and a number of other locations. 
     
-  \item \reply L336: Note that XP2 was also operated on the 31st.
+  \item \reply: L336: Note that XP2 was also operated on the 31st.
     
     \action: Corrected.
 
@@ -319,52 +319,210 @@ in the updated manuscript. \\
 
 \begin{answers}
 
-\item {\it{General Comments:}}
+\item
+  \reply: The figures are mostly suitable. Figure 6 needs some
+  clarification. The references are suitable. For Figure 6, part (a) is
+  a different size than all the other parts of Figure 6. Additionally,
+  comparing to 6(a) to 6(bc), there is no specification of the data that
+  the forecasts are compared to. For part (c), the units are missing.
+
+  \action: We have corrected this in the
+  following manner:
+
+  \begin{quote}
+    \kc{LA and AFD - check this comment about fig 6}
+  \end{quote}
+
+\item {\it General Comments:}
+
+    \reply: The paper is generally well constructed, well written and
+    accurate. I appreciate the authors’ efforts. For real-time ocean
+    awareness, glider missions are part of a sample-assimilate
+    predict-direct loop. Here, the authors review an experiment where
+    they demonstrate an ability to send gliders on sampling missions,
+    assimilate the data, predict the next day with a low computational
+    cost forecast model, and then generate guidance based on the
+    forecast. All of these components have been developed by the authors
+    and their collaborators. Bring all these components together
+    represents a significant accomplishment. Some parts of their work
+    are novel - the forecast model has low computational cost, and thus
+    appropriate for low-powered/limited-resource environments. The
+    forecast model can also generate uncertainty maps, which are useful
+    for generating glider guidance. The gliders are of their own design.
+    I also appreciate the discussion of the observed subgridscale
+    variability in section 5. Some parts of the paper would benefit
+    additional attention. There is no discussion of the gliders speed
+    through water nor typical water velocities in the region. There is
+    no comparison of predicted glider trajectories versus guidance
+    fields. Also, there is no comparison of predicted trajectories with
+    actual glider trajectories. The combination of these things makes it
+    hard for me to evaluate how well the guidance was followed. There is
+    no comparison of the low-cost forecast model versus the global
+    forecast that the low-cost model is based on. So, it makes it hard
+    to say if this approach improves forecast skill over the global
+    model forecast. I think the paper would be strengthed by showing how
+    well the gliders followed their guidance, showing that the
+    observations reduce uncertainty (maybe just put the glider
+    trajectories on the uncertainty maps?), and showing the performance
+    of the low-cost model versus the parent model.
+
+  
+  \begin{enumerate}
+
+  \item {\it On gliders:} There appears to be some confusion. Our work
+    leverages powered AUVs, not gliders. This allows our vehicles to go
+    against the current (anything $< 1--2$ knots), carry a range of
+    payloads subject to battery chemistry and most importantly have an
+    onboard computer which is power enough to do embedded
+    decision-making (see comments above on this addressing Reviewer 1).
+    Fig 3. shows a typical deployment, which is quite unlike that of a
+    glider. These low-cost platforms are more versatile in our opinion,
+    complement gliders and designed in house while available
+    commercially off-the-shelf
+    \footnote{see https://www.oceanscan-mst.com} and
+    operated across the world.
+
+    \action: None.
+    
+  \item
+
+    \reply: \ldots gliders speed through water nor typical water
+    velocities in the region \ldots
+
+    \action: \kc{RM will take care}
+
+  \item
+
+    \reply: \ldots comparison of predicted glider trajectories versus
+    guidance fields. Also, there is no comparison of predicted trajectories
+      with actual glider trajectories.... I think the paper would be
+      strengthed by showing how well the gliders followed their
+      guidance, showing that the observations reduce uncertainty (maybe
+      just put the glider trajectories on the uncertainty maps?)
+
+      \action: Thank you; we agree. We have corrected this in the
+      following manner: 
+
+      \begin{quote}
+
+        \kc{LB will evaluate how to handle this in terms of figures}
+
+        \end{quote}
+
+      \item
+
+        \reply: \ldots comparison of the low-cost forecast model versus
+        the global forecast that the low-cost model is based on
+
+      \action:  We have corrected this in the
+      following manner:
+
+      \begin{quote}
+
+        \kc{LA and AFD will check this. same reply as R1 in the general
+          comments}
+        
+      \end{quote}        
+
+  \end{enumerate}
 
 
-\item {\it The paper is generally well constructed, well written and accurate. I appreciate the authors’ efforts. For real-time ocean awareness, glider missions are part of a sample-assimilate predict-direct loop. Here, the authors review an experiment where they demonstrate an ability to send gliders on sampling missions, assimilate the data, predict the next day with a low computational cost forecast model, and then generate guidance based on the forecast. All of these components have been developed by the authors and their collaborators. Bring all these components together represents a significant accomplishment. Some parts of their work are novel - the forecast model has low computational cost, and thus appropriate for low-powered/limited-resource environments. The forecast model can also generate uncertainty maps, which are useful for generating glider guidance. The gliders are of their own design. I also appreciate the discussion of the observed subgridscale variability in section 5. Some parts of the paper would benefit additional attention. There is no discussion of the gliders speed through water nor typical water velocities in the region. There is no comparison of predicted glider trajectories versus guidance fields. Also, there is no comparison of predicted trajectories with actual glider trajectories. The combination of these things makes it hard for me to evaluate how well the guidance was followed. There is no comparison of the low-cost forecast model versus the global forecast that the low-cost model is based on. So, it makes it hard to say if this approach improves forecast skill over the global model forecast. I think the paper would be strengthed by showing how well the gliders followed their guidance, showing that the observations reduce uncertainty (maybe just put the glider trajectories on the uncertainty maps?), and showing the performance of the low-cost model versus the parent model.} \\ 
+\item {\it Specific Comments:}
 
-\rmcomment{\\
- A - Need to correct the reviewer about gliders vs AUVs\\\\
- B - \textit{gliders speed through water nor typical water velocities in the region} - RM will take care\\\\
- C - \textit{...comparison of predicted glider trajectories versus guidance fields. Also, there is no comparison of predicted trajectories with actual glider trajectories.... I think the paper would be strengthed by showing how well the gliders followed their guidance, showing that the observations reduce uncertainty (maybe just put the glider trajectories on the uncertainty maps?)} - LB will evaluate how to handle this in terms of figures\\\\
- D - \textit{comparison of the low-cost forecast model versus the global forecast that the low-cost model is based on} - LA and AFD will check this. same reply as R1 in the general comments
+  
+  \begin{enumerate}
 
-}
 
-\textbf{Are the figures and references suitable? }
-\item{\it The figures are mostly suitable. Figure 6 needs some clarification. The references are suitable. For Figure 6, part (a) is a different size than all the other parts of Figure 6. Additionally, comparing to 6(a) to 6(bc), there is no specification of the data that the forecasts are compared to. For part (c), the units are missing.}
+  \item
+    \reply: After reviewing the references, it looks like all the
+    components of this system - the low-cost model, the assimilation,
+    the guidance, and the gliders - have been build and integrated by
+    the authors and colleagues. This study looks like a first end-to-end
+    demonstration. If that is true, I think it is okay to strongly and
+    clearly state that in the introduction. That is a significant
+    achievement.
 
-\rmcomment{LA and AFD - check this comment about fig 6}\\
+    \action: 
 
-\textbf{Specific Comments}
-\item{\it After reviewing the references, it looks like all the components of this system - the low-cost model, the assimilation, the guidance, and the gliders - have been build and integrated by the authors and colleagues. This study looks like a first end-to-end demonstration. If that is true, I think it is okay to strongly and clearly state that in the introduction. That is a significant achievement.}
-\rmcomment{True. RM and KR will take care}\\
+    \kc{True. RM and KR will take care. KR: I'm not so sure; we did use
+    CMEMS and unless the stochastic model is something Leonardo et.al
+    built, we might not have a very strong case here. Plus we need to be
+  careful given the Ford. et al reference above.}
 
-\item{\it It would be valuable to see maps of the uncertainty and the predicted and actual glider paths on the uncertainty maps - c.f. Figure 4. }
-\rmcomment{LB will take care - same question in general comments}\\
+\item
+  \reply: It would be valuable to see maps of the uncertainty and the
+  predicted and actual glider paths on the uncertainty maps - c.f.
+  Figure 4.
 
-\item{\it Figures 5 and 6 demonstrate that assimilating glider data results in lower forecast error than not assimilating glider data. It would be nice to see that the system outperforms CMS. Also, Fig. 6c needs unit labels.  }
-\rmcomment{LA and AFD - check this. same question in general comments}\\
+  \action: \kc{LB will take care - same question in general comments}
 
-\item{\it Lines 410-439: An alternative explanation for assimilation experiments C4 and D4 performing worse than the free run is that the background error horizontal covariance length scales are over large. When the update is made to the background in experiments C4 and D4, how far away is the background corrected? Is that typical of feature size in the region? Fig. 4a suggests eddies of ~15 km in diameter. That said, construction of 
-background error covariances remains a rich topic.}\\
-\rmcomment{LA and AFD, can you check what our approach should be here. I don't interpret this as a question but more as a comment, but I'm not sure.}\\
+\item
 
-\textbf{Minor Comments}
-\item{\it At lines 74-79, section 4 is not mentioned}
-\rmcomment{RM will take care}\\
+  \reply: Figures 5 and 6 demonstrate that assimilating glider data
+  results in lower forecast error than not assimilating glider data. It
+  would be nice to see that the system outperforms CMS. Also, Fig. 6c
+  needs unit labels.
 
-\item{\it At line 178: “With AUV sampling denser than the grid resultion 
-(approximately 0.0035 deg., corresponding to about 300-400 m at the study 
-latitude)…” Unclear to me if this is the model horizontal resolution or the 
-typical distance between glider surfacings/profiles. }
-\rmcomment{RM will take care}
+  \action: \kc{LA and AFD - check this. same question in general comments}
 
-\item{\it Line 521-523. I don’t understand the motivation to demonstrate the viaibility of low-cost models in the cloud. Once it is solved on a dedicated system, running it in the cloud is a software engineering task. It sounds to me that the benefit of portable, low-cost models is not necessarily running in the cloud but “containerization” - able to running a wide range of computer hardware, independent of the specific hardware details. This includes AUVs, as you point out. I think there are two benefits of cloud computing for ocean forecasting. First, access an ocean model anywhere there is an internet connection and second, acquire varying computer resources 
-proportional to compute need (or forecast need), whether it is low cost or 
-high cost. I strongly agree with the motivation to look at forecast skill at a range of time horizons and compute costs }
-\rmcomment{RM and KR will take care}
+\item
+
+  \reply: Lines 410-439: An alternative explanation for assimilation
+  experiments C4 and D4 performing worse than the free run is that the
+  background error horizontal covariance length scales are over large.
+  When the update is made to the background in experiments C4 and D4,
+  how far away is the background corrected? Is that typical of feature
+  size in the region? Fig. 4a suggests eddies of ~15 km in diameter.
+  That said, construction of background error covariances remains a rich
+  topic.
+
+  \action: \kc{LA and AFD, can you check what our approach should be
+      here. I don't interpret this as a question but more as a comment,
+      but I'm not sure.}
+
+  \end{enumerate}
+
+\item {\it Minor Comments}
+
+  \begin{enumerate}
+
+\item
+
+  \reply: At lines 74-79, section 4 is not mentioned
+
+  \action: \kc{RM will take care}
+
+  \item
+
+    \reply: At line 178: “With AUV sampling denser than the grid
+    resultion (approximately 0.0035 deg., corresponding to about 300-400
+    m at the study latitude)…” Unclear to me if this is the model
+    horizontal resolution or the typical distance between glider
+    surfacings/profiles.
+
+    \action: \kc{RM will take care}
+
+  \item
+
+    \reply: Line 521-523. I don’t understand the motivation to
+    demonstrate the viaibility of low-cost models in the cloud. Once it
+    is solved on a dedicated system, running it in the cloud is a
+    software engineering task. It sounds to me that the benefit of
+    portable, low-cost models is not necessarily running in the cloud
+    but “containerization” - able to running a wide range of computer
+    hardware, independent of the specific hardware details. This
+    includes AUVs, as you point out. I think there are two benefits of
+    cloud computing for ocean forecasting. First, access an ocean model
+    anywhere there is an internet connection and second, acquire varying
+    computer resources proportional to compute need (or forecast need),
+    whether it is low cost or high cost. I strongly agree with the
+    motivation to look at forecast skill at a range of time horizons and
+    compute costs
+
+  \action: \kc{RM and KR will take care}
+
+
+  \end{enumerate}
 
 \end{answers}
 % ======================================================================

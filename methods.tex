@@ -81,11 +81,19 @@ time length. If the numerical model is unable to capture the true
 nature of the system, the geostatistical predictions will likely be
 inaccurate.
 
-Our methodology relies on ensembles of geostatistical realizations,
-each representing a state of an ocean variable field conditioned to
-\emph{a priori} by the deterministic \rone{NEMO-CMEMS model using the Iberian Biscay Irish domain \cite{madec97,madec15,CMEMS_IBI_MFC}} (i.e.,
-ocean models outputs of the previous 14 days) with a variogram model
-describing the temporal dependency between days. By computing the
+% Our methodology relies on ensembles of geostatistical realizations,
+% each representing a state of an ocean variable field conditioned to
+% \emph{a priori} by the deterministic \rone{NEMO-CMEMS model using the
+%   Iberian Biscay Irish domain \cite{madec97,madec15,CMEMS_IBI_MFC}}
+% (i.e., ocean models outputs of the previous 14 days) with a variogram
+% model describing the temporal dependency between days.
+
+\rone{Our methodology relies on ensembles of geostatistical
+  realizations, each representing a state of an ocean variable field
+  conditioned \emph{a priori} by the deterministic CMEMS NEMO model
+  \cite{madec97,madec15,CMEMS_IBI_MFC} using the Iberian Biscay Irish
+  domain. In doing so we use a variogram model describing the temporal
+  dependency between days over a 14 day period.}  By computing the
 pointwise standard deviation across the ensemble, we obtain spatial
 uncertainty maps that highlight regions where predictions are more
 variable and therefore potentially a target for robotic

@@ -528,12 +528,9 @@ the updated manuscript.
   \item
 
     \reply: At line 178: “With AUV sampling denser than the grid
-    resultion (approximately 0.0035 deg., corresponding to about 300-400
-    m at the study latitude)…” Unclear to me if this is the model
-    horizontal resolution or the typical distance between glider
-    surfacings/profiles.
+    resultion (approximately 0.0035 deg., corresponding to about 300-400 m at the study latitude)…” Unclear to me if this is the model horizontal resolution or the typical distance between glider surfacings/profiles.
 
-    \action: \kc{RM will take care}
+    \action: Thank you for the clarification request. The value $0.0035^\circ$ refers to the statistical model's horizontal grid spacing, not to the spacing between AUV profiles or surfacings. An AUV profile here corresponds to a slanted yo-yo trajectory: the vehicle advances horizontally while descending and ascending, and samples are collected continuously along that path. Thus, while the along-track distance between surfacings for a 100\,m yo-yo at a maximum pitch of $15^\circ$ is on the order of $\sim 0.75$--$0.8$\,km, the sample spacing along the trajectory is much smaller. This is the sense in which we state that AUV sampling is denser than the model grid spacing. We revised the manuscript sentence accordingly to make this explicit.
 
   \item
 
@@ -553,21 +550,18 @@ the updated manuscript.
     compute costs
 
     \action: While it might be a ``software engineering task'', for
-    the technologists amongst us, it is one that is
-    non-trivial. Dismissing it away removes the notion that not only
+    the technologists amongst us, it is one that is non-trivial. Dismissing it away removes the notion that not only
     does one not have to carry their specific compute element with
     them, but that the data sources to prime the model in any region
     of the world is seamlessly accessible, and useable for those in
-    the region in question, potentially in the ocean-facing nations in
-    the Global South. So there are larger implications of going to the
-    cloud that are outside the relevance for discussion in this
-    manuscript. Yes, containers will help, but if remote
+    the region in question, potentially in the ocean-facing nations in the Global South. So there are larger implications of going to the cloud that are outside the relevance for discussion in this manuscript. Yes, containers will help, but if remote
     collaborations have to be fostered, it would be a lot easier to
-    have identical, anonymized machine agnostic infrastrucure, without
-    having to tinker with the mechanics of hardware and
-    drivers. Contaniers could help with that; but having models in the
-    cloud, as you point out, also scales with the computation
+    have identical, anonymized machine agnostic infrastrucure, without having to tinker with the mechanics of hardware and
+    drivers. Contaniers could help with that; but having models in the cloud, as you point out, also scales with the computation
     needed. We feel no modifications are necessary in this manuscript.
+
+    \rm{i think the reply is a bit \textit{defensive}. maybe something like this:\\
+    We agree that containerization is an important enabling mechanism for portability across heterogeneous hardware (including embedded platforms). However, the motivation for demonstrating cloud viability goes beyond packaging: cloud deployment also enables (i) access to the forecasting system and its dependencies from any location with connectivity, and (ii) allocation of compute resources proportional to forecast needs. In addition, cloud-native workflows can leverage anonymized, machine-agnostic infrastructure without tinkering with hardware- or driver-specific configurations, thereby fostering remote collaboration. We believe the current manuscript already captures this motivation.}
 
 
   \end{enumerate}

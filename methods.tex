@@ -109,10 +109,7 @@ predictions with new measurements. The geostatistical simulation grid,
 in this case, includes two temporal layers: the first containing the
 AUV measurements at their spatial locations and the second
 corresponding to the new prediction step. With AUV sampling denser
-than the grid resolution (approximately 0.0035$^{\circ}$,
-corresponding to about 300-–400 m at the study latitude), measurements
-within the same grid cell are averaged as a form of arithmetic
-upscaling \cite{Duarte2025}. To incorporate spatial and temporal
+than the \rtwo{model horizontal} grid resolution (approximately 0.0035$^{\circ}$, corresponding to about 300-400 m at the study latitude), measurements within the same grid cell are averaged as a form of arithmetic upscaling \cite{Duarte2025}. To incorporate spatial and temporal
 variability, we apply sequential simulation with local means
 \cite{soares2001direct}\footnote{Defined by kriging estimates and
   variances, which are conditioned to existing direct measurements and

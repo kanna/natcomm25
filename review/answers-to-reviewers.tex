@@ -207,11 +207,30 @@ of the Methods section.
   “vehicle endurance and safety constraints.” Please describe how you
   constrain the algorithm for safety.
 
-  \action: We enforce both endurance and safety constraints through two complementary ways. First, we constrain endurance by limiting each vehicle’s planned route length to an effective maximum distance derived from its mission time budget, explicitly accounting for mandatory surfacing time at waypoints for GPS and communications (which reduces the time available for transit and therefore the reachable distance). Second, we constrain navigational safety by planning only within an admissible-area map where unsafe regions are masked out (e.g., land/shoreline, shallow-water areas below a conservative depth threshold, and locally known/identified hazards such as high-traffic zones, buoys, or fishing gear). Any candidate path that violates these constraints (either exceeding the effective distance/time budget or intersecting masked cells) is rejected. These constraints are implemented as hard feasibility checks, so the planner only returns routes that satisfy both endurance and safety requirements. This is illustrated by the boundaries in the uncertainty field shown in the zoomed area of the new Figure 4 (masked regions delimit the admissible planning domain). More details on how this is mathematically incorporated in the cost function are provided in \cite{bernacchi2025}. We also added an explicit mention of these constraints in the revised manuscript:
+  \action: We enforce both endurance and safety constraints in two
+  complementary ways. First, we constrain endurance by limiting each
+  vehicle’s planned route to an effective maximum distance derived
+  from its mission time budget, while accounting for mandatory
+  surfacing time for communications and geolocation. We constrain
+  navigational safety by planning only within an admissible-area map
+  where unsafe regions are masked out (e.g., land/shoreline,
+  shallow-water areas below a conservative depth threshold, and
+  locally known/identified hazards such as high-traffic zones, buoys,
+  or fishing gear). Every candidate path is then algorithmically
+  constrained. These constraints are implemented as hard feasibility
+  checks, so the route planner only returns routes that satisfy both
+  endurance and safety requirements. This is illustrated by the
+  boundaries in the uncertainty field shown in the zoomed area of the
+  new Fig. 4. More details on how this is mathematically incorporated
+  in the cost function are provided in \cite{bernacchi2025} and
+  \cite{bernacchi26}. We have modified the text to read:
 
      \begin{quote}
 
-      \ldots while enforcing an effective travel budget (endurance) and an obstacle-masked admissible area (safety) \cite{bernacchi2025}. This is illustrated by the boundaries in the uncertainty field shown in the zoomed area of the new Figure 4.
+       \ldots while enforcing an effective travel budget (endurance)
+       and an obstacle-masked admissible area (safety)
+       \cite{bernacchi2025}. This is illustrated by the boundaries in
+       the uncertainty field shown in the zoomed area of Fig. 4.
 
     \end{quote}
 

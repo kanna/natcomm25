@@ -195,11 +195,9 @@ nodes carry a reward proportional to their uncertainty value and edges
 represent travel costs. The trajectory planning task is posed as a
 multi-vehicle multi-depot tour routing problem where routes must
 balance the rewards obtained from visiting nodes with associated costs
-of traveling between them \cite{vidal2013,toth2014vehicle}. By solving
-this graph traversal problem, the algorithm returns a set of
-near-optimal trajectories that prioritize regions of greatest
-uncertainty, while ensuring vehicle endurance and safety constraints
-\cite{bernacchi2025}.
+of traveling between them \cite{vidal2013,toth2014vehicle}. By solving this graph traversal problem, the algorithm returns a set of near-optimal trajectories that prioritize regions of greatest uncertainty, \sout{while ensuring vehicle endurance and safety constraints \cite{bernacchi2025}.} \rone{while enforcing an effective travel budget (endurance) and an obstacle-masked admissible area (safety) \cite{bernacchi2025}. This is illustrated by the boundaries in the uncertainty field shown in the zoomed area of the new (Fig. \ref{fig:temperatureprofiles})}
+
+
 
 \subsection{Operations and Data Collection}
 

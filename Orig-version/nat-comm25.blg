@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: nat-comm25.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ref.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing institution in wallcraft09
+
+Done.
+You've used 46 entries,
+            4087 wiz_defined-function locations,
+            1114 strings with 17834 characters,
+and the built_in function-call counts, 38666 in all, are:
+= -- 3048
+> -- 1195
+< -- 304
++ -- 635
+- -- 235
+* -- 1903
+:= -- 5631
+add.period$ -- 96
+call.type$ -- 46
+change.case$ -- 47
+chr.to.int$ -- 654
+cite$ -- 47
+duplicate$ -- 2764
+empty$ -- 2967
+format.name$ -- 277
+if$ -- 9039
+int.to.chr$ -- 0
+int.to.str$ -- 46
+missing$ -- 538
+newline$ -- 167
+num.names$ -- 48
+pop$ -- 1244
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 2962
+stack$ -- 0
+substring$ -- 1614
+swap$ -- 2326
+text.length$ -- 86
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 46
+warning$ -- 1
+while$ -- 158
+width$ -- 48
+write$ -- 486
+(There was 1 warning)

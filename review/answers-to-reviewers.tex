@@ -90,34 +90,56 @@ in the updated manuscript. \setcounter{reviewer}{1}.
 
 \item {\it Methodology} 
 
+
   \action: We predicted uncertainty by computing the pointwise
   standard deviation from an ensemble of three-dimensional temperature
   models predicted with stochastic sequential simulation. Stochastic
   sequential simulation predicts multiple models (i.e., geostatistical
-  realizations) from observed data and a spatial covariance matrix, as
-  characterized by a variogram model. In stochastic sequential
+  realizations) given a set of observed data and a spatial covariance
+  matrix, as revealed by a variogram model.  In stochastic sequential
   simulation, the simulation grid is visited following a random
-  path. At each location along the random path, the local kriging
+  path. At each location along these random paths, the local kriging
   estimate and kriging variance are computed using a spatial
   covariance matrix and existing direct observations, as well as, if
   available, previously visited values. The kriging variance and
   estimate are used to sample from the probability distribution of the
   property of interest as estimated from existing data. Each time the
-  simulation runs a new random path is defined producing different
-  results. As each realization matches the observed data, the primary
-  and secondary statistics as revealed from the observed data, and the
-  imposed spatial continuity pattern.  The set of geostatistical
-  realizations represents the posterior distribution of the phenomenon
-  one is trying to model, and this ensemble can be used to estimate
-  uncertainty by computing local statistics at the grid-cell level.
+  simulation runs, a new random path is defined and different results
+  are produced. Each realization matches the observed data, the
+  primary and secondary statistics as revealed from the observed data
+  and the imposed spatial continuity pattern.  The set of
+  geostatistical realizations represents the posterior distribution of
+  the phenomena one is trying to model, and this ensemble can be used
+  to estimate uncertainty by computing local statistics at the grid
+  cell level. A complete description of this methodology is provided
+  in section 2 of Duarte et al.\ (2025)~\cite{Duarte2025}.
 
   We have modified the text to read:
 
-    \begin{quote}
+\begin{quote}
 
-  \kc{Needs text here which will go into the m/s}
+  Our methodology relies on ensembles of geostatistical realizations,
+  each representing a state of an ocean variable field conditioned
+  \emph{a priori} by the deterministic CMEMS NEMO model
+  \cite{madec97,madec15,CMEMS_IBI_MFC} using the Iberian Biscay Irish
+  domain. In doing so we use a variogram model describing the temporal
+  dependency between days over a 14 day period. Realizations are
+  generated via stochastic sequential simulation: the grid is visited
+  along a random path and, at each node, a local kriging mean and
+  variance are computed from the covariance/variogram model and the
+  available conditioning data, from which a value is drawn from the
+  corresponding conditional distribution.
+\end{quote}
 
-    \end{quote}
+We've also modified the text at the end of the same subsection,
+highlighting that we follow the same methodology as in
+\cite{Duarte2025}, modifying the text to read:
+  
+\begin{quote}
+  A complete description of the methodology and implementation is
+  provided in \cite{Duarte2025}. modified the text to read:
+\end{quote}
+
 
 \end{enumerate}
   
@@ -285,13 +307,14 @@ of the Methods section.
     
     \action: Our (and most) AUVs, have far more computational capacity
     on board, akin to a standard laptop; this is not the case with the
-    current generation of gliders. For instance, our AUVs carry a Intel
-    Core i7-1065G7 CPU rated at 1.30GHz running the Linux operating
-    system. Advanced methods of embedded reasoning such as in our
-    earlier work \cite{das11b,rajan12,chrpa15,fossum18,fossum19,fossum19b} among
-    others, allow onboard computing. While embedded reasoning was neither
-    the highlight nor used in this work, the vehicles used allow for
-    such capability. We have modified the text to read:
+    current generation of gliders. For instance, our AUVs carry a
+    Intel Core i7-1065G7 CPU rated at 1.30GHz running the Linux
+    operating system. Advanced methods of embedded reasoning such as
+    in our earlier work
+    \cite{das11b,rajan12,chrpa15,fossum18,fossum19,fossum19b} among
+    others, allow onboard computing. While embedded reasoning was
+    neither the highlight nor used in this work, the vehicles used
+    allow for such capability. We have modified the text to read:
 
     \begin{quote}
 
@@ -626,21 +649,6 @@ the updated manuscript.
     configurations, thereby fostering remote collaboration. We believe
     the current manuscript already captures this motivation. No
     changes were made to the manuscript. 
-
-   
-    % \rm{i think the reply is a bit \textit{defensive}. maybe something like this:\\
-    %   We agree that containerization is an important enabling
-    %   mechanism for portability across heterogeneous hardware
-    %   (including embedded platforms). However, the motivation for
-    %   demonstrating cloud viability goes beyond packaging: cloud
-    %   deployment also enables (i) access to the forecasting system and
-    %   its dependencies from any location with connectivity, and (ii)
-    %   allocation of compute resources proportional to forecast
-    %   needs. In addition, cloud-native workflows can leverage
-    %   anonymized, machine-agnostic infrastructure without tinkering
-    %   with hardware- or driver-specific configurations, thereby
-    %   fostering remote collaboration. We believe the current
-    %   manuscript already captures this motivation.}
 
 
   \end{enumerate}

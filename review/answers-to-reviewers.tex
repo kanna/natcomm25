@@ -69,7 +69,7 @@ in the updated manuscript. \setcounter{reviewer}{1}.
   Thank you for pointing out the Ford et.al
   paper \cite{ford22}. Their work indeed is synergistic with ours,
   caveat, we use powered AUVs, not gliders as noted already in the
-  Introduction; that is AUVs which can articulate their paths in ways
+  introduction; that is AUVs which can articulate their paths in ways
   gliders cannot by virtue of a propeller and their software control
   system. We have modified the text to read:
 
@@ -90,9 +90,34 @@ in the updated manuscript. \setcounter{reviewer}{1}.
 
 \item {\it Methodology} 
 
-\action: We predicted uncertainty by computing the pointwise standard deviation from an ensemble of three-dimensional temperature models predicted with stochastic sequential simulation. Stochastic sequential simulation predicts multiple models (i.e., geostatistical realizations) from observed data and a spatial covariance matrix, as characterized by a variogram model. In stochastic sequential simulation, the simulation grid is visited following a random path. At each location along the random path, the local kriging estimate and kriging variance are computed using a spatial covariance matrix and existing direct observations, as well as, if available, previously visited values. The kriging variance and estimate are used to sample from the probability distribution of the property of interest as estimated from existing data. As each time the simulation runs a new random path is defined it different results are produced. Each realization matches exactly the observed data, the primary and secondary statistics as revealed from the observed data, and the imposed spatial continuity pattern.
-The set of geostatistical realizations represents the posterior distribution of the phenomenon one is trying to model, and this ensemble can be used to estimate uncertainty by computing local statistics at the grid-cell level. We have modified the text to read:
+  \action: We predicted uncertainty by computing the pointwise
+  standard deviation from an ensemble of three-dimensional temperature
+  models predicted with stochastic sequential simulation. Stochastic
+  sequential simulation predicts multiple models (i.e., geostatistical
+  realizations) from observed data and a spatial covariance matrix, as
+  characterized by a variogram model. In stochastic sequential
+  simulation, the simulation grid is visited following a random
+  path. At each location along the random path, the local kriging
+  estimate and kriging variance are computed using a spatial
+  covariance matrix and existing direct observations, as well as, if
+  available, previously visited values. The kriging variance and
+  estimate are used to sample from the probability distribution of the
+  property of interest as estimated from existing data. Each time the
+  simulation runs a new random path is defined producing different
+  results. As each realization matches the observed data, the primary
+  and secondary statistics as revealed from the observed data, and the
+  imposed spatial continuity pattern.  The set of geostatistical
+  realizations represents the posterior distribution of the phenomenon
+  one is trying to model, and this ensemble can be used to estimate
+  uncertainty by computing local statistics at the grid-cell level.
 
+  We have modified the text to read:
+
+    \begin{quote}
+
+  \kc{Needs text here which will go into the m/s}
+
+    \end{quote}
 
 \end{enumerate}
   

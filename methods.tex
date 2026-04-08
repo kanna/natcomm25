@@ -93,9 +93,8 @@ inaccurate.
   conditioned \emph{a priori} by the deterministic CMEMS NEMO model
   \cite{madec97,madec15,CMEMS_IBI_MFC} using the Iberian Biscay Irish
   domain. In doing so we use a variogram model describing the temporal
-  dependency between days over a 14 day period.}  By computing the
-pointwise standard deviation across the ensemble, we obtain spatial
-uncertainty maps that highlight regions where predictions are more
+  dependency between days over a 14 day period.} \rone{Realizations are generated via stochastic sequential simulation: the grid is visited along a random path and, at each node, a local kriging mean and variance are computed from the covariance/variogram model and the available conditioning data, from which a value is drawn from the corresponding conditional distribution.}  By computing the
+pointwise standard deviation across the ensemble, we obtain spatial uncertainty maps that highlight regions where predictions are more
 variable and therefore potentially a target for robotic
 sampling. These maps then, serve as the basis for identifying areas
 where new measurements are expected to maximize the reduction of
@@ -145,9 +144,9 @@ variable field while maintaining consistency with prior model
 dynamics. The resulting forecast and uncertainty maps then form the
 input for the targeted sampling algorithm, guiding the allocation of
 AUV trajectories towards regions of greatest expected information
-gain. More details about the geostatistical model, its development,
+gain.\rone{A complete description of the methodology and implementation is provided in \cite{Duarte2025}, and the methodology used here is identical.} \sout{More details about the geostatistical model, its development,
 and application during the \proj experiment can be found in
-\cite{Duarte2025}.
+\cite{Duarte2025}.}
 
 
 \subsection{The Sampling Algorithm}

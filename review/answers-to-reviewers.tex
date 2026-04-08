@@ -90,9 +90,22 @@ in the updated manuscript. \setcounter{reviewer}{1}.
 
 \item {\it Methodology} 
 
-\action: We predicted uncertainty by computing the pointwise standard deviation from an ensemble of three-dimensional temperature models predicted with stochastic sequential simulation. Stochastic sequential simulation predicts multiple models (i.e., geostatistical realizations) from observed data and a spatial covariance matrix, as characterized by a variogram model. In stochastic sequential simulation, the simulation grid is visited following a random path. At each location along the random path, the local kriging estimate and kriging variance are computed using a spatial covariance matrix and existing direct observations, as well as, if available, previously visited values. The kriging variance and estimate are used to sample from the probability distribution of the property of interest as estimated from existing data. As each time the simulation runs a new random path is defined it different results are produced. Each realization matches exactly the observed data, the primary and secondary statistics as revealed from the observed data, and the imposed spatial continuity pattern.
-The set of geostatistical realizations represents the posterior distribution of the phenomenon one is trying to model, and this ensemble can be used to estimate uncertainty by computing local statistics at the grid-cell level. We have modified the text to read:
+\action: We predicted uncertainty by computing the pointwise standard deviation from an ensemble of three-dimensional temperature models predicted with stochastic sequential simulation. Stochastic sequential simulation predicts multiple models (i.e., geostatistical realizations) given a set of observed data and a spatial covariance matrix, as revealed by a variogram model.
+In stochastic sequential simulation, the simulation grid is visited following a random path. At each location along the random path, the local kriging estimate and kriging variance are computed using a spatial covariance matrix and existing direct observations, as well as, if available, previously visited values. The kriging variance and estimate are used to sample from the probability distribution of the property of interest as estimated from existing data. As each time the simulation runs a new random path is defined it different results are produced. Each realization matches exactly the observed data, the primary and secondary statistics as revealed from the observed data and the imposed spatial continuity pattern.
+The set of geostatistical realizations represents the posterior distribution of the phenomena one is trying to model, and this ensemble can be used to estimate uncertainty by computing local statistics at the grid cell level. A complete description of this methodology is provided in section 2 of Duarte et al.\ (2025)~\cite{Duarte2025}, and the methodology used in this manuscript is identical. 
 
+We have modified the text to read:
+\begin{quote}
+
+Our methodology relies on ensembles of geostatistical
+  realizations, each representing a state of an ocean variable field conditioned \emph{a priori} by the deterministic CMEMS NEMO model \cite{madec97,madec15,CMEMS_IBI_MFC} using the Iberian Biscay Irish   domain. In doing so we use a variogram model describing the temporal dependency between days over a 14 day period. Realizations are generated via stochastic sequential simulation: the grid is visited along a random path and, at each node, a local kriging mean and variance are computed from the covariance/variogram model and the available conditioning data, from which a value is drawn from the corresponding conditional distribution.
+\end{quote}
+
+  and we also modified the text at the end of the same subsection, highlighting that we follow the same methodology as \cite{Duarte2025}, and a complete description is there:
+  
+\begin{quote}
+  A complete description of the methodology and implementation is provided in \cite{Duarte2025}, and the methodology used here is identical.
+\end{quote}
 
 \end{enumerate}
   

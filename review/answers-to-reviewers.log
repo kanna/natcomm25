@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 APR 2026 12:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 APR 2026 08:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -326,10 +326,10 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
+ [3]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
- [3]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ú in font cmr10!
@@ -384,22 +384,23 @@ Missing character: There is no ú in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
- (./answers-to-reviewers.bbl [7]
+ [7] (./answers-to-reviewers.bbl
 Missing character: There is no ‚ in font cmr8!
 Missing character: There is no Ä in font cmr8!
 Missing character: There is no ì in font cmr8!
+ [8]
 Missing character: There is no ‚ in font cmr8!
 Missing character: There is no Ä in font cmr8!
 Missing character: There is no ì in font cmr8!
-) [8] (./answers-to-reviewers.aux) ) 
+) [9] (./answers-to-reviewers.aux) ) 
 Here is how much of TeX's memory you used:
- 3535 strings out of 492995
- 45818 string characters out of 6132704
- 118747 words of memory out of 5000000
- 7031 multiletter control sequences out of 15000+600000
+ 3537 strings out of 492995
+ 45843 string characters out of 6132704
+ 118769 words of memory out of 5000000
+ 7033 multiletter control sequences out of 15000+600000
  12000 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,8n,35p,270b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,8n,35p,270b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
@@ -414,10 +415,10 @@ ts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti8.pfb>
-Output written on answers-to-reviewers.pdf (8 pages, 187057 bytes).
+Output written on answers-to-reviewers.pdf (9 pages, 188440 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

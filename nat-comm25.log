@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 APR 2026 11:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  9 APR 2026 08:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -697,22 +697,21 @@ Missing character: There is no ” in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
-) (./methods.tex [5] [6]
+) (./methods.tex [5] [6] [7]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [7]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
  [8]
-<fig/DSC_8342.JPG, id=208, 968.1771pt x 714.5094pt>
+<fig/DSC_8342.JPG, id=209, 968.1771pt x 714.5094pt>
 File: fig/DSC_8342.JPG Graphic file (type jpg)
  <use fig/DSC_8342.JPG>
 Package pdftex.def Info: fig/DSC_8342.JPG used on input line 219.
 (pdftex.def)             Requested size: 242.04367pt x 178.6269pt.
 
-<fig/scheme.png, id=209, 1011.78pt x 758.835pt>
+<fig/scheme.png, id=210, 1011.78pt x 758.835pt>
 File: fig/scheme.png Graphic file (type png)
  <use fig/scheme.png>
 Package pdftex.def Info: fig/scheme.png used on input line 220.
@@ -778,14 +777,14 @@ Missing character: There is no “ in font cmbx10!
 Missing character: There is no â in font cmbx10!
 Missing character: There is no € in font cmbx10!
 Missing character: There is no “ in font cmbx10!
-[11] <fig/SST_Uncertainty.png, id=266, 1355.8153pt x 693.34032pt>
+[11] <fig/SST_Uncertainty.png, id=267, 1355.8153pt x 693.34032pt>
 File: fig/SST_Uncertainty.png Graphic file (type png)
 
 <use fig/SST_Uncertainty.png>
 Package pdftex.def Info: fig/SST_Uncertainty.png used on input line 41.
 (pdftex.def)             Requested size: 469.75502pt x 240.22888pt.
 
-<fig/Figure2_100m_zoom2.pdf, id=267, 1339.16313pt x 716.19572pt>
+<fig/Figure2_100m_zoom2.pdf, id=268, 1339.16313pt x 716.19572pt>
 File: fig/Figure2_100m_zoom2.pdf Graphic file (type pdf)
 
 <use fig/Figure2_100m_zoom2.pdf>
@@ -810,25 +809,25 @@ Missing character: There is no ™ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- <fig/scatter_c.png, id=343, 277.035pt x 264.5082pt>
+ <fig/scatter_c.png, id=344, 277.035pt x 264.5082pt>
 File: fig/scatter_c.png Graphic file (type png)
 
 <use fig/scatter_c.png>
 Package pdftex.def Info: fig/scatter_c.png used on input line 113.
 (pdftex.def)             Requested size: 160.6804pt x 153.41486pt.
- <fig/scatter_c4.png, id=344, 347.3778pt x 264.5082pt>
+ <fig/scatter_c4.png, id=345, 347.3778pt x 264.5082pt>
 File: fig/scatter_c4.png Graphic file (type png)
 
 <use fig/scatter_c4.png>
 Package pdftex.def Info: fig/scatter_c4.png used on input line 114.
 (pdftex.def)             Requested size: 201.47926pt x 153.41486pt.
- <fig/scatter_d.png, id=345, 277.035pt x 264.99pt>
+ <fig/scatter_d.png, id=346, 277.035pt x 264.99pt>
 File: fig/scatter_d.png Graphic file (type png)
 
 <use fig/scatter_d.png>
 Package pdftex.def Info: fig/scatter_d.png used on input line 115.
 (pdftex.def)             Requested size: 160.6804pt x 153.6943pt.
- <fig/scatter_d4.png, id=346, 274.407pt x 264.771pt>
+ <fig/scatter_d4.png, id=347, 274.407pt x 264.771pt>
 File: fig/scatter_d4.png Graphic file (type png)
 
 <use fig/scatter_d4.png>
@@ -837,20 +836,20 @@ Package pdftex.def Info: fig/scatter_d4.png used on input line 116.
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
-
-<fig/rms_ABB1_v2.png, id=358, 141.6492pt x 224.5188pt>
+ [14]
+<fig/rms_ABB1_v2.png, id=367, 141.6492pt x 224.5188pt>
 File: fig/rms_ABB1_v2.png Graphic file (type png)
 
 <use fig/rms_ABB1_v2.png>
 Package pdftex.def Info: fig/rms_ABB1_v2.png used on input line 157.
 (pdftex.def)             Requested size: 70.82442pt x 112.25911pt.
- <fig/rms_c_v2.png, id=359, 529.98pt x 224.037pt>
+ <fig/rms_c_v2.png, id=368, 529.98pt x 224.037pt>
 File: fig/rms_c_v2.png Graphic file (type png)
 
 <use fig/rms_c_v2.png>
 Package pdftex.def Info: fig/rms_c_v2.png used on input line 158.
 (pdftex.def)             Requested size: 264.98933pt x 112.01822pt.
- <fig/rms_d_v2.png, id=360, 529.98pt x 224.5188pt>
+ <fig/rms_d_v2.png, id=369, 529.98pt x 224.5188pt>
 File: fig/rms_d_v2.png Graphic file (type png)
 
 <use fig/rms_d_v2.png>
@@ -898,22 +897,22 @@ Missing character: There is no “ in font cmbx10!
 Missing character: There is no â in font cmbx10!
 Missing character: There is no € in font cmbx10!
 Missing character: There is no “ in font cmbx10!
- [14]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
  [15 <./fig/scatter_c.png> <./fig/scatter_c4.png> <./fig/scatter_d.png> <./fig/
-scatter_d4.png>]) (./discussion.tex
+scatter_d4.png>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
- [16 <./fig/rms_ABB1_v2.png> <./fig/rms_c_v2.png> <./fig/rms_d_v2.png>]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+ [16 <./fig/rms_ABB1_v2.png> <./fig/rms_c_v2.png> <./fig/rms_d_v2.png>]) (./dis
+cussion.tex
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
@@ -921,7 +920,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
 
-<fig/north_south.pdf, id=410, 2054.67625pt x 1123.19624pt>
+<fig/north_south.pdf, id=411, 2054.67625pt x 1123.19624pt>
 File: fig/north_south.pdf Graphic file (type pdf)
 
 <use fig/north_south.pdf>
@@ -931,7 +930,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
  [17]
-<fig/fig3D-inset_v2.png, id=422, 1217.54875pt x 1474.50874pt>
+<fig/fig3D-inset_v2.png, id=423, 1217.54875pt x 1474.50874pt>
 File: fig/fig3D-inset_v2.png Graphic file (type png)
 
 <use fig/fig3D-inset_v2.png>
@@ -952,8 +951,8 @@ Missing character: There is no ” in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [19]) (./conclude.tex)
-[20]
+ [19]) (./conclude.tex
+[20])
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no § in font cmr10!
 Missing character: There is no Ã in font cmr10!
@@ -988,7 +987,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 74.
 Here is how much of TeX's memory you used:
  10441 strings out of 492995
  155286 string characters out of 6132704
- 271015 words of memory out of 5000000
+ 267574 words of memory out of 5000000
  13645 multiletter control sequences out of 15000+600000
  16068 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1024,10 +1023,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2017/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2017/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on nat-comm25.pdf (23 pages, 14447569 bytes).
+Output written on nat-comm25.pdf (23 pages, 14448581 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
+ 594 PDF objects out of 1000 (max. 8388607)
+ 444 compressed objects within 5 object streams
  113 named destinations out of 1000 (max. 500000)
  177 words of extra memory for PDF output out of 10000 (max. 10000000)
 

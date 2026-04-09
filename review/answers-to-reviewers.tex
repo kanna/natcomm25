@@ -48,7 +48,7 @@ in the updated manuscript. \setcounter{reviewer}{1}.
 
 \begin{answers}
 
-\item {\it Major comment:}
+\item {\it Major comment:}\label{sec:r1-top}
 
   \reply: Abstract should be re-written to reflect the findings of the
   study. The literature review can be extended (e.g. Ford et al. 2022)
@@ -88,7 +88,7 @@ in the updated manuscript. \setcounter{reviewer}{1}.
 
 \end{quote}
 
-\item {\it Methodology} 
+\item {\it Methodology}\label{sec:r1-meth}
 
 
   \action: We predicted uncertainty by computing the pointwise
@@ -193,7 +193,9 @@ of the Methods section.
 \item \reply: L129: Detail the specific methodology used for the
   uncertainty estimate.
   
-  \action: A detailed description of the uncertainty estimation methodology is already provided in the \textit{General Comments}, 1.1; we therefore refer the reviewer to that section for the full methodological framework.
+  \action: A detailed description of the uncertainty estimation
+  methodology is provided above in sub-section \ref{sec:r1-meth} under
+  \ref{sec:r1-top}.
 
 \item \reply: L147: The correct acronym for the E.U. Copernicus Marine
   Service is CMEMS, not CMS; please correct this throughout the text.
@@ -220,9 +222,12 @@ of the Methods section.
     Note that the reference to CMS has been replaced manuscript--wide
     with CMEMS.
 
-\item \reply: L157: Please provide a figure showing the temperature fields after the geostatistical simulation.
+  \item \reply: L157: Please provide a figure showing the temperature
+    fields after the geostatistical simulation.
   
-  \action: This is a good point. We now provide the temperature fields for all scenarios and the CMEMS numerical model in the Annexes, and the comparison between the models and the measured values.
+    \action: We now provide the temperature fields for all scenarios
+    and the CMEMS numerical model in the Annexe to the manuscript, and
+    the comparison between the models and the measured values.
 
 \item \reply: L166: Elaborate on the process used to generate the
   ensemble of geostatistical realizations.
@@ -235,7 +240,17 @@ of the Methods section.
   Filter) and clarify whether differences with observations are
   calculated before or after assimilation.
 
-  \action: This is an important comment as our sequential assimilation is not directly related to ensemble Kalman filters, which, based on previous observations, try to predict future states. Conventional Kalman filters assume a Gaussian distribution, and conventional approaches are prone to instabilities. In our approach, the new data assimilation is performed in a simpler way to improve computational efficiency. New data is incorporated in the set of conditioning data for the geostatistical simulation (i.e., considered local hard data for the geostatistical simulation) when predicting the spatial distribution of temperature for the subsequent day. The differences shown in Figs. 5 and the annexes are computed both with and without data assimilation.
+  \action: Our sequential assimilation is not directly related to
+  ensemble Kalman filters, which, based on previous observations, try
+  to predict future states. Conventional Kalman filters assume a
+  Gaussian distribution, and conventional approaches are prone to
+  instabilities. In our approach, the new data is assimilated in a
+  simpler way to improve computational efficiency. \kc{New data is
+  incorporated in the set of conditioning data for the geostatistical
+  simulation (i.e., considered local hard data for the geostatistical
+  simulation) when predicting the spatial distribution of temperature
+  for the subsequent day. The differences shown in Figs. 5 and the
+  annexes are computed both with and without data assimilation.}
 
 
 \item \reply: L192: The statement on spatial propagation being
@@ -495,9 +510,17 @@ the updated manuscript.
 
         \begin{quote}
 
-With the addition of the figures in the Annexes with the CMEMS, Previous and Assimilated Temperature models, it is possible to proceed to a visual comparison. The scatter plots show the quantification of the deviation for each scenario.
+          With the addition of the figures in the Annexes with the
+          CMEMS, Previous and Assimilated Temperature models, it is
+          possible to proceed to a visual comparison. The scatter
+          plots show the quantification of the deviation for each
+          scenario.
         
-      \end{quote}
+        \end{quote}
+
+        \kc{English needs work above. What does ``Previous'' mean?
+          Also it doesn't look like this has been added to the m/s
+          itself.} 
 
   \end{enumerate}
 
@@ -551,7 +574,13 @@ With the addition of the figures in the Annexes with the CMEMS, Previous and Ass
   data. It would be nice to see that the system outperforms CMS. Also,
   Fig. 6c needs unit labels.
 
-  \action: With the addition of the figures in the Annexes with the CMEMS, Previous and Assimilated Temperature models, it is possible to proceed to a visual comparison. The scatter plots show the quantification of the deviation for each scenario.
+  \action: With the addition of the figures in the Annexes with the
+  CMEMS, Previous and Assimilated Temperature models, it is possible
+  to proceed to a visual comparison. The scatter plots show the
+  quantification of the deviation for each scenario.
+
+  \kc{Same English issue as above}
+
 
 \item
 

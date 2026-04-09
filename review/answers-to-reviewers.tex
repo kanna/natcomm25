@@ -193,7 +193,7 @@ of the Methods section.
 \item \reply: L129: Detail the specific methodology used for the
   uncertainty estimate.
   
-  \action: \kc{LA and AFD - related to General Comments}
+  \action: A detailed description of the uncertainty estimation methodology is already provided in the \textit{General Comments}, 1.1; we therefore refer the reviewer to that section for the full methodological framework.
 
 \item \reply: L147: The correct acronym for the E.U. Copernicus Marine
   Service is CMEMS, not CMS; please correct this throughout the text.
@@ -220,9 +220,9 @@ of the Methods section.
     Note that the reference to CMS has been replaced manuscript--wide
     with CMEMS.
 
-\item \reply: L157: Please provide a figure showing the temperature
-  fields after the geostatistical simulation.
-  \action: \kc{AFD will take care}
+\item \reply: L157: Please provide a figure showing the temperature fields after the geostatistical simulation.
+  
+  \action: This is a good point. We now provide the temperature fields for all scenarios and the CMEMS numerical model in the Annexes, and the comparison between the models and the measured values.
 
 \item \reply: L166: Elaborate on the process used to generate the
   ensemble of geostatistical realizations.
@@ -235,7 +235,8 @@ of the Methods section.
   Filter) and clarify whether differences with observations are
   calculated before or after assimilation.
 
-  \action: \kc{LA and AFD will take care}
+  \action: This is an important comment as our sequential assimilation is not directly related to ensemble Kalman filters, which, based on previous observations, try to predict future states. Conventional Kalman filters assume a Gaussian distribution, and conventional approaches are prone to instabilities. In our approach, the new data assimilation is performed in a simpler way to improve computational efficiency. New data is incorporated in the set of conditioning data for the geostatistical simulation (i.e., considered local hard data for the geostatistical simulation) when predicting the spatial distribution of temperature for the subsequent day. The differences shown in Figs. 5 and the annexes are computed both with and without data assimilation.
+
 
 \item \reply: L192: The statement on spatial propagation being
   horizontal with implicit vertical consistency is not immediately
@@ -354,8 +355,7 @@ of the Methods section.
   \item \reply: L362 / Fig. 6: A panel code is missing for Figure 6.
     Please also add an x-axis label to panel (c) of Figure 6.
     
-    \action: Panel references are fixed. \kc{AFD to fix X-axis on panel
-      Fig 6 (c)}
+    \action: Panel references and x-axis labels are fixed. 
 
   \item \reply: L430: Correct the compound word to
     upwelling-relaxation.
@@ -402,11 +402,7 @@ the updated manuscript.
   comparing to 6(a) to 6(bc), there is no specification of the data that
   the forecasts are compared to. For part (c), the units are missing.
 
-  \action: We have corrected this in the following manner:
-
-  \begin{quote}
-    \kc{LA and AFD - check this comment about fig 6}
-  \end{quote}
+  \action: Figure 6 was redrawn to accommodate the comment.
 
 \item {\it General Comments:}
 
@@ -499,8 +495,7 @@ the updated manuscript.
 
         \begin{quote}
 
-        \kc{LA and AFD will check this. same reply as R1 in the
-          general comments}
+With the addition of the figures in the Annexes with the CMEMS, Previous and Assimilated Temperature models, it is possible to proceed to a visual comparison. The scatter plots show the quantification of the deviation for each scenario.
         
       \end{quote}
 
@@ -556,7 +551,7 @@ the updated manuscript.
   data. It would be nice to see that the system outperforms CMS. Also,
   Fig. 6c needs unit labels.
 
-  \action: \kc{LA and AFD - check this. same question in general comments}
+  \action: With the addition of the figures in the Annexes with the CMEMS, Previous and Assimilated Temperature models, it is possible to proceed to a visual comparison. The scatter plots show the quantification of the deviation for each scenario.
 
 \item
 

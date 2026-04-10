@@ -65,13 +65,12 @@ in the updated manuscript. \setcounter{reviewer}{1}.
 
   \item {\it Literature review}
 
-  \action: 
-  Thank you for pointing out the Ford et.al
-  paper \cite{ford22}. Their work indeed is synergistic with ours,
-  caveat, we use powered AUVs, not gliders as noted already in the
-  introduction; that is AUVs which can articulate their paths in ways
-  gliders cannot by virtue of a propeller and their software control
-  system. We have modified the text to read:
+    \action: Thank you for pointing out the Ford et.al paper
+    \cite{ford22}. That effort is indeed synergistic, caveat, we use
+    powered AUVs, not gliders as noted in the introduction, that is
+    AUVs which can articulate their paths in ways gliders cannot by
+    virtue of a propeller and their software control system. We have
+    modified the text to read:
 
   \begin{quote}
 
@@ -112,7 +111,7 @@ in the updated manuscript. \setcounter{reviewer}{1}.
   the phenomena one is trying to model, and this ensemble can be used
   to estimate uncertainty by computing local statistics at the grid
   cell level. A complete description of this methodology is provided
-  in section 2 of Duarte et al.\ (2025)~\cite{Duarte2025}.
+  in \cite{Duarte2025}.
 
   We have modified the text to read:
 
@@ -265,15 +264,35 @@ of the Methods section.
 \item \reply: L204: Please provide a demonstration or figure of the
   “uncertainty map provided by the model.”
   
-  \action: We have revised Fig. 4 to explicitly demonstrate the model-derived uncertainty maps and their use in the sampling scenario. In the updated figure, the AUV trajectories for each day are overlaid on the corresponding daily uncertainty map, thereby providing a direct visual demonstration of the uncertainty map referenced in the text. It is worth noting that the objective of the planning is not to steer the vehicles towards the single location of maximum pointwise uncertainty. Instead, the planned route is selected to maximise the \emph{accumulated} (path-integrated) uncertainty that can be sampled under operational constraints, including predefined deployment/recovery locations and whether vehicles operate independently or in tandem (Fig. \ref{fig:cumulative} and the annex). The straight trajectory segments shown outside the uncertainty map correspond only to transit from the safe deployment area to the operational domain; these segments are therefore not outputs of the path-planning algorithm. Nevertheless, observations collected during transit remain valuable and were incorporated into the subsequent assimilation.
+  \action: We have revised Fig. 4 to explicitly show the model-derived
+  uncertainty map(s) and their use in the sampling scenario; AUV
+  trajectories for each day are overlaid on the corresponding daily
+  uncertainty map. It is worth noting that the objective of the
+  planning is not to steer the vehicles towards any single location of
+  maximum pointwise uncertainty. Instead, the planned route is
+  selected to maximise the \emph{accumulated} (path-integrated)
+  uncertainty that can be sampled under operational constraints,
+  including predefined deployment/recovery locations and whether
+  vehicles operate independently or in tandem
+  (Fig. \ref{fig:cumulative} and the annex). The straight trajectory
+  segments shown outside the uncertainty map correspond \emph{only} to
+  transit from safe deployment areas into the operational domain;
+  these segments are therefore not outputs of the path-planning
+  algorithm. Nevertheless, observations collected during transit
+  remain valuable and were incorporated into the subsequent
+  assimilation.
 
      \begin{figure}[!b]
-  \centering
-  \includegraphics[scale=0.33]{fig/cumulative_error.pdf}
-  \caption{Cumulative temperature error as a function of mission duration for the different AUV missions shown in the legend. Each colored curve corresponds to a mission after generating a new plan, allowing a direct comparison of how \textit{uncertainty collected} accumulates over time across missions.}
+       \centering
+       \includegraphics[scale=0.33]{../fig/cumulative_error.pdf}
+       \caption{Cumulative temperature error as a function of mission
+         duration for the different AUV missions shown in the
+         legend. Each colored curve corresponds to a mission after
+         generating a new plan, allowing a direct comparison of how
+         \textit{uncertainty collected} accumulates over time across
+         missions.}
   \label{fig:cumulative}
 \end{figure}
-    
  
 
 \item \reply: L231: The text mentions that the algorithm ensures
@@ -373,8 +392,12 @@ of the Methods section.
     representation. Please verify the description against the
     colorbar.
     
-    \action: Regarding Fig.~4, the SST field corresponds to the European North West Shelf-Iberia Biscay Irish Seas – High Resolution ODYSSEA Sea Surface Temperature Multi-sensor L3 Observations Reprocessed product \cite{NWS_IBI_SST_L3}. We have added the corresponding reference in both the figure caption and the main text.
-\kc{LB check the colors}
+    \action: Regarding Fig.4, the SST field corresponds to the
+    European North West Shelf-Iberia Biscay Irish Seas – High
+    Resolution ODYSSEA Sea Surface Temperature Multi-sensor L3
+    Observations Reprocessed product \cite{NWS_IBI_SST_L3}. We have
+    added the corresponding reference in both the figure caption and
+    the main text.  \kc{LB check the colors}
 
   \item \reply: L362 / Fig. 6: A panel code is missing for Figure 6.
     Please also add an x-axis label to panel (c) of Figure 6.
@@ -490,18 +513,36 @@ the updated manuscript.
     \reply: \ldots gliders speed through water nor typical water
     velocities in the region \ldots
 
-    \action: Following the clarification above, it is also important to note that, unlike gliders, our powered AUVs are less sensitive to the impact of currents on locomotion because propulsion enables them to oppose ambient flow up to a practical limit. For the Nazar\'{e} coastal region, maximum near-surface current magnitudes are on the order of $\sim$0.4--0.5~m~s$^{-1}$ (e.g., \cite{quaresma07, CMEMS_IBI_MFC}, so their impact on vehicle navigation is generally limited within the context of the deployments considered here. To provide quantitative support, we include an additional figure below and in the Annex that compares planned and realized trajectories (Fig. \ref{fig:real_planned}). The maximum deviation between the planned and realized paths (from top-left to bottom-right panels) is 256~m, 318~m, 218~m, 155~m, and 279~m, respectively. 
+    \action: Following the clarification above, it is also important
+    to note that, unlike gliders, our AUVs are less sensitive to the
+    impact of currents. For the Nazar\'{e} coastal region, maximum
+    near-surface current magnitudes are on the order of
+    $\sim$0.4--0.5~m~s$^{-1}$ \cite{quaresma07, CMEMS_IBI_MFC}, so
+    their impact on vehicle navigation is generally limited within the
+    context of the deployments considered here. To provide
+    quantitative support, we have include an additional figure below
+    and in the Annex that compares planned and realized trajectories
+    (Fig. \ref{fig:real_planned}). The maximum deviation between the
+    planned and realized paths (from top-left to bottom-right panels)
+    is 256~m, 318~m, 218~m, 155~m, and 279~m, respectively.
     
-     \begin{figure}[!t]
-  \centering
-  \includegraphics[scale=0.33]{fig/real_vs_planned.pdf}
-  \caption{Planned versus realized AUV trajectories plotted on the corresponding daily model-derived uncertainty maps. Panels correspond to XP2 (29 Oct), XP5 (29--30 Oct; 30--31 Oct), and XP3 (30--31 Oct; 31 Oct). The planned route is shown as markers and a black line, and the realized trajectory as a green line.}
-  \label{fig:real_planned}
-\end{figure}
+    \begin{figure}[!t]
+      \centering
+      \includegraphics[scale=0.33]{../fig/real_vs_planned.pdf}
+      \caption{Planned versus realized AUV trajectories plotted on the
+        corresponding daily model-derived uncertainty maps. Panels
+        correspond to XP2 (29 Oct), XP5 (29--30 Oct; 30--31 Oct), and
+        XP3 (30--31 Oct; 31 Oct). The planned route is shown as
+        markers and a black line, and the realized trajectory as a
+        green line.}
+      \label{fig:real_planned}
+    \end{figure}
     
-    These deviations are comparable to the spatial resolution of the statistical model used for guidance, indicating that current-driven drift did not affect the interpretation of the results within the scope of this manuscript. We nevertheless provide the figure in the new Annex for readers who wish to examine this aspect in greater detail.
-
-
+    These deviations are comparable to the spatial resolution of the
+    statistical model used for guidance, indicating that
+    current-driven drift did not affect the interpretation of the
+    results. We nevertheless provide the figure in the new Annex for
+    readers who wish to examine this aspect in greater detail.
 
   \item
 
@@ -512,28 +553,28 @@ the updated manuscript.
     guidance, showing that the observations reduce uncertainty (maybe
     just put the glider trajectories on the uncertainty maps?)
 
-    \action: Thank you for this suggestion. We agree, and it is consistent with Reviewer~1’s comments. Accordingly, we have revised Fig.~4 to explicitly show the model-derived uncertainty maps.
+    \action: Thank you for this suggestion which is consistent with
+    Reviewer~1’s comments above. Accordingly, we have revised Fig. 4
+    to explicitly show the model-derived uncertainty maps.
 
-      \item
+  \item
 
-        \reply: \ldots comparison of the low-cost forecast model
-        versus the global forecast that the low-cost model is based on
+    \reply: \ldots comparison of the low-cost forecast model versus
+    the global forecast that the low-cost model is based on
 
-        \action: We have corrected this in the following manner:
+    \action: We have corrected this in the following manner:
 
-        \begin{quote}
+    \begin{quote}
 
-          With the addition of the figures in the Annexes with the
-          CMEMS, Previous and Assimilated Temperature models, it is
-          possible to proceed to a visual comparison. The scatter
-          plots show the quantification of the deviation for each
-          scenario.
+      With the addition of the figures in the Annexe with the CMEMS,
+      Previous and Assimilated Temperature models, it is possible to
+      proceed to a visual comparison. The scatter plots show the
+      quantification of the deviation for each scenario.
         
-        \end{quote}
+    \end{quote}
 
-        \kc{English needs work above. What does ``Previous'' mean?
-          Also it doesn't look like this has been added to the m/s
-          itself.} 
+    \kc{English needs work above. What does ``Previous'' mean?  Also
+      it doesn't look like this has been added to the m/s itself.}
 
   \end{enumerate}
 
@@ -577,7 +618,19 @@ the updated manuscript.
     the predicted and actual glider paths on the uncertainty maps -
     c.f.  Figure 4.
 
-    \action: We agree, and we have revised Fig.~4 to explicitly present the model-derived uncertainty maps and their use in the sampling scenario, with the AUV trajectories overlaid on the corresponding daily uncertainty fields. At the scale of Fig.~4, the planned and real trajectories are nearly coincident, and the small differences are therefore not readily discernible in the figure. As discussed in our response 2, the observed deviations are comparable to the effective spatial resolution of the statistical model used for guidance, indicating that currents did not affect the results within the scope of this manuscript. For completeness, we provide an additional figure (Fig \ref{fig:real_planned} in the new Annex showing planned versus real trajectories at higher resolution, for readers who wish to examine this aspect in greater detail.
+    \action: We have revised Fig. 4 to explicitly present the
+    model-derived uncertainty maps and their use in the sampling
+    scenario, with the AUV trajectories overlaid on the corresponding
+    uncertainty fields. The planned and real trajectories are nearly
+    coincident, and small differences are therefore not readily
+    discernible in the figure. As discussed in our response 2, the
+    observed deviations are comparable to the effective spatial
+    resolution of the statistical model used for guidance, indicating
+    that currents did not impact the results within the scope of this
+    manuscript. For completeness, we provide an additional figure (Fig
+    \ref{fig:real_planned}) in the new Annex showing planned versus
+    real trajectories at higher resolution, for readers who wish to
+    examine this aspect in greater detail.
 
 \item
 
@@ -586,7 +639,7 @@ the updated manuscript.
   data. It would be nice to see that the system outperforms CMS. Also,
   Fig. 6c needs unit labels.
 
-  \action: With the addition of the figures in the Annexes with the
+  \action: With the addition of the figures in the Annexe with the
   CMEMS, Previous and Assimilated Temperature models, it is possible
   to proceed to a visual comparison. The scatter plots show the
   quantification of the deviation for each scenario.

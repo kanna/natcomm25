@@ -267,32 +267,31 @@ of the Methods section.
   \action: We have revised Fig. 4 to explicitly show the model-derived
   uncertainty map(s) and their use in the sampling scenario; AUV
   trajectories for each day are overlaid on the corresponding daily
-  uncertainty map. It is worth noting that the objective of the
-  planning is not to steer the vehicles towards any single location of
-  maximum pointwise uncertainty. Instead, the planned route is
-  selected to maximise the \emph{accumulated} (path-integrated)
-  uncertainty that can be sampled under operational constraints,
-  including predefined deployment/recovery locations and whether
-  vehicles operate independently or in tandem
-  (Fig. \ref{fig:cumulative} and the annex). The straight trajectory
-  segments shown outside the uncertainty map correspond \emph{only} to
-  transit from safe deployment areas into the operational domain;
-  these segments are therefore not outputs of the path-planning
-  algorithm. Nevertheless, observations collected during transit
-  remain valuable and were incorporated into the subsequent
-  assimilation.
+  uncertainty map. It is worth noting that the planning objective is
+  not to steer the vehicles towards any single location of maximum
+  pointwise uncertainty. Instead, the planned route is selected to
+  maximize the \emph{accumulated} path-integrated uncertainty that can
+  be sampled under operational constraints, including predefined
+  deployment/recovery locations and whether vehicles operate
+  independently or in tandem (Fig. \ref{fig:cumulative} below and in
+  the new annex). The straight line trajectory segments shown outside
+  the uncertainty map correspond \emph{only} to transit from safe
+  deployment areas into the operational domain; these segments are
+  therefore not outputs of the path-planning algorithm. Nevertheless,
+  observations collected during transit remain valuable and were
+  incorporated into the subsequent assimilation.
 
-     \begin{figure}[!b]
-       \centering
-       \includegraphics[scale=0.33]{../fig/cumulative_error.pdf}
-       \caption{Cumulative temperature error as a function of mission
-         duration for the different AUV missions shown in the
-         legend. Each colored curve corresponds to a mission after
-         generating a new plan, allowing a direct comparison of how
-         \textit{uncertainty collected} accumulates over time across
-         missions.}
-  \label{fig:cumulative}
-\end{figure}
+  \begin{figure}[!b]
+    \centering
+    \includegraphics[scale=0.33]{../fig/cumulative_error.pdf}
+    \caption{Cumulative temperature error as a function of mission
+      duration for the different AUV missions shown in the
+      legend. Each colored curve corresponds to a mission after
+      generating a new plan, allowing a direct comparison of how
+      \textit{uncertainty collected} accumulates over time across
+      missions.}
+    \label{fig:cumulative}
+  \end{figure}
  
 
 \item \reply: L231: The text mentions that the algorithm ensures

@@ -111,7 +111,7 @@ in the updated manuscript. \setcounter{reviewer}{1}.
   the phenomena one is trying to model, and this ensemble can be used
   to estimate uncertainty by computing local statistics at the grid
   cell level. A complete description of this methodology is provided
-  in \cite{Duarte2025}.
+  in \cite{duarte2025}.
 
   We have modified the text to read:
 
@@ -132,11 +132,11 @@ in the updated manuscript. \setcounter{reviewer}{1}.
 
 We've also modified the text at the end of the same subsection,
 highlighting that we follow the same methodology as in
-\cite{Duarte2025}, modifying the text to read:
+\cite{duarte2025}, modifying the text to read:
   
 \begin{quote}
   A complete description of the methodology and implementation is
-  provided in \cite{Duarte2025}. 
+  provided in \cite{duarte2025}. 
 \end{quote}
 
 
@@ -231,7 +231,9 @@ of the Methods section.
 \item \reply: L166: Elaborate on the process used to generate the
   ensemble of geostatistical realizations.
 
-  \action: We have already elaborated on this process in our response to Reviewer Comment~1.1 (Methodology). Following that feedback, we have also strengthened the corresponding description in the main text.
+  \action: See response in sub-section \ref{sec:r1-meth} under
+  \ref{sec:r1-top}. We have also strengthened the corresponding
+  description in the main text as noted there.
 
 \item \reply: L173: The description of “sequential assimilation” is
   unclear. Please specify the exact scheme used (e.g., Ensemble Kalman
@@ -256,7 +258,18 @@ of the Methods section.
   intuitive. A figure illustrating this concept would be very helpful to
   the reader.
 
-  \action: Indeed, the geostatistical temperature prediction is carried out jointly in the horizontal (space) and temporal domains. Conceptually, the method can be viewed as operating on a 3-D space--time volume, in which each horizontal slice corresponds to a given day over the spatial domain of interest. In the present case, we use a complete set of 14 days on the model grid to estimate the 15th slice, corresponding to the forecast for the next day. This procedure is described in more detail in \cite{duarte2025}; in particular, Fig.~3 in that study provides the schematic illustration requested by the reviewer. To keep the manuscript concise and within scope, we have added an explicit reference in the text pointing readers directly to Fig.~3 of \cite{duarte2025}.
+  \action: Indeed, the geostatistical temperature prediction is
+  carried out jointly in the horizontal (space) and temporal
+  domains. Conceptually, the method can be viewed as operating on a
+  3-D space X time volume, in which each horizontal slice corresponds
+  to a given day over the spatial domain of interest. We use a a set
+  of 14 days on the model grid to estimate the 15th slice,
+  corresponding to the forecast for the next day. This procedure is
+  described in more detail in \cite{duarte2025}; in particular, Fig.~3
+  in that study provides the schematic illustration requested by the
+  reviewer. To keep the manuscript concise and within scope, we have
+  added an explicit reference in the text pointing readers directly to
+  that work.
   
 \item \reply: L204: Please provide a demonstration or figure of the
   “uncertainty map provided by the model.”
@@ -447,7 +460,7 @@ the updated manuscript.
 
   \action: Figure 6 was redrawn to accommodate the comment.
 
-\item {\it General Comments:}
+\item {\it General Comments:}\label{sec:r2-genl}
 
     \reply: The paper is generally well constructed, well written and
     accurate. I appreciate the authors’ efforts. For real-time ocean
@@ -553,12 +566,22 @@ the updated manuscript.
     Reviewer~1’s comments above. Accordingly, we have revised Fig. 4
     to explicitly show the model-derived uncertainty maps.
 
-  \item
+  \item\label{sec:r2-low-cost}
 
     \reply: \ldots comparison of the low-cost forecast model versus
     the global forecast that the low-cost model is based on
 
-    \action: We agree that including these comparisons would be valuable; however, they are somewhat beyond the scope of the present manuscript and are analysed in greater detail in \cite{duarte2025}. To avoid increasing the length of the paper while still making these comparisons available, we have added supplementary figures in the Annex showing (i) comparisons with CMEMS and (ii) all scenarios of the statistical model (C1-C4, D1-D4), enabling a visual comparison of the SST fields. We have also added scatter plots for each model solution (CMEMS and C1-C4 and D1-D4 scenarios), quantifying the deviation from in situ measurements for 31~October        
+    \action: While we agree that including these comparisons would be
+    valuable, they are however, beyond the scope of this manuscript
+    and are analysed in greater detail in \cite{duarte2025}. That
+    said, to fit within the constraints of this manuscript, while
+    still making these comparisons available, we have added
+    supplementary figures in the Annex showing (i) comparisons with
+    CMEMS and (ii) all scenarios of the statistical model (C1-C4,
+    D1-D4). We have also added scatter plots for each model solution
+    (CMEMS and C1-C4 and D1-D4 scenarios), quantifying the deviation
+    from in situ measurements for 31~October. We believe this should
+    address the reviewers concerns.
     
 
   \end{enumerate}
@@ -624,7 +647,10 @@ the updated manuscript.
   data. It would be nice to see that the system outperforms CMS. Also,
   Fig. 6c needs unit labels.
 
-  \action: As requested in Reviewer Comment~4, we have added supplementary figures in the Annex, enabling a direct visual comparison while keeping the main manuscript concise.
+  \action: As requested in sub-section \ref{sec:r2-low-cost} under
+  \ref{sec:r2-genl}, we have added supplementary figures in the Annex,
+  for a direct comparison with CMEMS while keeping the main manuscript
+  within its required constraints.
 
 
 \item

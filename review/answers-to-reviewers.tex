@@ -183,10 +183,10 @@ of the Methods section.
 
 
 \begin{quote}
-  Our end goal is to democratize ocean model prediction, using low-cost
-  operations
-  integrated with open-source software to enable spatio-temporal data
-  assimilation from mobile or immobile robots across space, \ldots
+  Our end goal is to democratize ocean model prediction, using
+  low-cost operations integrated with open-source software to enable
+  spatio-temporal data assimilation from mobile or immobile robots
+  across space, \ldots
   \end{quote}
 
 \item \reply: L129: Detail the specific methodology used for the
@@ -241,16 +241,21 @@ of the Methods section.
   calculated before or after assimilation.
 
   \action: Our sequential assimilation is not directly related to
-  ensemble Kalman filters, which, based on previous observations, try
-  to predict future states. Conventional Kalman filters assume a
+  ensemble Kalman filters. Conventional Kalman filters assume a
   Gaussian distribution, and conventional approaches are prone to
-  instabilities. In our approach, the new data is assimilated in a
-  simpler way to improve computational efficiency. \kc{New data is
-  incorporated in the set of conditioning data for the geostatistical
-  simulation (i.e., considered local hard data for the geostatistical
-  simulation) when predicting the spatial distribution of temperature
-  for the subsequent day. The differences shown in Figs. 5 and the
-  annexes are computed both with and without data assimilation.}
+  instabilities. In our approach, new data is incorporated into a grid
+  cell (i.e. it is ``conditioned'') and this value is propagated in
+  the neighbouring cells; see \cite{duarte2025} for addition
+  details. See sub-section \ref{sec:r2-assim} under \ref{sec:r2-spec}
+  for additional information. \kc{State whether differences are
+    computed before or after assimilation}
+
+  % the set of conditioning data for the geostatistical simulation
+  % (i.e., considered local hard data for the geostatistical simulation)
+  % when predicting the spatial distribution of temperature for the
+  % subsequent day. The differences shown in Figs. 5 and the annexes are
+  % computed both with and without data assimilation.\kc{State whether
+  %   differences are computed before or after assimilation}
 
 
 \item \reply: L192: The statement on spatial propagation being
@@ -406,7 +411,8 @@ of the Methods section.
     Resolution ODYSSEA Sea Surface Temperature Multi-sensor L3
     Observations Reprocessed product \cite{NWS_IBI_SST_L3}. We have
     added the corresponding reference in both the figure caption and
-    the main text.  \kc{LB check the colors}
+    the main text.  \kc{AFD to check the colors since warmer colors
+      are shown in deeper depth.}
 
   \item \reply: L362 / Fig. 6: A panel code is missing for Figure 6.
     Please also add an x-axis label to panel (c) of Figure 6.
@@ -587,7 +593,7 @@ the updated manuscript.
   \end{enumerate}
 
 
-\item {\it Specific Comments:}
+\item {\it Specific Comments:}\label{sec:r2-spec}
 
   
   \begin{enumerate}
@@ -602,8 +608,8 @@ the updated manuscript.
     clearly state that in the introduction. That is a significant
     achievement.
 
-    \action: We do not believe this is the first end-to-end study
-    coupling ocean models with robots. AOSN-II
+    \action: We do \emph{not} believe this is the first end-to-end
+    study coupling ocean models with robots. AOSN-II
     \cite{ramp2009preparing} was among the early experiments in this
     context, albeit with a far larger number of robots and at least
     three numerical models compared in an ensemble. Given that both
@@ -618,7 +624,7 @@ the updated manuscript.
     of observation, including aerial and surface vehicles akin to
     \cite{sousa16} and \cite{pinto22}. This manuscript describes the
     first step and provides a window into the use of statistical
-    models primed by larger numerical simulation model (CMEMS). 
+    models primed by larger numerical simulation model (CMEMS).
 
   \item
 
@@ -653,7 +659,7 @@ the updated manuscript.
   within its required constraints.
 
 
-\item
+\item\label{sec:r2-assim}
 
   \reply: Lines 410-439: An alternative explanation for assimilation
   experiments C4 and D4 performing worse than the free run is that the

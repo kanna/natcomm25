@@ -73,7 +73,7 @@ of ocean variables together with estimates of spatial uncertainty
 spatiotemporal variability of local ocean dynamics, based on a prior
 numerical ocean model solution, at a fraction of the computational
 cost of numerical models, while remaining flexible enough to rapidly
-assimilate new in-situ observations \cite{Duarte2025}.  However, with
+assimilate new in-situ observations \cite{duarte2025}.  However, with
 this type of surrogate models, we are not explicitly considering the
 full-physics of the system, and the quality of the predictions
 directly depends on the accuracy of the numerical model and prediction
@@ -93,8 +93,14 @@ inaccurate.
   conditioned \emph{a priori} by the deterministic CMEMS NEMO model
   \cite{madec97,madec15,CMEMS_IBI_MFC} using the Iberian Biscay Irish
   domain. In doing so we use a variogram model describing the temporal
-  dependency between days over a 14 day period.} \rone{Realizations are generated via stochastic sequential simulation: the grid is visited along a random path and, at each node, a local kriging mean and variance are computed from the covariance/variogram model and the available conditioning data, from which a value is drawn from the corresponding conditional distribution.}  By computing the
-pointwise standard deviation across the ensemble, we obtain spatial uncertainty maps that highlight regions where predictions are more
+  dependency between days over a 14 day period.} \rone{Realizations
+  are generated via stochastic sequential simulation: the grid is
+  visited along a random path and, at each node, a local kriging mean
+  and variance are computed from the covariance/variogram model and
+  the available conditioning data, from which a value is drawn from
+  the corresponding conditional distribution.}  By computing the
+pointwise standard deviation across the ensemble, we obtain spatial
+uncertainty maps that highlight regions where predictions are more
 variable and therefore potentially a target for robotic
 sampling. These maps then, serve as the basis for identifying areas
 where new measurements are expected to maximize the reduction of
@@ -111,7 +117,7 @@ corresponding to the new prediction step. With AUV sampling denser
 than the \rtwo{model horizontal} grid resolution (approximately
 0.0035$^{\circ}$, corresponding to about 300-400 m at the study
 latitude), measurements within the same grid cell are averaged as a
-form of arithmetic upscaling \cite{Duarte2025}. To incorporate spatial
+form of arithmetic upscaling \cite{duarte2025}. To incorporate spatial
 and temporal variability, we apply sequential simulation with local
 means \cite{soares2001direct}\footnote{Defined by kriging estimates
   and variances, which are conditioned to existing direct measurements
@@ -136,18 +142,19 @@ striking a balance between forecast stability and computational
 cost. Spatial propagation occurs only horizontally within each depth
 level, while vertical consistency is implicitly maintained through the
 depth-specific variogram structures derived from the 3D numerical
-model \rone{see Fig.~3 of \cite{duarte2025}}.  This provides both a forecast of ocean variables being
-simulated, as well as a quantitative assessment of the prediction
-uncertainty.  By updating the forecasts with new in-situ measurements
-through sequential assimilation, the method progressively refines the
-variable field while maintaining consistency with prior model
-dynamics. The resulting forecast and uncertainty maps then form the
-input for the targeted sampling algorithm, guiding the allocation of
-AUV trajectories towards regions of greatest expected information
-gain.\rone{A complete description of the methodology and
-  implementation is provided in \cite{Duarte2025}.} \sout{More details
-  about the geostatistical model, its development, and application
-  during the \proj experiment can be found in \cite{Duarte2025}.}
+model \rone{see Fig.~3 of \cite{duarte2025}}.  This provides both a
+forecast of ocean variables being simulated, as well as a quantitative
+assessment of the prediction uncertainty.  By updating the forecasts
+with new in-situ measurements through sequential assimilation, the
+method progressively refines the variable field while maintaining
+consistency with prior model dynamics. The resulting forecast and
+uncertainty maps then form the input for the targeted sampling
+algorithm, guiding the allocation of AUV trajectories towards regions
+of greatest expected information gain.\rone{A complete description of
+  the methodology and implementation is provided in
+  \cite{duarte2025}.} \sout{More details about the geostatistical
+  model, its development, and application during the \proj experiment
+  can be found in \cite{duarte2025}.}
 
 
 \subsection{The Sampling Algorithm}

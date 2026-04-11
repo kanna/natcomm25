@@ -5,6 +5,8 @@
 \textheight	230mm
 
 \input{commands}
+% \setcounter{figure}{0}
+% \renewcommand{\thefigure}{S\arabic{figure}}
 
 \begin{document}
 
@@ -52,38 +54,44 @@ in the updated manuscript. \setcounter{reviewer}{1}.
 
   \reply: Abstract should be re-written to reflect the findings of the
   study. The literature review can be extended (e.g. Ford et al. 2022)
-  in the introduction section. In the methodology, the authors challenge
-  the fully dynamical ocean models with a geostatical model. I
-  understand the constraints to use a dynamical model. However, the
-  authors should carefully demonstrate various aspects of the
-  statistical model. They estimate the uncertainty via an ensemble. How
-  is this ensemble generated? How reliable is it? Can we see a
-  temperature prediction of the geostatistical model to be compared with
-  CMEMS model to investigate where are the major differences?
+  in the introduction. In the methodology, the authors challenge the
+  fully dynamical ocean models with a geostatical model. I understand
+  the constraints to use a dynamical model. However, the authors
+  should carefully demonstrate various aspects of the statistical
+  model. They estimate the uncertainty via an ensemble. How is this
+  ensemble generated? How reliable is it? Can we see a temperature
+  prediction of the geostatistical model to be compared with CMEMS
+  model to investigate where are the major differences?
 
   \begin{enumerate}
 
   \item {\it Literature review}
 
     \action: Thank you for pointing out the Ford et.al paper
-    \cite{ford22}. That effort is indeed synergistic, caveat, we use
-    powered AUVs, not gliders as noted in the introduction, that is
-    AUVs which can articulate their paths in ways gliders cannot by
-    virtue of a propeller and their software control system. We have
-    modified the text to read:
+    \cite{ford22}; in addition \cite{wihsgott26} also expounds on
+    similar efforts. These are indeed synergistic, caveat, we use
+    powered AUVs, not gliders as noted in the introduction of the
+    manuscript; this is further clarified below in subsection
+    \ref{sec:r2-gli} under \ref{sec:r2-genl}. AUVs can articulate
+    their paths in ways gliders cannot by virtue of a propeller and
+    their software command and control system. We have modified the
+    text to read:
 
   \begin{quote}
 
-    \cite{lermusiaux07} and \cite{ford22} explore such a concept, the
-    former in simulation, the latter focusing on chlorophyll while we
-    targeted temperature gradients; moreover the novelty of our work
+    \cite{lermusiaux07} and \cite{ford22,wihsgott26} explore such a
+    concept, the former in simulation. While \cite{ford22} focuses a
+    single glider on chlorophyll as a driver, and \cite{wihsgott26}
+    multiple gliders on chlorophyll, temperature and oxygen, while we
+    target exclusively temperature gradients.  The novelty of our work
     is in demonstrating the applicability of using our AUVs that can
-    control their trajectory using onboard computation. Our setup is
-    also simpler with CMEMS seeding the stochastic model augmenting
-    the need to show this \emph{sample-assimilate-predict-direct} loop
-    in a cost effective manner relying on small boats, the use of
-    multiple AUVs while relying on our mature technology suite for
-    command/control of vehicles.
+    control their trajectory using onboard computation and
+    articulating the importance of the larger
+    \emph{sample-assimilate-predict-direct} loop. Our setup is also
+    simpler with CMEMS seeding the stochastic model augmenting while
+    using a low-cost operational approach with small boats, the use of
+    multiple AUVs all the while relying on our mature technology suite
+    for command/control of vehicles.
 
 \end{quote}
 
@@ -504,21 +512,21 @@ the updated manuscript.
 
   \item
 
-    {\it On gliders:} There appears to be some confusion. Our work
-    leverages powered AUVs, not gliders. This allows our vehicles to
-    go against the current (anything $< 1$--$2$ knots), carry a range
-    of payloads (subject to battery chemistry), and, most importantly,
-    include an onboard computer powerful enough to perform embedded
-    decision-making (see comments above addressing Reviewer 1). AUVs
-    in oceanography are complementary to gliders: they are
-    particularly well-suited for rapid, high-resolution sampling of
-    spatially localized features and short time-span events, whereas
-    gliders are typically optimized for long-duration, low-power
-    monitoring over broader areas \cite{rudnick18}. Fig.3 shows a
-    typical deployment, which is quite unlike that of a glider. These
-    low-cost platforms are, in our view, more versatile, especially
-    for coastal observations, are designed in-house, and are also
-    available commercially off-the-shelf \footnote{see
+    {\it On gliders:}\label{sec:r2-gli} There appears to be some
+    confusion. Our work leverages powered AUVs, not gliders. This
+    allows our vehicles to go against the current (anything $< 1$--$2$
+    knots), carry a range of payloads (subject to battery chemistry),
+    and, most importantly, include an onboard computer powerful enough
+    to perform embedded decision-making (see comments above addressing
+    Reviewer 1). AUVs in oceanography are complementary to gliders:
+    they are particularly well-suited for rapid, high-resolution
+    sampling of spatially localized features and short time-span
+    events, whereas gliders are typically optimized for long-duration,
+    low-power monitoring over broader areas \cite{rudnick18}. Fig.3
+    shows a typical deployment, which is quite unlike that of a
+    glider. These low-cost platforms are, in our view, more versatile,
+    especially for coastal observations, are designed in-house, and
+    are also available commercially off-the-shelf \footnote{see
       https://www.oceanscan-mst.com} and operated across the world.
 
     \action: None.

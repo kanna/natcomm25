@@ -253,9 +253,15 @@ of the Methods section.
   Gaussian distribution, and conventional approaches are prone to
   instabilities. In our approach, new data is incorporated into a grid
   cell (i.e. it is ``conditioned'') and this value is propagated in
-  the neighbouring cells; see \cite{duarte2025} for addition
-  details. See sub-section \ref{sec:r2-assim} under \ref{sec:r2-spec}
-  for additional information. The differences shown in Figs 5 and in the supplementary material are computed with and without data assimilation, depending on the scenario.
+  the neighbouring cells as noted in \cite{duarte2025}.  Also see
+  sub-section \ref{sec:r2-assim} under \ref{sec:r2-spec} for
+  additional information. The differences shown in Figs 5 and in the
+  supplementary material are computed with and without data
+  assimilation, depending on the scenario. \kc{This needs more
+    clarification. Where is it with and where is it without
+    assimilation? Its really critical that the responses be to the
+    point and clear, so the reviewers don't think we've ``blown them
+    off''.} 
 
   % the set of conditioning data for the geostatistical simulation
   % (i.e., considered local hard data for the geostatistical simulation)
@@ -413,13 +419,16 @@ of the Methods section.
     representation. Please verify the description against the
     colorbar.
     
-    \action: We thank the reviewer for these careful observations. 
-First, we corrected the trajectory labels. Regarding Fig.4, the SST field corresponds to the
-    European North West Shelf-Iberia Biscay Irish Seas – High
-    Resolution ODYSSEA Sea Surface Temperature Multi-sensor L3
-    Observations Reprocessed product \cite{NWS_IBI_SST_L3}. We have
-    added the corresponding reference in both the figure caption and
-    the main text. Finally, we also thank the reviewer for catching an inconsistency in Fig.~5: the colorbar description contained an error (whereas the caption was already correct). The figure has been rectified accordingly to ensure full consistency between the colorbar and its description.
+    \action: We thank the reviewer for these careful observations
+    especially with the color bar which indeed was incorrect even if
+    the caption was accurate.  First, we corrected the trajectory
+    labels. Regarding Fig.4, the SST field corresponds to the European
+    North West Shelf-Iberia Biscay Irish Seas – High Resolution
+    ODYSSEA Sea Surface Temperature Multi-sensor L3 Observations
+    Reprocessed product \cite{NWS_IBI_SST_L3}. We have added the
+    corresponding reference in both the figure caption and the main
+    text. Fig. 5 has been rectified accordingly to ensure full
+    consistency between the color bar and its description.
 
   \item \reply: L362 / Fig. 6: A panel code is missing for Figure 6.
     Please also add an x-axis label to panel (c) of Figure 6.
@@ -593,8 +602,8 @@ the updated manuscript.
     CMEMS and (ii) all scenarios of the statistical model (C1-C4,
     D1-D4). We have also added scatter plots for each model solution
     (CMEMS and C1-C4 and D1-D4 scenarios), quantifying the deviation
-    from in situ measurements for 31~October. We believe this should
-    address the reviewers concerns.
+    from in situ measurements for 31\textsuperscript{st} October. We
+    believe this should address the reviewers concerns.
     
 
   \end{enumerate}
@@ -677,7 +686,18 @@ the updated manuscript.
   That said, construction of background error covariances remains a
   rich topic.
 
-  \action: The new samples' area of influence in the corrected background models is governed by the range of the variogram model (i.e., the spatial covariance matrix). In our configuration, the estimated variogram range is approximately 70 km laterally, with a temporal scale of about one season. When estimating the variogram model parameters, we consider the entire area of interest, which can be interpreted as the ‘average’ behavior of the system and therefore cannot capture local variations, such as those in the southern and northern regions of the Nazaré Canyon. Therefore, over- and/or underestimation of the variogram ranges for each region will result in higher RMSE than in the free run. 
+  \action: The new sample area of influence in the corrected
+  background models is governed by the range of the variogram model
+  (i.e., the spatial covariance matrix). In our configuration, the
+  estimated variogram range is approximately 70 km laterally, with a
+  temporal scale of about one season. When estimating the variogram
+  model parameters, we consider the entire area of interest, which can
+  be interpreted as the ‘average’ behavior of the system and therefore
+  cannot capture local variations such as those in the southern and
+  northern regions of the Nazar\'{e} Canyon. Therefore, over- and/or
+  underestimation of the variogram ranges for each region will result
+  in higher RMSE than in the free run. \kc{Does this imply some
+    change(s) to the text?}
 
   \end{enumerate}
 

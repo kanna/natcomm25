@@ -80,9 +80,9 @@ incorporating the full set of AUV observations from previous days
 (\textbf{C4} and \textbf{D4}). The observations include all available
 data collected by the missions on that day (see Fig. \ref{fig:sst} and
 \ref{fig:temperatureprofiles}). Colors indicate the depth layers
-associated with the vertical discretization used in the \rone{CMEMS}
-model which defines the vertical structure of the statistical model.
-This comparison illustrates the statistical model's ability to
+associated with the vertical discretization used in the \rone{CMEMS
+  NEMO} model which defines the vertical structure of the statistical
+model.  This comparison illustrates the statistical model's ability to
 reproduce the observed temperatures at each measurement point
 accurately, contrasting the non-assimilated cases (\textbf{C} and
 \textbf{D}) with the partially and fully assimilated (\textbf{C1-4}
@@ -96,8 +96,8 @@ particularly evident in XP3 and XP5 data, where temperatures around
 20--30 m depth tend to be overestimated by almost 1$^{\circ}$C)
 (Figs. \ref{fig:rms_c} and \ref{fig:rms_d}). This dispersion reflects
 the model’s limited ability to accurately reproduce the vertical
-thermal structure when it relies solely on \rone{CMEMS} data without
-incorporating in-situ information.
+thermal structure when it relies solely on \rone{CMEMS NEMO} data
+without incorporating in-situ information.
 
 In contrast, the fully assimilated scenarios (\textbf{C4} and
 \textbf{D4}) show a much tighter clustering of points around the
@@ -136,7 +136,7 @@ the AUVs. These figures cover all experimental configurations examined
 in this study.  Fig. \ref{fig:rms_ABB1}, corresponds to the initial
 phase of the experiments on the 29\textsuperscript{th} and the
 30\textsuperscript{th}. Scenario \textbf{A} represents the baseline
-statistical forecast based on \rone{CMEMS} data. \textbf{B} and
+statistical forecast based on \rone{CMEMS NEMO} data. \textbf{B} and
 \textbf{B1} scenarios correspond to forecasts for the
 30\textsuperscript{th} without and with the assimilation of in-situ
 observations during the previous day (see Table
@@ -165,21 +165,22 @@ densely sampled by the AUVs.
     $^{\circ}$C) between model forecasts and in-situ AUV temperature
     observations for 29\textsuperscript{th}–-30\textsuperscript{st}
     October. Scenario \textbf{A} corresponds to the baseline
-    statistical forecast generated based on \rone{CMEMS} data up to
-    the 29\textsuperscript{th}. Scenarios \textbf{B} and \textbf{B1}
-    represent forecasts for the 30\textsuperscript{th} without and
-    with respectively, the assimilation of AUV observations collected
-    by XP2. \subref{fig:rms_c} RMSE, between the statistical model
-    forecasts and in-situ AUV temperature measurements for
-    31\textsuperscript{th} October, for scenarios \textbf{C} and
-    \textbf{C1-–C4}. These forecasts were initialized using
-    \rone{CMEMS} data available up to the 30\textsuperscript{th}, and
-    the assimilation steps progressively incorporate AUV observations
-    collected on previous days. Results are shown for each vehicle and
-    for the combined dataset (“All AUVs”). \subref{fig:rms_d} Same as
-    \subref{fig:rms_c}, but for scenarios \textbf{D} and
-    \textbf{D1-–D4}, in which forecasts for the 31\textsuperscript{th}
-    were initialized using \rone{CMEMS} data available only up to the
+    statistical forecast generated based on \rone{CMEMS NEMO} data up
+    to the 29\textsuperscript{th}. Scenarios \textbf{B} and
+    \textbf{B1} represent forecasts for the 30\textsuperscript{th}
+    without and with respectively, the assimilation of AUV
+    observations collected by XP2. \subref{fig:rms_c} RMSE, between
+    the statistical model forecasts and in-situ AUV temperature
+    measurements for 31\textsuperscript{th} October, for scenarios
+    \textbf{C} and \textbf{C1-–C4}. These forecasts were initialized
+    using \rone{CMEMS NEMO} data available up to the
+    30\textsuperscript{th}, and the assimilation steps progressively
+    incorporate AUV observations collected on previous days. Results
+    are shown for each vehicle and for the combined dataset (“All
+    AUVs”). \subref{fig:rms_d} Same as \subref{fig:rms_c}, but for
+    scenarios \textbf{D} and \textbf{D1-–D4}, in which forecasts for
+    the 31\textsuperscript{th} were initialized using \rone{CMEMS
+      NEMO} data available only up to the
     29\textsuperscript{th}. Assimilation configurations
     \textbf{D1-–D4} mirror those of the \textbf{C}--series but start
     from this less favorable prior state. Results are again presented
@@ -191,12 +192,13 @@ densely sampled by the AUVs.
 The results for 31\textsuperscript{st} October, summarized in
 Fig. \ref{fig:rms}, correspond to the phase of the experiment in which
 multiple assimilation scenarios were tested. The \textbf{C}-series
-used \rone{CMEMS} data up to the 30\textsuperscript{th}, whereas the
-\textbf{D}-series uses \rone{CMEMS} up to the 29\textsuperscript{th},
-representing a less favorable statistical initial state. In both
-cases, the assimilation scenarios (\textbf{C1-–C4} and
-\textbf{D1-–D4}) correspond to the incorporation of AUV data collected
-during previous days (see Table \ref{table:scenarios}).
+used \rone{CMEMS NEMO} data up to the 30\textsuperscript{th}, whereas
+the \textbf{D}-series uses \rone{CMEMS NEMO} up to the
+29\textsuperscript{th}, representing a less favorable statistical
+initial state. In both cases, the assimilation scenarios
+(\textbf{C1-–C4} and \textbf{D1-–D4}) correspond to the incorporation
+of AUV data collected during previous days (see Table
+\ref{table:scenarios}).
 
 A consistent reduction in statistical forecast error is observed
 across most vehicles and assimilation stages. In the

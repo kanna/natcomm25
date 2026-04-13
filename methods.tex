@@ -50,7 +50,7 @@ to the \emph{sample-assimilate-predict-direct} process.
 Sampling strategies rely on timely information about the spatial
 variability of ocean properties. Conventional numerical ocean
 circulation models, based on the fluid dynamics, such as
-E.U. Copernicus Marine Service (\rone{CMEMS-NEMO}) \cite{CMEMS2017},
+E.U. Copernicus Marine Service (\rone{CMEMS NEMO}) \cite{CMEMS2017},
 Regional Ocean Modeling System (ROMS)\cite{shchepetkin2005regional},
 and Hybrid Coordinate Ocean Model (HYCOM)\cite{wallcraft09}, for
 example, are widely used by the scientific community for operational
@@ -132,7 +132,7 @@ quantitative measure of uncertainty.
  
 The continuity of the variable field in space and time is
 simultaneously characterized by variogram models fitted to long-term
-numerical ocean model data from \rone{CMEMS-NEMO}. For each depth
+numerical ocean model data from \rone{CMEMS NEMO}. For each depth
 layer of the numerical model where the AUV navigation is defined,
 geostatistical simulations are performed independently using a moving
 temporal window of the previous 14 days as conditioning data. This
@@ -172,7 +172,7 @@ while the duration is bounded above by the assimilation period. The
 starting and ending points are selected to simplify logistics for
 launch and recovery.
 
-Although the underlying numerical \rone{CMEMS-NEMO} model is fully
+Although the underlying numerical \rone{CMEMS NEMO} model is fully
 three-dimensional and the statistical solution also provides
 predictions across multiple depth layers, in this work, the sampling
 algorithm operates on a 2-Dimensional (2D) horizontal field derived
@@ -234,7 +234,7 @@ uncertainty, \sout{while ensuring vehicle endurance and safety
     (29\textsuperscript{th} - 31\textsuperscript{st} October 2024) of
     the \emph{sample-–assimilate–-predict-–direct} loop in the \proj
     experiment. Each cycle integrated statistical model predictions
-    using the \rone{CMEMS-NEMO} model as a prior, targeted sampling,
+    using the \rone{CMEMS NEMO} model as a prior, targeted sampling,
     AUV data acquisition, and subsequent assimilation for the
     following day's predict.}
 \end{wrapfigure}
@@ -284,12 +284,12 @@ setting.
 
 Each experimental day followed a structured cycle involving: (i) the
 generation of a statistical model forecast and its associated
-uncertainty field using as prior \rone{CMEMS} model data available up
-to the previous day \cite{sotillo2021}; (ii) the execution of the
-target sampling algorithm to plan the next day missions; (iii) in-situ
-data collection by AUVs following the algorithmically determined
-tours; (iv) and finally data from the tour assimilated into the
-model. % The data collected
+uncertainty field using as prior \rone{CMEMS NEMO} model data
+available up to the previous day \cite{sotillo2021}; (ii) the
+execution of the target sampling algorithm to plan the next day
+missions; (iii) in-situ data collection by AUVs following the
+algorithmically determined tours; (iv) and finally data from the tour
+assimilated into the model. % The data collected
 % within the previous day were subsequently assimilated into the
 % statistical model to produce updated forecasts, enabling comparisons
 % between forecasts with and without data assimilation.
@@ -337,16 +337,16 @@ full multi-vehicle dataset from the 29\textsuperscript{st} to the
 
 A parallel set of scenarios (\textbf{D} and \textbf{D1} - \textbf{D4})
 was generated to evaluate the sensitivity of the statistical model to
-the choice of prior \rone{CMEMS} fields. The \textbf{D}-series uses
-\rone{CMEMS} data available only up to 29\textsuperscript{st} October,
-thus representing a less favorable initial state, and applies the same
-assimilation configurations as in the \textbf{C}-series. This
-dual-series approach enables a controlled comparison of how data
-assimilation interacts with differences in model initialization.
-Model performance was evaluated by comparing predicted and observed
-temperature data along the AUV trajectories using Root Mean Square
-Error (RMSE) as the performance metric for 31\textsuperscript{st}
-October.
+the choice of prior \rone{CMEMS NEMO} fields. The \textbf{D}-series
+uses \rone{CMEMS NEMO} data available only up to
+29\textsuperscript{st} October, thus representing a less favorable
+initial state, and applies the same assimilation configurations as in
+the \textbf{C}-series. This dual-series approach enables a controlled
+comparison of how data assimilation interacts with differences in
+model initialization.  Model performance was evaluated by comparing
+predicted and observed temperature data along the AUV trajectories
+using Root Mean Square Error (RMSE) as the performance metric for
+31\textsuperscript{st} October.
 
 \rone{ \proj itself is part of a larger concept for multi-domain
   sensing, observation and exploration, which couples ocean models,
@@ -362,7 +362,8 @@ October.
     \footnotesize{
 \begin{tabular}{cccc}
 \hline
-\textbf{Scenario}                  & \textbf{Forecast date} & \textbf{\rone{CMEMS}prior data up to} & \textbf{Assimilated AUV datasets} \\ \hline
+\textbf{Scenario}                  & \textbf{Forecast date} &
+                                                              \textbf{\rone{CMEMS NEMO}prior data up to} & \textbf{Assimilated AUV datasets} \\ \hline
 {\color[HTML]{3531FF} \textbf{A}}  & 29 Oct                 & 28 Oct                        & None (baseline)                   \\ \hline
 {\color[HTML]{9A0000} \textbf{B}}  & 30 Oct                 & 29 Oct                        & None (baseline)                   \\
 {\color[HTML]{FFCB2F} \textbf{B1}} & 30 Oct                 & 29 Oct                        & XP2 (29 Oct)                      \\ \hline

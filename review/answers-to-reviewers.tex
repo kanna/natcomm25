@@ -95,18 +95,18 @@ in the updated manuscript. \setcounter{reviewer}{1}.
   models predicted with stochastic sequential simulation. Stochastic
   sequential simulation predicts multiple models (i.e., geostatistical
   realizations) given a set of observed data and a spatial covariance
-  matrix, as revealed by a variogram model.  In stochastic sequential
+  matrix, as revealed by a variogram.  In stochastic sequential
   simulation, the simulation grid is visited following a random
   path. At each location along these random paths, the local kriging
   estimate and kriging variance are computed using a spatial
-  covariance matrix and existing direct observations, as well as, if
-  available, previously visited values. The kriging variance and
+  covariance matrix and existing direct observations as well as, if
+  available, previously visited values. \kc{The kriging variance and
   estimate are used to sample from the probability distribution of the
   property of interest as estimated from existing data. Each time the
   simulation runs, a new random path is defined and different results
   are produced. Each realization matches the observed data, the
   primary and secondary statistics as revealed from the observed data
-  and the imposed spatial continuity pattern.  The set of
+  and the imposed spatial continuity pattern}.  The set of
   geostatistical realizations represents the posterior distribution of
   the phenomena one is trying to model, and this ensemble can be used
   to estimate uncertainty by computing local statistics at the grid
@@ -121,11 +121,11 @@ in the updated manuscript. \setcounter{reviewer}{1}.
   each representing a state of an ocean variable field conditioned
   \emph{a priori} by the deterministic CMEMS NEMO model
   \cite{madec97,madec15,CMEMS_IBI_MFC} using the Iberian Biscay Irish
-  domain. In doing so we use a variogram model describing the temporal
+  domain. In doing so we use a variogram describing the temporal
   dependency between days over a 14 day period. Realizations are
   generated via stochastic sequential simulation: the grid is visited
   along a random path and, at each node, a local kriging mean and
-  variance are computed from the covariance/variogram model and the
+  variance are computed from the covariance/variogram \kc{model} and the
   available conditioning data, from which a value is drawn from the
   corresponding conditional distribution.
 \end{quote}

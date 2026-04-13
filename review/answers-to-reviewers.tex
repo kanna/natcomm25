@@ -235,8 +235,9 @@ of the Methods section.
     fields after the geostatistical simulation.
   
     \action: We now provide the temperature fields for all scenarios
-    and the CMEMS numerical model in the Annexe to the manuscript, and
-    the comparison between the models and the measured values.
+    and the CMEMS numerical model in the supplementary material to the
+    manuscript, and the comparison between the models and the measured
+    values.
 
 \item \reply: L166: Elaborate on the process used to generate the
   ensemble of geostatistical realizations.
@@ -252,28 +253,18 @@ of the Methods section.
 
   \action: Our sequential assimilation is not directly related to
   ensemble Kalman filters. Conventional Kalman filters assume a
-  Gaussian distribution, and conventional approaches are prone to
+  Gaussian distribution and such methods are prone to
   instabilities. In our approach, new data is incorporated into a grid
   cell (i.e. it is ``conditioned'') and this value is propagated in
-  the neighbouring cells as noted in \cite{duarte2025}.  Also see
+  the neighbouring cells as noted in \cite{duarte2025} -- also see
   sub-section \ref{sec:r2-assim} under \ref{sec:r2-spec} for
-  additional information. 
+  additional information.
   
-  The differences shown in Figs 5 with (C4 and D4) and without (C and D). In the supplementary material, we also attached the analysis for C1-C3 and D1-D3 with assimilation scenarios. 
+  The differences are shown in Fig. 5 with assimilation (scenarios C4
+  and D4) and without (C and D). In the supplementary material, we've
+  also attached the analysis for C1-C3 and D1-D3 with assimilation
+  scenarios.
   
-  
-   \kc{This needs more
-    clarification. Where is it with and where is it without
-    assimilation? Its really critical that the responses be to the
-    point and clear, so the reviewers don't think we've ``blown them
-    off''.} 
-
-  % the set of conditioning data for the geostatistical simulation
-  % (i.e., considered local hard data for the geostatistical simulation)
-  % when predicting the spatial distribution of temperature for the
-  % subsequent day. The differences shown in Figs. 5 and the annexes are
-  % computed both with and without data assimilation.\kc{State whether
-  %   differences are computed before or after assimilation}
 
 
 \item \reply: L192: The statement on spatial propagation being
@@ -307,12 +298,13 @@ of the Methods section.
   be sampled under operational constraints, including predefined
   deployment/recovery locations and whether vehicles operate
   independently or in tandem (Fig. \ref{fig:cumulative} below and in
-  the new annex). The straight line trajectory segments shown outside
-  the uncertainty map correspond \emph{only} to transit from safe
-  deployment areas into the operational domain; these segments are
-  therefore not outputs of the path-planning algorithm. Nevertheless,
-  observations collected during transit remain valuable and were
-  incorporated into the subsequent assimilation.
+  the newly added supplementary material). The straight line
+  trajectory segments shown outside the uncertainty map correspond
+  \emph{only} to transit from safe deployment areas into the
+  operational domain; these segments are therefore not outputs of the
+  path-planning algorithm. Nevertheless, observations collected during
+  transit remain valuable and were incorporated into the subsequent
+  assimilation.
 
   \begin{figure}[!b]
     \centering
@@ -557,10 +549,11 @@ the updated manuscript.
     their impact on vehicle navigation is generally limited within the
     context of the deployments considered here. To provide
     quantitative support, we have include an additional figure below
-    and in the Annex that compares planned and realized trajectories
-    (Fig. \ref{fig:real_planned}). The maximum deviation between the
-    planned and realized paths (from top-left to bottom-right panels)
-    is 256~m, 318~m, 218~m, 155~m, and 279~m, respectively.
+    and in the supplementary material that compares planned and
+    realized trajectories (Fig. \ref{fig:real_planned}). The maximum
+    deviation between the planned and realized paths (from top-left to
+    bottom-right panels) is 256~m, 318~m, 218~m, 155~m, and 279~m,
+    respectively.
     
     \begin{figure}[!t]
       \centering
@@ -577,8 +570,9 @@ the updated manuscript.
     These deviations are comparable to the spatial resolution of the
     statistical model used for guidance, indicating that
     current-driven drift did not affect the interpretation of the
-    results. We nevertheless provide the figure in the new Annex for
-    readers who wish to examine this aspect in greater detail.
+    results. We nevertheless provide the figure in the newly added
+    supplementary material for readers who wish to examine this aspect
+    in greater detail.
 
   \item
 
@@ -603,12 +597,12 @@ the updated manuscript.
     and are analysed in greater detail in \cite{duarte2025}. That
     said, to fit within the constraints of this manuscript, while
     still making these comparisons available, we have added
-    supplementary figures in the Annex showing (i) comparisons with
-    CMEMS and (ii) all scenarios of the statistical model (C1-C4,
-    D1-D4). We have also added scatter plots for each model solution
-    (CMEMS and C1-C4 and D1-D4 scenarios), quantifying the deviation
-    from in situ measurements for 31\textsuperscript{st} October. We
-    believe this should address the reviewers concerns.
+    supplementary figures in the supplementary material showing (i)
+    comparisons with CMEMS and (ii) all scenarios of the statistical
+    model (C1-C4, D1-D4). We have also added scatter plots for each
+    model solution (CMEMS and C1-C4 and D1-D4 scenarios), quantifying
+    the deviation from in situ measurements for 31\textsuperscript{st}
+    October. We believe this should address the reviewers concerns.
     
 
   \end{enumerate}
@@ -663,9 +657,9 @@ the updated manuscript.
     resolution of the statistical model used for guidance, indicating
     that currents did not impact the results within the scope of this
     manuscript. For completeness, we provide an additional figure (Fig
-    \ref{fig:real_planned}) in the new Annex showing planned versus
-    real trajectories at higher resolution, for readers who wish to
-    examine this aspect in greater detail.
+    \ref{fig:real_planned}) in the new supplementary material showing
+    planned versus real trajectories at higher resolution, for readers
+    who wish to examine this aspect in greater detail.
 
 \item
 
@@ -675,9 +669,9 @@ the updated manuscript.
   Fig. 6c needs unit labels.
 
   \action: As requested in sub-section \ref{sec:r2-low-cost} under
-  \ref{sec:r2-genl}, we have added supplementary figures in the Annex,
-  for a direct comparison with CMEMS while keeping the main manuscript
-  within its required constraints.
+  \ref{sec:r2-genl}, we have added supplementary figures in the
+  supplementary material, for a direct comparison with CMEMS while
+  keeping the main manuscript within its required constraints.
 
 
 \item\label{sec:r2-assim}

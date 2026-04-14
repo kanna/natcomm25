@@ -1,123 +1,175 @@
 \newpage
 \setcounter{figure}{0}
-% \renewcommand{\thepage}{S\arabic{page}} 
-% \renewcommand{\thesection}{S\arabic{section}}  
-% \renewcommand{\thetable}{S\arabic{table}}  
 \renewcommand{\thefigure}{S\arabic{figure}}
 
-\section*{Supplementary Material:\normalfont{'Towards Ocean Model-Driven Robotic Exploration'}}
+\section*{Supplementary Material:\normalfont{Towards Ocean Model-Driven Robotic Exploration}}
 \label{sec:annex}
 
-This Supplementary Material provides additional analyses and figures that support the main manuscript while keeping the core text concise. In particular, it includes supplementary visualizations used to (i) clarify operational and methodological aspects of the sample--assimilate--predict--direct loop, and (ii) enable direct, side-by-side comparisons between model solutions and in situ observations for readers who wish to examine those aspects in greater detail.
+This Supplementary Material provides additional analyses and figures
+that support the main manuscript while keeping the core text
+concise. In particular, it includes supplementary visualizations used
+to (i) clarify operational and methodological aspects of the
+\emph{sample-assimilate-predict-direct} loop, and (ii) enable direct,
+side-by-side comparisons between model solutions and in situ
+observations for readers who wish to examine those aspects in greater
+detail.
 
 
-Figure \ref{fig:real_planned} provides a high-resolution comparison between planned and realised AUV trajectories for the relevant deployment days. For quantitative context, the maximum deviation between the planned and realised paths (from top-left to bottom-right panels) is 256~m, 318~m, 218~m, 155~m, and 279~m, respectively.
+Fig. \ref{fig:real_planned} provides a high-resolution comparison
+between planned and realised AUV trajectories for the relevant
+deployment days. For quantitative context, the maximum deviation
+between the planned and realised paths (from top-left to bottom-right
+panels) is 256~m, 318~m, 218~m, 155~m, and 279~m, respectively.
 
  \begin{figure}[!b]
-      \centering
-      \includegraphics[scale=0.33]{fig/real_vs_planned.pdf}
-      \caption{\rtwo{Planned versus realized AUV trajectories plotted on the
-        corresponding daily model-derived uncertainty maps. Panels
-        correspond to XP2 (29 Oct), XP5 (29--30 Oct; 30--31 Oct), and
-        XP3 (30--31 Oct; 31 Oct). The planned route is shown as
-        markers and a black line, and the realized trajectory as a
-        green line.}}
-      \label{fig:real_planned}
-    \end{figure}
+   \centering
+   \includegraphics[scale=0.33]{fig/real_vs_planned.pdf}
+   \caption{\rtwo{Planned versus realized AUV trajectories plotted on
+       the corresponding daily model-derived uncertainty maps. Panels
+       correspond to XP2 (29\textsuperscript{th} Oct), XP5
+       (29\textsuperscript{th}--30\textsuperscript{th} Oct;
+       30\textsuperscript{th}--31\textsuperscript{st} Oct), and XP3
+       (30\textsuperscript{th}--31\textsuperscript{st} Oct;
+       31\textsuperscript{st} Oct). The planned route is shown as
+       markers and a black line, and the realized trajectory as a
+       green line.}}
+   \label{fig:real_planned}
+ \end{figure}
 
-In our guidance framework, routes are not designed to target a single location of maximum pointwise uncertainty; instead, the planned route is selected to maximize the \textit{accumulated} path-integrated uncertainty that can be sampled under the relevant operational constraints. Figure \ref{fig:cumulative} complements that perspective by summarising how the temperature error metric accumulates over mission duration across the deployments/experiments, providing a compact diagnostic for comparing error growth behavior among scenarios. 
+ In our algorithmic framework, routes are not designed to target a
+ single location of maximum pointwise uncertainty; instead, a planned
+ route is selected to maximize the \textit{accumulated}
+ path-integrated uncertainty that can be sampled under the relevant
+ operational constraints. Fig. \ref{fig:cumulative} complements that
+ perspective by summarising how the temperature error metric
+ accumulates over mission duration across the deployments, providing a
+ compact diagnostic for comparing error growth behavior among
+ scenarios.
+ 
+ \begin{figure}[!t]
+   \centering 
+   \includegraphics[scale=0.33]{fig/cumulative_error.pdf}
+   \caption{\rone{Cumulative temperature error as a function of
+       mission duration for the different AUV missions shown in the
+       legend. Each colored curve corresponds to a mission after
+       generating a new plan, allowing a direct comparison of how
+       \emph{uncertainty} accumulates over time across missions.}}
+   \label{fig:cumulative}
+ \end{figure}
 
-     \begin{figure}[!t]
-       \centering
-       \includegraphics[scale=0.33]{fig/cumulative_error.pdf}
-       \caption{\rone{Cumulative temperature error as a function of mission
-         duration for the different AUV missions shown in the
-         legend. Each colored curve corresponds to a mission after
-         generating a new plan, allowing a direct comparison of how
-         \textit{uncertainty collected} accumulates over time across
-         missions.}}
-  \label{fig:cumulative}
-\end{figure}
-
-Figures \ref{fig:cmems_vs_data},\ref{fig:scenarioC_vs_data},\ref{fig:scenarioC1_vs_data},\ref{fig:scenarioC2_vs_data},\ref{fig:scenarioC3_vs_data},\ref{fig:scenarioC4_vs_data},\ref{fig:scenarioD_vs_data},\ref{fig:scenarioD1_vs_data},\ref{fig:scenarioD2_vs_data},\ref{fig:scenarioD3_vs_data},\ref{fig:scenarioD4_vs_data} enabling direct qualitative comparison of SST fields across CMEMS--NEMO model products and scenarios from C to C4 and from D to D4. Scatter plots are shown to compare the spatial models with the AUV data.
-
-
-     \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/cmems_vs_data.png}
-       \caption{\rone{The prediction for day 31st of October of 2024
-           from the CMEMS--NEMO numerical model downloaded on day 30th
-           of October of 2024.}}
-  \label{fig:cmems_vs_data}
-\end{figure}
-
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioC_vs_data.png}
-       \caption{\rone{Statistic model prediction without assimilation for day 31st of October of 2024 – Scenario C; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
-  \label{fig:scenarioC_vs_data}
-\end{figure}
+ Fig. \ref{fig:cmems_vs_data},\ref{fig:scenarioC_vs_data},\ref{fig:scenarioC1_vs_data},\ref{fig:scenarioC2_vs_data},\ref{fig:scenarioC3_vs_data},\ref{fig:scenarioC4_vs_data},\ref{fig:scenarioD_vs_data},\ref{fig:scenarioD1_vs_data},\ref{fig:scenarioD2_vs_data},\ref{fig:scenarioD3_vs_data},\ref{fig:scenarioD4_vs_data}
+ show qualitative comparison of SST fields across CMEMS--NEMO model
+ products and scenarios from \textbf{C} to \textbf{C4} and from
+ \textbf{D} to \textbf{D4}. Scatter plots are shown to compare the
+ spatial models with the AUV data.
 
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioC1_vs_data.png}
-       \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios C1; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
-  \label{fig:scenarioC1_vs_data}
-\end{figure}
+ \begin{figure}
+   \centering
+   \includegraphics[scale=1]{fig/cmems_vs_data.png}
+   \caption{\rone{The prediction for day 31st of October of 2024 from
+       the CMEMS--NEMO numerical model downloaded on
+       30\textsuperscript{th} October, 2024.}}
+   \label{fig:cmems_vs_data}
+ \end{figure}
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioC2_vs_data.png}
-       \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios C2; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
+ \begin{figure}
+   \centering
+   \includegraphics[scale=1]{fig/scenarioC_vs_data.png}
+   \caption{\rone{Statistic model prediction without assimilation for
+       31\textsuperscript{st} October, 2024 – Scenario \textbf{C} and
+       scatter plot between prediction and measured values by the XP2,
+       XP3 and XP5.}}
+   \label{fig:scenarioC_vs_data}
+ \end{figure}
+
+
+ \begin{figure}
+   \centering
+   \includegraphics[scale=1]{fig/scenarioC1_vs_data.png}
+   \caption{\rone{Statistic model predictions with assimilation for
+       31\textsuperscript{st} October, 2024 – Scenarios \textbf{C1};
+       and scatter plot between prediction and measured values by the
+       XP2, XP3 and XP5.}}
+   \label{fig:scenarioC1_vs_data}
+ \end{figure}
+
+ \begin{figure}
+   \centering
+   \includegraphics[scale=1]{fig/scenarioC2_vs_data.png}
+   \caption{\rone{Statistic model predictions with assimilation for
+       31\textsuperscript{st} October, 2024 – Scenarios \textbf{C2}
+       and scatter plot between prediction and measured values by the
+       XP2, XP3 and XP5.}}
   \label{fig:scenarioC2_vs_data}
 \end{figure}
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioC3_vs_data.png}
-       \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios C3; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
+\begin{figure}
+  \centering 
+  \includegraphics[scale=1]{fig/scenarioC3_vs_data.png}
+  \caption{\rone{Statistic model predictions with assimilation for
+      31\textsuperscript{st} October, 2024 – Scenarios \textbf{C3} and
+      scatter plot between prediction and measured values by the XP2,
+      XP3 and XP5.}}
   \label{fig:scenarioC3_vs_data}
 \end{figure}
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioC4_vs_data.png}
-       \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios C4; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
+\begin{figure}
+  \centering 
+  \includegraphics[scale=1]{fig/scenarioC4_vs_data.png}
+  \caption{\rone{Statistic model predictions with assimilation for
+      31\textsuperscript{st} October, 2024 – Scenarios \textbf{C4} and
+      scatter plot between prediction and measured values by the XP2,
+      XP3 and XP5.}}
   \label{fig:scenarioC4_vs_data}
 \end{figure}
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioD_vs_data.png}
-       \caption{\rone{Statistic model prediction without assimilation for day 31st of October of 2024 – Scenario D; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{fig/scenarioD_vs_data.png}
+  \caption{\rone{Statistic model prediction without assimilation for
+      31\textsuperscript{st} October, 2024 – Scenario \textbf{D} and
+      scatter plot between prediction and measured values by the XP2,
+      XP3 and XP5.}}
   \label{fig:scenarioD_vs_data}
 \end{figure}
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioD1_vs_data.png}
-       \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios D1; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{fig/scenarioD1_vs_data.png}
+  \caption{\rone{Statistic model predictions with assimilation for
+      31\textsuperscript{st} October, 2024 – Scenarios \textbf{D1} and
+      scatter plot between prediction and measured values by the XP2,
+      XP3 and XP5.}}
   \label{fig:scenarioD1_vs_data}
 \end{figure}
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioD2_vs_data.png}
-       \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios D2; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{fig/scenarioD2_vs_data.png}
+  \caption{\rone{Statistic model predictions with assimilation for
+      31\textsuperscript{st} October, 2024 – Scenarios \textbf{D2} and
+      scatter plot between prediction and measured values by the XP2,
+      XP3 and XP5.}}
   \label{fig:scenarioD2_vs_data}
 \end{figure}
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioD3_vs_data.png}
-       \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios D3; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{fig/scenarioD3_vs_data.png}
+  \caption{\rone{Statistic model predictions with assimilation for
+      31\textsuperscript{st} October, 2024 – Scenarios \textbf{D3} and
+      scatter plot between prediction and measured values by the XP2,
+      XP3 and XP5.}}
   \label{fig:scenarioD3_vs_data}
 \end{figure}
 
-      \begin{figure}
-       \centering
-       \includegraphics[scale=1]{fig/scenarioD4_vs_data.png}
-       \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios D4; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{fig/scenarioD4_vs_data.png}
+  \caption{\rone{Statistic model predictions with assimilation for day
+      31\textsuperscript{st} October, 2024 – Scenarios \textbf{D4} and
+      scatter plot between prediction and measured values by the XP2,
+      XP3 and XP5.}}
   \label{fig:scenarioD4_vs_data}
 \end{figure}

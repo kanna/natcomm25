@@ -23,11 +23,12 @@
 \maketitle
 
 The authors are grateful to the reviewers for their insightful and
-constructive comments and suggestions. A detailed response to the
-review follows.
+constructive comments and suggestions; the manuscript is far better
+contribution given their careful review and detailed comments.
 
-Note that the reference to page $X$, line $Y$, are made relative to the
-previously submitted manuscript.
+A detailed response to the review follows. Note that the reference to
+page $X$, line $Y$, are made relative to the previously submitted
+manuscript.
 
 %======================================================================
 \section*{Author responses to Reviewer 1}
@@ -142,13 +143,13 @@ highlighting that we follow the same methodology as in
 
 \end{enumerate}
   
-\item {\it Specific Comments:}
+\item\label{sec:r1-spec} {\it Specific Comments:}
 
   \begin{enumerate}
 
   \item \reply: L65: This paragraph may be better placed in the
-    abstract or
-  conclusions to serve as a summary of the work’s contribution.
+    abstract or conclusions to serve as a summary of the work’s
+    contribution.
 
   \action: We have modified the abstract per the suggestion while
   keeping the text as is in the body of the article, by adding the
@@ -156,10 +157,9 @@ highlighting that we follow the same methodology as in
 
   \begin{quote}
     
-    The novelty of this effort is
-  threefold; the demonstration of coupling models with AUV sampling,
-  the importance of targeted sampling and the impact of loop closure
-  towards model prediction.
+    The novelty of this effort is threefold; the demonstration of
+    coupling models with AUV sampling, the importance of targeted
+    sampling and the impact of loop closure towards model prediction.
   \end{quote}
 
 \item \reply: L100/L105: For better geographical context, please mark
@@ -252,9 +252,10 @@ of the Methods section.
   bullet point \ref{sec:r2-assim} under subsection \ref{sec:r2-spec}
   for additional information.
   
-  The differences are shown in Fig. 5 with assimilation (scenarios C4
-  and D4) and without (C and D). In the supplementary material, we've
-  also attached the analysis for C1-C3 and D1-D3 with assimilation
+  The differences are shown in Fig. 5 with assimilation (scenarios
+  \textbf{C4} and \textbf{D4}) and without (\textbf{C} and
+  \textbf{D}). In the supplementary material, we've also attached the
+  analysis for \textbf{C1--C3} and \textbf{D1--D3} with assimilation
   scenarios.
   
 
@@ -277,26 +278,29 @@ of the Methods section.
   added an explicit reference in the text pointing readers directly to
   that work.
   
-\item \reply: L204: Please provide a demonstration or figure of the
-  “uncertainty map provided by the model.”
+\item\label{sec:r1-uncert} \reply: L204: Please provide a
+  demonstration or figure of the “uncertainty map provided by the
+  model.”
   
   \action: We have revised Fig. 4 to explicitly show the model-derived
   uncertainty map(s) and their use in the sampling scenario; AUV
   trajectories for each day are overlaid on the corresponding daily
-  uncertainty map. It is worth noting that the planning objective is
-  not to steer the vehicles towards any single location of maximum
-  pointwise uncertainty. Instead, the planned route is selected to
-  maximize the \emph{accumulated} path-integrated uncertainty that can
-  be sampled under operational constraints, including predefined
+  uncertainty map.
+
+  It is worth noting that the planning objective is not to steer the
+  vehicles towards any single location of maximum pointwise
+  uncertainty. Instead, the planned route is selected to maximize the
+  \emph{accumulated} path-integrated uncertainty that can be sampled
+  under operational constraints, including predefined
   deployment/recovery locations and whether vehicles operate
-  independently or in tandem (Fig. \ref{fig:cumulative} below and in
-  the newly added supplementary material). The straight line
-  trajectory segments shown outside the uncertainty map correspond
-  \emph{only} to transit from safe deployment areas into the
-  operational domain; these segments are therefore not outputs of the
-  path-planning algorithm. Nevertheless, observations collected during
-  transit remain valuable and were incorporated into the subsequent
-  assimilation.
+  independently or in tandem (see Fig. \ref{fig:cumulative} below and
+  the text in the newly added supplementary material). The straight
+  line trajectory segments shown outside the uncertainty map
+  correspond \emph{only} to transit from safe deployment areas into
+  the operational domain; these segments are therefore not outputs of
+  the path-planning algorithm. Nevertheless, observations collected
+  during transit remain valuable and were incorporated into the
+  subsequent assimilation.
 
   \begin{figure}[!b]
     \centering
@@ -305,8 +309,7 @@ of the Methods section.
       duration for the different AUV missions shown in the
       legend. Each colored curve corresponds to a mission after
       generating a new plan, allowing a direct comparison of how
-      \textit{uncertainty collected} accumulates over time across
-      missions.}
+      \emph{uncertainty} accumulates over time across missions.}
     \label{fig:cumulative}
   \end{figure}
  
@@ -317,21 +320,23 @@ of the Methods section.
 
   \action: We enforce both endurance and safety constraints in two
   complementary ways. First, we constrain endurance by limiting each
-  vehicle’s planned route to an effective maximum distance derived
-  from its mission time budget, while accounting for mandatory
-  surfacing time for communications and geolocation. We constrain
-  navigational safety by planning only within an admissible-area map
-  where unsafe regions are masked out (e.g., land/shoreline,
-  shallow-water areas below a conservative depth threshold, and
-  locally known/identified hazards such as high-traffic zones, buoys,
-  or fishing gear). Every candidate path is then algorithmically
-  constrained. These constraints are implemented as hard feasibility
-  checks, so the route planner only returns routes that satisfy both
-  endurance and safety requirements. This is illustrated by the
-  boundaries in the uncertainty field shown in the zoomed area of the
-  new Fig. 4. More details on how this is mathematically incorporated
-  in the cost function are provided in \cite{bernacchi2025} and
-  \cite{bernacchi26}. We have modified the text to read:
+  vehicle's planned route to an effective maximum distance derived
+  from its battery capacity and mandatory daytime recovery, while
+  accounting for surfacing time for communications and geolocation.
+
+  We constrain navigational safety by planning only within an
+  admissible area where unsafe regions are masked out (e.g.,
+  land/shoreline, shallow-water areas below a conservative depth
+  threshold, and locally known/identified hazards such as high-traffic
+  zones, buoys, or fishing gear). Every candidate path is then
+  algorithmically constrained. These constraints are implemented as
+  hard feasibility checks, so the route planner only returns routes
+  that satisfy both endurance and safety requirements. This is
+  illustrated by the boundaries in the uncertainty field shown in the
+  zoomed area of the updated Fig. 4. More details on how this is
+  mathematically incorporated in the cost function are provided in
+  \cite{bernacchi2025} and \cite{bernacchi26}. We have modified the
+  text to read:
 
      \begin{quote}
 
@@ -345,7 +350,7 @@ of the Methods section.
 \end{enumerate}
 
 
-\item{\it Minor corrections:} 
+\item{\it Minor corrections:}\label{sec:r1-minor}
 
   \begin{enumerate}
     
@@ -362,7 +367,7 @@ of the Methods section.
     which typically operate at lower speeds. We do not believe any
     modification is necessary. 
 
-  \item \reply: L56: Explain the meaning of onboard computation.
+  \item \label{sec:r1-compute} \reply: L56: Explain the meaning of onboard computation.
     
     \action: Our (and most) AUVs, have far more computational capacity
     on board, akin to a standard laptop; this is not the case with the
@@ -377,13 +382,13 @@ of the Methods section.
 
     \begin{quote}
 
-      \ldots moreover the novelty of our work is
-  in demonstrating the applicability of using our AUVs that can
-  control their trajectory using onboard computation. While well
-  suited for embedded reasoning for adaptive sampling
-  \cite{das11b,rajan12,chrpa15,fossum18,fossum19,fossum19b}, this
-  effort used shore-generated waypoints distributed to all AUVs, a
-  task which could be moved onboard in the future. 
+      \ldots moreover the novelty of our work is in demonstrating the
+      applicability of using our AUVs that can control their
+      trajectory using onboard computation. While well suited for
+      embedded reasoning for adaptive sampling
+      \cite{das11b,rajan12,chrpa15,fossum18,fossum19,fossum19b}, this
+      effort used shore-generated waypoints distributed to all AUVs, a
+      task which could be moved onboard in the future.
 
     \end{quote}
 
@@ -422,12 +427,12 @@ of the Methods section.
   \item \reply: L362 / Fig. 6: A panel code is missing for Figure 6.
     Please also add an x-axis label to panel (c) of Figure 6.
     
-    \action: Panel references and x-axis labels are fixed. 
+    \action: Panel references and x-axis labels are now fixed.
 
   \item \reply: L430: Correct the compound word to
     upwelling-relaxation.
 
-    \action: Corrected
+    \action: Corrected. 
       
   \item \reply: L432: Correct the compound word to data collected.
     
@@ -435,9 +440,9 @@ of the Methods section.
 
     \begin{quote}
 
-      This transition can explain why assimilation of southern
-      data, collected under a single dynamical regime, fails to improve
-      and in fact, degrades forecasts.
+      This transition can explain why assimilation of southern data,
+      collected under a single dynamical regime, fails to improve and
+      in fact, degrades forecasts.
 
       \end{quote}
 
@@ -509,29 +514,31 @@ the updated manuscript.
 
   \item
 
-    {\it On gliders:}\label{sec:r2-gli} There appears to be some
-    confusion. Our work leverages powered AUVs, not gliders. This
-    allows our vehicles to go against the current (anything $< 1$--$2$
-    knots), carry a range of payloads (subject to battery chemistry),
-    and, most importantly, include an onboard computer powerful enough
-    to perform embedded decision-making (see comments above addressing
-    Reviewer 1). AUVs in oceanography are complementary to gliders:
-    they are particularly well-suited for rapid, high-resolution
-    sampling of spatially localized features and short time-span
-    events, whereas gliders are typically optimized for long-duration,
-    low-power monitoring over broader areas \cite{rudnick18}. Fig.3
-    shows a typical deployment, which is quite unlike that of a
-    glider. These low-cost platforms are, in our view, more versatile,
-    especially for coastal observations, are designed in-house, and
-    are also available commercially off-the-shelf \footnote{see
+    
+    \action: {\it On gliders:}\label{sec:r2-gli} There appears to be
+    some confusion regarding the vehicles. Our work leverages
+    propelled AUVs, not gliders. This allows our vehicles to go
+    against the current (anything $< 1$--$2$ knots), carry a range of
+    payloads (subject to battery capacity), and, most importantly,
+    include an onboard computer powerful enough to perform embedded
+    decision-making (see comments above bullet point
+    \ref{sec:r1-compute} subsection \ref{sec:r1-minor}). AUVs in
+    oceanography are complementary to gliders; they are particularly
+    well-suited for rapid, high-resolution sampling of spatially
+    localized features and short time-span events, whereas gliders are
+    typically optimized for long-duration, low-power monitoring over
+    broader areas \cite{rudnick18}. Fig.3 shows a typical deployment,
+    which is quite unlike that of a glider. These low-cost platforms
+    are, in our view, more versatile, especially for coastal
+    observations, have been designed in-house, and are also available
+    commercially off-the-shelf \footnote{See
       https://www.oceanscan-mst.com} and operated across the world.
 
-    \action: None.
     
   \item
 
-    \reply: \ldots gliders speed through water nor typical water
-    velocities in the region \ldots
+    \reply:\label{sec:r2-speed} \ldots gliders speed through water nor
+    typical water velocities in the region \ldots
 
     \action: Following the clarification above, it is also important
     to note that, unlike gliders, our AUVs are less sensitive to the
@@ -540,28 +547,31 @@ the updated manuscript.
     $\sim$0.4--0.5~m~s$^{-1}$ \cite{quaresma07, CMEMS_IBI_MFC}, so
     their impact on vehicle navigation is generally limited within the
     context of the deployments considered here. To provide
-    quantitative support, we have include an additional figure below
-    and in the supplementary material that compares planned and
-    realized trajectories (Fig. \ref{fig:real_planned}). The maximum
-    deviation between the planned and realized paths (from top-left to
-    bottom-right panels) is 256~m, 318~m, 218~m, 155~m, and 279~m,
-    respectively.
+    quantitative support, we have included an additional figure
+    (Fig. \ref{fig:real_planned}) here and in the supplementary
+    material that compares planned and realized trajectories. The
+    maximum deviation between the planned and realized paths (from
+    top-left to bottom-right panels) is 256~m, 318~m, 218~m, 155~m,
+    and 279~m, respectively.
     
     \begin{figure}[!t]
       \centering
       \includegraphics[scale=0.33]{../fig/real_vs_planned.pdf}
-      \caption{Planned versus realized AUV trajectories plotted on the
-        corresponding daily model-derived uncertainty maps. Panels
-        correspond to XP2 (29 Oct), XP5 (29--30 Oct; 30--31 Oct), and
-        XP3 (30--31 Oct; 31 Oct). The planned route is shown as
-        markers and a black line, and the realized trajectory as a
-        green line.}
+      \caption{Planned versus realized AUV trajectories plotted on
+       the corresponding daily model-derived uncertainty maps. Panels
+       correspond to XP2 (29\textsuperscript{th} Oct), XP5
+       (29\textsuperscript{th}--30\textsuperscript{th} Oct;
+       30\textsuperscript{th}--31\textsuperscript{st} Oct), and XP3
+       (30\textsuperscript{th}--31\textsuperscript{st} Oct;
+       31\textsuperscript{st} Oct). The planned route is shown as
+       markers and a black line, and the realized trajectory as a
+       green line.}
       \label{fig:real_planned}
     \end{figure}
     
     These deviations are comparable to the spatial resolution of the
     statistical model used for guidance, indicating that
-    current-driven drift did not affect the interpretation of the
+    current-driven drift did not impact the interpretation of the
     results. We nevertheless provide the figure in the newly added
     supplementary material for readers who wish to examine this aspect
     in greater detail.
@@ -575,9 +585,10 @@ the updated manuscript.
     guidance, showing that the observations reduce uncertainty (maybe
     just put the glider trajectories on the uncertainty maps?)
 
-    \action: Thank you for this suggestion which is consistent with
-    Reviewer~1’s comments above. Accordingly, we have revised Fig. 4
-    to explicitly show the model-derived uncertainty maps.
+    \action: Thank you for this suggestion consistent with comments
+    above in bullet point \ref{sec:r1-uncert} subsection
+    \ref{sec:r1-spec}. Accordingly, we have revised Fig. 4 to
+    explicitly show the model-derived uncertainty maps.
 
   \item\label{sec:r2-low-cost}
 
@@ -590,11 +601,12 @@ the updated manuscript.
     said, to fit within the constraints of this manuscript, while
     still making these comparisons available, we have added figures in
     the supplementary material showing (i) comparisons with CMEMS NEMO
-    and (ii) all scenarios of the statistical model (C1-C4, D1-D4). We
-    have also added scatter plots for each model solution (CMEMS NEMO
-    and C1-C4 and D1-D4 scenarios), quantifying the deviation from in
-    situ measurements for 31\textsuperscript{st} October. We believe
-    this should address the reviewers concerns.
+    and (ii) all scenarios of the statistical model (\textbf{C1--C4},
+    \textbf{D1--D4}). We have also added scatter plots for each model
+    solution (CMEMS NEMO and \textbf{C1--C4} and \textbf{D1--D4}
+    scenarios), quantifying the deviation from in situ measurements
+    for 31\textsuperscript{st} October. We believe this should address
+    the reviewers concerns.
     
 
   \end{enumerate}
@@ -615,23 +627,24 @@ the updated manuscript.
     clearly state that in the introduction. That is a significant
     achievement.
 
-    \action: We do \emph{not} believe this is the first end-to-end
-    study coupling ocean models with robots. AOSN-II
+    \action: We do not believe this is the first end-to-end study
+    coupling ocean models with robots. AOSN-II
     \cite{ramp2009preparing} was among the early experiments in this
-    context, albeit with a far larger number of robots and at least
-    three numerical models compared in an ensemble. Given that both
+    context, albeit with a larger number of robots and at least three
+    numerical models in an ensemble. Given that both
     \cite{lermusiaux07}, \cite{ford22} and more recently
     \cite{wihsgott26} have conceptualized (for the former) and
     executed on for the latter two, the novelty of our effort is in
-    using (propelled) AUVs and placing the work in a far larger
-    conceptual framework. While this might not appear to be such a
-    large advance in the view of the reviewers, the objective is to be
-    able to add onboard adaptive sampling algorithms much akin to
-    \cite{fossum18} and \cite{fossum19}, as also integrate modalities
-    of observation, including aerial and surface vehicles akin to
-    \cite{sousa16} and \cite{pinto22}. This manuscript describes the
-    first step and provides a window into the use of statistical
-    models primed by larger numerical simulation model (CMEMS NEMO).
+    using propelled AUVs and placing the work in a far larger
+    conceptual framework \cite{rajan21}. While this might not appear
+    to be such a large advance in the view of the reviewers, the
+    objective is to be able to add onboard adaptive sampling
+    algorithms along the lines of \cite{fossum18} and \cite{fossum19},
+    as also integrate modalities of observation, including aerial and
+    surface vehicles similar to \cite{sousa16} and
+    \cite{pinto22}. This manuscript describes the first step and
+    provides a window into the use of statistical models primed by
+    operational numerical simulation models like CMEMS NEMO.
 
   \item
 
@@ -644,14 +657,14 @@ the updated manuscript.
     scenario, with the AUV trajectories overlaid on the corresponding
     uncertainty fields. The planned and real trajectories are nearly
     coincident, and small differences are therefore not readily
-    discernible in the figure. As discussed in our response 2, the
+    discernible in the figure. As discussed in our response bullet
+    point \ref{sec:r2-speed} subsection \ref{sec:r2-genl}, the
     observed deviations are comparable to the effective spatial
     resolution of the statistical model used for guidance, indicating
     that currents did not impact the results within the scope of this
-    manuscript. For completeness, we provide an additional figure (Fig
+    experiment. For completeness, we provide an additional figure (Fig
     \ref{fig:real_planned}) in the new supplementary material showing
-    planned versus real trajectories at higher resolution, for readers
-    who wish to examine this aspect in greater detail.
+    planned versus real trajectories at higher resolution.
 
 \item
 
@@ -661,9 +674,9 @@ the updated manuscript.
   Fig. 6c needs unit labels.
 
   \action: As requested in bullet point \ref{sec:r2-low-cost} under
-  subsection \ref{sec:r2-genl}, we have added supplementary figures in
+  subsection \ref{sec:r2-genl}, we have added additional figures in
   the supplementary material, for a direct comparison with CMEMS NEMO
-  while keeping the main manuscript within its required constraints.
+  while keeping the main manuscript within its scope.
 
 
 \item\label{sec:r2-assim}
@@ -705,9 +718,9 @@ the updated manuscript.
     northern sectors of the Nazar\'{e} Canyon region. Therefore, local
     over- and/or underestimation of the variogram range may lead to
     overly broad or overly localised background corrections, which can
-    in turn increase the RMSE in the assimilative experiments (C4 and
-    D4) relative to the corresponding baseline runs (C and D) without
-    assimilation.
+    in turn increase the RMSE in the assimilative experiments
+    (\textbf{C4} and \textbf{D4}) relative to the corresponding
+    baseline runs (\textbf{C} and \textbf{D}) without assimilation.
 
     \end{quote}
   
@@ -741,17 +754,25 @@ the updated manuscript.
     model horizontal resolution or the typical distance between glider
     surfacings/profiles.
 
-    \action: Thanks for the query. The value $0.0035^\circ$ refers to
-    the statistical model's horizontal grid spacing, not to the
-    spacing between AUV profiles or surfacings. An AUV profile here
-    corresponds to a slanted yo-yo trajectory: the vehicle advances
+    \action: Thank you for the comment. The value $0.0035^\circ$
+    refers to the statistical model's horizontal grid spacing, not to
+    the spacing between AUV profiles or surfacings. An AUV profile
+    here corresponds to a yo-yo trajectory: the vehicle advances
     horizontally while descending and ascending, while sampling
     continuously. Thus, while the along-track distance between
     surfacings for a 100\,m yo-yo at a maximum pitch of $15^\circ$ is
     on the order of $\sim 0.75$--$0.8$\,km, the sample spacing along
     the trajectory is much smaller. This is why we state that AUV
     sampling is denser than the model grid spacing. We revised the
-    manuscript sentence accordingly to make this explicit.
+    manuscript sentence accordingly to make this explicit in the
+    following way:
+
+    \begin{quote}
+
+      With AUV sampling denser than the model horizontal grid
+      resolution \ldots
+
+    \end{quote}
 
   \item
 

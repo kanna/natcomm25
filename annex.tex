@@ -8,8 +8,10 @@
 \section*{Supplementary Material:\normalfont{'Towards Ocean Model-Driven Robotic Exploration'}}
 \label{sec:annex}
 
-\kc{Text needed -- doesn't have to be extensive and perhaps even
-  cut/paste could do.}
+This Supplementary Material provides additional analyses and figures that support the main manuscript while keeping the core text concise. In particular, it includes supplementary visualizations used to (i) clarify operational and methodological aspects of the sample--assimilate--predict--direct loop, and (ii) enable direct, side-by-side comparisons between model solutions and in situ observations for readers who wish to examine those aspects in greater detail.
+
+
+Figure \ref{fig:real_planned} provides a high-resolution comparison between planned and realised AUV trajectories for the relevant deployment days. For quantitative context, the maximum deviation between the planned and realised paths (from top-left to bottom-right panels) is 256~m, 318~m, 218~m, 155~m, and 279~m, respectively.
 
  \begin{figure}[!b]
       \centering
@@ -23,9 +25,9 @@
       \label{fig:real_planned}
     \end{figure}
 
+In our guidance framework, routes are not designed to target a single location of maximum pointwise uncertainty; instead, the planned route is selected to maximize the \textit{accumulated} path-integrated uncertainty that can be sampled under the relevant operational constraints. Figure \ref{fig:cumulative} complements that perspective by summarising how the temperature error metric accumulates over mission duration across the deployments/experiments, providing a compact diagnostic for comparing error growth behavior among scenarios. 
 
-
-     \begin{figure}[!b]
+     \begin{figure}[!t]
        \centering
        \includegraphics[scale=0.33]{fig/cumulative_error.pdf}
        \caption{\rone{Cumulative temperature error as a function of mission
@@ -37,13 +39,16 @@
   \label{fig:cumulative}
 \end{figure}
 
+Figures \ref{fig:cmems_vs_data},\ref{fig:scenarioC_vs_data},\ref{fig:scenarioC1_vs_data},\ref{fig:scenarioC2_vs_data},\ref{fig:scenarioC3_vs_data},\ref{fig:scenarioC4_vs_data},\ref{fig:scenarioD_vs_data},\ref{fig:scenarioD1_vs_data},\ref{fig:scenarioD2_vs_data},\ref{fig:scenarioD3_vs_data},\ref{fig:scenarioD4_vs_data} enabling direct qualitative comparison of SST fields across CMEMS--NEMO model products and scenarios from C to C4 and from D to D4. Scatter plots are shown to compare the spatial models with the AUV data.
+
+
      \begin{figure}
        \centering
        \includegraphics[scale=1]{fig/cmems_vs_data.png}
        \caption{\rone{The prediction for day 31st of October of 2024
-           from the CMEMS NEMO numerical model downloaded on day 30th
+           from the CMEMS--NEMO numerical model downloaded on day 30th
            of October of 2024.}}
-  \label{fig:cumulative}
+  \label{fig:cmems_vs_data}
 \end{figure}
 
       \begin{figure}
@@ -86,14 +91,14 @@
        \centering
        \includegraphics[scale=1]{fig/scenarioD_vs_data.png}
        \caption{\rone{Statistic model prediction without assimilation for day 31st of October of 2024 – Scenario D; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
-  \label{fig:fig:scenarioD_vs_data}
+  \label{fig:scenarioD_vs_data}
 \end{figure}
 
       \begin{figure}
        \centering
        \includegraphics[scale=1]{fig/scenarioD1_vs_data.png}
        \caption{\rone{Statistic model predictions with assimilation for day 31st of October of 2024 – Scenarios D1; and scatter plot between prediction and measured values by the XP2, XP3 and XP5.}}
-  \label{fig:cumulative}
+  \label{fig:scenarioD1_vs_data}
 \end{figure}
 
       \begin{figure}

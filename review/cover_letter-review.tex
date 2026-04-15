@@ -1,0 +1,69 @@
+\documentclass[10pt,stdletter]{newlfm}
+\usepackage{charter}
+\usepackage{times}
+
+\widowpenalty=1000
+\clubpenalty=1000
+
+\newsavebox{\Luiuc}
+\sbox{\Luiuc}{%
+	\parbox[b]{1.75in}{%
+		\vspace{0.5in}%
+		\includegraphics[scale=0.8]{../fig/uporto.png}%
+	}%
+}%
+\makeletterhead{Uiuc}{\Lheader{\usebox{\Luiuc}}}
+
+\newlfmP{headermarginskip=10pt}
+\newlfmP{sigsize=10pt}
+\newlfmP{dateskipafter=30pt}
+\newlfmP{addrfromphone}
+\newlfmP{addrfromemail}
+\PhrPhone{Phone}
+\PhrEmail{Email}
+
+\lthUiuc
+
+
+\namefrom{\vspace{-1.2cm}Renato Mendes}
+\addrfrom{INEGI\\
+	Campus FEUP, Rua Dr. Roberto Frias, 400\\
+	Porto, Portugal
+}
+% \phonefrom{(+47) 98 678 309}
+\emailfrom{\emph{rpmendes@inegi.up.pt}}
+
+\addrto{%
+Editor-in-Chief\\
+Oceanography\\
+}
+
+\greetto{Dear Editor,}
+\closeline{Yours faithfully,}
+
+
+\Lfooter{University of Porto, Portugal, Underwater Systems and
+  Technology Laboratory, 4200-465 Porto, Portugal \\
+}
+
+% \Rheader{1 of 1}
+
+\begin{document}
+\begin{newlfm}
+
+
+  We thank the reviewers for providing feedback on our manuscript
+  \textbf{Towards Ocean Model-Driven Robotic Exploration}. The
+  feedback from reviewers has been very insightful and
+  constructive. Our response is herewith attached along with the
+  updated manuscript itself, duly color-coded with responses to each
+  of the two reviewers. We have carefully considered all the feedback
+  in this revised version of the manuscript, which we believe, has
+  significantly improved as a result.
+
+  We look forward to receiving any further feedback at the earliest.
+
+
+\end{newlfm}
+\vspace{-1cm}
+\end{document}

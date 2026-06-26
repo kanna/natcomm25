@@ -21,7 +21,7 @@
 
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage[hmargin=1in,vmargin=1.2in]{geometry}
-\usepackage{url}
+%\usepackage{url}
 \usepackage{multirow}
 \usepackage[bottom]{footmisc}
 \usepackage{afterpage}
@@ -29,8 +29,46 @@
 \usepackage{enumitem}
 \usepackage[normalem]{ulem}
 % *******************************************
-\usepackage{lineno}
+%\usepackage{lineno}
 \usepackage{setspace}
+\usepackage[
+    backend=biber,
+    style=authoryear,
+    sorting=nyt,
+    maxbibnames=99,
+    maxcitenames=2,
+    uniquelist=false,
+    giveninits=true,
+    doi=true,
+    url=false,
+    isbn=false,
+    eprint=false
+]{biblatex}
+
+\addbibresource{ref.bib}
+
+% DOI como https://doi.org/...
+\DeclareFieldFormat{doi}{%
+  \mkbibacro{DOI}\addcolon\space
+  \href{https://doi.org/#1}{https://doi.org/#1}}
+
+% remover "In:"
+\renewbibmacro{in:}{}
+
+% nomes próprios abreviados
+\DeclareNameAlias{default}{family-given}
+
+% não usar aspas no título
+\DeclareFieldFormat[article]{title}{#1}
+
+% volume em negrito
+\DeclareFieldFormat[article]{volume}{\textbf{#1}}
+
+% número entre parênteses
+\DeclareFieldFormat[article]{number}{(#1)}
+
+% páginas
+\DeclareFieldFormat{pages}{#1}
 % *******************************************
 
 \interfootnotelinepenalty=80 
